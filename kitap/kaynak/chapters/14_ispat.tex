@@ -1,0 +1,400 @@
+\chapter{İspat Kavramı; Doğrudan ve Kontrapozitif İspat}
+\label{chap:dogrudan-ispat}
+
+
+\subsection*{Öğrenme Hedefleri}
+
+Bu bölümü tamamladığınızda:
+
+\begin{itemize}\setlength{\itemsep}{2pt}\setlength{\parskip}{0pt}
+\item Matematiksel ispatı, ampirik doğrulama ve inandırıcı argümandan ayırt edebileceksiniz.
+\item İspatın tarihsel gelişiminde Öklid’in Elementler’inin oynadığı rolü açıklayabileceksiniz.
+\item Biçimsel ispat ile matematikçilerin günlük pratiğinde kullandığı gayriresmî ispat arasındaki ilişkiyi tartışabileceksiniz.
+\item İspatın yalnızca teknik değil, aynı zamanda sosyal-epistemik bir pratik olduğu görüşünü değerlendirebileceksiniz.
+\end{itemize}
+
+\section{İspat Nedir?}
+
+\begin{tcolorbox}[bookbox,colback=cDef]
+\textbf{\textsf{\textcolor{cAcc}{Tanım.}}}\quad
+Bir \emph{ispat}, kabul edilmiş aksiyomlar, tanımlar ve önceki sonuçlardan başlayarak hedef önermeye geçerli çıkarım adımlarıyla ulaşan sonlu ve denetlenebilir bir akıl yürütmedir.
+\end{tcolorbox}
+
+Matematiği diğer bilgi alanlarından ayıran en temel özellik, matematiksel iddiaların doğruluğunun ispat (proof) yoluyla ortaya konmasıdır. Bir ispat, önceden kabul edilmiş önermelerden (aksiyomlar ve daha önce ispatlanmış teoremler) başlayarak, geçerli mantıksal çıkarım adımlarıyla (Bölüm~\ref{chap:onermeler-mantigi}’te incelediğimiz mantıksal ilkelere dayanarak) hedeflenen sonuca ulaşan sonlu bir akıl yürütme dizisidir. Bu tanım biçimsel türetme idealini yakalar; matematiksel pratikteki ispatların açıklama, iletişim ve kavram geliştirme işlevleri bundan daha geniştir (Rav 1999; Hanna 2000). Devlin de ispatın yalnızca mantıksal olarak sağlam olmasını değil, hedeflenen okuyucunun akıl yürütmeyi izleyebileceği biçimde açıklama ve iletişim işlevi görmesini vurgular. Bu nedenle aynı matematiksel fikir, uzmanlara ve öğrenme sürecindeki öğrencilere sunulurken farklı ayrıntı düzeyleri gerektirebilir (Devlin 2012, ss. 51–53). Bu tanım, ispatı diğer inandırıcılık biçimlerinden keskin biçimde ayırır. Deneysel bilimlerde bir iddia, tekrarlanan gözlem ve deneylerle desteklenir; bu destek ilkece yeni gözlem, ölçüm ve kuramsal değerlendirmeler karşısında düzeltilebilir. Popper’ın yanlışlanabilirlik yaklaşımı bu farkı etkili biçimde vurgulamış olsa da, bilimsel sınama tek bir basit “karşı gözlem” şemasına indirgenemez (Popper 2002). Matematikte ise durum farklıdır: bir teorem, bir kere geçerli biçimde
+
+ispatlandıktan sonra, ispat hatasız olduğu sürece, ilke olarak bir daha çürütülemez. Bununla birlikte, yayımlanmış bir metnin gerçekten hatasız bir ispat olup olmadığı insan denetimine açık epistemik bir sorudur (De Millo ve diğ. 1979).
+
+\begin{tcolorbox}[bookbox,colback=cEx]\textbf{\textsf{\textcolor{cAcc}{Örnek.}}}\quad Sayısal Doğrulama İspat Değildir “2’den büyük her çift tam sayı, iki asal sayının toplamı olarak yazılabilir” iddiası (Goldbach Sanısı olarak bilinir), 4 = 2+2, 6 = 3+3, 8 = 3+5, 10 = 3+7, …, şeklinde çok geniş sonlu aralıklarda bilgisayarlarla sınanmıştır. Oliveira e Silva ve diğ.’nin elektronik olarak 18 Kasım 2013’te, basılı olarak Temmuz 2014’te yayımlanan çalışması, sanıyı 4 ile 4 × 1018 arasındaki bütün çift tam sayılar için doğrulamıştır (Oliveira e Silva ve diğ. 2014, ss. 2033–2034). Ancak bu sayısal doğrulama, iddianın ispatlandığı anlamına gelmez — 1742’deki Goldbach–Euler yazışmasına uzanan bu sanı, 23 Eylül 2026 itibarıyla hâlâ genel olarak ispatlanabilmiş değildir (Weisstein 2026). Bu örnek, ne kadar çok sayıda örnek doğrulansa da, sonlu sayıda örneğin, sonsuz sayıda durumu kapsayan bir genel iddiayı ispatlayamayacağını gösterir. Buna karşılık, tek bir karşı örnek bulunması, iddiayı anında çürütmeye yeterlidir — bu asimetri, matematiksel ispatın mantıksal yapısının önemli bir özelliğidir.\end{tcolorbox}
+
+Bu asimetriyi biraz daha açalım: evrensel bir iddia (“her x için P(x)”) ile varlık iddiası (“bazı x için P(x)”) arasındaki ilişki, ispat stratejisi açısından tam bir aynadır (Bölüm~\ref{chap:niceleyiciler}’daki ¬∀x P(x) ≡ ∃x ¬P(x) eşdeğerliğini hatırlayınız). Evrensel bir iddiayı ispatlamak tüm durumları kapsayan bir akıl yürütme gerektirirken, onu çürütmek için tek bir karşı örnek yeter; varlık iddiasında ise tam tersi geçerlidir. Goldbach Sanısı tam olarak bu nedenle zordur: 4 × 1018 ’e kadar yapılan doğrulama, bu sınırın üzerindeki sonsuz sayıda çift sayı arasında bir karşı örnek bulunması ihtimalini mantıksal olarak ortadan kaldırmaz. (Oliveira e Silva ve diğ. 2014, ss. 2033–2034)
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\linewidth}{>{\bfseries\raggedright\arraybackslash}p{2.0cm}Y Y}
+\toprule
+Görev & Evrensel iddia $\forall x\,P(x)$ & Varlık iddiası $\exists x\,P(x)$ \\
+\midrule
+İspat & Bütün $x$ değerlerini kapsayan genel bir argüman kur. & Bir tanık $c$ ver ve $P(c)$ olduğunu göster. \\
+Çürütme & Tek bir $c$ bul ve $P(c)$'nin yanlış olduğunu göster. & Her $x$ için $P(x)$'in yanlış olduğunu göster. \\
+Sonlu deneme & Çok sayıda doğrulama iddiayı destekler, fakat ispatlamaz. & Çok sayıda başarısız arama, tanık bulunmadığını ispatlamaz. \\
+\bottomrule
+\end{tabularx}
+\caption{Evrensel ve varlıksal iddialarda ispat ile çürütme arasındaki asimetri.}
+\end{table}
+
+Bu noktada günlük dildeki “kanıt” (evidence, delil) kavramıyla matematiksel “ispat” kavramını ayırmak gerekir. Hukukta ya da bilimde bir “kanıt”, bir iddiayı belirli bir olasılıkla destekleyen, ama kesinlik iddiasında bulunmayan bir göstergedir — yeni bir kanıt ortaya çıktığında hüküm değişebilir. Matematiksel ispat ise, geçerli olduğu sürece, bu tür bir revizyona ilke olarak kapalıdır: ispatlanmış bir teorem, hiçbir gözleme dayanmadığı için, gelecekte ortaya çıkacak hiçbir yeni “gözlemle” çürütülemez; yalnızca aksiyomlardan ve mantık kurallarından türetilmiştir.
+
+\section{İspatın Tarihsel Kökenleri: Öklid’in Elementler’i}
+
+Sistematik ispat kavramının kökleri Antik Yunan matematiğine, özellikle MÖ 3. yüzyılda yazılmış Öklid’in Elementler (Stoicheia) adlı eserine dayanır. Bu eser, geometriyi (ve sayı teorisinin bir kısmını) beş postülat, birtakım tanım ve “ortak kavram” (aksiyom) üzerine, adım adım, her teoremi öncekilerden mantıksal olarak türeterek inşa etmiştir. Elementler, yalnızca matematiksel içeriğiyle değil, benimsediği yöntemle — yani aksiyomatiktümdengelimli ispat yöntemiyle — batı düşüncesinin en etkili eserlerinden biri olmuştur; bu yöntem, 2000 yılı aşkın bir süre boyunca “titiz akıl yürütme”nin altın standardı olarak kabul edilmiştir. Newton’un Principia’sındaki tanım–aksiyom–önerme düzeni ile Spinoza’nın başlığında dahi “geometrik düzende kanıtlanmış” olduğunu bildiren Ethica’sı, bu yöntemin doğa felsefesi ve etik alanlarına taşınmasının
+
+iki belirgin örneğidir (Newton 1999; Spinoza 2002). Öklidçi tümdengelimin antik matematikteki özgül kuruluşu ise modern biçimsel sistemlerle doğrudan özdeşleştirilmemelidir (Euclid 1956; Netz 1999). Öklid’in ispat anlayışının, modern aksiyomatik yöntem üzerindeki etkisi belirleyici olmuştur: bir ispat, sıfırdan başlayamaz; her ispat, önceden kabul edilmiş bir temelden (aksiyomlardan ya da daha önce ispatlanmış teoremlerden) hareket etmelidir. Bu, matematiksel bilginin neden kümülatif (birikimli) bir yapıya sahip olduğunu da açıklar: her yeni teorem, önceki teoremler üzerine inşa edilir. Ne var ki Öklid dışı geometrilerin 19. yüzyılda keşfi, Öklid’in ispat modeliyle ilgili önemli bir ayrımı gözler önüne sermiştir. Yüzyıllarca Öklid’in postülatları, yalnızca mantıksal olarak tutarlı bir başlangıç noktası değil, fiziksel uzayın zorunlu ve apaçık bir betimlemesi sayılıyordu. Bolyai ve Lobaçevski hiperbolik geometriyi sistematik olarak geliştirmiş, Riemann daha genel bir geometri anlayışının yolunu açmış; Beltrami ve sonraki model kurucuları bu kuramların Öklid geometrisi içindeki modellerini vererek bağıl tutarlılık ve bağımsızlık sonuçlarını sağlamlaştırmıştır. Böylece Öklid’in ispatlarının kendi varsayımları altındaki mantıksal geçerliliği sarsılmamış, ama bu ispatların fiziksel zorunluluğu iddiası çökmüştür. Bu ayrım — bir ispatın geçerliliği (aksiyomlardan doğru biçimde türetilmiş olması) ile ispatlanan önermenin mutlak/zorunlu doğruluğu arasındaki fark — modern ispat kavramının temel bir bileşenidir ve aksiyomatik düşünmenin de temel ilkesidir: bir teoremin hangi varsayımlardan türetildiği açıkça belirtilmeli; başlangıç aksiyomlarının matematiksel ya da fiziksel uygunluğu ayrıca tartışılabilmelidir (Greenberg 2008; Gray 2007).
+
+\section{Biçimsel İspat ve Gayriresmî İspat}\label{sec:bicimsel}
+
+20. yüzyılda matematiksel mantığın gelişmesiyle birlikte, biçimsel ispat (formal proof) kavramı kesin bir teknik anlam kazanmıştır: biçimsel bir ispat, önceden tam olarak belirlenmiş bir biçimsel dilde yazılan, her adımı önceden belirlenmiş sonlu bir çıkarım kuralları listesinden birine göre gerekçelendirilen, sembol dizisidir. Böyle bir ispatın geçerliliği, insan yargısına ihtiyaç duyulmadan, prensipte bir bilgisayar tarafından mekanik olarak denetlenebilir (Enderton 2001). Ancak matematikçilerin günlük pratiğinde ürettiği ispatların büyük çoğunluğu, bu anlamda tam olarak “biçimsel” değildir. Bir matematik makalesinde ya da ders kitabında karşılaştığımız ispatlar, genellikle doğal dille (Türkçe, İngilizce vb.) yazılır, bazı adımları “açıktır” ya da “benzer şekilde gösterilebilir” diyerek atlar ve okuyucunun matematiksel arka planına ve akıl yürütme yeteneğine güvenir. Bu tür ispatlara gayriresmî ispat (informal proof) denir. Bu ispatların epistemik içeri-
+
+ğinin yalnızca biçimsel türetme dizisine indirgenip indirgenemeyeceği tartışmalıdır. Filozoflar arasında, gayriresmî ispatların matematiksel kesinliğin gerçek taşıyıcısı olup olmadığına dair önemli bir tartışma vardır. Yaygın bir biçimselleştirilebilirlik varsayımına göre kabul edilmiş gayriresmî ispatlar, yeterli ayrıntı ve uygun bir biçimsel çerçeve sağlandığında prensipte biçimsel türetmelere dönüştürülebilir. Buna karşılık Rav, gayriresmî ispatların kavramsal ve yöntemsel içeriğinin salt sembol dizilerine indirgenmesine itiraz eder (Rav 1999, ss. 6–9, 20–27). Özellikle 1979’da Richard De Millo, Richard Lipton ve Alan Perlis’in yazdığı etkili makaleye göre matematiksel ispat aynı zamanda sosyal bir süreçtir: bir ispat, matematik camiası tarafından incelenip, tartışılıp ve kullanıldıkça güvenilirlik kazanır. Buradaki iddia, mantıksal geçerliliğin topluluk oyuyla yaratılması değil, fiilî matematiksel güvenin salt mekanik kontrolden daha geniş bir eleştiri ve kabul sürecine dayanmasıdır (De Millo ve diğ. 1979, ss. 271–276). Hilbert Programı, klasik matematiğin biçimselleştirilmesiyle onun tutarlılığının finiter metamatematik yoluyla güvenceye alınmasını birleştiriyordu; bu program, matematiksel pratiği yalnızca anlamsız sembol oyununa indirgemekle özdeşleştirilmemelidir. Gödel’in teoremleri belirli etkili teorilerin tamlığına ve içsel tutarlılık ispatlarına sınır koyar; tek tek matematiksel argümanların biçimselleştirilemeyeceğini göstermez (Detlefsen 1986; Tait 1981; Franzén 2005).
+
+\begin{tcolorbox}[bookbox,colback=cEx]\textbf{\textsf{\textcolor{cAcc}{Bilgi Kutusu.}}}\quad Imre Lakatos ve “İspatlar ve Çürütmeler” Macar asıllı bilim felsefecisi Imre Lakatos, 1976’da yayımlanan Proofs and Refutations (İspatlar ve Çürütmeler) adlı etkili eserinde, matematiksel bilginin — tıpkı deneysel bilimlerdeki gibi — sanılanın aksine düz, kümülatif bir doğrusal ilerleme değil, tahmin, ispat girişimi, karşı örnek bulma ve ispatı revize etme aşamalarından oluşan diyalektik bir süreçle geliştiğini savunmuştur. Lakatos, Öklid’in çokyüzlüler formülü (V - E + F = 2) üzerinden bu süreci canlı bir diyalog biçiminde örneklendirmiştir. Bu görüş, matematiğin “hatasız ilerleyen, kesinlik biriktiren” klasik imgesine önemli bir eleştiri getirmiştir (Lakatos 1976).\end{tcolorbox}
+
+\section{İspatta Hata Olasılığı ve Yanılabilirlik}\label{sec:hata}
+
+Lakatos’un vurguladığı diyalektik süreç, matematik tarihinde somut örneklerle görülür: yayımlanmış ve bir süre kabul görmüş bazı ispatların yıllar sonra eksik ya da hatalı olduğu anlaşılmıştır. Bu durum, “bir ispat bir kere yapıldıktan sonra sonsuza dek kesindir” biçimindeki idealize edilmiş görüşü nüanslandırır: ispatlar insanlar tarafından üretilir ve insanlar hata yapabilir; matematiksel kesinlik, tek tek ispatların her zaman hatasız olduğu değil, ispat kavramının — doğru
+
+uygulandığında — kesin bir doğrulama sunduğu anlamına gelir. (Lakatos 1976; De Millo ve diğ. 1979)
+
+Yaygın Yanılgı — Her Satırı Cebirsel Görünen İşlem Geçerli Değildir. 𝑎 = 𝑏 ≠ 0 olsun. Aşağıdaki zincir ilk bakışta olağan cebirsel işlemlerden oluşuyor gibi görünür:
+
+𝑎2 = 𝑎𝑏, 𝑎2 − 𝑏2 = 𝑎𝑏 − 𝑏2, (𝑎 − 𝑏)(𝑎 + 𝑏) = 𝑏(𝑎 − 𝑏), 𝑎 + 𝑏 = 𝑏, 2𝑏 = 𝑏, 2 = 1. Hata, üçüncü satırdan dördüncü satıra geçerken iki tarafı 𝑎 − 𝑏 ile bölmektir. Başlangıçta 𝑎 = 𝑏 kabul edildiği için 𝑎−𝑏 = 0’dır; sıfıra bölme tanımlı değildir. Bir ispatı denetlerken yalnızca kullanılan işlem türüne değil, o işlemin uygulanma koşullarının sağlanıp sağlanmadığına da bakılmalıdır.
+
+\begin{tcolorbox}[bookbox,colback=cEx]\textbf{\textsf{\textcolor{cAcc}{Örnek.}}}\quad Kempe’nin “İspatı” ve Dört Renk Teoremi 1879’da İngiliz matematikçi Alfred Kempe, herhangi bir düzlem haritanın en fazla dört renkle, komşu bölgeler farklı renkte olacak şekilde boyanabileceğini iddia eden Dört Renk Teoremi’nin bir ispatını yayımladı; bu ispat on bir yıl boyunca doğru kabul edildi. 1890’da Percy Heawood, Kempe’nin akıl yürütmesinde ciddi bir boşluk bularak ispatın geçersiz olduğunu gösterdi (Kempe 1879, ss. 193–220; Heawood 1890, ss. 332–338). Benzer biçimde, Andrew Wiles’ın Haziran 1993’te duyurduğu Fermat’nın Son Teoremi argümanında hakemlik sürecinde bir boşluk ortaya çıkmış; Wiles ve Richard Taylor 1994’te onarımı tamamlamıştır. Düzeltilmiş ispat ve tamamlayıcı cebirsel sonuç Mayıs 1995’te yan yana yayımlanmıştır (O’Connor ve Robertson 1996; Wiles 1995; Taylor ve Wiles 1995). Her iki örnek de, matematik camiasının incelemesinin (Lakatos’un ve De Millo-Lipton-Perlis’in vurguladığı sosyal denetim sürecinin) boşlukları ortaya çıkarıp düzeltmeyi mümkün kılabildiğini gösterir; böyle bir denetim otomatik bir hata ayıklama garantisi değildir.\end{tcolorbox}
+
+Bu örnekler, ispatın neden yalnızca yazarın kanaatine değil, camianın titiz incelemesine (akran değerlendirme, ders kitaplarına girme süreci gibi tekrarlanan kontrol mekanizmalarına) dayandığını açıklar. Bununla birlikte, biçimselleştirme için doğru tanımların, öncüllerin ve araçların seçilmesi de insan çalışması gerektirir.
+
+\section{Bilgisayar Destekli İspat ve İspat Doğrulama Sistemleri}\label{sec:bilgisayar}
+
+20. yüzyılın ikinci yarısından itibaren, bilgisayarların hesaplama gücü, ispat kavramı üzerinde yeni ve tartışmalı bir soru doğurmuştur: bir ispatın, insanın tek tek denetleyemeyeceği ölçüde büyük bir hesaplama yoluyla üretilmesi, hâlâ “gerçek” bir matematiksel ispat sayılır mı? (Tymoczko 1979)
+
+\begin{tcolorbox}[bookbox,colback=cEx]\textbf{\textsf{\textcolor{cAcc}{Örnek.}}}\quad Dört Renk Teoreminin Bilgisayarla İspatı Bölüm~\ref{sec:hata}’te Kempe’nin başarısız girişimini gördüğümüz Dört Renk Teoremi için Appel ve Haken 1976’da bilgisayar destekli bir çözüm duyurdu; ayrıntılı ispat 1977’de iki bölüm hâlinde yayımlandı. Yöntem, olası karşı örnekleri sonlu bir yapılandırma listesine indiriyor ve indirgenebilirlik kontrollerinin önemli bir kısmını bilgisayara yaptırıyordu (Appel ve Haken 1977; Appel ve diğ. 1977). İnsan tarafından elle baştan sona yeniden yürütülemeyen hesap bölümü, ispatın doğası ve bilgisayar koduna duyulan güven hakkında yoğun bir felsefi tartışma başlattı (Tymoczko 1979).\end{tcolorbox}
+
+Bu tartışma, 21. yüzyılda ispat doğrulama sistemleri (proof assistants) adı verilen yazılımların gelişmesiyle yeni bir aşamaya girmiştir. Mart 2025’te resmen Rocq Prover adını alan Coq, Isabelle/HOL ve Lean gibi sistemler, matematikçilerin bir ispatı tam olarak biçimsel bir dilde, önceden tanımlanmış çıkarım kurallarına dayanarak yazmasına imkân tanır (Rocq Development Team 2025). Küçük ve denetlenebilir bir çekirdek, sunulan ispat teriminin tanımlanmış kurallara göre geçerli olup olmadığını kontrol eder; güvence kullanılan mantık, tanımlar, çekirdek ve donanım/yazılım zinciriyle sınırlıdır. Gonthier’nin o tarihte Coq adını taşıyan sistemdeki çalışması Dört Renk Teoremi’nin makine denetimli yeniden kuruluşunu sağlamıştır (Gonthier 2008, ss. 1382–1393). Önemli sonuçlar bu yöntemle biçimsel olarak doğrulanmıştır: Thomas Hales’in 1998’de duyurduğu Kepler Sanısı ispatının denetlenmesinde yaşanan güçlükler, “Flyspeck” projesini başlatmasına yol açtı. Proje 2014’te tamamlandı; HOL Light ve Isabelle ile yürütülen biçimselleştirmeyi açıklayan hakemli makale 2017’de yayımlandı (Hales ve diğ. 2017, ss. 1–4). Büyük dil modelleri (LLM) ile bu sistemlerin birleştirilmesi de aktif bir araştırma alanıdır: LLM bir ispat stratejisi önerirken, Lean gibi bir sistem her adımı mekanik olarak denetleyerek üretilen metnin gerçekten geçerli bir ispat olduğunu denetler. Ancak güvence yalnızca önerinin biçimsel sistemde gerçekten başarıyla doğrulandığı durumda elde edilir; LLM çıktısı kendi başına ispat değildir (Yang ve diğ. 2026, ss. 66–73).
+
+\begin{tcolorbox}[bookbox,colback=cEx]\textbf{\textsf{\textcolor{cAcc}{Bilgi Kutusu.}}}\quad İspat Uzunluğu Bir Sorun mu? Sonlu basit grupların sınıflandırılması, çok sayıda araştırmacının onlarca yıla yayılan yüzlerce makalesine dayanan dağıtık bir ispat bütünüdür. Tarihi, tamamlanma ilanları ve sonradan kapatılan boşluklar nedeniyle tek bir tarihe indirgenemez (Solomon 2001). Bu örnek, güvenin uzmanların farklı parçaları denetlediği kolektif bir yapıya dayanabildiğini ve ispat kavramının “tek bir zihnin kavrayabileceği akıl yürütme” idealinden, camianın kolektif denetimine dayanan bir modele evrildiğini gösterir.\end{tcolorbox}
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[node distance=5mm]
+  \node[schemeaccent,text width=8.7cm] (claim) {\textbf{İddia / tahmin}\\Örnekler, hesaplamalar ve sezgi olası sonuca işaret eder.};
+  \node[schemenode,text width=8.7cm,below=of claim] (draft) {\textbf{İspat taslağı}\\Aksiyomlardan ve bilinen sonuçlardan mantıksal adımlarla sonuca ulaşılır.};
+  \node[schemenode,text width=8.7cm,below=of draft] (review) {\textbf{Uzman incelemesi}\\Varsayımlar, çıkarımlar ve olası boşluklar denetlenir.};
+  \node[schemenode,text width=8.7cm,below=of review] (formal) {\textbf{İsteğe bağlı biçimsel doğrulama}\\Bilgisayar her çıkarım adımını mekanik olarak kontrol eder.};
+  \node[schemeaccent,text width=8.7cm,below=of formal] (theorem) {\textbf{Kabul edilmiş teorem}\\Sonuç paylaşılır ve sonraki çalışmalara temel olur.};
+  \draw[schemearrow] (claim)--(draft); \draw[schemearrow] (draft)--(review);
+  \draw[schemearrow] (review)--(formal); \draw[schemearrow] (formal)--(theorem);
+  \draw[schemearrow,bend right=32] (review.west) to node[left,font=\scriptsize,align=center] {boşluk varsa:\\düzelt} (draft.west);
+\end{tikzpicture}
+\caption{Bir matematiksel iddianın güvenilir bir teoreme dönüşme süreci.}
+\end{figure}
+
+\section{İspatın İşlevleri}
+
+Matematik felsefecisi ve eğitimcileri, bir ispatın birden fazla işlevi yerine getirdiğini vurgular. Bir ispat yalnızca bir iddianın doğru olduğunu doğrulamakla kalmaz; genellikle iddianın neden doğru olduğuna dair bir anlayış (understanding) da sunar — iyi bir ispat “bu doğrudur, çünkü…” diyerek bir açıklama sunar. Bazı ispatlar (örneğin Bölüm~\ref{chap:celiski-ispat}’de göreceğimiz bazı yapıcı olmayan varlık ispatları) doğruluğu gösterirken sezgisel bir kavrayış sunmakta yetersiz kalabilir; matematikçiler bu durumlarda daha “aydınlatıcı” alternatif ispatlar arar. Bölüm~\ref{sec:bilgisayar}’te tartıştığımız bilgisayar destekli ispatlar tam olarak bu noktada eleştirilir: belirtilen biçimselleştirme ve güven zinciri altında iddiayı doğrulayabilir ama neden doğru olduğuna dair bir anlayış sunmayabilir; bu da doğrulama işlevi ile açıklama işlevinin, en azından bazı ispatlarda, birbirinden
+
+ayrışabileceğini gösterir. (Tymoczko 1979) Doğrulama ve açıklamanın yanı sıra, ispatın en az iki işlevi daha vardır. Keşif işlevi: bir ispatı geliştirme sürecinde matematikçiler çoğu zaman orijinal iddiadan daha genel yeni sonuçlar, tanımlar ya da teknikler keşfeder; ispat, bilineni teyit eden pasif bir işlem değil, yeni bilgi üreten üretken bir süreçtir. İletişim işlevi: bir ispat, yazarının akıl yürütmesini başkalarının denetleyebileceği ortak, paylaşılabilir bir biçime dönüştürür; bu işlev, Bölüm~\ref{sec:bicimsel}--\ref{sec:hata}’te tartıştığımız sosyal doğrulama sürecinin ön koşuludur — camiada kabul edilebilmesi için bir ispatın öncelikle anlaşılır biçimde iletilmiş olması gerekir. (Rav 1999) Ayrıca ispat, matematik eğitiminde de merkezi bir işleve sahiptir (bu ders öğrenim çıktılarından biri olan eğitim felsefesi-matematik felsefesi ilişkisiyle doğrudan bağlantılıdır): öğrencilere yalnızca “doğru sonucu” ezberletmek değil, o sonuca neden güvenebileceklerini gösteren akıl yürütme süreçlerini kazandırmak, matematik eğitiminin temel hedeflerinden biri olarak kabul edilir. (Hanna 2000)
+
+\section{Yüksek Lisans Derinleştirmesi: İspat Nesnesi, Denetleyici ve Açıklama}
+
+Çağdaş ispat pratiğinde “doğru sonuç”, “denetlenebilir türetim” ve “açıklayıcı argüman” aynı başarı ölçütü değildir. Bilgisayar destekli ispatlar bu ayrımı özellikle görünür kılar.
+
+\textbf{Bu kısmın hedefleri.} Bu kısmı tamamladığınızda ispatı denetlenebilir bir sertifika olarak modelleyebilecek, güvenilir hesaplama tabanını çözümleyebilecek, biçimsel doğrulama ile matematiksel açıklamayı ayırabilecek ve karma insan–makine ispatları için değerlendirme ölçütleri geliştirebileceksiniz.
+
+
+9.7.1 İspat Bir Sertifika Olarak Bir biçimsel sistemde 𝑆 önermesi ve 𝜋 ispat nesnesi için küçük bir denetleyici
+
+𝐶(𝑆, 𝜋) = kabul sonucunu ancak 𝜋’nin her adımı çekirdeğin çıkarım kurallarına uyuyorsa verir. İspatı bulmak çok zor olsa bile hazır sertifikayı denetlemek görece basit olabilir. Bu ayrım, otomatik arama aracının hatalarıyla küçük mantıksal çekirdeğin güvenilirliğini birbirinden ayırır.
+
+Bir denetimin sağladığı güvence koşulludur: biçimselleştirilen 𝑆 ifadesinin amaçlanan gayriresmî teoremi doğru temsil ettiği, kullanılan tanımların uygun olduğu ve çekirdek ile derleyici zincirinin güvenilir olduğu ayrıca incelenmelidir. Gonthier’nin dört renk çalışması ve Flyspeck projesi büyük matematiksel gelişmelerin böyle sertifikalara dönüştürülmesine örnektir (Gonthier 2008, ss. 1382–1393) (Hales ve diğ. 2017, ss. 1–29).
+
+9.7.2 Güven Katmanları Karma bir ispatta en az dört katman ayırt edilebilir:
+
+1. gayriresmî teoremin doğru biçimselleştirilmesi; 2. tanım ve ara lemaların matematiksel uygunluğu; 3. ispat nesnesinin çekirdek tarafından kabul edilmesi; 4. dosyaların, yazılım sürümünün ve hesaplama ortamının yeniden üretilebilirliği.
+
+Çekirdek denetimi üçüncü katmanı güçlü biçimde güvenceye alır; diğer katmanları otomatik olarak çözmez. Bu nedenle biçimsel ispat, toplumsal incelemenin yerini tümden almak yerine incelemenin konusunu ve hata yüzeyini değiştirir.
+
+9.7.3 Geçerlilik ile Açıklama Arasındaki Fark Aynı teoremin iki geçerli ispatından biri, sonucun neden doğru olduğunu görünür kılarken diğeri yalnızca uzun bir denetim zinciri sunabilir. Hanna’nın ayırımıyla ispatın doğrulama, açıklama ve keşif işlevleri birbirinden ayrılmalıdır (Hanna 2000, ss. 5–23). Bir ispat yardımcısının kabulü mantıksal geçerliliğe güçlü kanıt sunar; pedagojik açıklık, kavramsal ekonomi veya yeni yöntem üretme değeri ayrıca değerlendirilir.
+
+Düşünelim — Daha kısa ispat daha açıklayıcı mıdır? Adım sayısının azalması bazen temel fikri görünür kılar, bazen de kritik ara yapıları gizler. Açıklama, yalnızca uzunlukla değil uygun kavramları, bağımlılıkları ve genellenebilir nedeni sergilemekle ilgilidir.
+
+9.7.4 Seminer ve Araştırma Çalışmaları 1. Basit bir doğal çıkarım ispatını makinece denetlenebilir sertifika biçiminde kodlayın.
+
+2. Bir biçimsel teorem ifadesiyle amaçlanan doğal dil iddiası arasında uyumsuzluk doğurabilecek üç örnek verin.
+
+3. Dört renk veya Flyspeck projesi için güven katmanlarını kaynaklar üzerinden haritalayın.
+
+4. Aynı teoremin iki ispatını doğrulama, açıklama ve keşif ölçütleriyle karşılaştırın.
+
+5. Yapay zekâ önerisi, ispat yardımcısı ve insan hakemliğinin rollerini ayıran bir değerlendirme protokolü tasarlayın.
+
+\section*{Bölüm Özeti}
+
+İspat, aksiyomlardan ve önceden ispatlanmış teoremlerden hareketle, geçerli mantıksal adımlarla sonuca ulaşan sonlu bir akıl yürütme dizisidir; bu, matematiği deneysel bilimlerden ayıran temel özelliktir (sayısal doğrulama, ispat değildir). Öklid’in Elementler’i, aksiyomatiktümdengelimli ispat geleneğinin tarihsel kaynağıdır. Biçimsel ispat (mekanik olarak denetlenebilen, kesin sembolik adımlar) ile matematikçilerin günlük pratiğindeki gayriresmî ispat arasındaki ilişki, felsefi bir tartışma konusudur; Lakatos gibi düşünürler, matematiksel bilginin doğrusal değil diyalektik bir süreçle geliştiğini savunmuştur. İspat, yalnızca doğrulama değil, aynı zamanda açıklama ve anlayış sağlama işlevine de sahiptir.
+
+\section*{Gözden Geçirme Soruları}
+
+\par\noindent 1. Goldbach Sanısı örneğini kullanarak, sayısal doğrulama ile matematiksel ispat arasındaki farkı açıklayınız.
+
+\par\noindent 2. Öklid’in Elementler’inin sonraki bilim ve felsefe eserlerine (örneğin Spinoza’nın Etik’ine) neden model oluşturduğunu tartışınız.
+
+\par\noindent 3. Biçimsel ispat ile gayriresmî ispat arasındaki farkı kendi cümlelerinizle özetleyiniz.
+
+\par\noindent 4. De Millo ve diğ.’in “ispat sosyal bir süreçtir” görüşünü değerlendiriniz; siz bu görüşe katılır mısınız?
+
+\par\noindent 5. Bir ispatın yalnızca “doğrulama” değil aynı zamanda “açıklama” işlevi de taşıdığı fikrini bir örnekle tartışınız.
+
+\section*{Çoktan Seçmeli Sorular}
+
+\par\smallskip\noindent 1. Matematiksel ispatı, deneysel bilimlerdeki doğrulama biçimlerinden ayıran temel özellik nedir?
+
+\par\noindent\hspace*{1.6em}A) İspatın yalnızca sayısal örneklere dayanması
+
+\par\noindent\hspace*{1.6em}B) İspatın, aksiyomlardan geçerli mantıksal adımlarla türetilmesi ve bir kez geçerli biçimde yapıldıktan sonra ilke olarak çürütülememesi
+
+\par\noindent\hspace*{1.6em}C) İspatın her zaman bir bilgisayar tarafından üretilmesi
+
+\par\noindent\hspace*{1.6em}D) İspatın deneysel gözlemle sürekli güncellenmesi
+
+\par\smallskip\noindent 2. Goldbach Sanısı örneği metinde hangi noktayı göstermek için kullanılmıştır?
+
+\par\noindent\hspace*{1.6em}A) Bilgisayarların matematiksel ispat üretemeyeceğini
+
+\par\noindent\hspace*{1.6em}B) Sonlu sayıda örneğin doğrulanmasının, sonsuz sayıda durumu kapsayan bir genel iddiayı ispatlamaya yetmediğini
+
+\par\noindent\hspace*{1.6em}C) Asal sayıların sonsuz olduğunu
+
+\par\noindent\hspace*{1.6em}D) Her matematiksel sanının er ya da geç çürütüleceğini
+
+\par\smallskip\noindent 3. Evrensel bir iddiayı (“her x için P(x)”) çürütmek için ne gerekir?
+
+\par\noindent\hspace*{1.6em}A) Tüm x değerlerinin tek tek denenmesi
+
+\par\noindent\hspace*{1.6em}B) Tek bir karşı örnek
+
+\par\noindent\hspace*{1.6em}C) İddianın biçimsel bir ispat sistemine çevrilmesi
+
+\par\noindent\hspace*{1.6em}D) İddianın sosyal camia tarafından reddedilmesi
+
+\par\smallskip\noindent 4. Metne göre hukuktaki/bilimdeki “kanıt” (evidence) kavramı ile matematiksel “ispat” arasındaki temel fark nedir?
+
+\par\noindent\hspace*{1.6em}A) Hukuki kanıt her zaman matematiksel ispattan daha güçlüdür
+
+\par\noindent\hspace*{1.6em}B) Hukuki/bilimsel kanıt belirli bir olasılıkla destekler ve yeni bulgularla revize edilebilirken, geçerli bir matematiksel ispat ilke olarak revizyona kapalıdır
+
+\par\noindent\hspace*{1.6em}C) İkisi arasında kavramsal olarak hiçbir fark yoktur
+
+\par\noindent\hspace*{1.6em}D) Matematiksel ispat da gözlemsel verilere dayanır
+
+\par\smallskip\noindent 5. Öklid’in Elementler’i, hangi yöntemiyle 2000 yılı aşkın süre boyunca “titiz akıl yürütme”nin modeli sayılmıştır?
+
+\par\noindent\hspace*{1.6em}A) Deneysel doğrulama yöntemiyle
+
+\par\noindent\hspace*{1.6em}B) Aksiyomatik-tümdengelimli ispat yöntemiyle
+
+\par\noindent\hspace*{1.6em}C) Sayısal örnekleme yöntemiyle
+
+\par\noindent\hspace*{1.6em}D) Bilgisayar destekli hesaplama yöntemiyle
+
+\par\smallskip\noindent 6. Öklid dışı geometrilerin keşfi, Öklid’in ispat modeliyle ilgili hangi ayrımı gözler önüne sermiştir?
+
+\par\noindent\hspace*{1.6em}A) Bir ispatın mantıksal geçerliliği ile ispatlanan önermenin mutlak/zorunlu doğruluğu arasındaki ayrımı
+
+\par\noindent\hspace*{1.6em}B) Biçimsel ispat ile bilgisayar destekli ispat arasındaki ayrımı
+
+\par\noindent\hspace*{1.6em}C) Aritmetik ile geometri arasındaki ayrımı
+
+\par\noindent\hspace*{1.6em}D) Tümevarım ile tümdengelim arasındaki ayrımı
+
+\par\smallskip\noindent 7. Biçimsel ispatın tanımı aşağıdakilerden hangisidir?
+
+\par\noindent\hspace*{1.6em}A) Doğal dilde yazılan, bazı adımları “açıktır” diyerek atlayan ispat
+
+\par\noindent\hspace*{1.6em}B) Önceden belirlenmiş bir biçimsel dilde yazılan ve her adımı sonlu bir çıkarım kuralları listesine göre gerekçelendirilen sembol dizisi
+
+\par\noindent\hspace*{1.6em}C) Yalnızca sayısal örneklerle desteklenen ispat
+
+\par\noindent\hspace*{1.6em}D) Bir matematikçinin sezgisine dayanan ispat
+
+\par\smallskip\noindent 8. Yaygın biçimselleştirilebilirlik varsayımına göre gayriresmî ispat neyi ifade eder?
+
+\par\noindent\hspace*{1.6em}A) Gayriresmî ispatın biçimsel ispata hiçbir zaman dönüştürülemeyeceğini
+
+\par\noindent\hspace*{1.6em}B) Kabul edilmiş gayriresmî ispatın, yeterli ayrıntı ve uygun bir biçimsel çerçeveyle prensipte biçimsel bir ispata dönüştürülebileceğini
+
+\par\noindent\hspace*{1.6em}C) Gayriresmî ispatın yalnızca sosyal bir anlaşma olduğunu
+
+\par\noindent\hspace*{1.6em}D) Gayriresmî ispatın matematiksel geçerlilikten yoksun olduğunu
+
+\par\smallskip\noindent 9. De Millo ve diğ.’in 1979 tarihli makalesi neyi savunur?
+
+\par\noindent\hspace*{1.6em}A) Matematiksel ispatın tamamen mekanik bir doğrulama süreci olduğunu
+
+\par\noindent\hspace*{1.6em}B) Matematiksel ispata duyulan fiilî güvenin, camianın inceleme, tartışma ve kullanım süreçleri içinde geliştiğini
+
+\par\noindent\hspace*{1.6em}C) İspatların yalnızca bilgisayarlar tarafından denetlenmesi gerektiğini
+
+\par\noindent\hspace*{1.6em}D) Gayriresmî ispatların hiçbir değeri olmadığını
+
+\par\smallskip\noindent 10. Imre Lakatos’un Proofs and Refutations eserindeki temel tezi nedir?
+
+\par\noindent\hspace*{1.6em}A) Matematiksel bilginin düz, kümülatif bir doğrusal ilerleyişle geliştiği
+
+\par\noindent\hspace*{1.6em}B) Matematiksel bilginin tahmin, ispat girişimi, karşı örnek bulma ve revizyon aşamalarından oluşan diyalektik bir süreçle geliştiği
+
+\par\noindent\hspace*{1.6em}C) Matematiksel ispatların hiçbir zaman hatalı olamayacağı
+
+\par\noindent\hspace*{1.6em}D) Öklid’in çokyüzlüler formülünün yanlış olduğu
+
+\par\smallskip\noindent 11. Kempe’nin 1879’daki Dört Renk Teoremi “ispatı” hakkında metinde anlatılanlar neyi göstermektedir?
+
+\par\noindent\hspace*{1.6em}A) Kabul görmüş bir ispatın da yıllar sonra hatalı çıkabileceğini ve camianın incelemesinin hataları ayıklama işlevi gördüğünü
+
+\par\noindent\hspace*{1.6em}B) Dört Renk Teoreminin hâlâ ispatlanamadığını
+
+\par\noindent\hspace*{1.6em}C) Bilgisayarların ispat sürecine hiçbir katkısı olmadığını
+
+\par\noindent\hspace*{1.6em}D) Kempe’nin ispatının günümüzde hâlâ geçerli kabul edildiğini
+
+\par\smallskip\noindent 12. Andrew Wiles’ın Fermat’nın Son Teoremi ispatıyla ilgili anlatılan olay nedir?
+
+\par\noindent\hspace*{1.6em}A) İspat hiçbir zaman tamamlanamamıştır
+
+\par\noindent\hspace*{1.6em}B) İlk duyurulan ispatta bir hakem tarafından boşluk tespit edilmiş, Wiles bunu bir yıl içinde kapatmıştır
+
+\par\noindent\hspace*{1.6em}C) İspat tamamen bir bilgisayar tarafından üretilmiştir
+
+\par\noindent\hspace*{1.6em}D) İspat, camia tarafından hiç incelenmeden kabul edilmiştir
+
+\par\smallskip\noindent 13. Appel ve Haken’in 1976’da duyurduğu bilgisayar destekli Dört Renk Teoremi çözümünün tartışma yaratmasının nedeni nedir?
+
+\par\noindent\hspace*{1.6em}A) İspatın yanlış olduğunun kanıtlanması
+
+\par\noindent\hspace*{1.6em}B) İspatın hiçbir hesaplama içermemesi
+
+\par\noindent\hspace*{1.6em}C) İspatın hiçbir insan matematikçinin tüm adımlarını elle denetleyemeyeceği kadar büyük bir bilgisayar hesaplamasına dayanması
+
+\par\noindent\hspace*{1.6em}D) İspatın yalnızca beş sayfa uzunluğunda olması
+
+\par\smallskip\noindent 14. İspat doğrulama sistemleri (Lean, Rocq gibi), Appel-Haken’in Dört Renk Teoremi ispatındaki bilgisayar kullanımından temel olarak nasıl farklıdır?
+
+\par\noindent\hspace*{1.6em}A) Bu sistemler yalnızca sayısal hesaplama yapar, mantıksal yapıyı denetlemez
+
+\par\noindent\hspace*{1.6em}B) Bu sistemler, ispatın mantıksal geçerliliğini, önceden tanımlanmış çıkarım kurallarına göre bizzat denetler; yalnızca çok sayıda durumu hesaplamakla kalmaz
+
+\par\noindent\hspace*{1.6em}C) Bu sistemler yalnızca geometri problemlerinde kullanılabilir
+
+\par\noindent\hspace*{1.6em}D) Bu sistemler insan matematikçilerin yerini tamamen almıştır
+
+\par\smallskip\noindent 15. Thomas Hales’in Kepler Sanısı ispatıyla ilgili “Flyspeck” projesinin amacı neydi?
+
+\par\noindent\hspace*{1.6em}A) İspatı ilk kez üretmek
+
+\par\noindent\hspace*{1.6em}B) İlk duyurulan ispatı, tamamen biçimsel bir ispat sistemi içinde yeniden inşa ederek kesin biçimde teyit etmek
+
+\par\noindent\hspace*{1.6em}C) İspatın yanlış olduğunu göstermek
+
+\par\noindent\hspace*{1.6em}D) Kepler Sanısını çürütmek
+
+\par\smallskip\noindent 16. Metne göre büyük dil modelleri (LLM) ile ispat doğrulama sistemlerinin birleştirilmesinin işlevi nedir?
+
+\par\noindent\hspace*{1.6em}A) LLM’lerin ürettiği ispat önerilerinin geçerliliğini, biçimsel doğrulama sistemi mekanik olarak denetler
+
+\par\noindent\hspace*{1.6em}B) LLM’ler biçimsel doğrulama sistemlerinin yerini tamamen alır
+
+\par\noindent\hspace*{1.6em}C) Bu birleşim yalnızca teorik bir olasılıktır, hiçbir araştırma alanı oluşturmamıştır
+
+\par\noindent\hspace*{1.6em}D) LLM’ler yalnızca ispatları Türkçeye çevirmek için kullanılır
+
+\par\smallskip\noindent 17. Sonlu basit grupların sınıflandırılması örneği, ispat kavramıyla ilgili hangi noktayı destekler?
+
+\par\noindent\hspace*{1.6em}A) Kısa ispatların uzun ispatlardan her zaman daha güvenilir olduğunu
+
+\par\noindent\hspace*{1.6em}B) İspata duyulan güvenin, tek bir insan zihninin tam kavrayışından çok, camianın kolektif ve dağıtık denetimine dayanabildiğini
+
+\par\noindent\hspace*{1.6em}C) Cebirsel yapı teorisinin ispat gerektirmediğini
+
+\par\noindent\hspace*{1.6em}D) Bu sınıflandırmanın hâlâ tamamlanmamış olduğunu
+
+\par\smallskip\noindent 18. Metne göre ispatın “keşif işlevi” ne anlama gelir?
+
+\par\noindent\hspace*{1.6em}A) Bir ispatı geliştirme sürecinin, orijinal iddiadan bağımsız yeni sonuç ve teknikler üretebilmesi
+
+\par\noindent\hspace*{1.6em}B) Bir ispatın yalnızca zaten bilinen sonuçları teyit etmesi
+
+\par\noindent\hspace*{1.6em}C) İspatların yalnızca bilgisayarlarla keşfedilebilmesi
+
+\par\noindent\hspace*{1.6em}D) İspatın hiçbir zaman yeni bilgi üretmemesi
+
+\par\smallskip\noindent 19. Metne göre ispatın “iletişim işlevi” neyle doğrudan ilişkilidir?
+
+\par\noindent\hspace*{1.6em}A) Camianın sosyal doğrulama sürecinin ön koşulu olmasıyla; bir ispatın denetlenebilmesi için anlaşılır biçimde iletilmiş olması gerekir
+
+\par\noindent\hspace*{1.6em}B) İspatların yalnızca yazarının kendisi tarafından anlaşılmasıyla
+
+\par\noindent\hspace*{1.6em}C) İspatların bilgisayar dilinde yazılması zorunluluğuyla
+
+\par\noindent\hspace*{1.6em}D) İspatın hiçbir zaman başkalarıyla paylaşılmaması gerektiğiyle
+
+\par\smallskip\noindent 20. Bilgisayar destekli ispatlara yöneltilen eleştirilerden biri, hangi iki işlevin bu tür ispatlarda birbirinden ayrışabileceğini öne sürer?
+
+\par\noindent\hspace*{1.6em}A) Keşif işlevi ile iletişim işlevi
+
+\par\noindent\hspace*{1.6em}B) Doğrulama işlevi ile açıklama/anlayış sağlama işlevi
+
+\par\noindent\hspace*{1.6em}C) Tarihsel işlev ile eğitimsel işlev
+
+\par\noindent\hspace*{1.6em}D) Sosyal işlev ile bireysel işlev
+
+
+\section*{İspat Yöntemleri}
+\subsection*{Öğrenme Hedefleri}
+
+Bu bölümü tamamladığınızda:
+
+\begin{itemize}\setlength{\itemsep}{2pt}\setlength{\parskip}{0pt}
+\item Doğrudan ispat, kontrapozitif ile ispat ve çelişki yoluyla ispat yöntemlerini birbirinden ayırt edip uygulayabileceksiniz.
+\item Matematiksel tümevarım ilkesini (zayıf ve güçlü biçimleriyle) doğru biçimde kullanabileceksiniz.
+\item Durum ayrımına dayalı ispat yönteminin ne zaman gerekli olduğunu açıklayabileceksiniz.
+\item Bir karşı örnek bulmanın, evrensel bir iddiayı çürütmek için neden yeterli olduğunu ifade edebileceksiniz.
+\end{itemize}
+
+\section{Doğrudan İspat}
+
+Doğrudan ispat (direct proof), bir “p ise q” (p → q) biçimindeki önermeyi ispatlamanın en temel yoludur: p’nin doğru olduğu varsayılır ve buradan hareketle, bir dizi geçerli mantıksal adımla doğrudan q’ya ulaşılır. “Doğrudan” sözcüğü ispatın mutlaka kısa veya tek çizgili olduğu anlamına gelmez; belirleyici olan, q’nun olumsuzunu varsaymak yerine p’den hareket edilmesidir (Velleman 2006; Hammack 2018).
+
+\begin{tcolorbox}[bookbox,colback=cEx]\textbf{\textsf{\textcolor{cAcc}{Örnek.}}}\quad Doğrudan İspat İddia: İki tek sayının toplamı çifttir. İspat: m ve n tek sayılar olsun. Tanım gereği, m = 2a + 1 ve n = 2b + 1 olacak şekilde a, b tam sayıları vardır. O hâlde m + n = (2a+1) + (2b+1) = 2a + 2b + 2 = 2(a+b+1). a+b+1 bir tam sayı olduğundan, m+n, 2’nin bir tam sayı katıdır; dolayısıyla m+n çifttir. ∎\end{tcolorbox}
+
+Burada dikkat edilmesi gereken teknik nokta, m ve n için aynı a değişkeni değil, iki farklı değişken (a ve b) kullanılmasıdır; aksi hâlde örtük olarak m = n varsayılmış, iddianın kapsamı gereksiz yere daraltılmış olurdu. Bu tür değişken seçimi hataları, doğrudan ispatlarda en sık karşılaşılan tuzaklardan biridir.
+
+\begin{tcolorbox}[bookbox,colback=cEx]\textbf{\textsf{\textcolor{cAcc}{Örnek.}}}\quad Doğrudan İspat (2) İddia: Ardışık iki tam sayının çarpımı çifttir. İspat: n herhangi bir tam sayı olsun; ardışık iki tam sayı n ve n+1 olarak yazılabilir. n ya çifttir ya da tektir. Eğer n çift ise, n = 2k olacak şekilde bir k tam sayısı vardır, dolayısıyla n(n+1) = 2k(n+1), yani n(n+1), 2’nin bir katıdır. Eğer n tek ise, n+1 çift olmak zorundadır (ardışık iki tam sayıdan biri her zaman çifttir), yani n+1 = 2k olacak şekilde bir k tam sayısı vardır ve n(n+1) = n(2k) = 2(nk), yani yine 2’nin bir katıdır. Her iki durumda da n(n+1) çift olduğundan, iddia ispatlanmıştır. ∎\end{tcolorbox}
+
+Bu ikinci örnek, Bölüm~\ref{sec:durum}’de sistematik olarak ele alacağımız durum ayrımı tekniğinin, doğrudan ispat içinde nasıl doğal bir biçimde ortaya çıkabileceğini de gösterir. Doğrudan ispatın en büyük avantajı kavramsal sadeliğidir: okuyucu, p’den başlayıp adım adım q’ya nasıl ulaşıldığını doğrudan takip edebilir. Ancak bazı önermelerde, p’nin doğruluğundan q’ya giden doğal bir akıl yürütme zinciri bulmak zor ya da yapay olabilir — böyle durumlarda kontrapozitif ya da çelişki yoluyla ispat gibi dolaylı (indirect) yöntemler devreye girer.
+
+\section{Kontrapozitif ile İspat}
+
+Bölüm~\ref{chap:onermeler-mantigi}’te gördüğümüz gibi, “p → q” önermesi, kontrapozitifi olan “¬q → ¬p” ile mantıksal olarak eşdeğerdir. Bu eşdeğerlik sayesinde, p → q’yu doğrudan ispatlamak yerine, bazen ¬q → ¬p’yi ispatlamak çok daha kolay olabilir. Bu yönteme kontrapozitif ile ispat denir.
+
+\begin{tcolorbox}[bookbox,colback=cEx]\textbf{\textsf{\textcolor{cAcc}{Örnek.}}}\quad Kontrapozitif ile İspat İddia: Eğer n² çift ise, n çifttir. Doğrudan ispat da mümkündür; ancak yalnızca çift–tek tanımlarını kullanmak istediğimizde kontrapozitif yön daha elverişlidir. Kontrapozitifini ispatlayalım: “n tek ise, n² tektir.” İspat: n tek olsun. O hâlde n = 2k+1 olacak şekilde bir k tam sayısı vardır. n² = (2k+1)² = 4k² + 4k + 1 = 2(2k²+2k) + 1. Bu, n²’nin tek olduğunu gösterir. Kontrapozitif ispatlandığına göre, orijinal önerme (“n² çift ise n çifttir”) de doğrudur (Velleman 2006, ss. 108–113). ∎\end{tcolorbox}
+
+Bu sonuç, Bölüm~\ref{chap:celiski-ispat}’de vereceğimiz √2’nin irrasyonelliği ispatında da örtük olarak kullanılacaktır (“p² çift olduğundan p çifttir” adımı, tam olarak bu kontrapozitif sonucun bir uygulamasıdır).
+
+\begin{tcolorbox}[bookbox,colback=cEx]\textbf{\textsf{\textcolor{cAcc}{Örnek.}}}\quad Kontrapozitif ile İspat (2) İddia: Eğer 3n + 2 sayısı tek ise, n tektir. Bu iddianın kontrapozitifi şudur: “n çift ise, 3n + 2 çifttir.” İspat: n çift olsun. O hâlde n = 2k olacak şekilde\end{tcolorbox}
+
+bir k tam sayısı vardır. 3n + 2 = 3(2k) + 2 = 6k + 2 = 2(3k+1). Bu, 3n+2’nin 2’nin bir katı, dolayısıyla çift olduğunu gösterir. Kontrapozitif ispatlandığına göre, orijinal önerme de doğrudur. ∎
+
+Bu ikinci örnekte de görüldüğü gibi, kontrapozitif ile ispatın tercih edilme nedeni genellikle şudur: sonuçtaki olumsuzlama (¬q), başlangıç noktası olarak, orijinal öncülden (p) daha “işlenebilir” bir cebirsel ifade sunar; hangi yönün daha kolay olduğunu görmek, pratikle gelişen bir beceridir.
+
+\clearpage
+
+\clearpage

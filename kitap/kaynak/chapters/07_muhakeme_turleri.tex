@@ -1,0 +1,585 @@
+\chapter{Muhakeme Türleri: Tümdengelim, Tümevarım, Abdüksiyon ve Analoji}
+\label{chap:muhakeme-turleri}
+\thispagestyle{plain}
+
+\subsection*{Öğrenme Hedefleri}
+Bu bölümü tamamlayan öğretmen adayı:
+\begin{itemize}[leftmargin=1.4em]
+\item Tümdengelim, tümevarım, abdüksiyon ve analoji muhakemelerini tanımlayıp örneklerle ayırt edebilir; aynı problem çözümünde bunların nasıl iç içe geçtiğini gösterebilir.
+\item Bir muhakemenin \emph{geçerliliği} ile öncüllerinin \emph{doğruluğu} arasındaki farkı açıklayabilir; geçerli/geçersiz çıkarım kalıplarını (modus ponens, modus tollens, sonucu onaylama, öncülü inkâr) tanıyabilir.
+\item Sayısal (empirik) tümevarım ile matematiksel tümevarım arasındaki terim karışıklığını açıklayabilir.
+\item Yanıltıcı örüntülere (Euler polinomu, Moser çemberi, Pólya sanısı) dayanarak ‘örnek’ ile ‘ispat’ arasındaki eşiği gerekçelendirebilir.
+\item Peirce’ın şeması üzerinden üç muhakeme türünü aynı önermelerin farklı düzenlemeleri olarak gösterebilir.
+\end{itemize}
+
+\subsection*{Anahtar Kavramlar}
+{\small öncül · sonuç · argüman · geçerlilik · sağlamlık · modus ponens · modus tollens · tümdengelim · tümevarım · abdüksiyon · analoji · karşı örnek · sanı · tasım}
+
+\usection{Bölüme Genel Bakış: Muhakemenin Üç Kökeni}
+Matematiksel muhakemenin türlerini birbirinden ayırma çabası yeni değildir; felsefe tarihinin en eski konularından biridir. Aristoteles, MÖ 4. yüzyılda tasım (syllogism) kuramıyla tümdengelimi sistemleştirdi: doğru öncüllerden zorunlu sonuçlar türeten biçimsel kalıpları inceledi. Yüzyıllar sonra Francis Bacon ve John Stuart Mill, doğa bilimlerinin gözlemden genellemeye giden tümevarımsal muhakemesini çözümlediler. On dokuzuncu yüzyılın sonunda ise Charles Sanders Peirce, üçüncü bir türü — abdüksiyonu, yani ‘en iyi açıklamaya çıkarım’ı — adlandırarak keşif mantığını felsefeye kazandırdı.
+
+Bu üç kökten her biri matematikte farklı bir role sahiptir: tümdengelim ispatın, tümevarım ve abdüksiyon ise keşfin dilidir. Bir öğretmen adayı için bu ayrımı bilmek yalnızca kuramsal bir zenginlik değil, sınıfta öğrencinin ‘bir örnek gördüm’ ile ‘kanıtladım’ arasındaki eşiği aşmasına yardımcı olabilmenin ön koşuludur. Bu bölüm üç muhakeme türünü (ve onlara eşlik eden analojiyi), aralarındaki geçişleri ve bunların matematik eğitimindeki düşünme düzeyi kuramlarıyla — özellikle van Hiele modeliyle — ilişkisini bir arada ele alır.
+
+Bölümü okurken bir soruyu aklınızda tutun: \emph{Bir matematikçi yeni bir teoremi ilk kez nasıl ‘görür’, sonra onu nasıl ‘bilir’?} Görmek ile bilmek arasındaki bu mesafe, bölümün bütününü birbirine bağlayan iplik olacaktır.
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[node distance=1.2cm]
+\node[node box,minimum width=3cm] (d) {Tümdengelim};
+\node[node box,minimum width=3cm,right=0.9cm of d] (i) {Tümevarım};
+\node[node box,minimum width=3cm,right=0.9cm of i] (a) {Abdüksiyon};
+\node[small lbl,below=0.25cm of d] (d1) {genel → özel\\öncül → zorunlu sonuç\\\textbf{işlev: ispat}};
+\node[small lbl,below=0.25cm of i] (i1) {özel → genel\\örnekler → genelleme\\\textbf{işlev: keşif, destek}};
+\node[small lbl,below=0.25cm of a] (a1) {sonuç → açıklama\\gözlem → en iyi hipotez\\\textbf{işlev: hipotez kurma}};
+\node[small lbl,below=0.2cm of d1,text=grn] {kesinlik: zorunlu};
+\node[small lbl,below=0.2cm of i1,text=warm] {kesinlik: olası};
+\node[small lbl,below=0.2cm of a1,text=warm] {kesinlik: makul};
+\end{tikzpicture}
+\caption{Üç temel muhakeme türü: yön, işlev ve sağladığı kesinlik derecesi.}
+\end{figure}
+
+\section{Muhakeme Nedir?}
+
+Muhakeme (akıl yürütme), verili önermelerden (öncüller) yeni bir önermeye (sonuç) gerekçeli biçimde geçiş etkinliğidir. Matematiksel muhakemeyi diğer alanlardan ayıran, sonuca ulaşırken izlenen adımların herkesçe denetlenebilir kurallara dayanmasıdır.
+
+Bu kısa tanımın içinde birkaç ayrı kavram gizlidir. Onları tek tek açalım; çünkü bölümün geri kalanındaki tüm ayrımlar bu temel sözcük dağarcığına dayanır.
+
+\begin{tanim}{Önerme}
+Doğru ya da yanlış olduğu (ama ikisi birden olmadığı) söylenebilen bildirme cümlesidir. ‘7 asal sayıdır’ bir önermedir; ‘$x+2=5$’ ise $x$ belirlenmeden önerme değildir (açık önerme). ‘Kapıyı kapat!’ önerme değildir.
+\end{tanim}
+
+\begin{tanim}{Argüman, öncül, sonuç}
+Bir \key{argüman}, bir önermeler kümesinden (\key{öncüller}) başka bir önermenin (\key{sonuç}) desteklendiği iddiasıdır. Öncüllerden sonuca geçiş adımına \key{çıkarım} denir. Günlük dilde ‘çünkü’, ‘madem’, ‘verildiğine göre’ öncülü; ‘öyleyse’, ‘demek ki’, ‘bu yüzden’ sonucu işaret eder.
+\end{tanim}
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\node[node acc,minimum width=6.3cm,anchor=west] (p1) at (0,0) {Öncül 1: Tüm kareler dikdörtgendir.};
+\node[node acc,minimum width=6.3cm,anchor=west] (p2) at (0,-0.75) {Öncül 2: ABCD bir karedir.};
+\draw[line width=1.2pt] (0,-1.3) -- (6.3,-1.3);
+\node[small lbl,anchor=west] at (6.45,-1.3) {çıkarım çizgisi\\(‘öyleyse’)};
+\node[node grn,minimum width=6.3cm,anchor=west] (c) at (0,-1.85) {Sonuç: ABCD bir dikdörtgendir.};
+\draw[decorate,decoration={brace,amplitude=6pt,mirror},line width=0.7pt] (-0.25,0.3) -- (-0.25,-1.05) node[midway,left=8pt,small lbl]{verilenler};
+\draw[decorate,decoration={brace,amplitude=6pt,mirror},line width=0.7pt] (-0.25,-1.6) -- (-0.25,-2.1) node[midway,left=8pt,small lbl]{iddia};
+\end{tikzpicture}
+\caption{Bir argümanın anatomisi. Mantıkta çıkarım çizgisi ‘öncüllerin altı, sonucun üstü’ olarak yazılır.}
+\end{figure}
+
+\subsection{Geçerlilik ve Sağlamlık}
+
+Bir argümanı değerlendirirken iki bağımsız soru sorulur. Birincisi \emph{biçimle} ilgilidir: öncüller doğru olsaydı sonuç da zorunlu olarak doğru olur muydu? İkincisi \emph{içerikle} ilgilidir: öncüller gerçekten doğru mu? Öğrencilerin (ve pek çok yetişkinin) en sık karıştırdığı nokta, bu iki sorunun birbirinden bağımsız olmasıdır.
+
+\begin{tanim}{Geçerlilik (validity)}
+Bir argüman, öncüllerinin hepsinin doğru, sonucunun yanlış olduğu \emph{hiçbir durum düşünülemiyorsa} geçerlidir. Geçerlilik, argümanın \emph{biçiminin} özelliğidir; öncüllerin fiilen doğru olup olmamasıyla ilgilenmez.
+\end{tanim}
+
+\begin{tanim}{Sağlamlık (soundness)}
+Bir argüman hem geçerli hem de tüm öncülleri gerçekten doğruysa sağlamdır. Sağlam bir argümanın sonucu kesinlikle doğrudur. Matematiksel ispat, sağlam bir tümdengelimsel argüman zinciridir.
+\end{tanim}
+
+\begin{table}[h]
+\centering\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{2.6cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\toprule
+ & \textbf{Öncüller doğru} & \textbf{En az bir öncül yanlış}\\
+\midrule
+\textbf{Biçim geçerli} & \cellcolor{grnl}\emph{Sağlam.} Tüm asal sayılar 1’den büyüktür; 7 asaldır; öyleyse 7 > 1. & \emph{Geçerli ama sağlam değil.} Tüm asal sayılar tektir; 2 asaldır; öyleyse 2 tektir. \\[2pt]
+\textbf{Biçim geçersiz} & \emph{Sonuç doğru olsa bile geçersiz.} Tüm kareler dörtgendir; ABCD dörtgendir; öyleyse ABCD karedir. & \emph{Geçersiz ve sağlam değil.} Tüm tek sayılar asaldır; 9 asaldır; öyleyse 9 tektir.\\
+\bottomrule
+\end{tabularx}
+\caption{Geçerlilik–doğruluk matrisi. Yalnızca sol üst hücre ‘kesin bilgi’ üretir.}
+\end{table}
+
+Tablonun sağ alt hücresi özellikle öğreticidir: sonuç (‘9 tektir’) doğrudur, ama ona ulaşan argüman hem geçersiz hem de yanlış bir öncüle dayanır. Doğru bir sonuca kötü bir yoldan varılabilir. Matematikte bir öğrencinin cevabının doğru olması, muhakemesinin doğru olduğunu göstermez; öğretmenin ‘Nasıl buldun?’ sorusu bu yüzden vazgeçilmezdir.
+
+\begin{sinif}[Sınıfta · 2 dakikalık kontrol]
+Tahtaya şu argümanı yazın: ‘Bütün eşkenar üçgenler ikizkenardır. Bu üçgen ikizkenardır. Öyleyse bu üçgen eşkenardır.’ Öğrencilere iki soru sorun: (1) Sonuç doğru olabilir mi? (2) Sonuç öncüllerden \emph{zorunlu olarak} çıkar mı? Birinci soruya ‘evet’, ikinciye ‘hayır’ diyebilen öğrenci, geçerlilik ile doğruluk ayrımını yakalamıştır. Bir karşı model (tabanı 4, kenarları 5 olan ikizkenar üçgen) çizdirmek ayrımı somutlaştırır.
+\end{sinif}
+
+\section{Tümdengelimsel Muhakeme}\label{sec:tumdengelim}
+
+Tümdengelimde, öncüller doğruysa sonucun da zorunlu olarak doğru olduğu çıkarımlar yapılır; bu çıkarımlar doğruluğu korur (truth-preserving). Matematiksel ispat, özünde tümdengelimseldir.
+
+\begin{ornek}
+Tüm kareler dikdörtgendir; ABCD bir karedir; öyleyse ABCD bir dikdörtgendir. Öncüller doğruysa sonuç kaçınılmazdır.
+\end{ornek}
+
+\begin{tanim}{Tümdengelimsel muhakeme}
+Sonucun, öncüllerde örtük olarak zaten bulunan bilgiyi açığa çıkardığı muhakeme türüdür. Doğru öncüllerden geçerli kurallarla türetilen sonuç \emph{zorunlu olarak} doğrudur. Tümdengelim bilgiyi \emph{genişletmez} ama \emph{kesinleştirir}: yeni bir şey ‘bulmaz’, zaten verilmiş olanın ne anlama geldiğini gösterir.
+\end{tanim}
+
+Bu son nokta ilk bakışta şaşırtıcıdır: madem tümdengelim yeni bilgi üretmiyor, neden matematikçiler ispatlardan bu kadar çok şey öğrenir? Yanıt, ‘örtük olarak içerilme’nin insan zihni için çoğu zaman hiç de açık olmamasıdır. Öklid’in beş postulatı, yüzlerce teoremi ‘içerir’; ama bu teoremlerin çoğunu görmek için yüzyıllar gerekmiştir.
+
+\subsection{Temel Çıkarım Kalıpları}
+
+Tümdengelimin gücü, içeriğe bakmaksızın her zaman geçerli olan birkaç kalıba dayanır. $p$ ve $q$ herhangi iki önermeyi göstersin.
+
+\begin{table}[h]
+\centering\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{3.1cm}>{\raggedright\arraybackslash}p{3.3cm}>{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Kalıp} & \textbf{Biçim} & \textbf{Matematiksel örnek}\\
+\midrule
+Modus ponens\newline(öncülü onaylama) & $p\Rightarrow q$;\; $p$ \;$\therefore\; q$ & $n$ 4’e bölünüyorsa çifttir; 12 4’e bölünür; öyleyse 12 çifttir.\\
+Modus tollens\newline(sonucu inkâr) & $p\Rightarrow q$;\; $\neg q$ \;$\therefore\; \neg p$ & $n$ 4’e bölünüyorsa çifttir; 15 çift değildir; öyleyse 15 4’e bölünmez.\\
+Hipotetik tasım\newline(zincir kuralı) & $p\Rightarrow q$;\; $q\Rightarrow r$ \;$\therefore\; p\Rightarrow r$ & Kare ise eşkenar dörtgendir; eşkenar dörtgen ise köşegenleri diktir; öyleyse kare ise köşegenleri diktir.\\
+Ayrık tasım\newline(eleme) & $p\vee q$;\; $\neg p$ \;$\therefore\; q$ & $n$ çift ya da tektir; $n$ çift değildir; öyleyse $n$ tektir.\\
+\bottomrule
+\end{tabularx}
+\caption{Her zaman geçerli olan dört temel çıkarım kalıbı.}
+\end{table}
+
+Modus tollens, \emph{olmayana ergi} (çelişki yoluyla ispat) yönteminin mantıksal çekirdeğidir: ‘$\sqrt2$ rasyonel olsaydı, bir kesir hem sadeleşmiş hem sadeleşmemiş olurdu; bu olamaz; öyleyse $\sqrt2$ rasyonel değildir.’
+
+\subsection{Geçersiz Kalıplar: Tümdengelimin Tuzakları}
+
+Aşağıdaki iki kalıp geçerliymiş gibi görünür ve günlük dilde sürekli kullanılır; ama biçimleri geçersizdir.
+
+\begin{table}[h]
+\centering\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{3.1cm}>{\raggedright\arraybackslash}p{3.3cm}>{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Hatalı kalıp} & \textbf{Biçim} & \textbf{Karşı örnek}\\
+\midrule
+Sonucu onaylama & $p\Rightarrow q$;\; $q$ \;$\therefore\; p$ \;\textcolor{warm}{✗} & 4’e bölünüyorsa çifttir; 6 çifttir; ‘öyleyse’ 6 4’e bölünür — yanlış.\\
+Öncülü inkâr & $p\Rightarrow q$;\; $\neg p$ \;$\therefore\; \neg q$ \;\textcolor{warm}{✗} & 4’e bölünüyorsa çifttir; 6 4’e bölünmez; ‘öyleyse’ 6 çift değildir — yanlış.\\
+\bottomrule
+\end{tabularx}
+\caption{İki klasik mantık hatası. Her biri, bir koşullu önermeyi karşıtıyla (converse) ya da tersiyle (inverse) karıştırmaktan doğar.}
+\end{table}
+
+Burada bölümün ilerisi için önemli bir ipucu saklıdır: \emph{sonucu onaylama}, tümdengelim olarak geçersizdir; ama \emph{abdüksiyonun} biçimi tam da budur. ‘Yağmur yağarsa çimen ıslanır; çimen ıslak; öyleyse (belki) yağmur yağdı.’ Abdüksiyon, bu geçersiz kalıbı ‘zorunluluk’ iddiasından arındırıp ‘makul hipotez’ iddiasına indirgeyerek meşru hâle getirir (bkz. Bölüm~\ref{sec:abduksiyon}).
+
+\begin{tbox}{Derinleştirme — Wason seçim görevi}
+Psikolog Peter Wason’ın 1966’da tasarladığı deney, insanların koşullu önermelerle ne kadar zorlandığını çarpıcı biçimde gösterir. Masada dört kart vardır; her kartın bir yüzünde harf, öbür yüzünde sayı bulunur. Kural: \emph{‘Bir kartın bir yüzünde ünlü harf varsa, öbür yüzünde çift sayı vardır.’} Kuralı sınamak için \emph{hangi kartları ve yalnızca hangilerini} çevirmelisiniz?
+
+\smallskip
+\centering
+\begin{tikzpicture}[card/.style={draw=bar,line width=0.9pt,rounded corners=3pt,minimum width=1.1cm,minimum height=1.5cm,fill=white,font=\sffamily\Large\bfseries}]
+\node[card] at (0,0) {E};
+\node[card] at (1.6,0) {K};
+\node[card] at (3.2,0) {4};
+\node[card] at (4.8,0) {7};
+\end{tikzpicture}
+
+\raggedright\smallskip
+Katılımcıların büyük çoğunluğu ‘E ve 4’ der; doğru yanıtı (‘E ve 7’) verenler genellikle yüzde onun altında kalır. 4’ü çevirmek kuralı sınamaz — arkasında ünsüz olsa bile kural çiğnenmez (bu, \emph{sonucu onaylama} hatasının davranışsal karşılığıdır). 7’yi çevirmek ise zorunludur: arkasında ünlü çıkarsa kural yanlışlanır (\emph{modus tollens}). Öğretmen adayları için ders: koşullu önermeleri doğru okumak ‘doğal’ bir yetenek değildir; öğretilmesi gerekir.
+\end{tbox}
+
+\section{Tümevarımsal Muhakeme}
+
+Tümevarımda tek tek durumlardan genel bir yargıya geçilir. Sonuç öncüller tarafından yalnızca desteklenir, garanti edilmez; yeni bir örnek genellemeyi çürütebilir. Doğa bilimlerinin ve matematiksel keşfin (örüntü fark etme) tipik muhakemesidir.
+
+\begin{ornek}
+1, 3, 5, 7 tek sayılarının kareleri 1, 9, 25, 49; ardışık farklar 8, 16, 24… Buradan bir örüntü sezilir, ancak bu sezgi ispat değildir; ispat tümdengelimsel olarak kurulmalıdır.
+\end{ornek}
+
+\begin{tanim}{Tümevarımsal (empirik) muhakeme}
+Gözlenen sonlu sayıda durumdan, bu durumları kapsayan daha genel bir önermeye geçiş. Sonuç öncüllerin içerdiğinden \emph{daha fazlasını} söyler; bu yüzden bilgiyi genişletir (ampliatif), ama kesinlik sağlamaz. Öncüller doğru, sonuç yanlış olabilir.
+\end{tanim}
+
+Tümdengelim ile tümevarım arasındaki ilişki bir tür takastır: tümdengelim kesinlik verir ama yeni bilgi vermez; tümevarım yeni bilgi verir ama kesinlik vermez. Matematikçinin günlük çalışması, bu iki muhakemenin sürekli el değiştirmesidir.
+
+\subsection{Tek Kareler Örneğinin Tamamlanması}
+
+Yukarıdaki örneğe geri dönelim ve tümevarımsal sezgiden tümdengelimsel ispata giden yolu adım adım izleyelim.
+
+\begin{enumerate}[leftmargin=1.6em,label=\textbf{\arabic*.}]
+\item \textbf{Gözlem (tümevarım).} $1^2=1,\;3^2=9,\;5^2=25,\;7^2=49,\;9^2=81$. Farklar: $8,16,24,32$ — hepsi 8’in katı. Ayrıca her kare, 8’e bölündüğünde 1 kalanını veriyor: $9=8+1$, $25=24+1$, $49=48+1$, $81=80+1$.
+\item \textbf{Sanı (tümevarımsal sıçrama).} ‘Her tek sayının karesi 8’in bir katından 1 fazladır.’
+\item \textbf{İspat stratejisi (abdüksiyon).} ‘Hangi yapı bunu açıklar?’ Tek sayı $2k+1$ biçimindedir; karesini açarsak 4 ortaya çıkar. 8’e ulaşmak için bir 2 çarpanı daha gerekir. \emph{Ardışık iki sayının çarpımı çifttir} gözlemi tam bu eksik halkadır.
+\item \textbf{İspat (tümdengelim).} $(2k+1)^2=4k^2+4k+1=4k(k+1)+1$. $k$ ile $k+1$ ardışık olduğundan biri çifttir; dolayısıyla $k(k+1)=2j$ ve $(2k+1)^2=8j+1$. $\square$
+\end{enumerate}
+
+Tek bir küçük problemde dört adımın dördü de farklı bir muhakeme türüne karşılık gelir. Bu, bölümün ana tezinin minyatür bir örneğidir: \emph{muhakeme türleri birbirinin rakibi değil, bir iş bölümünün parçalarıdır.}
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[scale=0.42]
+\foreach \n/\x in {1/0,2/3,3/7.5,4/13,5/19.5}{
+  \foreach \i in {1,...,\n}{\foreach \j in {1,...,\n}{
+    \pgfmathtruncatemacro{\g}{max(\i,\j)}
+    \pgfmathsetmacro{\shade}{\g==\n ? 1 : 0}
+    \ifdim\shade pt=1pt
+      \fill[acc!70] (\x+\i-1,\j-1) rectangle ++(0.9,0.9);
+    \else
+      \fill[bar!25] (\x+\i-1,\j-1) rectangle ++(0.9,0.9);
+    \fi
+  }}
+  \pgfmathtruncatemacro{\odd}{2*\n-1}
+  \pgfmathtruncatemacro{\sq}{\n*\n}
+  \node[font=\sffamily\scriptsize,anchor=north] at (\x+\n/2-0.05,-0.3) {$+\odd$ \;$\to\; \sq$};
+}
+\end{tikzpicture}
+\caption{Tek sayılar ve kareler: her yeni ‘L’ biçimli parça (gnomon) bir sonraki tek sayıdır ve kareyi bir büyütür. $1+3+5+\dots+(2n-1)=n^2$ olgusunun görsel kanıtı; Pisagorcular bu şekilleri çakıl taşlarıyla kurardı.}\label{fig:gnomon}
+\end{figure}
+
+\subsection{Terim Karışıklığı: İki Ayrı ‘Tümevarım’}
+
+Türkçede \emph{tümevarım} sözcüğü iki çok farklı şey için kullanılır ve bu, öğrencilerin kafasını en çok karıştıran terminoloji sorunlarından biridir.
+
+\begin{table}[h]
+\centering\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{2.6cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\toprule
+ & \textbf{Empirik (sayısal) tümevarım} & \textbf{Matematiksel tümevarım}\\
+\midrule
+İngilizce & induction, inductive reasoning & mathematical induction\\
+Muhakeme türü & Tümevarımsal (olası) & \textbf{Tümdengelimsel} (zorunlu)\\
+Yapı & Birkaç durumu kontrol et, genelle & Taban durumu + ‘$P(k)\Rightarrow P(k+1)$’ adımını \emph{tüm} $k$ için ispatla\\
+Sonuç & Sanı & Teorem\\
+Dayanak & Örneklerin sayısı & Doğal sayıların iyi sıralılık / tümevarım aksiyomu\\
+\bottomrule
+\end{tabularx}
+\caption{Aynı ad, zıt statü. Matematiksel tümevarım, adına rağmen tamamen tümdengelimsel bir ispat yöntemidir (bkz. Bölüm~\ref{chap:tumevarim}).}
+\end{table}
+
+Bazı ders kitaplarının ‘tam tümevarım’ terimini kullanması bu yüzdendir. Matematiksel tümevarımda ‘domino taşları’ benzetmesi yol göstericidir: ilk taşın düştüğünü ve \emph{her} taşın bir sonrakini düşürdüğünü \emph{ispatlarsanız}, tüm taşların düşeceği zorunludur — hiçbir taşa tek tek bakmanıza gerek yoktur. Empirik tümevarım ise ilk yüz taşın düştüğünü \emph{izleyip} geri kalanlar için tahminde bulunmaktır.
+
+\subsection{Tümevarımın Sınırları: Kırılan Örüntüler}
+
+Matematik tarihi, çok sayıda örnekle ‘kanıtlanmış’ görünüp sonunda çöken örüntülerle doludur. Bu örnekler, öğrencilere ‘neden ispat?’ sorusunun en ikna edici yanıtını verir.
+
+\begin{ornek}[\textbf{Moser’in çemberi.}]
+Bir çemberin üzerine $n$ nokta yerleştirip her iki noktayı bir kirişle birleştirelim (üç kiriş aynı noktada kesişmeyecek biçimde). Çember kaç bölgeye ayrılır?
+\end{ornek}
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[scale=0.78]
+\foreach \n/\x in {1/0,2/2.6,3/5.2,4/7.8,5/10.4}{
+  \draw[line width=0.8pt] (\x,0) circle (1cm);
+  \foreach \i in {1,...,\n}{
+    \coordinate (P\i) at ($(\x,0)+({90+360*(\i-1)/\n+7*\i}:1cm)$);
+  }
+  \ifnum\n>1
+  \foreach \i in {1,...,\n}{\foreach \j in {1,...,\n}{\ifnum\i<\j \draw[acc,line width=0.6pt] (P\i)--(P\j);\fi}}
+  \fi
+  \foreach \i in {1,...,\n}{\node[circle,fill=black,inner sep=1.4pt] at (P\i) {};}
+}
+\node[font=\sffamily\small] at (0,-1.45) {$n=1$: 1};
+\node[font=\sffamily\small] at (2.6,-1.45) {$n=2$: 2};
+\node[font=\sffamily\small] at (5.2,-1.45) {$n=3$: 4};
+\node[font=\sffamily\small] at (7.8,-1.45) {$n=4$: 8};
+\node[font=\sffamily\small] at (10.4,-1.45) {$n=5$: 16};
+\end{tikzpicture}
+\caption{Moser’in çember problemi: bölge sayıları 1, 2, 4, 8, 16. Örüntü ‘ikinin kuvvetleri’ diye bağırır.}
+\end{figure}
+
+1, 2, 4, 8, 16… Hemen hemen herkes bir sonraki değerin 32 olacağını tahmin eder. Oysa $n=6$ için bölge sayısı \textbf{31}’dir. Doğru formül
+\[
+R(n)=\binom{n}{4}+\binom{n}{2}+1
+\]
+olup ilk beş değerde $2^{n-1}$ ile çakışması bir tesadüftür. Aşağıdaki grafik, iki dizinin $n=6$’dan sonra nasıl hızla ayrıldığını gösterir: $2^{n-1}$ üstel büyürken $R(n)$ yalnızca dördüncü dereceden bir polinomdur.
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=0.8\linewidth,height=5.2cm,ybar,bar width=7pt,xlabel={nokta sayısı $n$},ylabel={bölge sayısı},
+  xtick={1,...,9},ymin=0,ymax=290,legend columns=2,legend style={at={(0.5,1.02)},anchor=south,font=\sffamily\scriptsize,draw=none,fill=none,/tikz/every even column/.append style={column sep=10pt}},
+  tick label style={font=\sffamily\scriptsize},label style={font=\sffamily\small},axis lines*=left,
+  nodes near coords,every node near coord/.append style={font=\sffamily\tiny,rotate=0}]
+\addplot[fill=bar!35,draw=bar] coordinates {(1,1)(2,2)(3,4)(4,8)(5,16)(6,32)(7,64)(8,128)(9,256)};
+\addplot[fill=acc!70,draw=acc] coordinates {(1,1)(2,2)(3,4)(4,8)(5,16)(6,31)(7,57)(8,99)(9,163)};
+\legend{tahmin: $2^{n-1}$, gerçek: $R(n)$}
+\end{axis}
+\end{tikzpicture}
+\caption{Moser dizisi ile ikinin kuvvetleri: beş değerlik bir ‘kanıt’ altıncıda çöker.}
+\end{figure}
+
+
+\begin{ornek}[\textbf{Pólya sanısı.}]
+George Pólya 1919’da şunu önerdi: 1’den $N$’ye kadar olan sayılar arasında, tek sayıda asal çarpanı olanlar (çarpanlar tekrarıyla sayılır) hiçbir zaman çift sayıda asal çarpanı olanlardan azınlıkta kalmaz. Sanı milyonlarca $N$ için doğrulandı. 1958’de C. B. Haselgrove sanının yanlış olduğunu kanıtladı; en küçük karşı örneğin $N=906\,150\,257$ olduğu 1980’de bulundu. Yani sanı, yaklaşık 900 milyon ardışık değer için doğrudur — ve yine de yanlıştır.
+\end{ornek}
+
+Bu örneklerin öğretimsel mesajı ‘örneklere güvenmeyin’ değildir; matematikçiler örneklere sürekli güvenir ve güvenmelidir. Mesaj şudur: \emph{örnekler bir sanıya ne kadar güvenmemiz gerektiğini söyler; bir sanının doğru olup olmadığını söylemez.}
+
+\section{Abdüktif Muhakeme}\label{sec:abduksiyon}
+
+Abdüksiyon, bir gözlemi en iyi açıklayan hipoteze geçiştir. Matematikte bir teoremin nasıl ispatlanacağına dair strateji seçimi (hangi yöntem, hangi yardımcı önerme) büyük ölçüde abdüktiftir.
+
+\begin{tanim}{Abdüksiyon (en iyi açıklamaya çıkarım)}
+Şaşırtıcı ya da açıklama bekleyen bir olgudan, o olguyu \emph{doğal ve beklenir} kılacak bir hipoteze geçiş. Abdüksiyon hipotezi \emph{kanıtlamaz}; yalnızca onu ‘ciddiye alınmaya değer’ adaylar arasına yerleştirir. Peirce’ın biçimlendirmesiyle:
+\begin{center}
+\begin{tabular}{l}
+Şaşırtıcı bir $C$ olgusu gözlenir.\\
+Eğer $A$ doğru olsaydı, $C$ olağan bir şey olurdu.\\
+\hline
+Öyleyse $A$’nın doğru olduğundan şüphelenmek için neden vardır.
+\end{tabular}
+\end{center}
+\end{tanim}
+
+Dikkat edilirse bu şema, Bölüm~\ref{sec:tumdengelim}’de geçersiz bulduğumuz \emph{sonucu onaylama} kalıbıyla aynı iskelete sahiptir ($A\Rightarrow C$; $C$; öyleyse $A$). Fark, sonucun iddia gücündedir: tümdengelim ‘$A$ doğrudur’ derken abdüksiyon yalnızca ‘$A$ incelemeye değer’ der. Abdüksiyonun dürüstlüğü, bu alçakgönüllülüğü korumasına bağlıdır.
+
+\subsection{Peirce’ın Fasulye Torbası}
+
+Peirce, üç muhakeme türünü aynı üç önermenin farklı düzenlemeleri olarak gösteren ünlü bir örnek verir. Elimizde üç önerme olsun:
+\begin{itemize}[leftmargin=1.4em]
+\item \textbf{Kural:} Bu torbadaki bütün fasulyeler beyazdır.
+\item \textbf{Durum:} Bu fasulyeler bu torbadan alınmıştır.
+\item \textbf{Sonuç:} Bu fasulyeler beyazdır.
+\end{itemize}
+
+\begin{figure}[h]
+\centering
+\resizebox{\linewidth}{!}{%
+\begin{tikzpicture}[x=1cm,y=1cm]
+\foreach \t/\x/\a/\b/\c/\col in {Tümdengelim/0/Kural/Durum/Sonuç/grn, Tümevarım/4.6/Durum/Sonuç/Kural/warm, Abdüksiyon/9.2/Kural/Sonuç/Durum/acc}{
+  \node[node box,minimum width=3.9cm] at (\x+1.95,0) {\t};
+  \node[font=\sffamily\small,anchor=west] at (\x,-0.8) {\a};
+  \node[font=\sffamily\small,anchor=west] at (\x,-1.3) {\b};
+  \draw[line width=1pt] (\x,-1.62) -- (\x+3.9,-1.62);
+  \node[font=\sffamily\small\bfseries,anchor=west,text=\col] at (\x,-2.0) {∴ \c};
+}
+\node[small lbl,text=grn] at (1.95,-2.6) {zorunlu};
+\node[small lbl,text=warm] at (6.55,-2.6) {olası};
+\node[small lbl,text=acc] at (11.15,-2.6) {makul};
+\end{tikzpicture}}%
+\caption{Peirce’ın şeması: aynı üç önerme, hangisinin ‘sonuç’ konumuna yerleştirildiğine göre üç farklı muhakeme türü üretir.}
+\end{figure}
+
+
+\subsection{Matematikte Abdüksiyon: Bir Örnek}
+
+\begin{ornek}[\textbf{Üçgensel sayılar.}]
+Bir öğrenci 1, 3, 6, 10, 15 sayılarını noktalarla üçgen biçiminde dizer ve şunu fark eder: her sayının iki katı, ardışık iki sayının çarpımıdır ($2\cdot 6=3\cdot4$, $2\cdot10=4\cdot5$). Bu şaşırtıcı bir olgudur ($C$). Öğrenci sorar: \emph{Bunu ne açıklar?} Aklına bir hipotez gelir ($A$): ‘İki özdeş üçgen, biri ters çevrilerek yan yana konursa bir dikdörtgen oluşturur.’ Bu doğruysa $C$ olağandır — $n$ satırlı üçgenden iki tane $n\times(n+1)$ dikdörtgen yapar. Abdüksiyon burada bitti; artık tümdengelimsel ispat yazılabilir: $T_n=\dfrac{n(n+1)}{2}$.
+\end{ornek}
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[scale=0.5]
+\foreach \r in {1,...,4}{\foreach \c in {1,...,\r}{\fill[acc] (\c,-\r) circle (0.28);}}
+\node[font=\sffamily\small] at (2.5,-5.2) {$T_4=10$};
+\begin{scope}[xshift=7cm]
+\foreach \r in {1,...,4}{\foreach \c in {1,...,5}{
+  \ifnum\c>\r \fill[warm] (\c,-\r) circle (0.28); \else \fill[acc] (\c,-\r) circle (0.28);\fi}}
+\draw[bar,line width=0.7pt,rounded corners=3pt] (0.5,-0.5) rectangle (5.5,-4.5);
+\node[font=\sffamily\small] at (3,-5.2) {$2T_4=4\times5=20$};
+\end{scope}
+\end{tikzpicture}
+\caption{Abdüktif ‘aha’ anı: iki üçgenin bir dikdörtgen oluşturduğu görülünce $2T_n=n(n+1)$ olgusu açıklanmış olur.}
+\end{figure}
+
+
+
+\begin{yanilgi}[Dikkat — Abdüksiyonun gölgesi]
+Abdüksiyon güçlü ama tehlikelidir, çünkü açıklama gücü yüksek hipotezler psikolojik olarak ‘doğru hissettirir’. Bir öğrenci, bir hipotezin her şeyi güzelce açıklamasını onun kanıtı sanabilir. Öğretmenin ‘Güzel bir fikir; şimdi bunun \emph{her zaman} işlediğini nasıl gösteririz?’ sorusu, abdüksiyonu tümdengelime devretmenin standart hamlesidir.
+\end{yanilgi}
+
+\section{Analojik Muhakeme}
+
+Üç temel muhakeme türünün yanında, matematiksel keşifte en az onlar kadar sık kullanılan dördüncü bir tür vardır: analoji.
+
+\begin{tanim}{Analojik muhakeme}
+Bir kaynak alandaki (bilinen durum) ilişkileri, yapıca benzer olduğu düşünülen bir hedef alana (yeni durum) taşıyarak hedef hakkında bir sonuç ya da sanı üretmek. Analoji, tek tek nesnelerin değil, \emph{nesneler arası ilişkilerin} benzerliğine dayanır.
+\end{tanim}
+
+\begin{ornek}[\textbf{Pisagor’dan de Gua’ya.}]
+Düzlemde, dik açılı bir köşeye sahip üçgen için $c^2=a^2+b^2$. Uzaydaki ‘karşılığı’ nedir? Analoji: üçgen $\leftrightarrow$ dörtyüzlü, dik açı $\leftrightarrow$ dik köşe (üç yüzü karşılıklı dik), kenar uzunluğu $\leftrightarrow$ yüz alanı. Sanı: dik köşeli bir dörtyüzlüde, dik köşenin karşısındaki yüzün alanının karesi, diğer üç yüzün alanlarının kareleri toplamına eşittir. Bu sanı doğrudur ve de Gua teoremi (1783) olarak bilinir: $D^2=A^2+B^2+C^2$. Analoji sanıyı verdi; ispat yine tümdengelimseldir.
+\end{ornek}
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[scale=1.05]
+\coordinate (O) at (0,0); \coordinate (A) at (2.4,0); \coordinate (B) at (0,1.8);
+\fill[accl] (O)--(A)--(B)--cycle;
+\draw[line width=0.9pt] (O)--(A)--(B)--cycle;
+\draw (0.25,0)--(0.25,0.25)--(0,0.25);
+\node[below,font=\small] at (1.2,0) {$a$};
+\node[left,font=\small] at (0,0.9) {$b$};
+\node[above right,font=\small] at (1.2,0.9) {$c$};
+\node[font=\sffamily\small] at (1.2,-0.8) {$c^2=a^2+b^2$};
+\draw[arr,dashed] (3.0,0.8) -- (4.4,0.8) node[midway,above,small lbl]{analoji};
+\begin{scope}[xshift=5.4cm]
+\coordinate (O) at (0.9,0.3); \coordinate (X) at (3.0,0); \coordinate (Y) at (0.9,2.2); \coordinate (Z) at (0,-0.5);
+\fill[accl] (X)--(Y)--(Z)--cycle;
+\draw[line width=0.9pt] (X)--(Y)--(Z)--cycle;
+\draw[dashed,line width=0.7pt] (O)--(X) (O)--(Y) (O)--(Z);
+\fill (O) circle (1.3pt);
+\node[font=\small] at (1.35,0.55) {$D$};
+\node[font=\sffamily\small] at (1.5,-1.3) {$D^2=A^2+B^2+C^2$};
+\end{scope}
+\end{tikzpicture}
+\caption{Analojiyle genelleme: dik üçgenden dik köşeli dörtyüzlüye. Kenar uzunluklarının yerini yüz alanları alır.}
+\end{figure}
+
+
+\begin{yanilgi}[Kavram Yanılgısı — Aşırı genelleştirilmiş analoji]
+Öğrencilerin cebirdeki en yaygın hatalarının çoğu kötü bir analojidir. Dağılma özelliği $a(b+c)=ab+ac$ ‘her işleme’ taşınır: $(a+b)^2=a^2+b^2$, $\sqrt{a+b}=\sqrt a+\sqrt b$, $\sin(x+y)=\sin x+\sin y$. Bu hatalar tembellikten değil, doğal bir analojik muhakemeden doğar; bu yüzden ‘yanlış’ demek yetmez. Öğrenciye analojinin \emph{hangi ilişkiyi} taşıdığını ve bu ilişkinin yeni bağlamda korunup korunmadığını sınamayı (örn. $a=9,b=16$ ile $\sqrt{25}\neq3+4$) öğretmek gerekir.
+\end{yanilgi}
+
+\section{Matematikte Muhakeme Türlerinin Yeri}
+
+Matematiksel keşif çoğu zaman tümevarımsal ve abdüktiftir (örüntü sez, hipotez kur), ama gerekçelendirme tümdengelimseldir (ispatla). Bu ayrım, öğrencinin ‘bir örnekle gösterdim’ ile ‘ispatladım’ arasındaki farkı kavraması için kritiktir.
+
+Matematik ders kitapları genellikle yalnızca son ürünü — tanım, teorem, ispat — gösterir. Bu ‘cilalanmış’ sunum, okuyucuda matematiğin baştan sona tümdengelimle üretildiği izlenimini bırakır. Oysa bir matematikçinin çalışma masası bambaşka görünür: karalanmış örnekler, yarım kalmış tablolar, çöpe atılmış sanılar, ‘belki şu lemma işe yarar’ notları. Aşağıdaki döngü bu gerçek süreci özetler.
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\def\R{2.5}
+\node[node grn,minimum width=2.9cm] (a) at (90:\R) {Deneme ve gözlem\\{\scriptsize özel durumlar, hesap}};
+\node[node warm,minimum width=2.9cm] (b) at (18:\R+0.6) {Örüntü ve sanı\\{\scriptsize \textbf{tümevarım}}};
+\node[node acc,minimum width=2.9cm] (c) at (-54:\R+0.2) {Açıklama, strateji\\{\scriptsize \textbf{abdüksiyon}, analoji}};
+\node[node box,minimum width=2.9cm] (d) at (-126:\R+0.2) {İspat\\{\scriptsize \textbf{tümdengelim}}};
+\node[node box,fill=white,minimum width=2.9cm] (e) at (162:\R+0.6) {Yeni sorular,\\genelleme};
+\draw[arr] (a) to[bend left=18] (b);
+\draw[arr] (b) to[bend left=18] (c);
+\draw[arr] (c) to[bend left=18] (d);
+\draw[arr] (d) to[bend left=18] (e);
+\draw[arr] (e) to[bend left=18] (a);
+\draw[arr,dashed,warm] (c.north west) to[bend right=25] node[pos=0.5,small lbl,fill=white,inner sep=2pt]{karşı örnek\\bulundu} (a.south);
+
+\end{tikzpicture}
+\caption{Keşiften ispata döngü. Kesikli ok, ispat girişimi başarısız olduğunda ya da bir karşı örnek bulunduğunda gözleme geri dönüşü gösterir.}
+\end{figure}
+
+\begin{table}[h]
+\centering\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{2.3cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\toprule
+ & \textbf{Tüm\-dengelim} & \textbf{Tümevarım} & \textbf{Abdüksiyon} & \textbf{Analoji}\\
+\midrule
+Yön & genel → özel & özel → genel & olgu → açıklama & kaynak → hedef\\
+Kesinlik & zorunlu & olası & makul & sezgisel\\
+Bilgiyi genişletir mi? & hayır & evet & evet & evet\\
+Matematikteki rolü & ispat & sanı üretme & strateji, hipotez & genelleme, yeni alan\\
+Tipik söz & ‘Öyleyse zorunlu olarak…’ & ‘Baktığım her durumda…’ & ‘Bunu en iyi ne açıklar?’ & ‘Bu tıpkı… gibi’\\
+Riski & yanlış öncül & karşı örnek & çekici ama yanlış hipotez & yüzeysel benzerlik\\
+\bottomrule
+\end{tabularx}
+\caption{Dört muhakeme türünün karşılaştırması.}
+\end{table}
+
+\section{Muhakeme Türlerini Ayırt Etmek: Tuzaklar ve Yanılgılar}
+
+Muhakeme türleri arasındaki fark, ancak somut örnekler üzerinde düşünüldüğünde yerleşir. Aşağıdaki örnekler, matematikte en sık karışan durumları bir arada gösterir ve öğrencinin ‘bir örnek gördüm’ ile ‘ispatladım’ arasındaki eşiği fark etmesini amaçlar.
+
+
+\begin{ornek}[\textbf{Yanıltıcı örüntü.}]
+$f(n)=n^2-n+41$ ifadesi $n=1,2,\dots,40$ için hep asal sayı üretir. Buradan ‘$f(n)$ daima asaldır’ genellemesine geçmek tümevarımsal bir sıçramadır ve yanlıştır: $n=41$ için $f(41)=41^2$ bileşiktir. Kırk doğrulama bile bir ispat yerine geçmez; matematikte örüntü sezmek ile ispatlamak ayrı işlerdir.
+
+\smallskip
+Başarısızlığın \emph{nedeni} de öğreticidir: $n=41$ seçildiğinde $n^2-n=n(n-1)$ terimi 41’in katı olur ve 41 eklenince tüm ifade 41’e bölünür. Yani karşı örnek rastgele değildir; ifadenin yapısı ‘41’ sabitini içinde taşır. Öğrenciye ‘karşı örneği nerede aramalıyız?’ sorusunu sormak, onu abdüktif düşünmeye yöneltir.
+\end{ornek}
+
+
+\begin{yanilgi}[Yaygın Kavram Yanılgıları]
+\textbf{‘Çok sayıda örnekte doğruladım, öyleyse ispatladım.’} — Sonlu doğrulama tümevarımsal destektir; evrensel bir önerme ancak tümdengelimsel bir argümanla ispatlanır.
+
+\smallskip
+\textbf{‘Matematiksel tümevarım, tümevarımsal muhakemedir.’} — Ad benzerliği yanıltıcıdır; matematiksel tümevarım (Bölüm~\ref{chap:tumevarim}) tümüyle tümdengelimsel bir yöntemdir.
+
+\smallskip
+\textbf{‘Geçerli bir argümanın sonucu her zaman doğrudur.’} — Geçerlilik biçimseldir; öncüller yanlışsa geçerli bir argümanın sonucu da yanlış olabilir. Doğruluk için ayrıca öncüllerin doğru olması (sağlamlık) gerekir.
+
+\smallskip
+\textbf{‘Bir teorem ispatlandıktan sonra bile karşı örnek çıkabilir.’} — Araştırmalar (Fischbein 1982; Chazan 1993) pek çok öğrencinin ispatlanmış bir teoremi de ‘yeni bir örnekle çürütülebilir’ gördüğünü göstermiştir. Bu, ispatın \emph{genellik} işlevinin kavranmadığının işaretidir: geçerli bir ispat, karşı örneğin \emph{var olamayacağını} gösterir.
+
+\smallskip
+\textbf{‘Şekil üzerinde görülüyor, öyleyse doğrudur.’} — Çizim bir özel durumdur; özel bir konum (örneğin tesadüfen ikizkenar çizilmiş bir üçgen) genel durumda olmayan özellikler ‘gösterebilir’. Şekil bir abdüksiyon kaynağıdır, ispat değil.
+\end{yanilgi}
+
+\section{Sınıfta Muhakeme Türleri}
+
+Öğretmen adayı için bu ayrımların doğrudan bir pratik karşılığı vardır. Etkili bir ders önce örüntü sezmeyi ve tahmini (tümevarımsal ve abdüktif etkinlik) teşvik eder, ardından bu tahminleri gerekçelendirmeye (tümdengelimsel ispat) geçer. Öğretmenin görevi yalnızca doğru ispatı sunmak değil, öğrencinin muhakeme türünü fark etmesini sağlamaktır: ‘Bu bir tahmin mi, yoksa kanıt mı?’, ‘Bu örnek fikri destekliyor mu, yoksa ispatlıyor mu?’
+
+\subsection{Sınıf Etkinlikleri}
+
+\begin{sinif}[Etkinlik 1 · Örüntü avcısı ya da tuzak? \hfill {\normalfont ortaokul, van Hiele 2→3}]
+Sınıfı dört gruba ayırın. Her gruba bir dizi verin: (a) $1,3,6,10,\dots$; (b) Moser bölgeleri $1,2,4,8,16,\dots$; (c) $n^2-n+41$ değerleri; (d) $1,3,5,7,\dots$’nin kısmi toplamları. Gruplar bir sonraki terimi tahmin edip bir kural yazsın. Sonra her grup kuralını ‘test ekibine’ (başka bir grup) sunar; test ekibi karşı örnek arar. Tartışma sorusu: ‘Hangi kurallara şimdi \emph{güveniyoruz}, hangilerini \emph{biliyoruz}?’
+\end{sinif}
+
+
+\usection{Bölüm Özeti}
+
+\begin{itemize}[leftmargin=1.4em]
+\item Tümdengelim doğruluğu korur; tümevarım yalnızca destekler; abdüksiyon en iyi açıklamayı arar; analoji ilişkileri bir alandan ötekine taşır.
+\item Geçerlilik argümanın biçimine, doğruluk öncüllerin içeriğine aittir; ikisi birlikte sağlamlığı oluşturur. Sonucu onaylama ve öncülü inkâr geçersiz kalıplardır; sonucu onaylamanın ‘yumuşatılmış’ hâli abdüksiyondur.
+\item Matematiksel keşif tümevarımsal/abdüktif, gerekçelendirme tümdengelimseldir. Kırılan örüntüler (Euler polinomu, Moser çemberi, Pólya sanısı) sonlu doğrulamanın neden ispat olmadığını gösterir.
+\item Matematiksel tümevarım, adına rağmen tümdengelimsel bir ispat yöntemidir.
+\end{itemize}
+
+\usection{Gözden Geçirme Soruları}
+
+\begin{enumerate}[leftmargin=1.8em,label=\textbf{\arabic*.}]
+\item Geçerli ama öncülleri yanlış bir tümdengelimsel argüman örneği veriniz. Sonuç doğru olmak zorunda mıdır?
+\item ‘Denediğim tüm çift sayılar iki asalın toplamı’ gözlemi hangi muhakeme türüdür ve neden ispat değildir?
+\item Abdüksiyon ile ‘sonucu onaylama’ hatası arasındaki benzerlik ve fark nedir?
+\item Matematiksel tümevarım neden tümdengelimsel bir yöntem sayılır?
+\end{enumerate}
+
+\usection{Alıştırmalar}
+
+\begin{enumerate}[leftmargin=1.8em,label=\textbf{\arabic*.}]
+\item Bir gazete başlığı, bir matematiksel iddia ve bir bilimsel hipotez örneği bulun; her birinin hangi muhakeme türüne dayandığını gerekçelendirin.
+\item ‘$n^2+n+41$ asaldır’ iddiasını $n=1,\dots,5$ için sınayın. Bu bir ispat mıdır? Genellemenin nerede ve neden başarısız olabileceğini tartışın. \emph{İpucu: $n=40$ ve $n=41$ için ifadeyi çarpanlarına ayırmayı deneyin.}
+\item Geçerli ama sağlam olmayan bir tümdengelimsel argüman ile sağlam bir argüman yazın; ikisi arasındaki farkı açıklayın.
+\item Aşağıdaki argümanların geçerli olup olmadığını belirleyin; geçersizse hangi hata kalıbına uyduğunu yazın:
+\begin{enumerate}[label=(\alph*),leftmargin=1.4em]
+\item Bir sayı 6’ya bölünüyorsa 3’e bölünür. 21 3’e bölünür. Öyleyse 21 6’ya bölünür.
+\item Bir dörtgen kare ise köşegenleri diktir. Bu dörtgenin köşegenleri dik değil. Öyleyse bu dörtgen kare değildir.
+\item Bir üçgen eşkenar ise ikizkenardır. Bu üçgen eşkenar değil. Öyleyse ikizkenar değildir.
+\end{enumerate}
+\item Wason seçim görevini dört arkadaşınıza uygulayın. Yanıtları kaydedin ve yanlış yanıtları Bölüm~\ref{sec:tumdengelim}’deki hata kalıplarıyla ilişkilendirin.
+\item Moser çember probleminde $n=6$ için bölge sayısının 31 olduğunu çizerek doğrulayın. Neden ‘ikinin kuvvetleri’ örüntüsünün bu kadar ikna edici göründüğünü tartışın.
+\item Pisagor teoremi ile de Gua teoremi arasındaki analojiyi bir tabloda gösterin (üçgen/dörtyüzlü, kenar/yüz, …). Analojinin hangi noktada ‘eşleştirme’ gerektirdiğini belirtin.
+\item ‘Ardışık üç tam sayının çarpımı 6’ya bölünür’ iddiası için (i) naif empirik, (ii) genel örnek, (iii) tümdengelimsel birer gerekçe yazın.
+\end{enumerate}
+
+\usection{Çoktan Seçmeli Sorular}
+
+\begin{multicols}{2}
+\footnotesize
+\raggedcolumns
+\newcommand{\cs}[5]{\item #1\\[1pt]
+\hspace*{0.4em}A) #2\\\hspace*{0.4em}B) #3\\\hspace*{0.4em}C) #4\\\hspace*{0.4em}D) #5}
+\begin{enumerate}[leftmargin=1.8em,label=\textbf{\arabic*.},itemsep=0.45em]
+\cs{Doğruluğu koruyan (öncüller doğruysa sonuç zorunlu doğru) muhakeme türü hangisidir?}{Tümevarım}{Tümdengelim}{Abdüksiyon}{Analoji}
+\cs{Bir örüntüden genel yargıya geçiş hangi muhakemedir?}{Tümdengelim}{Tümevarım}{Çelişki}{Kontrapozitif}
+\cs{Bir gözlemi en iyi açıklayan hipoteze geçiş hangi muhakemedir?}{Tümdengelim}{Tümevarım}{Abdüksiyon}{Yanlışlama}
+\cs{Matematiksel keşif (örüntü sezme) ağırlıklı olarak hangi türlere dayanır?}{Yalnızca tümdengelim}{Tümevarım ve abdüksiyon}{Yalnızca yanlışlama}{Yalnızca analoji}
+\cs{Tümevarımsal bir genellemeyi ne çürütebilir?}{Yeni bir destekleyici örnek}{Tek bir karşı örnek}{Bir tanım}{Bir aksiyom}
+\cs{‘Geçerli ama sağlam olmayan’ argüman ne demektir?}{Biçim geçersizdir}{Biçim geçerli ama en az bir öncül yanlıştır}{Sonuç daima yanlıştır}{Öncüller doğrudur}
+\cs{Aşağıdakilerden hangisi tümdengelimsel bir çıkarımdır?}{İlk 100 çift sayı iki asalın toplamı, öyleyse hepsi}{Tüm kareler dikdörtgendir; ABCD karedir; öyleyse dikdörtgendir}{Yerler ıslak, öyleyse yağmur yağmış}{Bu dizi hep artmış, artmaya devam eder}
+\cs{‘4’e bölünen sayı çifttir; 6 çifttir; öyleyse 6 4’e bölünür.’ Bu argümandaki hata hangisidir?}{Modus ponens}{Sonucu onaylama}{Öncülü inkâr}{Modus tollens}
+\cs{Bir çember üzerindeki 6 noktanın tüm kirişleri çizildiğinde (genel konumda) çember kaç bölgeye ayrılır?}{30}{31}{32}{36}
+\cs{Peirce’ın şemasında ‘kural + sonuç ⇒ durum’ biçimindeki çıkarım hangisidir?}{Tümdengelim}{Tümevarım}{Abdüksiyon}{Analoji}
+\end{enumerate}
+\end{multicols}
+
+\usection{Öğretmen Adayına Öneriler}
+
+\begin{enumerate}[leftmargin=1.6em,label=\textbf{\arabic*.}]
+\item \textbf{Muhakemeye ad verin.} Sınıfta ‘bu bir tahmin’, ‘bu bir açıklama’, ‘bu bir ispat’ sözcüklerini tutarlı biçimde kullanın. Ad verilen şey görünür hâle gelir.
+\item \textbf{Sezgiyi ödüllendirin, statüsünü netleştirin.} ‘Harika bir sanı!’ cümlesi, hem öğrencinin katkısını onaylar hem de işin bitmediğini söyler.
+\item \textbf{Kırılan örüntüleri sistemli kullanın.} Her dönem en az bir ‘tuzak örüntü’ (Moser, Euler polinomu) sınıfa getirin; ispatın gerekliliğini hissettirmenin en etkili yoludur.
+\end{enumerate}
+
+\usection{Kavram Sözlüğü}
+
+{\small
+\renewcommand{\arraystretch}{1.25}
+\begin{longtable}{>{\raggedright\arraybackslash}p{2.3cm}>{\raggedright\itshape\arraybackslash}p{2.3cm}>{\raggedright\arraybackslash}p{5.6cm}}
+\toprule
+\textbf{Terim} & \textbf{\upshape İngilizce} & \textbf{Kısa tanım}\\
+\midrule\endhead
+Abdüksiyon & abduction & Bir olgudan onu en iyi açıklayan hipoteze geçiş.\\
+Analoji & analogical reasoning & İlişkileri benzer bir alana taşıyarak sanı üretme.\\
+Geçerlilik & validity & Öncüller doğruyken sonucun yanlış olamaması.\\
+Modus ponens & modus ponens & $p\Rightarrow q$ ve $p$’den $q$ çıkarımı.\\
+Modus tollens & modus tollens & $p\Rightarrow q$ ve $\neg q$’dan $\neg p$ çıkarımı.\\
+Sağlamlık & soundness & Geçerli olmak ve doğru öncüllere sahip olmak.\\
+Sanı & conjecture & Doğru olduğu düşünülen ama ispatlanmamış önerme.\\
+Tümdengelim & deduction & Öncüllerden zorunlu sonuç çıkarma.\\
+Tümevarım & induction & Özel durumlardan genel yargıya geçiş.\\
+\bottomrule
+\end{longtable}
+}

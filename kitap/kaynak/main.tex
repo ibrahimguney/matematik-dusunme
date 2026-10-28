@@ -1,0 +1,543 @@
+% !TeX program = xelatex
+% !TeX encoding = UTF-8
+\documentclass[10pt,twoside,openright]{book}
+
+\usepackage{fontspec}
+\setmainfont{LibertinusSerif-Regular.otf}[
+  BoldFont=LibertinusSerif-Bold.otf,
+  ItalicFont=LibertinusSerif-Italic.otf,
+  BoldItalicFont=LibertinusSerif-BoldItalic.otf,
+  Ligatures=TeX]
+\setsansfont{LibertinusSans-Regular.otf}[
+  BoldFont=LibertinusSans-Bold.otf,
+  ItalicFont=LibertinusSans-Italic.otf,
+  BoldItalicFont=LibertinusSans-Bold.otf,
+  BoldItalicFeatures={FakeSlant=0.18},
+  Scale=MatchLowercase,
+  Ligatures=TeX]
+\setmonofont{LibertinusMono-Regular.otf}[Scale=MatchLowercase]
+\usepackage{polyglossia}
+\setmainlanguage{turkish}
+\usepackage[protrusion=true,expansion=false]{microtype}
+
+\usepackage[
+  paperwidth=6in,
+  paperheight=9in,
+  inner=0.70in,
+  outer=0.63in,
+  bindingoffset=0.08in,
+  top=0.70in,
+  bottom=0.80in,
+  headheight=14pt,
+  headsep=6mm,
+  footskip=10mm,
+  heightrounded
+]{geometry}
+
+\usepackage{xcolor,colortbl,array,booktabs,longtable,tabularx,multirow}
+\usepackage{amsmath,mathtools}
+\usepackage{enumitem}
+\usepackage{multicol}
+% Bağımsız bölüm dosyalarının önsözünü ve \end{document} komutunu yok sayar.
+\usepackage{docmute}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\definecolor{cAcc}{HTML}{7A1F2B}
+\definecolor{cGrey}{HTML}{F3F3F3}
+\definecolor{cDef}{HTML}{EEF3F7}
+\definecolor{cDep}{HTML}{FBEEF0}
+\definecolor{cEx}{HTML}{F0F4EC}
+\definecolor{cMis}{HTML}{FBF0E6}
+\definecolor{pCream}{HTML}{FFF8ED}
+\definecolor{pCoral}{HTML}{FF9E9E}
+\definecolor{pPeach}{HTML}{FFC98B}
+\definecolor{pMint}{HTML}{9EDBC5}
+\definecolor{pSky}{HTML}{9CCEEB}
+\definecolor{pLilac}{HTML}{C7B5EA}
+\definecolor{pNavy}{HTML}{25324A}
+% Bölüm 5'in genişletilmiş öğretim şemaları için yardımcı renkler
+\definecolor{ink}{HTML}{2B2B2B}
+\definecolor{boxbg}{HTML}{F1F1F1}
+\definecolor{bar}{HTML}{3A3A3A}
+\definecolor{acc}{HTML}{1F5E8C}
+\definecolor{accl}{HTML}{E4EEF6}
+\definecolor{warm}{HTML}{A4502A}
+\definecolor{warml}{HTML}{F8EDE6}
+\definecolor{grn}{HTML}{2E6B45}
+\definecolor{grnl}{HTML}{E6F1EA}
+\definecolor{mid}{HTML}{8A8A8A}
+\definecolor{bordo}{HTML}{812637}
+\definecolor{petrol}{HTML}{176B78}
+\definecolor{altin}{HTML}{976B18}
+
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta,shapes.geometric,shapes.misc,calc,fit,
+  decorations.pathreplacing,backgrounds,shadows}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\tikzset{
+  schemenode/.style={draw=pNavy!55,fill=cDef,rounded corners=5pt,
+    align=center,font=\sffamily\small,inner sep=7pt},
+  schemeaccent/.style={draw=cAcc!70,fill=cDep,rounded corners=5pt,
+    align=center,font=\sffamily\small,inner sep=7pt},
+  schemearrow/.style={-{Latex[length=2.2mm]},draw=cAcc,line width=.8pt},
+  schemeline/.style={draw=pNavy!65,line width=.8pt}
+}
+\usepackage[most]{tcolorbox}
+\tcbset{bookbox/.style={enhanced jigsaw,breakable,boxrule=0pt,colframe=white,
+  borderline west={2pt}{0pt}{cAcc},arc=0pt,outer arc=0pt,
+  left=8pt,right=8pt,top=5pt,bottom=5pt,before skip=8pt,after skip=8pt}}
+
+% Genişletilmiş Bölüm 5'te kullanılan pedagojik kutular
+\newtcolorbox{ornek}[1][]{enhanced jigsaw,breakable,colback=cEx,colframe=white,
+  boxrule=0pt,arc=0pt,borderline west={2pt}{0pt}{cAcc},
+  left=8pt,right=8pt,top=6pt,bottom=6pt,before skip=8pt,after skip=8pt,
+  before upper={\textsf{\bfseries\color{cAcc}Örnek.}\hspace{0.6em}#1\hspace{0.4em}}}
+\newtcolorbox{tbox}[1]{enhanced jigsaw,breakable,colback=cGrey,colframe=white,
+  boxrule=0pt,arc=0pt,borderline west={2pt}{0pt}{cAcc},
+  left=8pt,right=8pt,top=6pt,bottom=6pt,before skip=8pt,after skip=8pt,
+  before upper={\textsf{\bfseries\color{cAcc}#1}\hspace{0.6em}}}
+\newtcolorbox{tanim}[1]{enhanced jigsaw,breakable,colback=cDef,colframe=white,
+  boxrule=0pt,arc=0pt,borderline west={2pt}{0pt}{cAcc},
+  left=8pt,right=8pt,top=6pt,bottom=6pt,before skip=8pt,after skip=8pt,
+  before upper={\textsf{\bfseries\color{cAcc}Tanım · #1}\par\smallskip}}
+\newtcolorbox{yanilgi}[1][Kavram Yanılgısı]{enhanced jigsaw,breakable,
+  colback=cMis,colframe=white,boxrule=0pt,arc=0pt,
+  borderline west={2pt}{0pt}{warm},left=8pt,right=8pt,top=6pt,bottom=6pt,
+  before skip=8pt,after skip=8pt,
+  before upper={\textsf{\bfseries\color{warm}#1}\par\smallskip}}
+\newtcolorbox{sinif}[1][Sınıfta]{enhanced jigsaw,breakable,colback=cEx,
+  colframe=white,boxrule=0pt,arc=0pt,borderline west={2pt}{0pt}{grn},
+  left=8pt,right=8pt,top=6pt,bottom=6pt,before skip=8pt,after skip=8pt,
+  before upper={\textsf{\bfseries\color{grn}#1}\par\smallskip}}
+\newtcolorbox{coz}{enhanced jigsaw,breakable,colback=white,colframe=mid!55,
+  boxrule=.4pt,arc=0pt,left=8pt,right=8pt,top=5pt,bottom=5pt,
+  before skip=6pt,after skip=8pt,
+  before upper={\textsf{\bfseries\color{mid}Çözüm.}\hspace{0.5em}}}
+\newtcolorbox{ileri}[1]{enhanced jigsaw,breakable,colback=bordo!4,
+  colframe=white,boxrule=0pt,arc=0pt,borderline west={2pt}{0pt}{bordo},
+  left=8pt,right=8pt,top=6pt,bottom=6pt,before skip=8pt,after skip=8pt,
+  before upper={\textsf{\bfseries\color{bordo}Lisansüstü derinleşme: #1}\par\smallskip}}
+\newtcolorbox{dikkat}[1]{enhanced jigsaw,breakable,colback=altin!6,
+  colframe=white,boxrule=0pt,arc=0pt,borderline west={2pt}{0pt}{altin},
+  left=8pt,right=8pt,top=6pt,bottom=6pt,before skip=8pt,after skip=8pt,
+  before upper={\textsf{\bfseries\color{altin}Düşün ve denetle: #1}\par\smallskip}}
+\newcommand{\usection}[1]{\section*{#1}\addcontentsline{toc}{section}{#1}}
+\newcommand{\sen}[1]{\textsf{\bfseries\small #1}}
+\newcommand{\ing}[1]{\textit{(#1)}}
+\newcommand{\key}[1]{\textbf{#1}}
+\newcommand{\ogr}[1]{\textsf{\bfseries\color{acc}#1:}}
+\newcommand{\ders}[2]{\clearpage\noindent{\small\sffamily\bfseries\color{petrol}#1}\par\section{#2}}
+\newcommand{\etkinlik}[1]{\par\textbf{Öğretime aktarım.} #1}
+\newcommand{\sekil}[1]{\par{\small\sffamily\color{petrol}#1}\par}
+\providecommand{\R}{\mathbb{R}}
+\providecommand{\Q}{\mathbb{Q}}
+\providecommand{\Z}{\mathbb{Z}}
+\providecommand{\N}{\mathbb{N}}
+\newcommand{\kaynak}[1]{{\small\textit{İleri okuma: #1.}}}
+\newcommand{\mc}[6]{\item #1\par {\small A) #2\quad B) #3\par C) #4\quad D) #5}\label{mc:#6}}
+
+\tikzset{
+  node box/.style={draw=bar,line width=.8pt,rounded corners=3pt,fill=boxbg,
+    font=\sffamily\bfseries\small,inner sep=5pt,align=center},
+  node acc/.style={draw=acc,line width=.8pt,rounded corners=3pt,fill=accl,
+    font=\sffamily\small,inner sep=5pt,align=center},
+  node warm/.style={draw=warm,line width=.8pt,rounded corners=3pt,fill=warml,
+    font=\sffamily\small,inner sep=5pt,align=center},
+  node grn/.style={draw=grn,line width=.8pt,rounded corners=3pt,fill=grnl,
+    font=\sffamily\small,inner sep=5pt,align=center},
+  arr/.style={-{Stealth[length=6pt]},line width=.9pt,color=bar},
+  small lbl/.style={font=\sffamily\scriptsize,align=center,text=ink}
+}
+
+\usepackage{amssymb}
+\usepackage{newunicodechar}
+\newunicodechar{∎}{\ensuremath{\blacksquare}}
+\newunicodechar{ℵ}{\ensuremath{\aleph}}
+\newunicodechar{𝑥}{\emph{x}}\newunicodechar{𝑦}{\emph{y}}\newunicodechar{𝑧}{\emph{z}}
+\newunicodechar{𝑝}{\emph{p}}\newunicodechar{𝑞}{\emph{q}}\newunicodechar{𝑟}{\emph{r}}
+\newunicodechar{𝑛}{\emph{n}}\newunicodechar{𝑚}{\emph{m}}\newunicodechar{𝑘}{\emph{k}}
+\newunicodechar{𝑎}{\emph{a}}\newunicodechar{𝑏}{\emph{b}}\newunicodechar{𝑐}{\emph{c}}
+\newunicodechar{𝑑}{\emph{d}}\newunicodechar{𝑓}{\emph{f}}
+\newunicodechar{𝑒}{\emph{e}}\newunicodechar{𝑖}{\emph{i}}\newunicodechar{𝑡}{\emph{t}}
+\newunicodechar{𝑣}{\emph{v}}\newunicodechar{𝑤}{\emph{w}}
+\newunicodechar{𝐴}{\ensuremath{A}}\newunicodechar{𝐵}{\ensuremath{B}}
+\newunicodechar{𝐶}{\ensuremath{C}}\newunicodechar{𝐷}{\ensuremath{D}}
+\newunicodechar{𝐹}{\ensuremath{F}}\newunicodechar{𝐺}{\ensuremath{G}}
+\newunicodechar{𝐼}{\ensuremath{I}}\newunicodechar{𝐾}{\ensuremath{K}}
+\newunicodechar{𝐿}{\ensuremath{L}}\newunicodechar{𝑀}{\ensuremath{M}}
+\newunicodechar{𝑁}{\ensuremath{N}}\newunicodechar{𝑃}{\ensuremath{P}}
+\newunicodechar{𝑄}{\ensuremath{Q}}\newunicodechar{𝑅}{\ensuremath{R}}
+\newunicodechar{𝑆}{\ensuremath{S}}\newunicodechar{𝑇}{\ensuremath{T}}
+\newunicodechar{𝑉}{\ensuremath{V}}
+\newunicodechar{𝜀}{ε}\newunicodechar{𝛿}{δ}
+\newunicodechar{∅}{\ensuremath{\varnothing}}
+\newunicodechar{ℝ}{\ensuremath{\mathbb{R}}}\newunicodechar{ℤ}{\ensuremath{\mathbb{Z}}}
+\newunicodechar{ℕ}{\ensuremath{\mathbb{N}}}\newunicodechar{ℚ}{\ensuremath{\mathbb{Q}}}
+\newunicodechar{✓}{\ensuremath{\checkmark}}\newunicodechar{∶}{\ensuremath{{:}}}
+\newunicodechar{✗}{\ensuremath{\times}}
+\newunicodechar{∴}{\ensuremath{\therefore}}
+\newunicodechar{≺}{\ensuremath{\prec}}\newunicodechar{⋯}{\ensuremath{\cdots}}
+\newunicodechar{⊊}{\ensuremath{\subsetneq}}\newunicodechar{≢}{\ensuremath{\not\equiv}}
+\newunicodechar{∖}{\ensuremath{\setminus}}
+\newunicodechar{⊥}{\ensuremath{\perp}}\newunicodechar{⊢}{\ensuremath{\vdash}}
+\newunicodechar{⊧}{\ensuremath{\models}}\newunicodechar{⊬}{\ensuremath{\nvdash}}
+\newunicodechar{⊆}{\ensuremath{\subseteq}}\newunicodechar{⊇}{\ensuremath{\supseteq}}
+\newunicodechar{↦}{\ensuremath{\mapsto}}\newunicodechar{⟼}{\ensuremath{\longmapsto}}
+\newunicodechar{⟶}{\ensuremath{\longrightarrow}}\newunicodechar{⟹}{\ensuremath{\Longrightarrow}}
+\newunicodechar{ᵢ}{\ensuremath{{}_{i}}}\newunicodechar{ₙ}{\ensuremath{{}_{n}}}
+\newunicodechar{ᴬ}{\ensuremath{{}^{A}}}
+\newunicodechar{𝜑}{\ensuremath{\varphi}}\newunicodechar{𝜆}{\ensuremath{\lambda}}
+\newunicodechar{𝜋}{\ensuremath{\pi}}\newunicodechar{𝜓}{\ensuremath{\psi}}
+\newunicodechar{𝜇}{\ensuremath{\mu}}\newunicodechar{𝛼}{\ensuremath{\alpha}}
+\newunicodechar{𝜌}{\ensuremath{\rho}}\newunicodechar{𝜏}{\ensuremath{\tau}}
+\newunicodechar{𝛾}{\ensuremath{\gamma}}\newunicodechar{𝛽}{\ensuremath{\beta}}
+\newunicodechar{𝜔}{\ensuremath{\omega}}\newunicodechar{𝜃}{\ensuremath{\theta}}
+\newunicodechar{𝜎}{\ensuremath{\sigma}}
+
+\usepackage{fancyhdr}
+\usepackage{emptypage}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\fancyhead[LE]{\sffamily\scriptsize\color{gray}MATEMATİKSEL DÜŞÜNME VE MUHAKEME}
+\fancyhead[RO]{\sffamily\scriptsize\color{gray}\nouppercase{\leftmark}}
+\fancyfoot[LE,RO]{\sffamily\small\color{black!70}\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\sffamily\small\color{black!70}\thepage}\renewcommand{\headrulewidth}{0pt}}
+
+\usepackage{titlesec}
+\titleformat{\chapter}[display]{\sffamily\bfseries}
+  {\raggedright{\color{cAcc}\Large\chaptertitlename\ \thechapter}}
+  {4pt}{\color{cAcc}\Huge\raggedright}
+  [\vspace{5pt}{\color{cAcc}\titlerule[1.4pt]}]
+\titlespacing*{\chapter}{0pt}{10pt}{20pt}
+\titleformat{name=\chapter,numberless}[display]{\sffamily\bfseries}{}{0pt}
+  {\color{cAcc}\Huge\raggedright}
+  [\vspace{5pt}{\color{cAcc}\titlerule[1.4pt]}]
+\titleformat{\part}[display]
+  {\centering\sffamily\bfseries\color{pNavy}}
+  {\Large\partname\ \thepart}{1.2em}{\Huge}
+\titlespacing*{\part}{0pt}{0.22\textheight}{0pt}
+
+\setcounter{tocdepth}{1}
+\setcounter{secnumdepth}{1}
+\newcommand{\reviewitem}[2]{\par\smallskip\noindent\hangindent=1.6em\hangafter=1 \textbf{#1.}\hspace{0.5em}#2\par}
+\newcommand{\mcqq}[2]{\par\smallskip\noindent\hangindent=1.4em\hangafter=1 \textbf{#1.}\hspace{0.4em}#2\par}
+\newcommand{\mcqo}[2]{\par\noindent\hspace*{1.6em}#1)\hspace{0.4em}#2}
+% Çoktan seçmeli soruların yanıtları kitabın sonundaki Ek B'de verilir.
+\newcommand{\mcqa}[2]{}
+\setlength{\parindent}{1.45em}
+\setlength{\parskip}{0pt plus 0.3pt}
+\linespread{1.08}
+\frenchspacing
+\raggedbottom
+\setlength{\emergencystretch}{2em}
+\tolerance=1800
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\brokenpenalty=7000
+
+\usepackage{tocloft}
+\renewcommand{\cftchapnumwidth}{2.4em}
+\renewcommand{\cftchapfont}{\bfseries}
+\renewcommand{\cftchappagefont}{\bfseries}
+\setlength{\cftsecnumwidth}{3.2em}
+\setlength{\cftbeforechapskip}{4pt}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+  pdftitle={Matematiksel Düşünme ve Muhakeme},
+  pdfauthor={İbrahim Güney},
+  pdfsubject={MAT 507: Muhakeme, Mantık, İspat ve Matematiksel Yapılar}
+}
+\Urlmuskip=0mu plus 1mu
+
+\begin{document}
+\hypersetup{pageanchor=false}
+
+\begin{titlepage}
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[pCream] (current page.south west) rectangle (current page.north east);
+  \fill[pCoral,opacity=.78] ([xshift=-1.3cm,yshift=-1.1cm]current page.north east) circle (3.2cm);
+  \fill[pPeach,opacity=.72] ([xshift=1.0cm,yshift=-5.0cm]current page.north west) circle (2.4cm);
+  \fill[pMint,opacity=.72] ([xshift=-.6cm,yshift=2.0cm]current page.south east) circle (3.5cm);
+  \fill[pSky,opacity=.65] ([xshift=1.0cm,yshift=1.0cm]current page.south west) circle (2.8cm);
+  \fill[pLilac,opacity=.68,rounded corners=18pt]
+    ([xshift=2.0cm,yshift=-8.1cm]current page.north west)
+    rectangle ++(3.7cm,1.15cm);
+  \draw[pNavy,opacity=.18,line width=18pt,rounded corners=20pt]
+    ([xshift=-4.8cm,yshift=5.6cm]current page.south east)
+    -- ++(4.0cm,-1.8cm);
+  \draw[cAcc,opacity=.22,line width=2.4pt]
+    ([xshift=1.1cm,yshift=-3.0cm]current page.north west)
+    .. controls +(2.6cm,-1.2cm) and +(-2.4cm,1.3cm) ..
+    ([xshift=-.9cm,yshift=4.2cm]current page.south east);
+  \node[rotate=12,scale=4,transform shape,text=pNavy,opacity=.10,font=\Large]
+    at ([xshift=-2.2cm,yshift=-3.7cm]current page.north east) {$\forall$};
+  \node[rotate=-10,scale=4.4,transform shape,text=cAcc,opacity=.09,font=\Large]
+    at ([xshift=2.2cm,yshift=3.5cm]current page.south west) {$\infty$};
+\end{tikzpicture}
+
+\centering
+\vspace*{1.0cm}
+\begin{tikzpicture}
+  \node[fill=white,rounded corners=8pt,inner xsep=12pt,inner ysep=8pt,
+        draw=white,line width=1pt,opacity=.96,text opacity=1]
+    {\includegraphics[width=.68\linewidth]{figs/izu_logo.png}};
+\end{tikzpicture}\par
+\vspace{8mm}
+
+{\sffamily\bfseries\color{cAcc}\large
+MAT 507 \textperiodcentered{} LİSANSÜSTÜ DERS KİTABI}\par
+\vspace{8mm}
+
+\begin{tikzpicture}
+  \node[fill=white,fill opacity=.86,text opacity=1,rounded corners=16pt,
+        inner xsep=15pt,inner ysep=15pt,text width=.82\textwidth,align=center]
+  {\sffamily\bfseries\color{pNavy}\fontsize{29}{34}\selectfont
+   MATEMATİKSEL\\[2mm]
+   DÜŞÜNME\hspace{.35em}VE\\[2mm]
+   MUHAKEME};
+\end{tikzpicture}\par
+\vspace{8mm}
+
+{\sffamily\color{pNavy}\large
+Muhakeme, Mantık, İspat ve Matematiksel Yapılar}\par
+
+\vfill
+\begin{tikzpicture}
+  \node[fill=white,fill opacity=.82,text opacity=1,rounded corners=12pt,
+        inner xsep=18pt,inner ysep=9pt,align=center]
+  {\sffamily\color{pNavy}\bfseries\Large İbrahim GÜNEY\\[2mm]
+   \mdseries\normalsize İstanbul Sabahattin Zaim Üniversitesi\\[1mm]
+   \color{cAcc}İstanbul \textperiodcentered{} 2026};
+\end{tikzpicture}
+\vspace*{8mm}
+\end{titlepage}
+
+\begingroup
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[pCream] (current page.south west) rectangle (current page.north east);
+  \fill[pLilac,opacity=.45] ([xshift=-1.2cm,yshift=-1.0cm]current page.north east) circle (2.8cm);
+  \fill[pMint,opacity=.48] ([xshift=1.0cm,yshift=1.0cm]current page.south west) circle (2.5cm);
+  \draw[cAcc,opacity=.18,line width=2pt]
+    ([xshift=1.2cm,yshift=-2.5cm]current page.north west)
+    .. controls +(3cm,-1cm) and +(-3cm,1cm) ..
+    ([xshift=-1.2cm,yshift=3cm]current page.south east);
+\end{tikzpicture}
+\centering
+\vspace*{1.8cm}
+\includegraphics[width=.64\linewidth]{figs/izu_logo.png}\par
+\vspace{1.5cm}
+{\sffamily\bfseries\color{cAcc}\large MAT 507}\par\vspace{5mm}
+{\sffamily\bfseries\color{pNavy}\fontsize{29}{34}\selectfont
+MATEMATİKSEL\\[2mm]
+DÜŞÜNME\hspace{.35em}VE\\[2mm]
+MUHAKEME}\par
+\vspace{7mm}
+{\sffamily\color{pNavy}\Large Muhakeme, Mantık, İspat\\[2mm]
+ve Matematiksel Yapılar}\par
+\vspace{1cm}
+{\color{cAcc}\rule{.62\linewidth}{1.2pt}}\par
+\vfill
+{\sffamily\bfseries\color{pNavy}\Large Prof.\ Dr.\ İbrahim GÜNEY}\par\vspace{4mm}
+{\sffamily\color{pNavy}İstanbul Sabahattin Zaim Üniversitesi}\par
+\vspace{1.2cm}
+{\sffamily\color{cAcc}Birinci Baskı \textperiodcentered{} İstanbul 2026}\par
+\vspace*{1cm}
+\clearpage
+\endgroup
+
+\begingroup
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[pCream] (current page.south west) rectangle (current page.north east);
+  \fill[pPeach,opacity=.38] ([xshift=-.7cm,yshift=-.6cm]current page.north east) circle (2.5cm);
+  \fill[pSky,opacity=.34] ([xshift=.5cm,yshift=.5cm]current page.south west) circle (2.2cm);
+  \node[anchor=north west,text=cAcc,font=\sffamily\bfseries\LARGE]
+    at ([xshift=1.25cm,yshift=-1.1cm]current page.north west) {Yayın Bilgileri};
+  \draw[cAcc,line width=1.2pt]
+    ([xshift=1.25cm,yshift=-2.0cm]current page.north west) --
+    ([xshift=-1.25cm,yshift=-2.0cm]current page.north east);
+
+  \node[anchor=north,fill=white,rounded corners=12pt,inner sep=13pt,
+        text width=12.2cm,align=left]
+    at ([yshift=-2.6cm]current page.north)
+  {\sffamily\small
+   \newcommand{\pubrow}[2]{%
+     \noindent\begin{minipage}[t]{3.0cm}\bfseries\color{pNavy}#1\end{minipage}%
+     \hfill\begin{minipage}[t]{8.55cm}\color{black}#2\end{minipage}\par\vspace{1.8mm}}
+   \pubrow{Eser adı}{Matematiksel Düşünme ve Muhakeme}
+   \pubrow{Alt başlık}{Muhakeme, Mantık, İspat ve Matematiksel Yapılar}
+   \pubrow{Yazar}{Prof.\ Dr.\ İbrahim Güney}
+   \pubrow{Kurum}{İstanbul Sabahattin Zaim Üniversitesi}
+   \pubrow{Ders}{MAT 507 “Matematiksel Düşünme ve Muhakeme” (lisansüstü)}
+   \pubrow{Yayın türü}{Lisansüstü ders kitabı}
+   \pubrow{Baskı bilgisi}{Birinci baskı, Ekim 2026}
+   \pubrow{Kaynak eser}{\emph{Matematiği Düşünmek} (v6, 2026)}
+   \pubrow{Yayın yeri}{İstanbul}
+   \pubrow{Sayfa ölçüsü}{6 $\times$ 9 inç (15,24 $\times$ 22,86 cm)}
+   \pubrow{Dizgi sistemi}{XeLaTeX}};
+
+  \node[anchor=north,fill=cDef,rounded corners=10pt,inner sep=10pt,
+        text width=12.2cm,align=left,font=\small]
+    at ([yshift=-13.2cm]current page.north)
+  {\textbf{Önerilen kaynak gösterimi:} Güney, İ. (2026). \emph{Matematiksel Düşünme ve Muhakeme: Muhakeme, Mantık, İspat ve Matematiksel Yapılar}. İstanbul.};
+
+  \node[anchor=south,fill=white,fill opacity=.88,text opacity=1,rounded corners=10pt,
+        inner sep=10pt,text width=12.2cm,align=left,font=\footnotesize]
+    at ([yshift=1.0cm]current page.south)
+  {© 2026 Prof.\ Dr.\ İbrahim Güney. Tüm hakları saklıdır. Bu eserin tamamı veya bir bölümü, hak sahibinin yazılı izni olmaksızın çoğaltılamaz ve yayımlanamaz. Eğitim amacıyla yapılacak kısa alıntılarda kaynak gösterilmelidir.\par\medskip
+   Bu kitap, yazarın \emph{Matematiği Düşünmek} adlı birleşik ders kitabının MAT 507 izlencesine karşılık gelen bölümlerinden derlenmiştir. Bölümler arası göndermeler, alıştırma çözümleri, cevap anahtarları ve kaynakça bu sürüme göre yeniden düzenlenmiştir.\par\medskip
+   Kapak, iç kapak, yayın bilgileri ve dizgi düzeni bu sürüm için hazırlanmıştır.};
+\end{tikzpicture}
+\null
+\endgroup
+\clearpage
+
+\frontmatter
+\hypersetup{pageanchor=true}
+\pdfbookmark[0]{İçindekiler}{toc}
+\tableofcontents
+\clearpage
+
+\chapter*{Bu Kitap Nasıl Kullanılır?}
+\addcontentsline{toc}{chapter}{Bu Kitap Nasıl Kullanılır?}
+
+Bu kitap, MAT 507 \emph{Matematiksel Düşünme ve Muhakeme} dersi için hazırlanmıştır. İçeriği, yazarın \emph{Matematiği Düşünmek} (2026) adlı birleşik ders kitabının bu dersin izlencesine karşılık gelen bölümlerinden derlenmiştir. Matematik tarihindeki bunalımlar, felsefi ekoller, matematiksel soru tipleri ve aksiyomatik yöntem bölümleri bu sürümde yer almaz; bu konulara ilişkin gerekli arka plan, ilgili bölümlerin içinde kısaca verilmiştir.
+
+Kitap; matematiğin doğası ve muhakeme türleriyle açılır, mantıksal dilin kurulmasıyla sürer, ispat yöntemleriyle derinleşir ve kümelerden kardinaliteye uzanan matematiksel yapılar üzerinde muhakemeyle tamamlanır. Son bölüm, bütün bu araçları matematik eğitimine ve ders tasarımına bağlayan bir sentez sunar.
+
+\begin{tcolorbox}[bookbox,colback=cGrey]
+\textbf{Bölüm yapısı ve süre.} Her bölüm, iki ile üç ders saatlik tek bir oturumda işlenebilecek biçimde 11--18 sayfa uzunluğunda düzenlenmiştir. Bölümler öğrenme hedefleriyle açılır; tanım kutuları, çözümlü örnekler, şekiller ve sınıf etkinlikleriyle ilerler; bölüm özeti, gözden geçirme soruları, alıştırmalar ve çoktan seçmeli sorularla kapanır. Alıştırmaların kısa çözümleri Ek~A'da, çoktan seçmeli soruların cevap anahtarları Ek~B'dedir.
+\end{tcolorbox}
+
+\begin{tcolorbox}[bookbox,colback=cEx]
+\textbf{Lisansüstü okuma.} Her bölümün temel açıklamaları ortak kavramsal çekirdeği oluşturur. ``Yüksek Lisans Derinleştirmesi'' ve ``Lisansüstü derinleşme'' başlıklı kısımlar, ileri düzey kutular ve birincil kaynak tartışmaları MAT 507'nin lisansüstü hedefleri için programın parçasıdır. Bölüm~\ref{chap:muhakeme-ogretimi}'teki muhakeme öğretimi çerçeveleri (van Hiele, Harel--Sowder, Balacheff, Toulmin) ve Bölüm~\ref{chap:sentez}'teki ders tasarımı vakaları, öğretmenlik bakış açısının merkezindedir.
+\end{tcolorbox}
+
+\section*{14 Haftalık Ders Planı}
+
+Dönem, 13 ders haftası ve 8. haftadaki ara sınavdan oluşur; final sınavı 14. haftadan sonra yapılır. İzlencedeki 15. hafta (genel tekrar) 14. haftadaki dönem sentezine katılmıştır.
+
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.18}
+\begin{tabularx}{\textwidth}{>{\bfseries}c >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{2.35cm}}
+\toprule
+Hafta & Konu & Kitapta \\
+\midrule
+1 & Tanıtım; matematiğin doğası & Bölüm~\ref{chap:matematigin-dogasi} \\
+2 & Muhakeme türleri ve düşünme düzeyleri & Bölüm~\ref{chap:muhakeme-turleri}--\ref{chap:muhakeme-ogretimi} \\
+3 & Önermeler, bağlaçlar ve doğruluk tabloları & Bölüm~\ref{chap:onermeler-mantigi} \\
+4 & Argüman geçerliliği; değişkenler & §\ref{sec:gecerlilik}; Bölüm~\ref{chap:sembolik-mantik} \\
+5 & Sembolik mantık ve niceleyiciler & Bölüm~\ref{chap:niceleyiciler} \\
+6 & İspat kavramı; doğrudan ve kontrapozitif ispat & Bölüm~\ref{chap:dogrudan-ispat} \\
+7 & Çelişki ile ispat ve niceleyicili ispatlar & Bölüm~\ref{chap:celiski-ispat} \\
+\rowcolor{cGrey} 8 & \textbf{ARA SINAV} & Bölüm~\ref{chap:matematigin-dogasi}--\ref{chap:celiski-ispat} \\
+9 & Kümeler & Bölüm~\ref{chap:kumeler} \\
+10 & Matematiksel tümevarım & Bölüm~\ref{chap:tumevarim} \\
+11 & Bağıntılar & Bölüm~\ref{chap:bagintilar} \\
+12 & Kongrüanslar & Bölüm~\ref{chap:kongruanslar} \\
+13 & Fonksiyonlar & Bölüm~\ref{chap:fonksiyonlar} \\
+14 & Kardinalite; dönem sentezi & Bölüm~\ref{chap:kardinalite}, \ref{chap:sentez} \\
+\rowcolor{cGrey} -- & \textbf{FİNAL SINAVI} & Bölüm~\ref{chap:tumevarim}--\ref{chap:kardinalite} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\noindent İzlencedeki sıra gereği kümeler (Bölüm~\ref{chap:kumeler}), kitapta kendisinden önce gelen tümevarım bölümünden (Bölüm~\ref{chap:tumevarim}) bir hafta önce işlenir. Kitap tümevarımı ispat yöntemleriyle birlikte sunar; iki bölüm birbirine dayanmadan okunabilir.
+
+\mainmatter
+\part{Matematiksel Düşünmenin Temelleri}
+\input{chapters/01_dogasi}
+\input{chapters/07_muhakeme_turleri}
+\input{chapters/08_muhakeme_ogretimi}
+
+\part{Mantıksal Dil}
+\input{chapters/11_onermeler}
+\input{chapters/12_degiskenler}
+\input{chapters/13_niceleyiciler}
+
+\part{İspat Yöntemleri}
+\input{chapters/14_ispat}
+\input{chapters/15_celiski}
+\input{chapters/16_tumevarim}
+
+\part{Matematiksel Yapılar Üzerine Muhakeme}
+\input{chapters/17_kumeler}
+\input{chapters/18_bagintilar}
+\input{chapters/19_kongruanslar}
+\input{chapters/20_fonksiyonlar}
+\input{chapters/21_kardinalite}
+
+\part{Sentez ve Eğitime Yansımalar}
+\input{chapters/25_sentez}
+
+\appendix
+\part{Ekler}
+\input{chapters/cevaplar_A}
+\input{chapters/cevaplar_B}
+
+\backmatter
+\input{chapters/kaynakca}
+
+\clearpage
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[pNavy] (current page.south west) rectangle (current page.north east);
+  \fill[pCoral,opacity=.82] ([xshift=-.8cm,yshift=-1.0cm]current page.north east) circle (3.4cm);
+  \fill[pPeach,opacity=.82] ([xshift=.5cm,yshift=-4.8cm]current page.north west) circle (2.4cm);
+  \fill[pMint,opacity=.82] ([xshift=-.4cm,yshift=1.1cm]current page.south east) circle (3.0cm);
+  \fill[pSky,opacity=.78] ([xshift=.5cm,yshift=.7cm]current page.south west) circle (2.7cm);
+  \fill[pLilac,opacity=.72,rounded corners=18pt]
+    ([xshift=1.5cm,yshift=-8.0cm]current page.north west) rectangle ++(4.2cm,1.1cm);
+  \draw[white,opacity=.16,line width=2.2pt]
+    ([xshift=1cm,yshift=-2.4cm]current page.north west)
+    .. controls +(3cm,-1cm) and +(-3cm,1cm) ..
+    ([xshift=-1cm,yshift=3.4cm]current page.south east);
+  \node[rotate=10,scale=4.5,transform shape,text=white,opacity=.08,font=\Large]
+    at ([xshift=-2.2cm,yshift=-3.7cm]current page.north east) {$\exists$};
+  \node[rotate=-8,scale=4.2,transform shape,text=white,opacity=.07,font=\Large]
+    at ([xshift=2.0cm,yshift=3.1cm]current page.south west) {$\sum$};
+\end{tikzpicture}
+
+\centering
+\vspace*{1.5cm}
+\begin{tikzpicture}
+  \node[fill=white,rounded corners=8pt,inner xsep=12pt,inner ysep=8pt]
+    {\includegraphics[width=.62\linewidth]{figs/izu_logo.png}};
+\end{tikzpicture}\par
+
+\vspace{1.4cm}
+\begin{minipage}{.78\textwidth}
+\raggedright\color{white}
+{\sffamily\bfseries\fontsize{22}{27}\selectfont
+Matematiği yalnızca sonuçlarıyla değil, düşünme biçimiyle tanımak\ldots}\par
+\vspace{8mm}
+{\sffamily\large
+Bu kitap; matematiğin doğasından muhakeme türlerine, önermeler mantığından ispat yöntemlerine, kümeler ve bağıntılardan modüler aritmetiğe, fonksiyonlar ve sonsuzluğa uzanan bütünlüklü bir öğrenme yolu sunar.}
+\par\vspace{6mm}
+{\sffamily\large
+MAT 507 Matematiksel Düşünme ve Muhakeme dersi için hazırlanan bu lisansüstü kitap, öğretmenlerin ve araştırmacıların hem kendi muhakemelerini hem de öğrencilerinin muhakemesini çözümleyebilmeleri için gereken araçları bir araya getirir.}
+\end{minipage}
+
+\vspace{1.2cm}
+\begin{tikzpicture}[every node/.style={rounded corners=9pt,inner xsep=11pt,inner ysep=6pt,
+  font=\sffamily\bfseries\small,text=pNavy}]
+  \node[fill=pCoral] (a) {MUHAKEME};
+  \node[fill=pPeach,right=3mm of a] (b) {MANTIK};
+  \node[fill=pMint,right=3mm of b] (c) {İSPAT};
+  \node[fill=pSky,right=3mm of c] {YAPILAR};
+\end{tikzpicture}
+
+\vfill
+{\sffamily\bfseries\color{white}\Large Prof.\ Dr.\ İbrahim GÜNEY}\par\vspace{3mm}
+{\sffamily\color{white!82}Matematiksel Düşünme ve Muhakeme}\par
+\vspace*{1.2cm}
+
+\end{document}

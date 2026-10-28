@@ -1,0 +1,381 @@
+\chapter{Çelişki ile İspat ve Niceleyicili İspatlar}
+\label{chap:celiski-ispat}
+
+
+\section{Çelişki Yoluyla İspat}
+
+\begin{tcolorbox}[bookbox,colback=cDef]
+\textbf{\textsf{\textcolor{cAcc}{Tanım.}}}\quad
+\emph{Çelişki yoluyla ispatta}, gösterilmek istenen önermenin olumsuzu varsayılır ve bu varsayımın kabul edilmiş bilgilerle bağdaşmayan bir sonuca yol açtığı gösterilir.
+\end{tcolorbox}
+
+Çelişki yoluyla ispat (proof by contradiction, reductio ad absurdum), ispatlamak istediğimiz önermenin olumsuzunun doğru olduğunu varsayarak başlayan ve bu varsayımdan bir çelişki (örneğin hem r hem ¬𝑟’nin türetilmesi) elde eden bir yöntemdir. Arka plan varsayımları doğru ve kullanılan çıkarımlar geçerliyse, olumsuz varsayım doğru olamaz; böylece ¬¬𝑝 elde edilir ve klasik mantıkta çift olumsuzlama kaldırılarak p sonucuna varılır (Hammack 2018; Velleman 2006). Bu yöntem, aşağıda vereceğimiz √2’nin irrasyonelliği ispatında kullanılan klasik yöntemdir. ¬𝑝’den çelişki türetmek önce ¬¬𝑝’yi verir; buradan p’ye geçiş klasik çift-olumsuzlama kaldırma kuralını kullanır. Bu kural klasik mantıkta üçüncü hâlin imkânsızlığıyla eşdeğer güçtedir, fakat sezgici mantıkta genel olarak kabul edilmez (Bridges ve Richman 1987; Heyting 1956).
+
+\begin{ornek}[\textbf{$\sqrt2$ irrasyoneldir.}]
+\emph{İspat (çelişki).} $\sqrt2$’nin rasyonel olduğunu varsayalım. O hâlde $\sqrt2=p/q$ olacak biçimde, ortak böleni yalnızca $1$ olan $p,q$ pozitif tam sayıları vardır (her pozitif rasyonel sayı sadeleştirilmiş bir kesir olarak yazılabilir). Eşitliğin iki yanının karesi alınırsa $p^2=2q^2$ bulunur; demek ki $p^2$ çifttir. Bölüm~\ref{chap:dogrudan-ispat}’de kontrapozitif yöntemle ispatladığımız sonuca göre $p$ de çifttir: $p=2k$. Yerine yazınca $4k^2=2q^2$, yani $q^2=2k^2$ elde edilir; aynı gerekçeyle $q$ da çifttir. Böylece $2$, hem $p$’yi hem $q$’yu böler; bu, $p$ ile $q$’nun ortak böleninin yalnızca $1$ olduğu varsayımıyla çelişir. Öyleyse $\sqrt2$ rasyonel değildir. $\square$
+
+\smallskip
+İspatın iki taşıyıcı adımı vardır: kesrin baştan sadeleştirilmiş seçilebilmesi ve ‘$p^2$ çift ise $p$ çifttir’ yardımcı sonucu. Öğrencilerin en sık atladığı yer birincisidir: sadeleştirme varsayımı olmadan ‘ikisi de çift’ sonucu bir çelişki üretmez.
+\end{ornek}
+
+\begin{tcolorbox}[bookbox,colback=cEx]\textbf{\textsf{\textcolor{cAcc}{Örnek.}}}\quad Asal Sayıların Sonsuzluğu: Modern Bir Çelişki Sunumu İddia: Sonsuz sayıda asal sayı vardır. Öklid’in Elementler’inin IX. Kitap 20. önermesi, verilen herhangi bir sonlu asal listesinin ötesinde başka bir asal bulunduğunu yapıcı biçimde gösterir. Aşağıdaki yaygın ders kitabı sunumu aynı temel fikri sonlu bir “tam liste” varsayımından çelişki çıkaracak biçimde yeniden düzenler; Öklid’in özgün ispatının kelimesi kelimesine çelişki ispatı olduğu ileri sürülmemelidir (Euclid 1956, Kitap IX, Önerme 20). İspat: İddianın tersini varsayalım: yalnızca sonlu sayıda asal sayı olduğunu kabul edelim, öyle ki bunlar p1, p2, …, p𝑛 olsun (tüm asal sayıların tam listesi bu olsun). Şimdi şu sayıyı oluşturalım: N = (p1 × p2 × … × p𝑛 ) + 1. N, listedeki her p𝑖 asal sayısına bölündüğünde her zaman 1 kalanını verir (çünkü p1 ×p2 ×…×p𝑛 ifadesi her p𝑖 ’ye tam bölünür). Dolayısıyla N, listedeki hiçbir asal sayıya tam bölünmez. Ancak her tam sayı (1’den büyük olmak kaydıyla) ya asaldır ya da asal sayıların bir çarpımıdır (bu, Bölüm~\ref{sec:guclu}’te güçlü tümevarımla ispatlayacağımız bir sonuçtur).\end{tcolorbox}
+
+𝑁 > 1 olduğundan, N’nin ya kendisi asaldır ya da onu bölen bir asal çarpanı vardır. Ama N’nin listedeki p1, …, p𝑛 asal sayılarının hiçbirine bölünmediğini gösterdik — dolayısıyla N’yi bölen asal sayı, listede olmayan yeni bir asal sayı olmalıdır. Bu, “p1, …, p𝑛 tüm asal sayıların tam listesidir” varsayımıyla doğrudan çelişir. Bu çelişki, başlangıç varsayımımızın (yalnızca sonlu sayıda asal sayı vardır) yanlış olduğunu gösterir; dolayısıyla sonsuz sayıda asal sayı vardır. ∎
+
+Bu modern sunum, tarihsel teoremi güncel sonlu-liste ve asal-çarpan diliyle yeniden ifade eder. Ayrıca N’nin mutlaka asal olduğu iddia edilmez; listede bulunmayan bir asal böleninin olması yeterlidir. İspat, çelişki yoluyla ispatın gücünü çok net biçimde sergiler: “sonsuz sayıda asal sayı vardır” gibi, doğrudan bir biçimde nasıl saldırılacağı belirsiz olan bir iddia, “sonlu olduğunu varsayıp bir saçmalığa ulaşmak” stratejisiyle şıklıkla ispatlanabilmiştir.
+
+\begin{tcolorbox}[bookbox,colback=cEx]\textbf{\textsf{\textcolor{cAcc}{Bilgi Kutusu.}}}\quad Sezgicilerin İtirazı Brouwer’in başlattığı sezgicilik akımının savunucuları (sezgiciler) klasik çelişki ispatının her kullanımını reddetmez. Bir olumsuzluğu göstermek için varsayımdan çelişki türetmek sezgici mantıkta da geçerlidir; tartışmalı adım, genel olarak ¬¬𝑝’den p’ye geçmek ve özellikle tanık vermeyen olumlu varlık sonuçları çıkarmaktır. Bu itiraz, matematiksel ispatın yalnızca teknik bir doğrulama mı, yoksa aynı zamanda kavrayış sağlayan bir açıklama mı olması gerektiği tartışmasına (Bölüm~\ref{chap:dogrudan-ispat}) doğrudan bağlanır. İlginç biçimde, yukarıdaki asal sayı argümanı yapıcı içerik taşır: verilen herhangi bir sonlu asal listeden yeni bir asal bölen bulmaya yönelten somut bir sayı N inşa edilir (Bridges ve Richman 1987; Heyting 1956).\end{tcolorbox}
+
+\section{Durum Ayrımına Dayalı İspat}\label{sec:durum}
+
+Bazı iddiaların ispatı, incelenen durumun birden fazla ayrık alt duruma (case) ayrılmasını ve her alt durumun ayrı ayrı ele alınmasını gerektirir. Buna durum ayrımına dayalı ispat (proof by cases) denir. Bu yöntemin geçerliliği, eğer alt durumlar incelenen tüm olasılıkları tüketiyorsa (yani birlikte incelenen evrenin tamamını kapsıyorsa) ve iddia her alt durumda ayrı ayrı doğrulanmışsa, iddianın genel olarak doğru olduğu sonucuna dayanır. Alt durumların birbirinden ayrık olması sunumu kolaylaştırır, fakat zorunlu koşul değildir; gerekli olan, birlikte bütün olasılıkları kapsamaları ve her olasılığın en az bir doğrulanmış durumda ele alınmasıdır (Hammack 2018). Klasik $(\sqrt2)^{\sqrt2}$ örneği, tam olarak bu yöntemin (üstelik yapıcı olmayan bir biçimde) bir uygulamasıdır: ‘$(\sqrt2)^{\sqrt2}$ ya rasyoneldir ya da irrasyoneldir’ biçiminde iki durum ayrımı yapılmış, her iki durumda da istenen sonuca ulaşıldığı gösterilmişti.
+
+\begin{tcolorbox}[bookbox,colback=cEx]\textbf{\textsf{\textcolor{cAcc}{Örnek.}}}\quad Durum Ayrımına Dayalı İspat (2) İddia: Her n tam sayısı için, n² + n çifttir. İspat: n ya çifttir ya da tektir; bu iki durum tüm tam sayıları tüketir. Durum 1 (n çift): n = 2k olacak şekilde bir k tam sayısı vardır. n² + n = (2k)² + 2k = 4k² + 2k = 2(2k² + k), yani 2’nin bir katıdır, dolayısıyla çifttir. Durum 2 (n tek): n = 2k+1 olacak şekilde bir k tam sayısı vardır. n² + n = (2k+1)² + (2k+1) = (4k²+4k+1) + (2k+1) = 4k² + 6k + 2 = 2(2k² + 3k + 1), yine 2’nin bir katıdır, dolayısıyla çifttir. Her iki durumda da n² + n çift çıktığından, iddia her n tam sayısı için doğrudur. ∎\end{tcolorbox}
+
+Bu örnekte alt durumların (çift ve tek) ayrık ve tüketici olması, ispatın geçerliliği için kritik önem taşır. Eğer alt durumlar tüketici değilse — yani göz ardı edilmiş bir olasılık kalıyorsa — ispat eksik kalır ve geçersiz sayılır.
+
+\section{Varlık ve Teklik İspatları}
+
+Bölüm~\ref{chap:niceleyiciler}’da incelediğimiz varlıksal niceleyici (∃x, P(x)) içeren iddiaları ispatlamanın kendine özgü bir mantığı vardır ve bu, buraya kadar ele aldığımız yöntemlerle yakından ilişkilidir. Bir varlık ispatı (existence proof), belirli bir özelliği (P) sağlayan en az bir x nesnesinin var olduğunu gösterir. Bu, iki temelde farklı stratejiyle yapılabilir: Yapıcı varlık ispatı (constructive existence proof): İstenen özelliği sağlayan bir x nesnesi açıkça inşa edilir ya da gösterilir, ardından bu nesnenin gerçekten P özelliğini sağladığı doğrudan doğrulanır. Yapıcı olmayan varlık ispatı (non-constructive existence proof): İstenen özelliği sağlayan bir x’in varlığı, belirli bir tanık veya onu üreten genel bir yöntem verilmeden gösterilir. Çelişki ve üçüncü hâlin imkânsızlığına dayalı durum ayrımı bunun yaygın yollarıdır, fakat kavram yalnızca bu iki kalıpla sınırlı değildir (Bridges ve Richman 1987). Yukarıdaki $(\sqrt2)^{\sqrt2}$ örneği, klasik bir yapıcı olmayan varlık ispatıdır: ‘irrasyonel bir sayının irrasyonel bir kuvveti rasyonel olabilir’ iddiası ispatlanır, ama tanığın $a=b=\sqrt2$ mi, yoksa $a=(\sqrt2)^{\sqrt2}$, $b=\sqrt2$ mi olduğu ispatın kendisinden anlaşılmaz — tam olarak sezgicilerin itiraz ettiği türden bir ispat.
+
+\begin{tcolorbox}[bookbox,colback=cEx]\textbf{\textsf{\textcolor{cAcc}{Bilgi Kutusu.}}}\quad Güvercin Yuvası İlkesi (Pigeonhole Principle) Güvercin yuvası ilkesi şöyle der: eğer n+1 (ya da daha fazla) nesne n kutuya yerleştirilirse, en az bir kutuda birden fazla nesne bulunmak zorundadır. Örneğin: bir yıl 12 ay içerdiğinden, 13 kişilik herhangi bir grupta, güvercin yuvası ilkesi gereği aynı ayda doğmuş en az iki kişi olmak zorundadır. Genel ifade belirli kişileri adlandırmaz; ancak doğum ayları verilen somut bir grupta uygun çift sonlu bir taramayla bulunur. Bu nedenle sonlu güvercin yuvası ilkesi doğası gereği yapıcı olmayan bir yöntem değildir. Tanığın metinde adlandırılmaması ile tanığı üretecek bir yöntemin bulunmaması birbirinden ayrılmalıdır (Hammack 2018).\end{tcolorbox}
+
+Bir iddia yalnızca bir x’in var olduğunu değil, tek bir x’in var olduğunu (∃!x, P(x) — “tam olarak bir x vardır”) iddia ediyorsa, ispat iki ayrı parçadan oluşmalıdır: Varlık kısmı: İstenen özelliği sağlayan en az bir x’in var olduğu gösterilir (yukarıdaki yöntemlerden biriyle). Teklik kısmı: P özelliğini sağlayan herhangi iki x1 ve x2 nesnesi alınır ve bunların zorunlu olarak eşit olduğu (x1 = x2 ) gösterilir — böylece P’yi sağlayan birden fazla farklı nesnenin olamayacağı kanıtlanmış olur.
+
+\begin{tcolorbox}[bookbox,colback=cEx]\textbf{\textsf{\textcolor{cAcc}{Örnek.}}}\quad Varlık ve Teklik İspatı İddia: a ≠ 0 olmak üzere, her ax + b = 0 doğrusal denkleminin gerçek sayılarda tam olarak bir çözümü vardır. Varlık: x = −b/a alalım (a ≠ 0 olduğundan bu işlem tanımlıdır). a(−b/a) + b = −b + b = 0. Dolayısıyla x = −b/a, denklemi sağlayan bir çözümdür; varlık gösterilmiştir. Teklik: x1 ve x2, denklemin iki çözümü olsun: ax1 + b = 0 ve ax2 + b = 0. Bu iki eşitliği birbirinden çıkarırsak: a(x1 − x2 ) = 0. a ≠ 0 olduğundan, x1 − x2 = 0, yani x1 = x2. Bu, denklemin birden fazla farklı çözümünün olamayacağını gösterir; teklik ispatlanmıştır. ∎\end{tcolorbox}
+
+Bu şablon (“iki çözüm varsayıp bunların eşit olduğunu göstermek”), cebirsel yapılardaki pek çok teklik teoreminde (örneğin bir grupta birim elemanın ya da bir elemanın tersinin tekliğinde) aynı biçimde karşımıza çıkar.
+
+\section{Karşı Örnekle Çürütme}
+
+Evrensel niceleyici içeren bir iddiayı (∀x, P(x)) çürütmek için, iddianın ispatlanmasına gerek yoktur — Bölüm~\ref{chap:niceleyiciler}’daki niceleyici olumsuzlama kuralına göre, ¬(∀x P(x)) ≡ ∃x ¬P(x) olduğundan, tek bir karşı örnek (P(x)’in sağlanmadığı tek bir x) bulmak, iddianın yanlış olduğunu göstermeye yeterlidir (Velleman 2006; Hammack 2018).
+
+\begin{tcolorbox}[bookbox,colback=cEx]\textbf{\textsf{\textcolor{cAcc}{Örnek.}}}\quad Karşı Örnekle Çürütme İddia: “Her asal sayı tektir.” Bu iddia, x = 2 karşı örneğiyle (2 asaldır ama tek değildir) anında çürütülür. Milyonlarca tek asal sayının (3, 5, 7, 11, …) varlığı, bu tek karşı örneğin gücünü hiçbir şekilde azaltmaz — bir evrensel iddianın çürütülmesi için, iddiayı ihlal eden bir tek örnek yeterlidir.\end{tcolorbox}
+
+\begin{tcolorbox}[bookbox,colback=cEx]\textbf{\textsf{\textcolor{cAcc}{Örnek.}}}\quad Karşı Örnekle Çürütme (2): Euler’in Asal Üreten Polinomu İddia: Her n doğal sayısı (n = 0, 1, 2, …) için, n² + n + 41 ifadesinin değeri bir asal sayıdır. Bu iddia ilk bakışta oldukça inandırıcı görünür: n = 0 için 41 (asal), n = 1 için 43 (asal), n = 2 için 47 (asal), … ve gerçekten de n = 0’dan n = 39’a kadar toplam 40 ardışık değer için ifade her seferinde bir asal sayı üretir. Ancak n = 40 için: 40² + 40 + 41 = 1681 = 41², dolayısıyla asal değildir; iddia n = 40 karşı örneğiyle çürütülür. Bu örnek, bir örüntünün 40 ardışık örnekte doğrulanmış olmasının bile onu genel bir yasa olarak kabul etmek için yeterli olmadığını gösterir; polinom geleneksel olarak Euler’in asal üreten polinomu diye anılır (Stillwell 2002).\end{tcolorbox}
+
+Bu asimetri —bir evrensel iddiayı ispatlamak için tüm örnekleri kontrol etmek (ya da genel bir akıl yürütme sunmak) gerekirken, çürütmek için tek bir örnek yeterli olması— matematiksel akıl yürütmenin en temel mantıksal özelliklerinden biridir ve Bölüm~\ref{chap:dogrudan-ispat}’de Goldbach Sanısı örneğinde de vurguladığımız bir noktadır. Bununla birlikte matematiksel bir formüle karşı örnek vermek ile deneysel bir bilim kuramını gözlem yoluyla yanlışlamak aynı süreç değildir: gözlemlerin ölçüm, yeniden üretilebilirlik ve yardımcı varsayımlar bakımından ayrıca değerlendirilmesi gerekir. Popper’ın yanlışlanabilirlik yaklaşımı bu mantıksal asimetriden yararlanır, fakat bilimsel yöntemi yalnızca tekil bir matematiksel karşı örnek şemasına indirgemez (Popper 2002, ss. 18–22).
+
+\section{İspat Yöntemlerini Seçme: Pratik Bir Kılavuz}
+
+Bu bölümde tanıtılan yöntemler arasında kesin, mekanik bir seçim kuralı yoktur; hangi yöntemin en uygun olduğuna karar vermek, matematiksel deneyimle gelişen bir sezgi gerektirir. Yine de birkaç genel eğilim yol gösterici olabilir: p’den q’ya doğal bir akıl yürütme varsa doğrudan ispat tercih edilir; sonucun olumsuzu daha işlenebilir bir başlangıç noktası sunuyorsa kontrapozitif kullanılır; iddia “böyle bir şey yoktur” ya da “sonsuz sayıda vardır” gibi bir yapıdaysa çelişki yoluyla ispat denenebilir; iddia doğal sayıların tümü için tanımlıysa tümevarım (gerekirse güçlü tümevarım) denenir; nesneler doğal alt
+
+kategorilere ayrılıyorsa durum ayrımı uygundur; iddia bir nesnenin var olduğunu söylüyorsa önce yapıcı bir ispat aranır; iddianın yanlış olduğundan şüpheleniliyorsa önce bir karşı örnek aranmalıdır. Pratikte deneyimli bir matematikçi genellikle birden fazla yöntemi aynı anda “dener”; yöntemler birbirini dışlamaz, karmaşık ispatlar genellikle bu tekniklerin bileşimidir. Bu esneklik, ispatın yalnızca mekanik bir prosedür değil, —Bölüm~\ref{chap:dogrudan-ispat}’de tartıştığımız gibi— aynı zamanda yaratıcı bir zanaat olduğunu hatırlatır (Pólya 2004; Velleman 2006).
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[node distance=5mm and 5mm]
+  \node[schemeaccent,text width=3.0cm] (start) {\textbf{İddianın biçimini belirle}};
+  \node[schemenode,text width=2.7cm,below left=of start] (imp) {$p\to q$ biçiminde mi?};
+  \node[schemenode,text width=2.7cm,below=of start] (natural) {Doğal sayılar için mi?};
+  \node[schemenode,text width=2.7cm,below right=of start] (exist) {Varlık iddiası mı?};
+  \node[schemeaccent,text width=2.7cm,below=of imp] (direct) {Doğrudan ispat veya kontrapozitif};
+  \node[schemeaccent,text width=2.7cm,below=of natural] (induction) {Tümevarım veya güçlü tümevarım};
+  \node[schemeaccent,text width=2.7cm,below=of exist] (construct) {Tanık üret; gerekirse çelişki kullan};
+  \node[schemenode,text width=8.9cm,below=12mm of induction] (check) {İddianın yanlış olabileceğini düşünüyorsanız önce karşı örnek arayın; nesneler doğal sınıflara ayrılıyorsa durum ayrımı yapın.};
+  \draw[schemearrow] (start)--(imp); \draw[schemearrow] (start)--(natural); \draw[schemearrow] (start)--(exist);
+  \draw[schemearrow] (imp)--(direct); \draw[schemearrow] (natural)--(induction); \draw[schemearrow] (exist)--(construct);
+  \draw[schemearrow] (direct)--(check); \draw[schemearrow] (induction)--(check); \draw[schemearrow] (construct)--(check);
+\end{tikzpicture}
+\caption{İspat yöntemi seçiminde yol gösterici karar ağacı.}
+\end{figure}
+
+\section{Yöntem Seçimini Görmek: Bir Karar Ağacı}
+
+Bir iddiayı ispatlamaya başlamadan önce onun mantıksal biçimine bakmak, yöntem seçimini büyük ölçüde belirler. Aşağıdaki ağaç bir reçete değil, ilk hamle için bir yön bulma aracıdır; çoğu gerçek ispat birden fazla yöntemi iç içe kullanır.
+
+\begin{figure}[htbp]
+\centering
+\resizebox{\linewidth}{!}{%
+\begin{tikzpicture}[b/.style={node box,font=\sffamily\small,text width=2.7cm,minimum height=1.05cm},
+  q/.style={node acc,font=\sffamily\small,text width=2.7cm,minimum height=1.05cm},>={Stealth[length=6pt]}]
+\node[node warm,font=\sffamily\small\bfseries,text width=3.4cm] (r) at (0,0) {İddianın biçimi nedir?};
+\node[q] (u) at (-6.3,-1.9) {$\forall x\,(P\Rightarrow Q)$};
+\node[q] (e) at (-2.1,-1.9) {$\exists x\,P(x)$};
+\node[q] (eu) at (2.1,-1.9) {$\exists!x\,P(x)$};
+\node[q] (n) at (6.3,-1.9) {$\neg\forall x\,P(x)$};
+\foreach \t in {u,e,eu,n}{\draw[arr] (r)--(\t);}
+\node[b] (u1) at (-7.7,-4.0) {Doğrudan: $P$’den $Q$’ya};
+\node[b] (u2) at (-4.9,-4.0) {$\neg Q$ daha elverişliyse: kontrapozitif ya da çelişki};
+\node[b] (e1) at (-2.1,-4.0) {Tanık göster (yapıcı) ya da yokluğunu çelişkiye götür};
+\node[b] (eu1) at (2.1,-4.0) {Varlık \emph{ve} iki çözümü eşitleme};
+\node[b] (n1) at (6.3,-4.0) {Tek bir karşı örnek yeter};
+\draw[arr] (u)--(u1); \draw[arr] (u)--(u2); \draw[arr] (e)--(e1); \draw[arr] (eu)--(eu1); \draw[arr] (n)--(n1);
+\node[small lbl,text=mid] at (-6.3,-5.0) {sonlu sayıda durum varsa: durum ayrımı};
+\node[small lbl,text=mid] at (2.1,-5.0) {doğal sayılar üzerinde: tümevarım (Böl.~\ref{chap:tumevarim})};
+\end{tikzpicture}}%
+\caption{İspat yöntemi seçimi için bir yön bulma ağacı. Oklar zorunluluk değil, ilk denenecek hamleyi gösterir.}
+\end{figure}
+
+\begin{ornek}[\textbf{Öklid’in ispatı ve sık yapılan bir hata.}]
+\emph{İddia:} Sonsuz sayıda asal sayı vardır. \emph{İspat (çelişki):} Asalların sonlu sayıda olduğunu varsayalım: $p_1,p_2,\dots,p_n$. $N=p_1p_2\cdots p_n+1$ sayısını düşünelim. $N>1$ olduğundan en az bir asal böleni $q$ vardır. $q$ listedeki asallardan biri olsaydı hem $N$’yi hem $p_1\cdots p_n$’yi, dolayısıyla farklarını, yani 1’i bölerdi — olanaksız. Öyleyse $q$ listede yoktur; bu, listenin bütün asalları içerdiği varsayımıyla çelişir. $\square$
+
+\smallskip
+\emph{Yaygın hata:} ‘$N=p_1\cdots p_n+1$ sayısı asaldır’ demek. İspat bunu söylemez, yalnızca $N$’nin listede olmayan bir asal \emph{böleni} olduğunu söyler. Nitekim $2\cdot3\cdot5\cdot7\cdot11\cdot13+1=30031=59\cdot509$ bileşiktir. Bu örnek, bir ispatın \emph{tam olarak neyi} kanıtladığını okumanın, onu yazmak kadar önemli olduğunu gösterir. İspat, çelişkiye dayanmasına rağmen, yapıcı bir öz de taşır: herhangi bir sonlu asal listesinden, listede olmayan bir asal üretmenin yöntemini verir.
+\end{ornek}
+
+\begin{sinif}[Sınıfta · ‘Bu ispat neyi kanıtladı?’]
+Öğrencilere Öklid’in ispatını verin ve şu üç cümlenin her biri için ‘ispat bunu gösterir / göstermez’ kararı istetin: (a) $p_1\cdots p_n+1$ asaldır; (b) $p_1\cdots p_n+1$’in listede olmayan bir asal böleni vardır; (c) en büyük asal yoktur. Ardından (a)’yı 30031 örneğiyle çürütün. Etkinlik, ispatın sonuç cümlesini kendi iddiasından ayırt etmeyi öğretir.
+\end{sinif}
+
+\section[Yüksek Lisans Derinleştirmesi: İyi Temellendirme, Değişmezler ve Yapıcı İçerik]{Yüksek Lisans Derinleştirmesi:\\ İyi Temellendirme, Değişmezler ve Yapıcı İçerik}
+
+İspat yöntemleri ayrı reçeteler olmaktan çok, bir problemin mantıksal ve yapısal özelliklerine verilen yanıtlardır. Tümevarım iyi temellendirmeye, algoritmik ispatlar değişmezlere ve varlık ispatları tanık üretme ölçütlerine bağlanabilir.
+
+\textbf{Bu kısmın hedefleri.} Bu kısmı tamamladığınızda doğal sayı tümevarımını iyi temellendirilmiş tümevarımın özel durumu olarak gösterebilecek, minimal
+
+
+karşı örnek yöntemini yeniden kurabilecek, döngü değişmezi ve azalan ölçüyle kısmi ve tam doğruluğu ayırabilecek ve varlık ispatlarının yapıcı içeriğini değerlendirebileceksiniz.
+
+10.9.1 İyi Temellendirilmiş Tümevarım (𝐴, ≺) ilişkisinde her boş olmayan alt kümenin bir ≺-minimal elemanı varsa ilişki iyi temellendirilmiştir. Şu ilke geçerlidir:
+
+[∀𝑎 ∈ 𝐴 ((∀𝑏 ≺ 𝑎 𝑃 (𝑏)) → 𝑃 (𝑎))] ⟹ ∀𝑎 ∈ 𝐴 𝑃 (𝑎).
+
+Aksi hâlde karşı örnekler kümesinin minimal bir 𝑎 elemanı olurdu; bütün 𝑏 ≺ 𝑎 için 𝑃 (𝑏) geçerli olduğundan tümevarım adımı 𝑃 (𝑎)’yı verir ve çelişki doğardı. Doğal sayı tümevarımı, (ℕ, <) ilişkisinin iyi temellendirilmiş olmasının özel durumudur (Velleman 2006; Hammack 2018). Bu argüman minimal karşı örnek yöntemi ile güçlü tümevarımın aynı yapısal çekirdeği paylaştığını gösterir.
+
+10.9.2 Döngü Değişmezi ve Sonlanma Ölçüsü Bir algoritmanın doğruluğu iki parçaya ayrılır:
+
+\begin{itemize}\setlength{\itemsep}{2pt}\setlength{\parskip}{0pt}
+\item Kısmi doğruluk: algoritma durursa sonuç istenen özelliği sağlar;
+\item Sonlanma: algoritma her geçerli girdide gerçekten durur.
+\end{itemize}
+
+Döngü değişmezi 𝐼, başlangıçta doğru olan ve her yinelemede korunan önermedir. Sonlanma için ise iyi temellendirilmiş bir kümede her adımda azalan 𝜇 ölçüsü kullanılır. Öklid algoritmasında
+
+(𝑎, 𝑏) ⟼ (𝑏, 𝑎 mod 𝑏) adımında ikinci bileşen 0 ≤ 𝑎 mod 𝑏 < 𝑏 olduğundan doğal sayı ölçüsü azalır; gcd(𝑎, 𝑏) = gcd(𝑏, 𝑎 mod 𝑏) eşitliği değişmezdir. İkisi birlikte algoritmanın durup doğru ortak böleni vermesini sağlar.
+
+10.9.3 Varlık İspatının Ürettiği Bilgi ∃𝑥 𝑃 (𝑥) sonucuna üç farklı yoldan ulaşılabilir: açık bir tanık vermek, tanığı üreten bir algoritma kurmak veya tanık olmadığını varsayıp çelişki elde etmek. Klasik mantıkta üçü de varlık ispatı olabilir; yapıcı yaklaşımlarda sonuncusu genel olarak hesaplanabilir bir tanık sağlamaz (Bridges ve Richman 1987; Heyting 1956).
+
+Bu fark, “ispatlandı” ile “hesaplanabilir biçimde üretildi” ifadelerini ayırmayı gerektirir. Sonlu arama veya etkili bir seçim yöntemi varsa klasik varlık kanıtı sonradan yapıcılaştırılabilir; genel durumda ek ilke gerekir.
+
+10.9.4 Seminer ve Araştırma Çalışmaları 1. Güçlü tümevarım, minimal karşı örnek ve iyi temellendirilmiş tümevarımın eşdeğerliğini doğal sayılar üzerinde gösterin.
+
+2. Öklid algoritması için değişmez ve azalan ölçüyü kullanarak tam doğruluk ispatı yazın.
+
+3. Bir sıralama algoritması için döngü değişmezi tasarlayın.
+
+4. Tanık veren ve yalnızca çelişkiyle varlık gösteren iki ispatı bilgi içeriği bakımından karşılaştırın.
+
+5. Bir matematik teoreminin ispatını algoritmaya dönüştürmenin hangi ek koşulları gerektirdiğini araştıran seminer raporu hazırlayın.
+
+\section*{Bölüm Özeti}
+
+Matematikte başlıca ispat yöntemleri şunlardır: doğrudan ispat (p’den doğrudan q’ya ulaşma), kontrapozitif ile ispat (¬q → ¬p’yi ispatlayarak p → q’yu gösterme), çelişki yoluyla ispat (¬p’den çelişki türeterek p’yi gösterme), matematiksel tümevarım (temel adım + tümevarım adımıyla, doğal sayılarla ilgili evrensel iddiaları ispatlama) ve durum ayrımına dayalı ispat (tüketici alt durumların her birini ayrı ayrı inceleme). Bir evrensel iddiayı çürütmek için ise tek bir karşı örnek yeterlidir. Çelişki yoluyla ispat, çift olumsuzlama kaldırma yoluyla olumlu bir var oluş sonucu verdiği hâlde tanık üretmediğinde, sezgici açıdan yapıcı ölçütü karşılamayabilir.
+
+\section*{Gözden Geçirme Soruları}
+
+\par\noindent 1. “n² tek ise n tektir” iddiasını kontrapozitif yöntemiyle ispatlayınız.
+
+\par\noindent 2. Klasik çelişki ispatında ¬¬𝑝’den p’ye geçişin üçüncü hâlin imkânsızlığı ilkesiyle ilişkisini açıklayınız.
+
+\par\noindent 3. Matematiksel tümevarımın temel adımı ile tümevarım adımının her ikisinin de neden gerekli olduğunu, yalnızca birinin yeterli olmayacağını örnekle tartışınız.
+
+\par\noindent 4. Zayıf tümevarım ile güçlü tümevarım arasındaki farkı açıklayınız.
+
+\par\noindent 5. “Tüm kuğular beyazdır” iddiasının bir karşı örnekle nasıl çürütülebileceğini tartışınız ve bu örneği bilim felsefesindeki yanlışlanabilirlik kavramıyla ilişkilendiriniz.
+
+\section*{Çoktan Seçmeli Sorular}
+
+\par\smallskip\noindent 1. Doğrudan ispat yönteminin temel mantığı aşağıdakilerden hangisidir?
+
+\par\noindent\hspace*{1.6em}A) ¬p’nin doğru olduğunu varsayıp bir çelişkiye ulaşmak
+
+\par\noindent\hspace*{1.6em}B) p’nin doğru olduğunu varsayıp geçerli adımlarla doğrudan q’ya ulaşmak
+
+\par\noindent\hspace*{1.6em}C) ¬q → ¬p önermesini ispatlamak
+
+\par\noindent\hspace*{1.6em}D) Tek bir karşı örnek bulmak
+
+\par\smallskip\noindent 2. “İki tek sayının toplamı çifttir” ispatında, m ve n tek sayıları için m = 2a+1 ve n = 2b+1 yazılırken farklı değişkenler (a ve b) kullanılmasının nedeni nedir?
+
+\par\noindent\hspace*{1.6em}A) Cebirsel işlemleri kısaltmak için
+
+\par\noindent\hspace*{1.6em}B) Sonucun çift değil tek çıkmasını sağlamak için
+
+\par\noindent\hspace*{1.6em}C) Tümevarım hipotezine ihtiyaç duymamak için
+
+\par\noindent\hspace*{1.6em}D) m ve n’nin aynı sayı olduğunu varsaymamak, yani genelliği korumak için
+
+\par\smallskip\noindent 3. “p → q” önermesinin kontrapozitifi aşağıdakilerden hangisidir?
+
+\par\noindent\hspace*{1.6em}A) ¬q → ¬p
+
+\par\noindent\hspace*{1.6em}B) q → p
+
+\par\noindent\hspace*{1.6em}C) ¬p → ¬q
+
+\par\noindent\hspace*{1.6em}D) p ∧ ¬q
+
+\par\smallskip\noindent 4. “Eğer n² çift ise, n çifttir” iddiası neden doğrudan değil kontrapozitif yöntemle ispatlanır?
+
+\par\noindent\hspace*{1.6em}A) Çünkü iddia yanlıştır
+
+\par\noindent\hspace*{1.6em}B) Çünkü kontrapozitif her zaman doğrudan ispattan daha kısadır
+
+\par\noindent\hspace*{1.6em}C) Çünkü n²’nin çift olmasından n’nin çift olduğunu doğrudan türetmek doğal bir yol sunmaz, oysa “n tek ise n² tektir” cebirsel olarak kolayca gösterilir
+
+\par\noindent\hspace*{1.6em}D) Çünkü doğrudan ispat yalnızca eşitsizlikler için kullanılabilir
+
+\par\smallskip\noindent 5. Klasik mantıkta çift olumsuzlamanın kaldırılmasıyla eşdeğer güçte olan ilke hangisidir?
+
+\par\noindent\hspace*{1.6em}A) p → (q → p)
+
+\par\noindent\hspace*{1.6em}B) (p ∧ q) → p
+
+\par\noindent\hspace*{1.6em}C) p ↔ ¬¬p
+
+\par\noindent\hspace*{1.6em}D) p ∨ ¬p
+
+\par\smallskip\noindent 6. Öklid’in asal sayıların sonsuzluğu ispatında, p1 ×p2 ×…×p𝑛 + 1 sayısının oluşturulmasının amacı nedir?
+
+\par\noindent\hspace*{1.6em}A) Listedeki hiçbir asal sayıya tam bölünmeyen, dolayısıyla listede olmayan bir asal çarpanı olması gereken bir sayı elde etmek
+
+\par\noindent\hspace*{1.6em}B) Bu sayının kesinlikle asal olduğunu göstermek
+
+\par\noindent\hspace*{1.6em}C) Sonsuz bir toplam formülü elde etmek
+
+\par\noindent\hspace*{1.6em}D) Tümevarım hipotezini kurmak
+
+\par\smallskip\noindent 7. Sezgiciler, klasik çelişki yoluyla ispata özellikle hangi kullanımda itiraz eder?
+
+\par\noindent\hspace*{1.6em}A) Bölünebilirlikle ilgili iddialarda
+
+\par\noindent\hspace*{1.6em}B) Olumlu varlık iddialarında, çelişkiden sonra somut bir tanık üretmeden çift olumsuzlamayı kaldırdığında
+
+\par\noindent\hspace*{1.6em}C) Yalnızca geometri ile ilgili iddialarda
+
+\par\noindent\hspace*{1.6em}D) Yalnızca sonlu kümelerle ilgili iddialarda
+
+\par\smallskip\noindent 8. Matematiksel tümevarımda “temel adım” (base case) neyi gösterir?
+
+\par\noindent\hspace*{1.6em}A) P(k) doğruysa P(k+1)’in de doğru olduğunu
+
+\par\noindent\hspace*{1.6em}B) İddianın tüm negatif tam sayılar için doğru olduğunu
+
+\par\noindent\hspace*{1.6em}C) İddianın başlangıç değeri n0 için doğru olduğunu
+
+\par\noindent\hspace*{1.6em}D) İddianın yanlış olduğunu
+
+\par\smallskip\noindent 9. Matematiksel tümevarımda “tümevarım adımı” tam olarak neyi ispatlar?
+
+\par\noindent\hspace*{1.6em}A) P(n0 )’ın doğru olduğunu
+
+\par\noindent\hspace*{1.6em}B) Her n için P(n)’nin yanlış olduğunu
+
+\par\noindent\hspace*{1.6em}C) n0 ’ın var olmadığını
+
+\par\noindent\hspace*{1.6em}D) Herhangi bir k için, P(k) doğruysa P(k+1)’in de doğru olduğunu
+
+\par\smallskip\noindent 10. Zayıf tümevarım ile güçlü tümevarım arasındaki temel fark nedir?
+
+\par\noindent\hspace*{1.6em}A) Güçlü tümevarımda, tümevarım adımında yalnızca P(k) değil, n0 ’dan k’ya kadar olan tüm önermelerin doğruluğu varsayılır
+
+\par\noindent\hspace*{1.6em}B) Zayıf tümevarımda temel adım yoktur
+
+\par\noindent\hspace*{1.6em}C) Güçlü tümevarım yalnızca asal sayılar için kullanılabilir
+
+\par\noindent\hspace*{1.6em}D) Zayıf tümevarım sonsuz kümelerde geçersizdir
+
+\par\smallskip\noindent 11. “Tüm atlar aynı renktedir” biçimindeki yanlış tümevarım “ispatı”nda hata nerede ortaya çıkar?
+
+\par\noindent\hspace*{1.6em}A) Temel adımın (n=1) kendisinde
+
+\par\noindent\hspace*{1.6em}B) k=1’den k=2’ye geçerken, “ilk k at” ile “son k at” alt gruplarının ortak elemanı olmadığı için bağlantı kurulamamasında
+
+\par\noindent\hspace*{1.6em}C) Formülün cebirsel olarak yanlış hesaplanmasında
+
+\par\noindent\hspace*{1.6em}D) Güçlü tümevarımın zayıf tümevarımla karıştırılmasında
+
+\par\smallskip\noindent 12. Matematiksel tümevarımın aksiyomatik sunumu aşağıdakilerden hangisinde doğru ifade edilmiştir?
+
+\par\noindent\hspace*{1.6em}A) Öklid’in beş postülatı
+
+\par\noindent\hspace*{1.6em}B) Zermelo-Fraenkel küme kuramı aksiyomları
+
+\par\noindent\hspace*{1.6em}C) İkinci-derece Peano sisteminde bir tümevarım aksiyomu, birinci-derece Peano aritmetiğinde ise tümevarım şeması
+
+\par\noindent\hspace*{1.6em}D) Boole cebri aksiyomları
+
+\par\smallskip\noindent 13. Durum ayrımına dayalı bir ispatın geçerli sayılması için alt durumların hangi özelliği taşıması gerekir?
+
+\par\noindent\hspace*{1.6em}A) Alt durumların sayısının ikiden fazla olması
+
+\par\noindent\hspace*{1.6em}B) Alt durumların birbirine eşit uzunlukta ispatlar gerektirmesi
+
+\par\noindent\hspace*{1.6em}C) Alt durumlardan yalnızca birinin doğru olması
+
+\par\noindent\hspace*{1.6em}D) Alt durumların incelenen tüm olasılıkları tüketmesi (birlikte tüm evreni kapsaması)
+
+\par\smallskip\noindent 14. “Her n tam sayısı için n² + n çifttir” iddiasının durum ayrımıyla ispatında hangi iki alt durum kullanılır?
+
+\par\noindent\hspace*{1.6em}A) n çift ve n tek
+
+\par\noindent\hspace*{1.6em}B) n pozitif ve n negatif
+
+\par\noindent\hspace*{1.6em}C) n asal ve n asal değil
+
+\par\noindent\hspace*{1.6em}D) n rasyonel ve n irrasyonel
+
+\par\smallskip\noindent 15. Yapıcı (constructive) varlık ispatı ile yapıcı olmayan (nonconstructive) varlık ispatı arasındaki fark nedir?
+
+\par\noindent\hspace*{1.6em}A) Yapıcı ispat yalnızca geometri problemlerinde kullanılır
+
+\par\noindent\hspace*{1.6em}B) Yapıcı ispat istenen özelliği sağlayan nesneyi açıkça gösterir; yapıcı olmayan ispat yalnızca böyle bir nesnenin var olması gerektiğini, nesneyi belirtmeden gösterir
+
+\par\noindent\hspace*{1.6em}C) Yapıcı olmayan ispat her zaman yanlış sonuç verir
+
+\par\noindent\hspace*{1.6em}D) Aralarında fark yoktur, ikisi de aynı anlama gelir
+
+\par\smallskip\noindent 16. Güvercin yuvası ilkesine (pigeonhole principle) göre, n+1 nesne n kutuya yerleştirildiğinde ne olur?
+
+\par\noindent\hspace*{1.6em}A) Her kutuda tam olarak bir nesne bulunur
+
+\par\noindent\hspace*{1.6em}B) En az bir kutu boş kalır
+
+\par\noindent\hspace*{1.6em}C) En az bir kutuda birden fazla nesne bulunmak zorundadır
+
+\par\noindent\hspace*{1.6em}D) Nesnelerin dağılımı belirlenemez
+
+\par\smallskip\noindent 17. Bir “tam olarak bir x vardır” (∃!x, P(x)) iddiasının ispatı, hangi iki bölümden oluşmalıdır?
+
+\par\noindent\hspace*{1.6em}A) Sadece varlık kısmı yeterlidir
+
+\par\noindent\hspace*{1.6em}B) Sadece karşı örnek kısmı
+
+\par\noindent\hspace*{1.6em}C) Temel adım ve tümevarım adımı
+
+\par\noindent\hspace*{1.6em}D) Varlık kısmı (bir x’in var olduğunu gösterme) ve teklik kısmı (iki çözümün eşit olduğunu gösterme)
+
+\par\smallskip\noindent 18. Bir evrensel iddiayı (∀x, P(x)) çürütmek için karşı örnek bulmanın yeterli olmasının mantıksal dayanağı nedir?
+
+\par\noindent\hspace*{1.6em}A) ¬(∀x P(x)) ≡ ∃x ¬P(x) eşdeğerliği
+
+\par\noindent\hspace*{1.6em}B) p ∨ ¬p tautolojisi
+
+\par\noindent\hspace*{1.6em}C) De Morgan yasasının önermeler mantığı biçimi
+
+\par\noindent\hspace*{1.6em}D) Modus ponens kuralı
+
+\par\smallskip\noindent 19. Euler’in n² + n + 41 polinomunun “her n için asal sayı ürettiği” iddiası hangi n değeriyle çürütülür?
+
+\par\noindent\hspace*{1.6em}A) n = 0
+
+\par\noindent\hspace*{1.6em}B) n = 40
+
+\par\noindent\hspace*{1.6em}C) n = 1
+
+\par\noindent\hspace*{1.6em}D) n = 39
+
+\par\smallskip\noindent 20. bu bölümdeki pratik kılavuz’de sunulan pratik kılavuza göre, bir iddia “sonsuz sayıda vardır” ya da “böyle bir şey yoktur” biçimindeyse, hangi yöntem genellikle en etkili yoldur?
+
+\par\noindent\hspace*{1.6em}A) Doğrudan ispat
+
+\par\noindent\hspace*{1.6em}B) Durum ayrımına dayalı ispat
+
+\par\noindent\hspace*{1.6em}C) Çelişki yoluyla ispat
+
+\par\noindent\hspace*{1.6em}D) Karşı örnekle çürütme
+
+\clearpage
+
+\clearpage

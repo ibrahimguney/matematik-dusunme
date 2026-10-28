@@ -1,0 +1,199 @@
+\chapter{Sentez ve Matematik Eğitimine Yansımalar}
+\label{chap:sentez}
+
+
+\subsection*{Öğrenme Hedefleri}
+
+Bu bölümü tamamladığınızda:
+
+\begin{itemize}\setlength{\itemsep}{2pt}\setlength{\parskip}{0pt}
+\item Dersin tüm bölümleri arasındaki kavramsal bağlantıları bütüncül biçimde özetleyebileceksiniz.
+\item Matematik felsefesi ile eğitim felsefesi arasındaki ilişkiyi tartışabileceksiniz.
+\item Matematik eğitimindeki çağdaş eğilim ve tartışmaları, dayandıkları kanıtların kapsamını gözeterek değerlendirebileceksiniz.
+\item Kendi matematik anlayışınızı, ders boyunca incelenen felsefi çerçeveler ışığında yeniden değerlendirebileceksiniz.
+\end{itemize}
+
+\section{Dersin Kavramsal Haritası}
+
+Bu kitabın başında (Bölüm~\ref{chap:matematigin-dogasi}), matematik felsefesinin iki temel sorusunu —matematiksel nesnelerin nasıl var olduğu ve matematiksel bilginin nasıl mümkün olduğu— tanıttık ve matematiksel kesinliğin kaynağını sorguladık (Wigner 1960; Benacerraf 1973; Shapiro 2000). Bölüm~\ref{chap:muhakeme-turleri} ve~\ref{chap:muhakeme-ogretimi}, bu kesinliğe giden yolları ayırt etti: tümdengelim, tümevarım, abdüksiyon ve analoji; van Hiele düzeyleri, ispat şemaları ve muhakemenin öğretimi.
+
+Bölüm~\ref{chap:onermeler-mantigi}--\ref{chap:niceleyiciler}, matematiksel düşünmenin dilini kurdu: önermeler, bağlaçlar, argüman geçerliliği, değişkenler ve niceleyiciler. Bölüm~\ref{chap:dogrudan-ispat}--\ref{chap:tumevarim} bu dili doğrudan, kontrapozitif, çelişki ve tümevarım yöntemleriyle gerekçelendirme pratiğine dönüştürdü. Bölüm~\ref{chap:kumeler}--\ref{chap:kardinalite} ise bu yöntemleri kümeler, bağıntılar, kongrüanslar, fonksiyonlar ve sonsuzluk üzerinde işletti; kardinalitenin sonunda karşılaştığımız süreklilik hipotezi, en temel görünen bir sorunun bile seçilen aksiyomlarca belirlenemeyebileceğini göstererek kitabı yeniden başlangıçtaki kesinlik sorusuna bağladı.
+
+\par\smallskip\begin{center}{\renewcommand{\arraystretch}{1.25}\footnotesize\begin{tabular}{|>{\raggedright\arraybackslash}p{2.59cm}|>{\raggedright\arraybackslash}p{5.43cm}|>{\raggedright\arraybackslash}p{2.10cm}|}\hline
+\rowcolor{cAcc}\textcolor{white}{\bfseries Boyut} & \textcolor{white}{\bfseries İçerik} & \textcolor{white}{\bfseries Bölümler} \\ \hline
+\textbf{Temeller} & Matematiğin doğası, muhakeme türleri, düşünme düzeyleri & Bölüm~\ref{chap:matematigin-dogasi}--\ref{chap:muhakeme-ogretimi} \\ \hline
+\textbf{Mantıksal Dil} & Önermeler, geçerlilik, değişkenler ve niceleyiciler & Bölüm~\ref{chap:onermeler-mantigi}--\ref{chap:niceleyiciler} \\ \hline
+\textbf{İspat} & Doğrudan, kontrapozitif, çelişki ve tümevarım & Bölüm~\ref{chap:dogrudan-ispat}--\ref{chap:tumevarim} \\ \hline
+\textbf{Matematiksel Yapılar} & Kümeler, bağıntılar, kongrüanslar, fonksiyonlar ve sonsuzluk & Bölüm~\ref{chap:kumeler}--\ref{chap:kardinalite} \\ \hline
+\textbf{Eğitime Yansımalar} & Muhakeme öğretimi, ders tasarımı, çağdaş eğilimler & Bölüm~\ref{chap:muhakeme-ogretimi}, \ref{chap:sentez} \\ \hline
+\end{tabular}}\end{center}\par\smallskip
+
+{\small\itshape\sffamily\color{gray}Kitabın kavramsal halkası. Muhakeme, mantıksal dil, ispat ve matematiksel yapılar arasında karşılıklı bir etkileşim vardır; eğitimsel yansımalar her aşamaya geri döner.}
+
+\section{Kavramlar Arası Bağlantılar: Bir Harita}
+
+Kitabın beş kısmı doğrusal bir sıra izler; ama kavramlar arasındaki ilişkiler doğrusal değildir. Aşağıdaki harita, bölümler arasındaki başlıca ‘geri dönüşleri’ gösterir: mantıksal dil ispat yöntemlerinin, ispat yöntemleri de matematiksel yapıların önkoşuludur; yapılar ise yeni ispat ihtiyaçları doğurarak geriye doğru besler.
+
+\begin{figure}[htbp]
+\centering
+\resizebox{\linewidth}{!}{%
+\begin{tikzpicture}[b/.style={node box,text width=3.3cm,minimum height=1.25cm,font=\sffamily\small},>={Stealth[length=6pt]}]
+\node[b,fill=accl,draw=acc] (dog) at (0,3.2) {\textbf{Matematiğin doğası}\\{\scriptsize Böl. \ref{chap:matematigin-dogasi}}};
+\node[b,fill=accl,draw=acc] (muh) at (5.4,3.2) {\textbf{Muhakeme türleri}\\{\scriptsize Böl. \ref{chap:muhakeme-turleri}}};
+\node[b,fill=warml,draw=warm] (dil) at (10.8,3.2) {\textbf{Mantıksal dil}\\{\scriptsize Böl. \ref{chap:onermeler-mantigi}--\ref{chap:niceleyiciler}}};
+\node[b,fill=grnl,draw=grn] (isp) at (10.8,0.4) {\textbf{İspat yöntemleri}\\{\scriptsize Böl. \ref{chap:dogrudan-ispat}--\ref{chap:tumevarim}}};
+\node[b,fill=grnl,draw=grn] (yap) at (5.4,0.4) {\textbf{Matematiksel yapılar}\\{\scriptsize Böl. \ref{chap:kumeler}--\ref{chap:kardinalite}}};
+\node[b] (sur) at (0,0.4) {\textbf{Süreklilik hipotezi}\\{\scriptsize bağımsızlık, Böl. \ref{chap:kardinalite}}};
+\node[b,fill=white] (egt) at (5.4,-2.3) {\textbf{Eğitime yansımalar}\\{\scriptsize Böl. \ref{chap:muhakeme-ogretimi}, \ref{chap:sentez}}};
+\draw[arr] (dog)--node[above,small lbl]{kesinlik}(muh);
+\draw[arr] (muh)--node[above,small lbl]{biçimleştirme}(dil);
+\draw[arr] (dil)--node[right,small lbl]{çıkarım}(isp);
+\draw[arr] (isp)--node[above,small lbl]{uygulama}(yap);
+\draw[arr] (yap)--node[above,small lbl]{sınır}(sur);
+\draw[arr,dashed] (sur)--node[left,small lbl,align=right]{kesinlik\\nereden?}(dog);
+\draw[arr] (yap)--(egt); \draw[arr] (isp.south)--(egt.east); \draw[arr] (sur.south)--(egt.west);
+\end{tikzpicture}}%
+\caption{Kitabın kavram haritası. Düz oklar ana öğrenme yolunu, kesikli ok yapılardan başlangıçtaki felsefi soruya geri dönüşü gösterir.}
+\end{figure}
+
+\section{Bir Kavramı Kitap Boyunca İzlemek: $\sqrt2$}
+
+Kitabın bütünlüğünü görmenin iyi bir yolu, tek bir matematiksel nesneyi bölümler boyunca izlemektir. $\sqrt2$ bu iş için biçilmiş kaftandır: pek çok bölümde başka bir muhakeme türünün, başka bir ispat yönteminin ya da başka bir felsefi sorunun konusu olur.
+
+\begin{table}[htbp]
+\centering\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{1.35cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{3.1cm}}
+\toprule
+\textbf{Bölüm} & \textbf{$\sqrt2$ ne olarak görünür?} & \textbf{Kavram}\\
+\midrule
+\ref{chap:matematigin-dogasi} & Ölçülebilir ama ortak ölçüsü olmayan bir büyüklük: keşif mi, icat mı? & Ontoloji\\
+\ref{chap:muhakeme-turleri} & $\sqrt2$ rasyonel olsaydı … (modus tollens) & Tümdengelim\\
+\ref{chap:dogrudan-ispat} & ‘$n^2$ çift ise $n$ çifttir’: ispatın kilit lemması & Kontrapozitif\\
+\ref{chap:celiski-ispat} & İrrasyonelliğin çelişki yoluyla ispatı; $(\sqrt2)^{\sqrt2}$ ile yapıcı olmayan varlık & Olmayana ergi, durum ayrımı\\
+\ref{chap:kardinalite} & Sayılabilir çoklukta cebirsel sayıdan biri & Kardinalite\\
+\bottomrule
+\end{tabularx}
+\caption{Tek bir sayı, birçok bakış: $\sqrt2$’nin kitaptaki izleri.}
+\end{table}
+
+\begin{sinif}[Sınıfta · Kavram izi projesi]
+Her öğrenci ya da grup bir kavram seçsin ($\pi$, sonsuzluk, eşitlik, ‘paralel’, ‘fonksiyon’, ‘kanıt’) ve yukarıdaki tabloya benzer bir iz tablosu hazırlasın: kavram hangi bölümlerde, hangi muhakeme türüyle, hangi ispat yöntemiyle ve hangi felsefi tartışmayla ortaya çıktı? Proje sunumunda en az bir ‘beklenmedik bağlantı’ gösterilmesi istenir. Etkinlik, dönem sonu değerlendirmesinde bütünleştirici bir görev olarak kullanılabilir.
+\end{sinif}
+
+\section{Matematik Felsefesi ve Eğitim Felsefesi İlişkisi}
+
+Bu kitabın amaçlarından biri, matematik felsefesi ile eğitim felsefesi arasındaki ilişkiyi görünür kılmaktı. Bu ilişki, ilk bakışta göründüğünden çok daha derindir: bir öğretmenin ya da eğitim programının matematiği nasıl öğretmesi gerektiğine dair her karar, örtük ya da açık biçimde, matematiğin ne olduğuna dair bir felsefi varsayımla
+
+ilişkilidir. Öğretmen inançları ile sınıf uygulamaları arasındaki ilişki doğrudan ve mekanik değildir; kurumsal koşullar, program, değerlendirme düzeni ve öğretmenin alan bilgisi de uygulamayı etkiler. Örneğin, matematiği “keşfedilecek, önceden var olan hakikatler” (platonist bir yaklaşım) olarak gören bir öğretim anlayışı, öğrencilere doğru cevapları ve kanıtlanmış yöntemleri aktarmaya, “matematiksel gerçekliği doğru biçimde algılamayı” öğretmeye odaklanabilir. Buna karşılık matematiği zihinsel inşa faaliyeti (sezgici bir yaklaşım) olarak gören bir öğretim anlayışı, öğrencilerin kendi akıl yürütmelerini adım adım inşa etmelerine, hazır sonuçları ezberlemek yerine yapıcı süreçleri deneyimlemelerine daha fazla önem verebilir. Matematiği toplumsal bir pratik (Lakatos’un ya da De Millo-Lipton-Perlis’in vurguladığı gibi) olarak gören bir yaklaşım ise sınıf içi tartışmayı, öğrencilerin birbirinin ispatlarını eleştirmesini ve matematiksel iddiaların nasıl “camia tarafından kabul edildiğini” deneyimlemelerini önemseyebilir (Lakatos 1976; De Millo ve diğ. 1979). Bu eşleştirmeler, belirli bir felsefi görüşten tek bir öğretim yönteminin zorunlu olarak çıktığı anlamına gelmez; pedagojik eğilimleri görünür kılmaya yarayan yorumlayıcı örneklerdir (Ernest 1991). Bu bakımdan, bir matematik öğretmeninin (ya da öğretmen adayının) yalnızca matematiksel teknikleri değil, bu tekniklerin arkasındaki felsefi varsayımları da fark etmesi, kendi pedagojik tercihlerinin bilinçli, gerekçelendirilmiş seçimler olmasına katkıda bulunabilir (Ernest 1989; Boadu ve Bonyah 2024). Bununla birlikte tek bir öğretmen-eğitimi çalışması, felsefe öğretiminin bütün program ve öğrenci gruplarında aynı sonuçları doğuracağını göstermeye yetmez. Bu klasik ekollerin ötesinde, son birkaç on yılda belirginleşen matematiksel pratik felsefesi de alanın gündemini genişletmiştir. Silvia De Toffoli ile Paolo Mancosu’nun Stanford Encyclopedia of Philosophy için hazırladığı ve 7 Nisan 2026’da yayımlanan “The Philosophy of Mathematical Practice” maddesinin de vurguladığı gibi, çağdaş matematik felsefesinin önemli bir kısmı artık yalnızca “matematiksel nesneler nasıl var olur?” gibi klasik ontolojik sorularla değil, matematiğin fiilen nasıl yapıldığıyla —matematikçilerin gerçek araştırma pratiklerinde nasıl kavram geliştirdiği, hangi ispat stratejilerini “güzel” ya da “aydınlatıcı” bulduğu, bir alanın hangi kanıtlama kültürünü benimsediği gibi sorularla— ilgilenmektedir. Bu “matematiksel pratik felsefesi” (philosophy of mathematical practice) yaklaşımı, geleneksel temel sorunlarını tümüyle terk etmekten çok, hangi matematiksel faaliyetlerin felsefi incelemeye değer sayıldığını genişletir (De Toffoli ve Mancosu 2026). Yakın tarihli bir Wittgensteincı çözümleme de bir ispatı “güzel” diye nitelemenin, ispatın değişmez ve içkin bir özelliğini saptamaktan çok, matematiksel pratik içinden yapılan ve gerekçelere açık normatif bir değerlendirme olarak anlaşılabileceğini
+
+savunur (Martinez 2026). Eğitim açısından buradan şu yorumlayıcı öneri çıkarılabilir: matematiği yalnızca statik, tamamlanmış bir hakikatler bütünü olarak değil, kendine özgü normları, tartışma biçimleri ve estetik ölçütleri olan canlı bir araştırma pratiği olarak öğretmek, öğrencilerin matematiğe dair algısını zenginleştirebilir. Bu yaklaşım, Bölüm~\ref{chap:dogrudan-ispat}’de tanıttığımız Lakatos’un “matematik diyalektik bir süreçtir” görüşüyle yakından ilişkilidir; aradaki fark, pratik felsefesinin bu diyalektiği yalnızca tarihsel ispat gelişimiyle değil, günümüz matematik camiasının güncel, gözlemlenebilir çalışma alışkanlıklarıyla da ilişkilendirmesidir (De Toffoli ve Mancosu 2026).
+
+\par\smallskip\begin{center}{\renewcommand{\arraystretch}{1.25}\footnotesize\begin{tabularx}{\linewidth}{|>{\raggedright\arraybackslash}p{2.10cm}|Y|Y|}\hline
+\rowcolor{cAcc}\textcolor{white}{\bfseries Ekol} & \textcolor{white}{\bfseries Matematik nedir?} & \textcolor{white}{\bfseries Sınıftaki vurgu} \\ \hline
+\textbf{Platonizm} & Hakikatler zihinden bağımsızdır; matematikçi onları keşfeder. & Yerleşik sonuçlar, doğru yöntemler ve kesin ispatların aktarılması \\ \hline
+\textbf{Biçimcilik} & Matematik, aksiyom ve kurallara göre işleyen biçimsel sistemdir. & Gösterim disiplini, kural takibi ve mantıksal geçerlilik \\ \hline
+\textbf{Sezgicilik} & Matematik, adım adım gerçekleştirilen zihinsel inşa faaliyetidir. & Yapıcı etkinlikler, öğrenci üretimi çözümler ve süreç odaklı öğrenme \\ \hline
+\textbf{Yapısalcılık} & Matematik, nesnelerden çok yapılar içindeki ilişki ve konumları inceler. & Örüntüler, çoklu gösterimler ve konular arası bağlantılar \\ \hline
+\textbf{Sosyal pratik} & Matematik; tahmin, eleştiri, karşı örnek ve uzlaşmayla gelişen bir pratiktir. & Sınıf tartışması, akran değerlendirmesi ve ispatların birlikte düzeltilmesi \\ \hline
+\end{tabularx}}\end{center}\par\smallskip
+
+Bu eşleştirmeler zorunlu reçeteler değil, felsefi kabullerin pedagojik tercihlere nasıl yön verebileceğini gösteren eğilimlerdir.
+
+{\small\itshape\sffamily\color{gray}Matematik felsefesinden öğretim uygulamasına uzanan ilişki. Matematiğin ne olduğuna dair farklı kabuller; sınıfta sonuca, kurala, inşa sürecine, yapılara veya toplumsal tartışmaya verilen ağırlığı değiştirebilir. Şema zorunlu eşlemeleri değil, yorumlayıcı eğilimleri gösterir (Ernest 1989; Ernest 1991).}
+
+\section{Matematik Eğitiminde Çağdaş Eğilimler}
+
+Son yıllarda matematik eğitimi araştırmalarında öne çıkan bazı eğilimler, bu kitabın tartışmalarıyla doğrudan ilişkilidir: Kavramsal anlama ile işlemsel akıcılık arasındaki denge. Matematik eğitimi araştırmacıları, öğrencilerin yalnızca işlemleri mekanik
+
+olarak uygulamayı (işlemsel/prosedürel bilgi) değil, bu işlemlerin neden işe yaradığını da anlamalarının (kavramsal bilgi) önemini vurgular. Bu ayrım, Bölüm~\ref{chap:dogrudan-ispat}’de tartıştığımız “ispatın yalnızca doğrulama değil, açıklama işlevi de taşıdığı” görüşüyle doğrudan örtüşür. Bununla birlikte kavramsal ve işlemsel bilgi iki rakip öğretim hedefi değildir; araştırmalar, bunların öğrenme sürecinde birbirini karşılıklı olarak geliştirebildiğine ilişkin kanıt sunar. Rittle-Johnson ve diğ.’nin çok basamaklı aritmetik öğrenimi üzerindeki çalışması bu karşılıklı gelişim görüşünün etkili örneklerinden biridir; sonuç bütün matematik konularına otomatik olarak genellenmemelidir (Skemp 1976; Rittle-Johnson ve diğ. 2001, ss. 346–362). Devlin, okul matematiğinden üniversite matematiğine geçişi, hazır işlemleri uygulama ağırlığından yeni problemler üzerinde matematiksel düşünme ağırlığına doğru bir vurgu değişimi olarak betimler (Devlin 2012, Preface, iii–vii, 9–10). Bu betimleme yararlı bir pedagojik çerçevedir; ancak bütün öğrenciler ve programlar için tek başına ampirik bir genelleme olarak kullanılmamalıdır. İspat ve akıl yürütmenin erken yaşta tanıtılması. Geleneksel olarak ispat kavramı yalnızca ileri düzey matematik derslerinde tanıtılırken, çağdaş eğitim yaklaşımları, basit akıl yürütme ve gerekçelendirme pratiklerinin (tam biçimsel ispat olmasa da) daha erken yaşlarda kazandırılmasını savunur. Okul ve üniversite düzeyindeki araştırmalar; öğrencinin, öğretmenin ve ispat içeriğinin karşılıklı ilişkilerini inceleyen geniş bir literatür oluşturmuştur. Stylianides, Stylianides ve Moutsios-Rentzos’un sistematik derlemesi, seçilmiş matematik eğitimi dergilerinde 1 Ocak 2018 ile 1 Haziran 2022 arasında yayımlanan çalışmaları kapsar; dolayısıyla alanın tamamının eksiksiz haritası olarak okunmamalıdır (Stylianides ve diğ. 2024, ss. 47–59). Matematik kaygısı (math anxiety) ve matematiksel özyeterlik. Matematik kaygısı ile matematik başarısı arasında ortalama olarak negatif bir ilişki bulunduğu meta-analizlerle gösterilmiştir; ancak bu ilişki tek yönlü ve tek nedenli bir mekanizma olarak yorumlanmamalıdır (Barroso ve diğ. 2021, ss. 134–168). Matematiksel özyeterlik ise öğrencinin belirli matematik görevlerini başarabileceğine ilişkin inancıdır ve göreve özgü biçimde ölçülmesi gerekir. Başarı deneyimi, geri bildirim, akran modelleri ve kaygıyla baş etme stratejilerini kullanan müdahaleler özyeterliği destekleyebilir (Zakariya 2022). Bu sistematik derleme farklı müdahale mekanizmalarını bir araya getirir; her bileşenin her bağlamda aynı etkiyi doğuracağını göstermez. Matematiğin hatalar, tartışmalar ve yeniden düşünmeler içeren insani tarihini göstermek bu yönde makul bir pedagojik öneridir; fakat tek başına matematik kaygısını azalttığı kanıtlanmış evrensel bir müdahale gibi sunulmamalıdır. Teknoloji ve hesaplamalı düşüncenin rolü. Bilgisayar destekli
+
+ispat doğrulama sistemleri (bunların bir kısmı, sezgici mantığın bilgisayar bilimindeki yeniden canlanışına dayanır) ve sembolik hesaplama yazılımları, hem matematik araştırmasını hem de matematik eğitimini etkileyebilecek araçlar sunmaktadır. Eğitim araştırmaları, ispat asistanlarının anlık biçimsel geri bildirim sağlama potansiyelinin yanı sıra özel bir sözdizimi ve biçimselleştirme yükü getirdiğini de göstermektedir. Bu gelişmeler, “ispat nedir, kimin ya da neyin ispatladığı önemli midir?” gibi Bölüm~\ref{chap:dogrudan-ispat}’de tartıştığımız soruları yeni bir bağlamda güncel tutmaktadır. Yapay zekâ destekli ispat sistemlerinin eğitime etkisi. Bu son eğilim hızlı gelişen bir araştırma alanıdır. Bölüm~\ref{chap:dogrudan-ispat}’de tanıttığımız, Mart 2025’te resmen Rocq adını alan Coq ile Isabelle/HOL ve Lean gibi ispat doğrulama sistemleri, artık büyük dil modelleriyle (LLM) birlikte çalışacak biçimde geliştirilmektedir (Rocq Development Team 2025). 10 Şubat 2026’da çevrim içi yayımlanan değerlendirmelerinde Yang ve arkadaşları, dil modellerinin öneri ve arama gücüyle biçimsel sistemlerin denetlenebilirliğini birleştiren araştırma yönünü tartışır (Yang ve diğ. 2026, ss. 66–73). Bir dil modeli aday bir strateji ya da biçimsel adım önerebilir; Lean gibi bir sistemin çekirdeği ise verilen biçimsel ifade ve kabul edilmiş kütüphane içinde ortaya çıkan ispat nesnesini denetler. Bu denetim, teorem ifadesinin amaçlanan gayriresmî matematiği doğru temsil ettiğini veya ispatın açıklayıcı olduğunu tek başına garanti etmez. Eğitim açısından bu gelişme umut ve sınırlılıkları birlikte taşır. Tasarlanmış ders ortamlarında öğrenciler, ispat denemelerine anlık biçimsel geri bildirim alabilir; küçük ölçekli ve keşifsel çalışmalar Lean kullanımının matematiksel dilin doğruluğu ile hedef–alt hedef örgütlenmesini destekleyebileceğini düşündürmektedir. Bununla birlikte mevcut bulgular, bütün öğrenci grupları için güçlü ve genellenebilir bir öğrenme etkisi sonucuna varmak için yeterli değildir (Thoma ve Iannone 2022, ss. 64–93; Iannone ve diğ. 2025, ss. 740–747). Dil modellerinin öğrencinin muhakemesini desteklemek yerine onun yerine geçmesi, hatalı önerilerin eleştirilmeden kabul edilmesi ve biçimsel doğruluğun kavramsal anlamayla karıştırılması önemli açık sorunlardır. Bu tartışma, ispatın biçimsel denetimi ile matematik camiasındaki açıklama, güven ve kabul süreçlerinin birbirinden ayrılması gerektiğini yeniden gündeme getirir (De Millo ve diğ. 1979).
+
+\begin{tcolorbox}[bookbox,colback=cEx]\textbf{\textsf{\textcolor{cAcc}{Bilgi Kutusu.}}}\quad “Matematik Yapmak” Kimin İşi? Yapay zekâ destekli ispat sistemlerinin yükselişi, kitabın başında sorduğumuz “matematikçiler keşfeder mi, icat mı eder?” sorusuna yeni, beklenmedik bir boyut ekler: bir dil modelinin önerdiği ve bir ispat asistanının doğruladığı bir ispat için, “bu ispatı kim yaptı?” soru-\end{tcolorbox}
+
+sunun cevabı artık her zamankinden daha karmaşıktır. Biçimciler için bu belki de şaşırtıcı değildir: biçimsel türetmenin kurallara uygunluğunu öne çıkaran yaklaşımlar, insan dışı denetleyicilerin rolünü açıklamak için uygun araçlar sunar. Bununla birlikte Hilbert’in programını matematiğin “yalnızca anlamsız sembol manipülasyonu” olduğu iddiasına indirgemek doğru değildir (Hilbert 1926; Detlefsen 1986). Sezgiciler için ise bu gelişme farklı bir güçlük doğurur, çünkü Brouwer’e göre matematik, temelde zihinsel bir inşa faaliyetidir; bir yazılımın “inşa ettiği” bir kanıtın, bu anlamda gerçek bir matematiksel eylem sayılıp sayılamayacağı tartışmaya açıktır (Brouwer 1913). Bu örnek, kitabın başından beri vurguladığımız bir noktayı bir kez daha doğrular: teknik gelişmeler, felsefi soruları geçersiz kılmaz, onları yeni biçimlerde yeniden gündeme getirir.
+
+\section{Ders Tasarımı Vakaları: Kitaptan Sınıfa}
+
+Kitap boyunca her bölüm kendi etkinliklerini önerdi. Bu kısımda iki vaka, farklı bölümlerin araçlarını tek bir ders tasarımında birleştirir. Vakalar reçete değil, tasarım kararlarının nasıl gerekçelendirileceğine dair örneklerdir.
+
+\subsection{Vaka 1: ‘Neden İspat?’ — Lise 10. Sınıf, İki Ders Saati}
+
+\begin{table}[htbp]
+\centering\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}p{3.3cm}}
+\toprule
+\textbf{Süre} & \textbf{Etkinlik} & \textbf{Dayandığı bölüm}\\
+\midrule
+15 dk & Moser çemberi: 1, 2, 4, 8, 16 … tahmin ve çöküş (31) & Böl.~\ref{chap:muhakeme-turleri}: kırılan örüntü\\
+15 dk & ‘Tek sayıların toplamı kare mi?’: örneklerden sanı, gnomon çizimi & Böl.~\ref{chap:muhakeme-ogretimi}: genel örnek\\
+20 dk & Sanının tümevarımla ispatı; şablonun doldurulması & Böl.~\ref{chap:tumevarim}: ispat şablonu\\
+15 dk & ‘$\sqrt2$ kesir mi?’: hesap makinesi deneyi ve çelişki ispatı & Böl.~\ref{chap:celiski-ispat}: olmayana ergi\\
+15 dk & Argüman mahkemesi: dört gerekçenin Toulmin kutularıyla değerlendirilmesi & Böl.~\ref{chap:muhakeme-ogretimi}: Balacheff, Toulmin\\
+10 dk & Çıkış kartı: ‘Örnek ile ispat arasındaki fark nedir?’ & Değerlendirme\\
+\bottomrule
+\end{tabularx}
+\caption{Vaka 1: iki ders saatlik bir ‘neden ispat?’ tasarımı.}
+\end{table}
+
+\emph{Tasarım gerekçesi.} Ders, önce örneklere olan güveni sarsar (Moser), sonra aynı güveni ispatla yeniden kurar (tek sayılar). Van Hiele açısından hedef, 3. düzeydeki öğrencinin ‘neden hep böyle?’ sorusunu kendisinin sormasıdır. Değerlendirmede yalnızca doğru ispat değil, çıkış kartındaki ayrımın niteliği de puanlanır (Bölüm~\ref{chap:muhakeme-ogretimi}’teki rubrik).
+
+\subsection{Vaka 2: ‘Aynı İddia, Dört İspat’ — Lisansüstü Seminer Oturumu}
+
+Bir seminer oturumu tek bir iddia etrafında kurulur: \emph{her $n$ tam sayısı için $n^3-n$, $6$’ya bölünür.} Dört grup aynı iddiayı farklı yöntemlerle ispatlar ve ispatlarını birbirine sunar:
+\begin{itemize}[leftmargin=1.4em]
+\item \textbf{Doğrudan ispat} (Bölüm~\ref{chap:dogrudan-ispat}): $n^3-n=(n-1)n(n+1)$ üç ardışık tam sayının çarpımıdır; bunlardan biri çift, biri $3$’ün katıdır.
+\item \textbf{Durum ayrımı / kongrüans} (Bölüm~\ref{chap:celiski-ispat}, \ref{chap:kongruanslar}): $n\equiv0,1,\dots,5\pmod 6$ durumlarının her birinde $n^3\equiv n$ olduğu denetlenir.
+\item \textbf{Tümevarım} (Bölüm~\ref{chap:tumevarim}): $(n+1)^3-(n+1)=(n^3-n)+3n(n+1)$ ve $n(n+1)$ çift olduğundan $3n(n+1)$, $6$’nın katıdır; negatif $n$ için $(-n)^3-(-n)=-(n^3-n)$ eşitliği kullanılır.
+\item \textbf{Bağıntı bakışı} (Bölüm~\ref{chap:bagintilar}): ‘$6$’ya bölünebilme’ bir denklik sınıfına ait olmaktır; iddia, $x\mapsto x^3$ eşlemesinin mod $6$ sınıflarını yerinde bıraktığını söyler.
+\end{itemize}
+Oturumun ikinci yarısı karşılaştırmaya ayrılır: Hangi ispat yalnızca \emph{doğrular}, hangisi \emph{açıklar} (Bölüm~\ref{chap:dogrudan-ispat})? Bir lise öğrencisi hangisini, hangi van Hiele ya da Balacheff basamağında üretebilir (Bölüm~\ref{chap:muhakeme-ogretimi})? Son soru felsefidir: ‘Dört farklı ispat aynı \emph{hakikati} mi gösterir, yoksa dört farklı kavrayış mı üretir?’ (Bölüm~\ref{chap:matematigin-dogasi}). Böylece teknik bir alıştırma, kitabın ilk sorusuna geri bağlanır.
+
+\begin{yanilgi}[Tasarımda Kaçınılacak Tuzaklar]
+\textbf{Etkinliği amaç sanmak.} Bir oyun ya da deney, ancak bir kavramsal hedefe (örneğin ‘örnek ile ispat ayrımı’) hizmet ettiğinde anlamlıdır.
+
+\smallskip
+\textbf{Tarihi süs olarak kullanmak.} Hippasos öyküsü gibi anlatılar, kaynak eleştirisiyle birlikte sunulmadığında yanlış bir matematik tarihi imgesi üretir.
+
+\smallskip
+\textbf{Düzeyi atlamak.} Biçimsel ispat, öğrenci özellikler arasındaki ilişkileri kuramadan (van Hiele 3) istenirse ezbere dönüşür.
+\end{yanilgi}
+
+\section{Kapanış: Matematiği Yeniden Düşünmek}
+
+Bu kitabın başında sorduğumuz “matematikçiler teoremleri keşfeder mi, icat mı ederler?” sorusuna, on beş bölümün sonunda kesin, tek bir cevap sunmuş değiliz — ve bu, kitabın bir eksikliği değil, matematik felsefesinin doğasının bir yansımasıdır. Yüzyıllardır süren bu tartışma, hâlâ açık bir felsefi problem olmaya devam etmektedir; her ekol (Mantıkçılık, Biçimcilik, Sezgicilik, Yapısalcılık, Platonizm) güçlü içgörüler sunarken, kendi içinde de ciddi zorluklarla karşı karşıyadır. Bu bölümde gördüğümüz gibi, bu tartışmaya son yıllarda hem “matematiksel pratik felsefesi” gibi yeni bir felsefi bakış açısı hem de yapay zekâ destekli ispat sistemleri gibi somut teknik gelişmeler yeni katmanlar eklemeye devam etmektedir; bu da tartışmanın kapanmaktan çok, genişleyerek sürdüğünü gösterir (De Toffoli ve Mancosu 2026; Yang ve diğ. 2026, ss. 66–73). Bu kitabın asıl hedefi, size kesin bir cevap dayatmak değil, matematiği bundan böyle daha sorgulayıcı, daha farkında bir gözle görebilmenizi sağlamaktı. Bir denklemi çözerken artık yalnızca “doğru cevabı” değil, o çözümün hangi ispat yöntemine dayandığını; bir teoremle karşılaştığınızda yalnızca sonucu değil, hangi tanımlara, varsayımlara ve ispat yöntemine dayandığını; matematiksel bir iddiayla karşılaştığınızda onun bir varlık, teklik ya da evrensel bir iddia olup olmadığını ve buna göre nasıl ispatlanması gerektiğini fark edebiliyorsanız, bu kitap amacına ulaşmış demektir. Bu farkındalığın, sınıf duvarlarının dışında da bir değeri vardır. Bir matematik öğretmeni ya da eğitim araştırmacısı olarak, sınıfta ve sınıf dışında karşılaşacağınız pek çok tartışma —bir yapay zekâ sisteminin “doğru” sonucu nasıl ürettiği, bir istatistiksel iddianın hangi varsayımlara dayandığı, bir algoritmanın “adil” olup olmadığı— temelde bu kitapta
+
+incelediğimiz sorularla aynı aileden sorulardır: hangi öncüller kabul ediliyor, hangi çıkarım kuralları kullanılıyor, sonucun kesinliği nereden geliyor? Bu kitabın kazandırdığı kavramsal araçlar —geçerlilik, niceleyici, ispat, tümevarım, denklik, varlık ile teklik arasındaki fark— yalnızca matematikçilere özgü teknik terimler değil, öğrencilerinize kazandırabileceğiniz her türlü titiz akıl yürütmeyi değerlendirmek için kullanılabilecek genel düşünme araçlarıdır. Matematik, yalnızca sayılarla ve şekillerle değil, insanlığın binlerce yıldır sürdürdüğü, kesinlik, hakikat ve akıl yürütmenin doğasına dair derin bir sorgulamayla da ilgilidir. Bu sorgulamanın bir parçası olmak, matematiği yalnızca bir hesaplama aracı olarak değil, felsefenin en eski ve en verimli ortaklarından biri olarak yeniden görmemizi sağlar.
+
+\usection{Bölüm Özeti}
+
+\begin{itemize}[leftmargin=1.4em]
+\item Kitap, matematiğin doğasından muhakeme türlerine, mantıksal dilden ispat yöntemlerine ve matematiksel yapılara uzanan bir yol izledi; bu kısımlar birbirine sürekli geri döner.
+\item Matematik felsefesindeki kabuller (platonizm, biçimcilik, sezgicilik, yapısalcılık, sosyal pratik) sınıftaki vurguları etkiler; ama bu ilişki zorunlu değil, yorumlayıcıdır.
+\item Tek bir kavramı ($\sqrt2$ gibi) bölümler boyunca izlemek, muhakeme türlerinin, ispat yöntemlerinin ve felsefi tartışmaların nasıl iç içe geçtiğini gösterir.
+\item İyi bir ders tasarımı; kırılan örüntülerle ispatın gerekliliğini, genel örnekle ispata geçişi ve kaynak eleştirisiyle tarihin doğru kullanımını birleştirir.
+\item Keşif ile gerekçelendirme, sezgi ile tanım, örnek ile ispat karşıtlar değil, matematiksel düşünmenin birbirini tamamlayan iki yüzüdür.
+\end{itemize}
+
+\usection{Gözden Geçirme Soruları}
+
+\begin{enumerate}[leftmargin=1.8em,label=\textbf{\arabic*.}]
+\item Doğrudan, kontrapozitif, çelişki ve tümevarım yöntemlerinin her biri hangi mantıksal biçimdeki iddialar için en uygundur? Her biri için kitaptan bir örnek veriniz.
+\item Bir öğretmenin platonist ya da sezgici bir matematik anlayışına sahip olması, sınıftaki hangi kararlarını etkileyebilir? Bu etki neden ‘zorunlu’ değildir?
+\item $\sqrt2$ dışında bir kavram seçerek kitaptaki izini en az dört bölüm üzerinden anlatınız.
+\item Vaka 1’deki ders akışında hangi etkinlik tümevarımsal, hangisi abdüktif, hangisi tümdengelimsel muhakemeyi öne çıkarır?
+\item Yapay zekâ destekli ispat sistemleri ‘matematiği kim yapar?’ sorusunu nasıl değiştirmektedir? Hangi felsefi ekol bu soruya en rahat yanıt verebilir?
+\item Vaka 2’deki dört ispattan hangisi en çok ‘açıklar’? Yanıtınızı ispatın işlevleri açısından gerekçelendiriniz.
+\item Kitabın başındaki ‘keşif mi, icat mı?’ sorusuna, kitabın sonunda nasıl bir yanıt verirsiniz? Yanıtınızı en az iki bölümden örnekle gerekçelendiriniz.
+\end{enumerate}
+
+\usection{Dönem Sonu Proje Görevleri}
+
+\begin{enumerate}[leftmargin=1.8em,label=\textbf{\arabic*.}]
+\item \textbf{Kavram izi.} Bir kavramın kitaptaki izini bir tablo ve bir kavram haritasıyla sunun; en az bir beklenmedik bağlantı gösterin.
+\item \textbf{Ders tasarımı.} Seçtiğiniz bir sınıf düzeyi için Vaka 1’e benzer iki ders saatlik bir tasarım hazırlayın. Her etkinliğin dayandığı bölümü ve hedeflediği muhakeme türünü belirtin; bir değerlendirme rubriği ekleyin.
+\item \textbf{Felsefi deneme.} ‘Matematikte kesinlik nereden gelir?’ sorusunu, en az bir felsefi ekol, bir ispat yöntemi ve bir bağımsızlık sonucu (örneğin süreklilik hipotezi) üzerinden 1.500 sözcüklük bir denemede tartışın.
+\item \textbf{Öğrenci düşüncesi çözümlemesi (lisansüstü).} Gerçek ya da kurgusal beş öğrenci argümanını Harel–Sowder şemaları, Balacheff basamakları ve Toulmin modeliyle çözümleyin; her biri için bir sonraki basamağa taşıyacak öğretmen hamlesi önerin.
+\end{enumerate}

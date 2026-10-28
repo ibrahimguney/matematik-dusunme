@@ -1,0 +1,518 @@
+\chapter{Düşünme Düzeyleri ve Muhakeme Öğretimi}
+\label{chap:muhakeme-ogretimi}
+\thispagestyle{plain}
+
+\subsection*{Öğrenme Hedefleri}
+Bu bölümü tamamlayan öğretmen adayı:
+\begin{itemize}[leftmargin=1.4em]
+\item Van Hiele düzeylerini, düzeylerin beş özelliğini ve beş öğretim evresini açıklayıp ispat öğretimiyle ilişkilendirebilir.
+\item Van Hiele modelini SOLO ve Bloom taksonomileriyle karşılaştırabilir; bir öğrenci yanıtını SOLO düzeyine göre sınıflayabilir.
+\item Harel–Sowder ispat şemaları ve Balacheff’in ispat basamaklarını kullanarak bir öğrenci argümanını çözümleyebilir ve bir sonraki basamağa köprü kuracak öğretmen hamlesi tasarlayabilir.
+\item Keşif ve gerekçelendirme bağlamlarını Lakatos, Pólya ve Toulmin üzerinden tartışabilir; Toulmin modeliyle bir sınıf argümanını bileşenlerine ayırabilir.
+\end{itemize}
+
+\subsection*{Anahtar Kavramlar}
+{\small van Hiele düzeyleri · öğretim evreleri · sınıf içerme · SOLO · Bloom taksonomisi · ispat şeması · Balacheff basamakları · genel örnek · keşif bağlamı · gerekçelendirme bağlamı · Lakatos · olası muhakeme · Toulmin modeli}
+
+\usection{Bölüme Genel Bakış: Muhakemeden Öğretime}
+
+Bölüm~\ref{chap:muhakeme-turleri}’de muhakeme türlerini mantıksal ve felsefi açıdan inceledik: tümdengelim ispatın, tümevarım ve abdüksiyon keşfin dilidir. Bu bölüm aynı ayrımı sınıfa taşır. Bir öğretmen için asıl soru, ‘ispat nedir?’ sorusundan çok ‘öğrencim ispata hazır mı, değilse onu oraya nasıl taşırım?’ sorusudur. Bu soruya üç tür araçla yaklaşacağız: düşünme düzeyi kuramları (van Hiele, SOLO, Bloom), öğrenci argümanlarını teşhis etmeye yarayan araştırma çerçeveleri (Harel–Sowder, Balacheff) ve keşif ile gerekçelendirme arasındaki ilişkiyi aydınlatan felsefi modeller (Lakatos, Pólya, Toulmin).
+
+\section{Düşünme Düzeyleri: Van Hiele Modeli}
+
+Van Hiele modeli, geometrik düşünmeyi beş düzeyde tanımlar: (1) görsel tanıma, (2) çözümleme (özellikleri fark etme), (3) informal çıkarım (özellikler arası ilişki), (4) biçimsel çıkarım (ispat), (5) kesinlik (aksiyomatik sistemlerin karşılaştırılması). İspat öğretimi ancak öğrenci 3.–4. düzeye geçtiğinde anlamlı olur; bu ders, öğretmen adayının bu geçişi tasarlayabilmesini hedefler.
+
+Model, Hollandalı matematik öğretmenleri Pierre M. van Hiele ile Dina van Hiele-Geldof’un 1957’de Utrecht Üniversitesi’nde tamamladıkları doktora tezlerinden doğmuştur. Çıkış noktaları sınıfta yaşadıkları bir hayal kırıklığıydı: öğrenciler geometri derslerinde ‘aynı dili konuşmuyor’ gibiydiler; öğretmen ispattan söz ederken öğrenci hâlâ şekillerin ‘görünüşü’ üzerinden düşünüyordu.
+
+\begin{tbox}{Numaralandırma notu}
+Literatürde düzeyler iki farklı biçimde numaralanır: van Hiele’lerin özgün çalışmaları ve Avrupa kaynakları genellikle 1–5, Kuzey Amerika kaynaklarının çoğu (Usiskin, Burger–Shaughnessy) 0–4 kullanır. Bu kitap 1–5 numaralandırmasını izler; ‘Düzey 0 — Görselleştirme’ ifadesini gördüğünüzde bunun buradaki 1. düzeye karşılık geldiğini unutmayın.
+\end{tbox}
+
+\begin{figure}[h]
+\centering
+\resizebox{\linewidth}{!}{%
+\begin{tikzpicture}[x=1cm,y=1cm]
+\def\H{0.82}
+\foreach \i/\lab/\fc/\tc in {1/{1 · Görsel tanıma}/bar!10/ink, 2/{2 · Çözümleme}/bar!18/ink, 3/{3 · İnformal çıkarım}/bar!28/ink, 4/{4 · Biçimsel ispat}/bar!85/white, 5/{5 · Kesinlik}/bar!95/white}{
+  \pgfmathsetmacro{\yb}{(\i-1)*\H}
+  \pgfmathsetmacro{\yt}{\i*\H}
+  \pgfmathsetmacro{\wb}{4.6-(\i-1)*0.6}
+  \pgfmathsetmacro{\wt}{4.6-\i*0.6}
+  \fill[\fc,draw=white,line width=1.2pt] (-\wb,\yb) -- (\wb,\yb) -- (\wt,\yt) -- (-\wt,\yt) -- cycle;
+  \node[font=\sffamily\small,text=\tc] at (0,\yb+\H/2) {\lab};
+}
+\draw[decorate,decoration={brace,amplitude=6pt},line width=0.7pt] (3.5,5*\H-0.05) -- (3.5,3*\H+0.03) node[midway,right=9pt,small lbl,align=left]{ispatın\\bölgesi};
+\draw[decorate,decoration={brace,amplitude=6pt},line width=0.7pt] (4.9,3*\H-0.03) -- (4.9,0.02) node[midway,right=9pt,small lbl,align=left]{keşif ve\\ilişkilendirme};
+\draw[arr,warm,line width=1.2pt] (-4.6,2.4*\H) to[bend left=35] (-3.4,3.5*\H); \node[small lbl,text=warm,anchor=east] at (-4.5,3.1*\H) {kritik\\geçiş};
+\end{tikzpicture}}%
+\caption{Van Hiele geometrik düşünme düzeyleri; ispat 4. düzeyde ortaya çıkar. 3.→4. düzey geçişi, ispat öğretiminin kritik eşiğidir.}
+\end{figure}
+
+\subsection{Düzeylerin Ayrıntılı Betimlemesi}
+
+Aşağıdaki tablo her düzeyi, o düzeydeki bir öğrencinin ‘kare’ hakkında ne söylediği ve öğretmenin o düzeyde ne gözlemleyebileceği üzerinden betimler. Aynı kavram (kare) üzerinden ilerlemek, düzeylerin nesnelerin değil \emph{düşünme biçimlerinin} farklılaşması olduğunu gösterir.
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{1.5cm}>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{3.2cm}>{\raggedright\arraybackslash}p{2.5cm}}
+\toprule
+\textbf{Düzey} & \textbf{Düşünmenin nesnesi} & \textbf{Öğrencinin sözü (kare)} & \textbf{Gözlenebilir davranış}\\
+\midrule\endhead
+\small 1 · Görsel tanıma & \small Şekillerin bütüncül görünüşü & \small ‘Bu kare, çünkü kareye benziyor. Döndürünce baklava oldu, artık kare değil.’ & \small Şekli prototipine benzeterek adlandırır; yönelim değişince adı değişir.\\
+\small 2 · Çözümleme & \small Şekillerin özellikleri & \small ‘Karenin 4 eşit kenarı, 4 dik açısı var, köşegenleri eşit…’ & \small Özellik listeler ama hangilerinin gerekli/yeterli olduğunu seçemez; ‘kare dikdörtgen değildir’ der.\\
+\small 3 · İnformal çıkarım & \small Özellikler arası ilişkiler & \small ‘Dört dik açısı varsa dikdörtgendir; kare de öyle, o hâlde her kare bir dikdörtgendir.’ & \small Sınıf içerme ilişkilerini kurar; minimal tanım verir; kısa ‘çünkü’ zincirlerini izler ama kendisi ispat kuramaz.\\
+\small 4 · Biçimsel çıkarım & \small Özellikler arası ilişkilerin tümdengelimsel sistemi & \small ‘Köşegenleri birbirini ortalayan, eşit ve dik olan her dörtgenin kare olduğunu eşlik aksiyomlarından ispatlayabilirim.’ & \small Tanım, aksiyom, teorem ayrımını yapar; karşıt önermeyi ayrıca ispatlaması gerektiğini bilir; alternatif ispatlar kurar.\\
+\small 5 · Kesinlik & \small Aksiyomatik sistemlerin kendisi & \small ‘Taksi geometrisinde “kare” neye benzer? Paralel aksiyomu olmadan kare var mıdır?’ & \small Farklı aksiyom sistemlerini karşılaştırır; Öklidyen olmayan geometrileri anlamlandırır.\\
+\bottomrule
+\caption{Van Hiele düzeyleri ‘kare’ kavramı üzerinden.}
+\end{longtable}
+
+\subsection{Modelin Beş Özelliği}
+
+Van Hiele’ler düzeylerin yanı sıra, düzeyler arası ilişkiyi betimleyen beş özellik tanımladılar. Bu özellikler, modelin yalnızca bir sınıflandırma değil bir öğretim kuramı olmasını sağlar.
+
+\begin{enumerate}[leftmargin=1.6em,label=\textbf{\arabic*.}]
+\item \textbf{Ardışıklık.} Bir düzeye ulaşmak için önceki düzeylerden geçmek gerekir; düzey atlanamaz.
+\item \textbf{İlerleme.} Düzeyler arası ilerleme yaştan çok \emph{öğretime} bağlıdır. Bazı yetişkinler hiçbir zaman 2. düzeyi aşmaz; iyi bir öğretimle ortaokul öğrencisi 3. düzeye ulaşabilir.
+\item \textbf{Örtük–açık.} Bir düzeyde örtük olan (yani kullanılan ama farkında olunmayan), bir sonraki düzeyde açık bir inceleme nesnesi hâline gelir. 1. düzeyde örtük olan özellikler, 2. düzeyde açıkça konuşulur.
+\item \textbf{Dilsel yapı.} Her düzeyin kendi dili ve sembolleri vardır. ‘Kare bir dikdörtgendir’ cümlesi 3. düzeyde doğal, 2. düzeyde ise yanlış ve kafa karıştırıcıdır.
+\item \textbf{Uyumsuzluk.} Öğretmen ile öğrenci farklı düzeylerde konuşursa öğrenme gerçekleşmez. Öğrenci ispatı ezberler ama anlamaz; öğretmen ise öğrencinin ‘anlamadığını’ değil ‘çalışmadığını’ sanar.
+\end{enumerate}
+
+\begin{yanilgi}[Uyumsuzluğun sınıftaki yüzü]
+\textit{Öğretmen:} ‘Karenin köşegenlerinin eşit olduğunu ispatlayalım. Kare aynı zamanda bir dikdörtgen olduğundan…’\\
+\textit{Öğrenci (2. düzey):} ‘Ama öğretmenim, kare dikdörtgen değil ki! Dikdörtgenin kenarları farklı olur.’\\[2pt]
+Öğrenci haksız değildir — kendi düzeyinin diliyle konuşmaktadır. Burada ispatı sürdürmek yerine ‘Dikdörtgeni tanımlamak için hangi özellik yeter?’ sorusuyla 3. düzey etkinliğine geri dönmek gerekir.
+\end{yanilgi}
+
+\subsection{Sınıf İçerme ve Dörtgen Hiyerarşisi}
+
+3. düzeyin ayırt edici başarısı, şekiller arasındaki \emph{içerme} ilişkilerini görebilmektir. Aşağıdaki hiyerarşi, bir öğrencinin 2. düzeyden 3. düzeye geçip geçmediğini sınamak için güçlü bir araçtır: 2. düzeydeki öğrenci bu ağacı ‘ayrık kutular’ olarak, 3. düzeydeki öğrenci ‘iç içe kümeler’ olarak okur.
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[level distance=1.25cm,
+  every node/.style={node box,font=\sffamily\small,minimum width=2.2cm},
+  edge from parent/.style={draw=bar,line width=0.8pt,-{Stealth[length=5pt]}}]
+\node (q) at (0,0) {Dörtgen};
+\node (y) at (-3.2,-1.3) {Yamuk};
+\node (d) at (3.2,-1.3) {Deltoid};
+\node (p) at (-3.2,-2.6) {Paralelkenar};
+\node (dk) at (-4.9,-3.9) {Dikdörtgen};
+\node (e) at (-1.5,-3.9) {Eşkenar dörtgen};
+\node[fill=accl,draw=acc] (k) at (-3.2,-5.2) {Kare};
+\foreach \a/\b in {q/y,q/d,y/p,p/dk,p/e,dk/k,e/k}{\draw[arr] (\a)--(\b);}
+\draw[arr,dashed] (d) to[out=-90,in=0] (e);
+\end{tikzpicture}
+\caption{Dörtgenlerin kapsayıcı hiyerarşisi. Ok ‘özel durumudur’ anlamına gelir; kare hem dikdörtgenin hem eşkenar dörtgenin özel durumudur. Kesikli ok: her eşkenar dörtgen bir deltoiddir. ‘Yamuk’ burada kapsayıcı tanımla (en az bir çift paralel kenar) alınmıştır. Bu ağacı ‘okuyabilmek’, 3. van Hiele düzeyinin tipik göstergesidir.}\label{fig:dortgen}
+\end{figure}
+
+\begin{tbox}{Tanım seçimi bir matematiksel karardır}
+Yamuğun ‘\emph{tam olarak} bir çift paralel kenarı olan dörtgen’ (dışlayıcı) mı yoksa ‘\emph{en az} bir çift paralel kenarı olan dörtgen’ (kapsayıcı) mı olduğu, ders kitaplarında farklı ele alınır. Kapsayıcı tanım, hiyerarşiyi daha düzenli kılar ve yamuk için ispatlanan her teoremin paralelkenara da uygulanmasını sağlar. Öğrencilerle bu seçimi tartışmak, ‘tanımların doğal olarak verilmediği, amaca göre seçildiği’ fikrini — yani 4. düzeyin habercisini — öğretir.
+\end{tbox}
+
+\subsection{Beş Öğretim Evresi}
+
+Van Hiele’lere göre öğrenciyi bir düzeyden sonrakine taşımak için öğretim beş evreden geçmelidir. Aşağıda her evre, ‘paralelkenarın özellikleri’ konusu üzerinden örneklenmiştir.
+
+\begin{table}[h]
+\centering\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{3cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Evre} & \textbf{Amaç} & \textbf{Paralelkenar örneği}\\
+\midrule
+1. Bilgilendirme (sorgulama) & Konu ve dil tanıtılır; öğretmen öğrencinin ön bilgisini yoklar. & ‘Bunlardan hangileri paralelkenar? Neden?’ diye farklı şekiller gösterilir.\\
+2. Yönlendirilmiş keşif & Dikkatle sıralanmış görevlerle öğrenci ilişkileri kendisi keşfeder. & Kareli kâğıtta paralelkenarlar çizilir; karşılıklı kenarlar ve açılar ölçülür, köşegenler çizilir.\\
+3. Açıklama & Öğrenci gözlemlerini kendi sözcükleriyle ifade eder; öğretmen terimleri yavaşça tanıştırır. & ‘Köşegenler birbirini ortalar’ ifadesi sınıf tartışmasında oluşturulur.\\
+4. Serbest keşif & Çok adımlı, açık uçlu görevlerle öğrenci ağı genişletir. & ‘Köşegenleri birbirini ortalayan her dörtgen paralelkenar mıdır?’\\
+5. Bütünleştirme & Öğrenci öğrendiklerini gözden geçirip yeni bir ilişkiler ağı olarak özetler. & Paralelkenarın özellikleri bir kavram haritasında toplanır; hangilerinin tanım için yeterli olduğu tartışılır.\\
+\bottomrule
+\end{tabularx}
+\caption{Van Hiele öğretim evreleri.}
+\end{table}
+
+
+\section{Van Hiele’nin Ötesinde: SOLO ve Bloom}
+
+Van Hiele modeli geometriye özgüdür. Buna koşut olarak Biggs ve Collis’in SOLO taksonomisi, bir öğrencinin bir kavramı ne derinlikte kavradığını beş yapı düzeyiyle (yapı öncesi, tekli, çoklu, ilişkisel, genişletilmiş soyut) betimler.
+
+İki model de aynı pedagojik ilkeye işaret eder: öğrenci, kavramları önce ayrı ayrı tanır, sonra aralarındaki ilişki kurar ve nihayet soyut, biçimsel bir sisteme ulaşır. Muhakeme türleri bu ilerlemeye eşlik eder — alt düzeylerde tümevarımsal/görsel keşif baskındır, üst düzeylerde tümdengelimsel gerekçelendirme devreye girer. Öğretmen adayının bu haritayı bilmesi, bir sınıfta ‘ne zaman ispat isteneceğini’ ve ‘hangi ön etkinliğin gerektiğini’ bilinçli biçimde tasarlamasını sağlar.
+
+\subsection{SOLO Taksonomisi}
+
+SOLO (\emph{Structure of the Observed Learning Outcome}, gözlenen öğrenme çıktısının yapısı), John Biggs ve Kevin Collis tarafından 1982’de önerildi. Van Hiele’den farklı olarak geometriye özgü değildir; herhangi bir konuda öğrenci yanıtlarının \emph{yapısal karmaşıklığını} sınıflar. Bu yüzden öğretmen için çok pratik bir değerlendirme aracıdır.
+
+\begin{figure}[h]
+\centering
+\resizebox{\linewidth}{!}{%
+\begin{tikzpicture}[dot/.style={circle,fill=acc,inner sep=0pt,minimum size=5pt}]
+\foreach \i/\name/\x in {1/Yapı öncesi/0,2/Tekli/2.7,3/Çoklu/5.4,4/İlişkisel/8.1,5/Genişletilmiş\\soyut/10.8}{
+  \node[small lbl,font=\sffamily\scriptsize\bfseries,anchor=north] at (\x+0.6,-0.45) {\name};
+}
+% prestructural
+\node[font=\sffamily\small,text=mid] at (0.6,0.6) {?};
+% uni
+\node[dot] at (3.3,0.6) {};
+% multi
+\foreach \y in {0.2,0.6,1.0}{\node[dot] at (5.7,\y) {};}\node[dot] at (6.3,0.6) {};
+% relational
+\node[dot] (a) at (8.4,0.2) {}; \node[dot] (b) at (8.4,1.0) {}; \node[dot] (c) at (9.0,0.6) {}; \node[dot] (d) at (8.1,0.6) {};
+\draw[acc,line width=0.8pt] (a)--(b)--(c)--(a) (d)--(a) (d)--(b);
+% extended
+\node[dot] (a2) at (11.1,0.2) {}; \node[dot] (b2) at (11.1,1.0) {}; \node[dot] (c2) at (11.7,0.6) {}; \node[dot] (d2) at (10.8,0.6) {};
+\draw[acc,line width=0.8pt] (a2)--(b2)--(c2)--(a2) (d2)--(a2) (d2)--(b2);
+\draw[warm,line width=0.9pt,-{Stealth}] (c2) -- (12.6,1.2); \draw[warm,line width=0.9pt,-{Stealth}] (c2) -- (12.6,0.0);
+\draw[arr,mid!60,line width=0.6pt] (-0.2,-1.35) -- (12.8,-1.35) node[right,small lbl,text=mid]{karmaşıklık};
+\end{tikzpicture}}%
+\caption{SOLO düzeylerinin klasik gösterimi: tek bir öğe, birbirinden kopuk öğeler, birbiriyle ilişkilendirilmiş öğeler ve bu yapının yeni bağlamlara genişletilmesi.}
+\end{figure}
+
+\begin{table}[h]
+\centering\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{2.6cm}>{\raggedright\arraybackslash}X}
+\toprule
+\textbf{SOLO düzeyi} & \textbf{‘Tek sayıların toplamı neden tam karedir?’ sorusuna tipik yanıt}\\
+\midrule
+Yapı öncesi & ‘Bilmiyorum.’ / ‘Çünkü sayılar tek.’ (İlgisiz ya da totolojik.)\\
+Tekli & ‘1+3=4, 4 de 2’nin karesi.’ (Tek bir örnek, tek bir ilişki.)\\
+Çoklu & ‘1+3=4, 1+3+5=9, 1+3+5+7=16; hepsi kare.’ (Birçok doğru öğe, aralarında bağ yok.)\\
+İlişkisel & ‘Her seferinde bir sonraki tek sayıyı eklemek kareyi bir büyütüyor; $n^2+2n+1=(n+1)^2$.’ (Öğeler bir bütün içinde ilişkilendirildi.)\\
+Genişletilmiş soyut & ‘Aynı mantıkla üçgensel sayıların, küplerin toplamlarını da inceleyebiliriz; ilk $n$ küpün toplamı $T_n^2$ olur.’ (Yapı yeni bağlamlara genellendi.)\\
+\bottomrule
+\end{tabularx}
+\caption{SOLO düzeyleri bir öğrenci yanıtı üzerinden.}
+\end{table}
+
+\subsection{Bloom Taksonomisi ve Muhakeme}
+
+Benjamin Bloom ve arkadaşlarının 1956’da yayımladığı taksonomi, eğitim hedeflerini bilişsel süreçlerin basitten karmaşığa sıralanmasıyla sınıflar. 2001’de Anderson ve Krathwohl tarafından revize edilen sürümde basamaklar eylem fiilleriyle adlandırılır ve en üste ‘yaratma’ yerleştirilir.
+
+\begin{figure}[h]
+\centering
+\resizebox{\linewidth}{!}{%
+\begin{tikzpicture}[x=1cm,y=1cm]
+\def\H{0.62}
+\foreach \i/\lab/\ex in {1/Hatırlama/{‘Tek sayının tanımını yaz.’},2/Anlama/{‘$2k+1$ neden tek sayıdır, açıkla.’},3/Uygulama/{‘İlk 20 tek sayının toplamını bul.’},4/Çözümleme/{‘Bu argüman ispat mı, tahmin mi? Neden?’},5/Değerlendirme/{‘Hangi ispat daha açıklayıcı? Karşılaştır.’},6/Yaratma/{‘Küplerin toplamı için bir sanı kur ve ispatla.’}}{
+  \pgfmathsetmacro{\yb}{(\i-1)*\H}
+  \pgfmathsetmacro{\yt}{\i*\H}
+  \pgfmathsetmacro{\wb}{3.6-(\i-1)*0.42}
+  \pgfmathsetmacro{\wt}{3.6-\i*0.42}
+  \pgfmathsetmacro{\sh}{10+\i*12}
+  \fill[acc!\sh,draw=white,line width=1pt] (-\wb,\yb) -- (\wb,\yb) -- (\wt,\yt) -- (-\wt,\yt) -- cycle;
+  \node[font=\sffamily\scriptsize\bfseries] at (0,\yb+\H/2) {\lab};
+  \node[font=\sffamily\scriptsize,anchor=west] at (3.9,\yb+\H/2) {\ex};
+}
+\draw[decorate,decoration={brace,amplitude=5pt,mirror},line width=0.7pt] (-3.8,3*\H) -- (-3.8,0.02) node[midway,left=7pt,small lbl]{alt düzey\\düşünme};
+\draw[decorate,decoration={brace,amplitude=5pt,mirror},line width=0.7pt] (-3.8,6*\H) -- (-3.8,3*\H+0.02) node[midway,left=7pt,small lbl]{üst düzey\\düşünme};
+\end{tikzpicture}}%
+\caption{Revize Bloom taksonomisi ve ‘tek sayılar’ konusu üzerinden örnek sorular.}
+\end{figure}
+
+\subsection{Üç Modelin Karşılaştırılması}
+
+\begin{table}[h]
+\centering\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{2.4cm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X}
+\toprule
+ & \textbf{Van Hiele} & \textbf{SOLO} & \textbf{Bloom (revize)}\\
+\midrule
+Neyi sınıflar? & Öğrencinin geometrik düşünme düzeyini & Bir yanıtın yapısal karmaşıklığını & Öğretim hedeflerinin bilişsel talebini\\
+Alan & Geometriye özgü (sonradan başka alanlara uyarlandı) & Alandan bağımsız & Alandan bağımsız\\
+Birim & Öğrenci & Yanıt / ürün & Hedef / soru\\
+İspatla ilişki & 4. düzey biçimsel ispatın düzeyidir & İlişkisel düzey genellikle ispat için gerekir & Çözümleme ve değerlendirme ispat okumayı, yaratma ispat kurmayı içerir\\
+Öğretmene katkısı & Öğretimi hangi düzeyde yapacağını söyler & Öğrenci çıktısını puanlamaya yardım eder & Soru ve hedef yazmaya yardım eder\\
+\bottomrule
+\end{tabularx}
+\caption{Van Hiele, SOLO ve Bloom: benzer merdivenler, farklı amaçlar.}
+\end{table}
+
+\section{Muhakeme ve İspat Öğretiminde Araştırma Bulguları}\label{sec:arastirma}
+
+Matematik eğitimi araştırması, öğrencilerin muhakemeyi nasıl kavradığını sistematik biçimde inceler. Harel ve Sowder’ın ‘ispat şemaları’ sınıflaması (proof schemes) bu alanda etkili bir çerçevedir. Buna göre öğrenciler bir iddiayı üç temel yolla ‘ikna edici’ bulabilir: otoriteye dayalı şema (öğretmen ya da kitap söylediği için doğru sayma), deneysel şema (birkaç örnekte doğrulayarak ikna olma) ve tümdengelimsel şema (mantıksal zorunlulukla kabul etme). İlk ikisi bu bölümde tanıdık gelen tümevarımsal/abdüktif ikna biçimlerine karşılık gelir; matematiksel olgunluk, üçüncüsüne — tümdengelimsel şemaya — geçişle ölçülür.
+
+\begin{figure}[h]
+\centering
+\resizebox{\linewidth}{!}{%
+\begin{tikzpicture}[
+  lvl1/.style={node box,minimum width=3.5cm},
+  lvl2/.style={draw=bar!60,rounded corners=2pt,fill=white,font=\sffamily\scriptsize,inner sep=3pt,minimum width=1.7cm,align=center}]
+\node[node acc,minimum width=4cm] (root) at (5.4,0) {İspat şemaları\\{\scriptsize (Harel \& Sowder, 1998)}};
+\node[lvl1,fill=warml,draw=warm] (e) at (0.9,-1.5) {Dışsal ikna};
+\node[lvl1,fill=warml,draw=warm] (d) at (5.4,-1.5) {Deneysel};
+\node[lvl1,fill=grnl,draw=grn] (a) at (9.9,-1.5) {Tümdengelimsel\\(analitik)};
+\foreach \n in {e,d,a}{\draw[arr] (root.south) -- (\n.north);}
+\node[lvl2] (e1) at (-0.9,-2.9) {otoriter};
+\node[lvl2] (e2) at (0.9,-3.75) {ritüel\\(biçime bakar)};
+\node[lvl2] (e3) at (2.4,-2.9) {sembolik\\(anlamsız işlem)};
+\node[lvl2] (d1) at (4.75,-2.9) {tümevarımsal};
+\node[lvl2] (d2) at (7.0,-2.9) {algısal};
+\node[lvl2] (a1) at (9.3,-2.9) {dönüşümsel};
+\node[lvl2] (a2) at (11.5,-2.9) {aksiyomatik};
+\foreach \p/\c in {e/e1,e/e2,e/e3,d/d1,d/d2,a/a1,a/a2}{\draw[bar!60,line width=0.6pt] (\p.south) -- (\c.north);}
+\end{tikzpicture}}%
+\caption{Harel–Sowder ispat şemalarının ayrıntılı sınıflaması. Sol ve orta dallar tümdengelim öncesi ikna biçimleridir.}
+\end{figure}
+
+Nicolas Balacheff ise öğrenci gerekçelerini bir gelişim çizgisinde konumlandırır: naif empirizm (birkaç örnek), kritik deney (özenle seçilmiş ‘zor’ bir durum), genel örnek (temsilî bir durum üzerinden genel akıl yürütme) ve düşünsel deney (nesnelerden bağımsız biçimsel muhakeme). Bu ara basamaklar önemlidir: öğrenci bir gecede ‘örnekten ispata’ atlamaz; öğretmen, öğrencinin bulunduğu düzeyi tanıyıp bir sonraki basamağa köprü kurmalıdır. Örneğin ‘genel örnek’ aşamasındaki bir öğrenci, seçtiği tek bir üçgen üzerinde ‘ama bu herhangi bir üçgen için de böyle’ diyerek biçimsel ispata çok yaklaşmıştır.
+
+\begin{figure}[h]
+\centering
+\resizebox{\linewidth}{!}{%
+\begin{tikzpicture}[x=1cm,y=1cm]
+\foreach \i/\lab/\sub/\col in {0/Naif empirizm/{birkaç rastgele örnek}/warm,1/Kritik deney/{özenle seçilmiş ‘zor’ örnek}/warm,2/Genel örnek/{temsilî örnek üzerinde yapı}/acc,3/Düşünsel deney/{nesneden bağımsız argüman}/grn}{
+  \node[draw=\col,fill=\col!15,line width=0.8pt,rounded corners=2pt,minimum width=3.1cm,minimum height=1.05cm,align=center,anchor=south west,inner sep=3pt] at (\i*3.3,\i*0.6) {{\sffamily\small\bfseries\color{\col!80!black}\lab}\\[-1pt]{\sffamily\scriptsize \sub}};
+}
+\draw[arr,line width=1.1pt] (0,3.05) -- (13.1,3.05) node[pos=0.5,above,small lbl]{pragmatik ispatlardan kavramsal ispatlara};
+\end{tikzpicture}}%
+\caption{Balacheff’in (1988) ispat basamakları. İlk ikisi ‘pragmatik’ (eyleme dayalı), son ikisi ‘kavramsal’ (dile ve yapıya dayalı) ispatlardır.}
+\end{figure}
+
+Bu bulgular sınıfta somut bir tutuma dönüşür. Diyelim öğrenciler ‘iki tek sayının toplamı çifttir’ iddiasıyla karşılaşıyor. Deneysel şemadaki bir öğrenci ‘$3+5=8$, $7+9=16$, demek ki doğru’ der. Öğretmen bu gözlemi reddetmek yerine ‘neden her zaman böyle?’ diye sorar ve öğrenciyi genel örneğe yönlendirir: ‘tek sayı $2k+1$ biçimindedir’; iki tek sayı $(2k+1)+(2m+1)=2(k+m+1)$, yani çifttir. Böylece öğrenci, tek bir cebirsel temsille sonsuz durumu birden kapsayan tümdengelimsel muhakemeye geçer. Bu geçişi yönetmek, muhakeme türlerini bilmenin doğrudan pedagojik karşılığıdır.
+
+\subsection{Diğer Önemli Bulgular}
+
+\begin{itemize}[leftmargin=1.4em]
+\item \textbf{Değerlendirme ile üretme arasındaki uçurum.} Healy ve Hoyles’un (2000) İngiltere’de 14–15 yaşındaki öğrencilerle yaptığı geniş çalışma, öğrencilerin geçerli ispatları \emph{tanımada} kendi ispatlarını \emph{kurmaktan} belirgin biçimde daha başarılı olduğunu gösterdi. Öğrenciler, öğretmenin en yüksek puanı cebirsel argümana vereceğini düşünüyor, ama kendileri için en ikna edici olanın çoğu zaman empirik ya da anlatısal argüman olduğunu belirtiyordu.
+\item \textbf{İspatın genelliği.} Fischbein (1982) ve Chazan (1993), ispatı kabul eden öğrencilerin bir kısmının yine de ‘karşı örnek çıkabilir’ diye yeni örnekler denemek istediğini buldu. Bu öğrenciler ispatı yalnızca ‘çok güçlü bir örnek’ olarak algılıyordu.
+\item \textbf{Öğretmenlerin ispat anlayışı.} Knuth (2002), lise matematik öğretmenlerinin önemli bir kısmının zaman zaman geçersiz argümanları ispat olarak kabul ettiğini ve ispatı çoğunlukla ‘ileri düzey öğrencilere özgü’ bir etkinlik olarak gördüğünü raporladı. Bu bulgu, öğretmen eğitiminde muhakeme türleri üzerine açık bir çalışmanın neden gerekli olduğunu gösterir.
+\item \textbf{İspatın işlevleri.} De Villiers (1990), ispatın yalnızca \emph{doğrulama} işlevi olmadığını vurguladı: açıklama, sistemleştirme, keşif ve iletişim de ispatın işlevleridir. Öğrenciler zaten ‘emin’ oldukları bir şeyi ispatlamanın anlamsız olduğunu düşündüğünde, ispatın \emph{açıklayıcı} işlevine (‘neden doğru?’) vurgu yapmak motivasyonu artırır.
+\end{itemize}
+
+Özetle, bu bölümde ele alınan tümdengelim–tümevarım–abdüksiyon ayrımı ile van Hiele ve SOLO düzeyleri, soyut felsefi kategoriler değil; öğretmenin sınıfta öğrenci muhakemesini okumasını, teşhis etmesini ve ilerletmesini sağlayan pratik araçlardır. Öğretmen adayı, kendi muhakemesini bu kavramlarla çözümleyebildiği ölçüde, öğrencilerininkini de çözümleyebilir hâle gelir.
+
+\section{Bir Öğrenci Argümanının Çözümlenmesi}
+
+Bir öğrencinin şöyle dediğini düşünelim: ‘$1+3=4$, $1+3+5=9$, $1+3+5+7=16$; bunların hepsi tam kare. Öyleyse ilk $n$ tek sayının toplamı her zaman tam karedir.’ Bu argümanı muhakeme türleri açısından çözümleyelim. Öğrenci önce özel durumları inceleyerek bir örüntü sezmiştir (tümevarımsal keşif) ve en sade açıklamanın ‘toplam $=n^2$’ olduğunu tahmin etmiştir (abdüktif sıçrama). Bu aşamaya kadar her şey değerlidir ve teşvik edilmelidir — ama henüz bir ispat yoktur.
+
+İddiayı kanıtlamak için tümdengelimsel bir adım gerekir: tümevarımla (Bölüm~\ref{chap:tumevarim}) $1+3+\dots+(2n-1)=n^2$ eşitliği gösterilebilir. Öğretmenin görevi, öğrencinin sezgisini küçümsemeden ‘bunun her zaman doğru olduğundan neden eminiz?’ sorusuyla onu gerekçelendirmeye taşımaktır. Aynı öğrenci, $f(n)=n^2-n+41$ örüntüsüyle karşılaştığında (Bölüm~\ref{chap:muhakeme-turleri}’deki yanıltıcı örüntü örneğinde) tümevarımsal genellemenin nasıl çökebileceğini de görmüş olur; böylece ‘örüntü’ ile ‘teorem’ arasındaki farkı somut biçimde yaşar.
+
+\subsection{Aynı İddia, Beş Farklı Gerekçe}
+
+Öğrencilerden bu iddiayı ‘kanıtlamaları’ istendiğinde, sınıfta tipik olarak şu beş yanıt türü görülür. Her birinin muhakeme türünü ve Balacheff basamağını (bkz. Bölüm~\ref{sec:arastirma}) yanına yazdık.
+
+\begin{enumerate}[leftmargin=1.6em,label=\textbf{(\Alph*)}]
+\item \textbf{‘Öğretmen söyledi / kitapta yazıyor.’} — Otoriteye dayalı; kendi başına bir muhakeme yok. (Harel–Sowder: dışsal şema.)
+\item \textbf{‘Beşe kadar denedim, hepsi tuttu.’} — Tümevarımsal; naif empirizm.
+\item \textbf{‘Bir de çok büyük bir sayı denedim: ilk 100 tek sayının toplamı 10\,000 çıktı.’} — Tümevarımsal; kritik deney. Öğrenci ‘zor bir durumu’ sınayarak güveni artırmaya çalışır ama hâlâ genellik yoktur.
+\item \textbf{Görsel argüman (Şekil~\ref{fig:gnomon}’teki gnomonlar):} ‘$4\times4$’lük kareye bir L eklersem, L’de 4+1+4 = 9 kare var, yani bir sonraki tek sayı. Her seferinde böyle olur çünkü $n\times n$’lik kareye L eklemek bir kenarı ve bir alt kenarı ve köşeyi ekler: $n+n+1=2n+1$.’ — \emph{Genel örnek}; tek bir resim üzerinden ama her $n$ için geçerli olan yapıyı görerek akıl yürütüyor.
+\item \textbf{Cebirsel ispat:} Toplamı iki kez yazıp ters sırayla eşleyerek:
+\[
+2S=\underbrace{(1+(2n-1))+(3+(2n-3))+\dots}_{n\ \text{tane}}=n\cdot 2n\quad\Rightarrow\quad S=n^2.
+\]
+— Tümdengelimsel; düşünsel deney (nesnelerden bağımsız biçimsel muhakeme).
+\end{enumerate}
+
+\begin{coz}
+\textbf{Matematiksel tümevarımla ispat.} $P(n)$: $1+3+\dots+(2n-1)=n^2$. \emph{Taban:} $n=1$ için $1=1^2$. \emph{Adım:} $P(k)$ doğru olsun. O hâlde $1+3+\dots+(2k-1)+(2k+1)=k^2+2k+1=(k+1)^2$; yani $P(k+1)$ doğrudur. Tümevarım ilkesiyle $P(n)$ her $n\ge1$ için doğrudur. $\square$ \\[3pt]
+Dikkat: (D)’deki görsel argüman ile bu ispatın tümevarım adımı \emph{aynı fikirdir} ($k^2$’ye $2k+1$ eklemek). Genel örnek, biçimsel ispatın ‘resmidir’ — bu yüzden 4. basamaktan 5. basamağa geçişte güçlü bir köprüdür.
+\end{coz}
+
+\begin{sinif}[Öğretmen hamleleri — bir basamak yukarı]
+(B)’deki öğrenciye: ‘Bir sonraki toplamı hesaplamadan tahmin edebilir misin? Nasıl?’ — onu yapıya yöneltir.\\
+(C)’deki öğrenciye: ‘100’de tuttu; 101’de tutacağını hesaplamadan nereden bilirsin?’ — ‘bir sonraki’ ilişkisini sorgulatır.\\
+(D)’deki öğrenciye: ‘Resimdeki L’yi harflerle yazabilir misin?’ — genel örneği sembolik dile çevirtir.\\
+(E)’deki öğrenciye: ‘Toplamı başka bir yolla da ispatlayabilir misin? Hangi ispat sana \emph{neden} doğru olduğunu daha iyi anlatıyor?’ — ispatın açıklayıcı işlevine dikkat çeker.
+\end{sinif}
+
+\subsection{Muhakeme Günlüğü Şablonu}
+
+\begin{table}[h]
+\centering\small
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{4.5cm}>{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Soru} & \textbf{Öğrencinin yanıtı (örnek)}\\
+\midrule
+Bugün hangi iddiayı inceledik? & Üçgenin iç açıları toplamı 180°’dir.\\
+İddiaya ilk nasıl ulaştık? & Ölçerek. (Tümevarım)\\
+Neden doğru olabileceğini ne düşündürdü? & Köşeleri yan yana koyunca düz çizgi oldu. (Abdüksiyon)\\
+Ne zaman \emph{emin} olduk? & Paralel doğruyla ispatı yazınca. (Tümdengelim)\\
+Hâlâ merak ettiğim bir şey: & Küre üzerine çizilen üçgenlerde de böyle mi?\\
+\bottomrule
+\end{tabularx}
+\caption{Bir muhakeme günlüğü sayfası. Son satır, 5. van Hiele düzeyine açılan bir kapıdır.}
+\end{table}
+
+\begin{tbox}{Öneri — Değerlendirmede muhakeme türü}
+Sınav ve ödevlerde yalnızca doğru cevabı değil, kullanılan muhakemeyi de puanlayan basit bir rubrik kullanılabilir: \textbf{0} — gerekçe yok; \textbf{1} — tek örnekle gerekçe; \textbf{2} — çok örnekle gerekçe (‘hep böyle çıktı’); \textbf{3} — genel örnek veya görsel argüman; \textbf{4} — tüm durumları kapsayan tümdengelimsel argüman. Bu rubrik, Bölüm~\ref{sec:arastirma}’te tartışılan Balacheff basamaklarının basitleştirilmiş bir sınıf sürümüdür.
+\end{tbox}
+
+\section{Yüksek Lisans Derinleştirmesi: Keşif ve Gerekçelendirme Bağlamları}
+
+Bilim felsefesinde Hans Reichenbach’ın (1938) yaptığı ‘keşif bağlamı’ (context of discovery) ile ‘gerekçelendirme bağlamı’ (context of justification) ayrımı, matematiksel muhakemeyi anlamada aydınlatıcıdır. Bir teorem sezgiyle, analojiyle, hesaplamayla ya da tahminle bulunabilir; ancak matematiksel topluluk onu yalnızca tümdengelimsel bir ispatla kabul eder. İki bağlam farklı muhakeme türlerine yaslanır ve birini diğerine indirgemek, matematiğin hem yaratıcı hem de kesin doğasını gözden kaçırmak olur.
+
+\subsection{Lakatos: İspatlar ve Çürütmeler}
+
+Imre Lakatos, \emph{Proofs and Refutations} (1976) adlı eserinde ispatın statik bir nesne değil, bir ‘ispat–çürütme’ diyalektiğiyle gelişen bir süreç olduğunu gösterir: bir kanıt öne sürülür, karşı örnekler bulunur, tanımlar ve önermeler bu karşı örnekleri karşılayacak biçimde yeniden düzenlenir (Euler’in çokyüzlü formülü $V-E+F=2$ bunun klasik örneğidir). Bu görüş, öğrenciye ispatın gökten inen bir kesinlik değil, insan eliyle işlenen ve zamanla olgunlaşan bir gerekçelendirme pratiği olduğunu hatırlatır.
+
+Lakatos’un kitabı bir sınıfta geçen hayalî bir tartışma biçiminde yazılmıştır: öğretmen Euler formülü için bir ‘ispat’ sunar, öğrenciler ise tek tek karşı örnekler getirir. Aşağıdaki tablo bu karşı örneklerden bazılarını gösterir.
+
+\begin{table}[h]
+\centering\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}X>{\centering\arraybackslash}p{0.8cm}>{\centering\arraybackslash}p{0.8cm}>{\centering\arraybackslash}p{0.8cm}>{\centering\arraybackslash}p{1.6cm}}
+\toprule
+\textbf{Çokyüzlü} & $V$ & $E$ & $F$ & $V-E+F$\\
+\midrule
+Küp & 8 & 12 & 6 & \textbf{2}\\
+Dörtyüzlü & 4 & 6 & 4 & \textbf{2}\\
+Kare piramit & 5 & 8 & 5 & \textbf{2}\\
+Onikiyüzlü (dodekahedron) & 20 & 30 & 12 & \textbf{2}\\
+\rowcolor{warml} ‘Resim çerçevesi’ (ortasında kare delik olan kalın çerçeve) & 16 & 32 & 16 & \textbf{0}\\
+\rowcolor{warml} İçinde küp biçimli bir boşluk olan küp & 16 & 24 & 12 & \textbf{4}\\
+\bottomrule
+\end{tabularx}
+\caption{Euler formülünün ‘canavarları’. Son iki satır, formülü tehdit eden karşı örneklerdir.}
+\end{table}
+
+Lakatos, karşı örneklere verilen tepkileri adlandırır: \emph{canavar yasaklama} (‘Resim çerçevesi zaten gerçek bir çokyüzlü değildir!’ diyerek tanımı daraltmak), \emph{istisna yasaklama} (‘Formül, delik içermeyen çokyüzlüler için geçerlidir’ diyerek teoremin alanını daraltmak) ve \emph{lemma katma} (ispatın hangi gizli varsayıma dayandığını bulup onu teoremin koşuluna açıkça eklemek). Üçüncüsü en verimlisidir: karşı örnek, ispatın gizli bir lemmasını açığa çıkarır. Bugün bilindiği üzere $V-E+F$, yüzeyin ‘delik sayısına’ (cinsine) bağlı bir değişmezdir: $V-E+F=2-2g$.
+
+\begin{sinif}[Sınıfta · Lakatos etkinliği]
+Öğrencilere küp, piramit ve prizma modelleri verin; $V$, $E$, $F$ sayılarını tablolaştırsınlar ve bir sanı kursunlar (tümevarım). Sonra pipetlerden ya da kartondan bir ‘resim çerçevesi’ çokyüzlüsü gösterin. Sınıfın vereceği tepkiler çoğu zaman Lakatos’un üç tepkisini birebir yeniden üretir. Tartışmanın sonunda şu soruyu sorun: ‘Sanımızı nasıl düzeltirsek hem doğru hem de işe yarar kalır?’
+\end{sinif}
+
+\subsection{Pólya: Olası Muhakeme}
+
+George Pólya ise ‘olası muhakeme’ (plausible reasoning) kavramıyla, matematikçinin ispattan önce nasıl tahmin yürüttüğünü çözümler: özel durumları inceleme, analoji kurma, genelleme ve tümevarımsal destek toplama. Pólya’ya göre kesin muhakeme (ispat) ile olası muhakeme (keşif) birbirinin rakibi değil, tamamlayıcısıdır; usta matematikçi ikisi arasında akıcı biçimde gidip gelir. İyi bir öğretmen de her iki muhakemeyi sınıfta görünür kılar: önce ‘bakalım ne oluyor’ diye keşfeder, sonra ‘neden hep böyle’ diye ispatlar.
+
+Pólya’nın \emph{Nasıl Çözmeli?} (1945) kitabında önerdiği dört aşamalı problem çözme modeli, muhakeme türlerinin bir problem boyunca nasıl el değiştirdiğini açıkça gösterir:
+
+\begin{figure}[h]
+\centering
+\resizebox{\linewidth}{!}{%
+\begin{tikzpicture}[node distance=0.5cm]
+\node[node box,minimum width=2.8cm,minimum height=1.1cm] (s1) {1. Problemi\\anlamak};
+\node[node acc,minimum width=2.8cm,minimum height=1.1cm,right=of s1] (s2) {2. Plan\\yapmak};
+\node[node grn,minimum width=2.8cm,minimum height=1.1cm,right=of s2] (s3) {3. Planı\\uygulamak};
+\node[node warm,minimum width=2.8cm,minimum height=1.1cm,right=of s3] (s4) {4. Geriye\\bakmak};
+\draw[arr] (s1)--(s2); \draw[arr] (s2)--(s3); \draw[arr] (s3)--(s4);
+\draw[arr,dashed] (s4.north) to[bend right=14] node[midway,above,small lbl]{yeni problem} (s1.north);
+\node[small lbl,below=0.12cm of s1,text width=2.8cm] {özel durumlar\\(tümevarım)};
+\node[small lbl,below=0.12cm of s2,text width=2.8cm] {benzer problem,\\ hipotez (abdüksiyon, analoji)};
+\node[small lbl,below=0.12cm of s3,text width=2.8cm] {adım adım\\doğrulama (tümdengelim)};
+\node[small lbl,below=0.12cm of s4,text width=2.8cm] {genelleme,\\yeni sanı};
+\end{tikzpicture}}%
+\caption{Pólya’nın dört aşaması ve her aşamada öne çıkan muhakeme türü.}
+\end{figure}
+
+Pólya’nın ‘temel tümevarımsal kalıp’ dediği şema da aydınlatıcıdır: ‘$A$, $B$’yi gerektirir; $B$ doğru çıktı; öyleyse $A$ \emph{daha inanılır} hâle geldi.’ Bu, sonucu onaylama hatasının ‘kesinlik’ yerine ‘inanılırlık derecesi’ diliyle yeniden yazılmış hâlidir — abdüksiyon ile tümevarımın buluştuğu nokta.
+
+\subsection{Toulmin: Argümanın Anatomisi}
+
+Son olarak, argüman çözümlemesinde Stephen Toulmin’in (1958) modeli (iddia, veri, gerekçe, destek, çürütücü) muhakemeyi biçimsel mantığın ötesinde, gündelik ve pedagojik bağlamda incelemeye olanak verir. Öğretmen adayı, öğrenci gerekçelerini bu bileşenlere ayırarak eksik kalan halkayı (çoğu zaman ‘gerekçe’, yani veriyi iddiaya bağlayan kural) teşhis edebilir; bu da matematiksel tartışmayı sınıfta yönetmenin somut bir aracıdır.
+
+\begin{figure}[h]
+\centering
+\resizebox{\linewidth}{!}{%
+\begin{tikzpicture}
+\node[node acc,minimum width=3.3cm,text width=3.1cm] (V) at (0,0) {\textbf{Veri}\\{\scriptsize 3+5=8, 7+9=16, 11+13=24}};
+\node[node grn,minimum width=3.3cm,text width=3.1cm] (I) at (9,0) {\textbf{İddia}\\{\scriptsize İki tek sayının toplamı çifttir.}};
+\node[node box,font=\sffamily\scriptsize,minimum width=2.2cm] (N) at (5.4,0) {\textbf{Niteleyici}\\‘her zaman’};
+\draw[arr] (V) -- (N); \draw[arr] (N) -- (I);
+\node[node box,fill=white,text width=3.6cm,font=\sffamily\scriptsize] (G) at (2.7,-1.9) {\textbf{Gerekçe}\\Tek sayılar $2k+1$ biçimindedir; iki tanesinin toplamı $2(k+m+1)$ olur.};
+\draw[arr] (G.north) -- ($(V.east)!0.5!(N.west)$);
+\node[node box,fill=white,text width=3.6cm,font=\sffamily\scriptsize] (D) at (2.7,-3.7) {\textbf{Destek}\\Tek/çift sayı tanımı, dağılma özelliği, tam sayıların kapalılığı.};
+\draw[arr] (D) -- (G);
+\node[node warm,text width=3.3cm,font=\sffamily\scriptsize] (C) at (8.4,-2.3) {\textbf{Çürütücü}\\‘Tek’ yalnızca tam sayılar için tanımlıdır; tam sayı olmayan sayılar için iddia anlamsızdır.};
+\draw[arr] (C.north) -- (N.south east);
+\end{tikzpicture}}%
+\caption{Toulmin modeli bir sınıf argümanına uygulandığında. Deneysel şemadaki bir öğrenci yalnızca ‘Veri → İddia’ okunu kurar; öğretmenin görevi ‘gerekçe’ kutusunu doldurtmaktır.}
+\end{figure}
+
+\begin{tbox}{Uygulama notu}
+Toulmin modeli, özellikle öğrencinin argümanı ‘yarım’ kaldığında işe yarar. Öğrenci ‘Üç örnekte de doğru çıktı, o hâlde doğru’ dediğinde veri ve iddia vardır, gerekçe yoktur. Öğretmen ‘Bu verilerden o iddiaya hangi kural izin veriyor?’ diye sorarak eksik halkayı hedefler. Gerekçe kutusu dolduğunda argüman tümevarımdan tümdengelime geçmiş olur.
+\end{tbox}
+
+\section{Sınıf İçin Etkinlikler}
+
+Bu bölümdeki fikirleri sınıfa taşımak için hazır, düzey belirtilmiş üç etkinlik öneriyoruz. Her etkinlik en az iki muhakeme türünü bilinçli olarak sıralar.
+
+\begin{sinif}[Etkinlik 1 · Dörtgen aile ağacı \hfill {\normalfont 7–9. sınıf, van Hiele 2→3}]
+Kartlara çizilmiş 30 dörtgeni öğrenciler önce serbestçe gruplasın (1.–2. düzey). Sonra ‘Bu grupların hangileri iç içe olabilir?’ sorusuyla Şekil~\ref{fig:dortgen}’deki hiyerarşiyi kendileri kursunlar. Son olarak ‘kare’ için mümkün olan en kısa tanımı yarışma biçiminde bulsunlar. Kazanan tanımın gerçekten yeterli olduğunu diğer gruplar karşı örnekle sınamaya çalışır.
+\end{sinif}
+
+\begin{sinif}[Etkinlik 2 · Argüman mahkemesi \hfill {\normalfont lise, Balacheff basamakları}]
+Tahtaya aynı iddianın (örn. ‘Ardışık üç tam sayının toplamı 3’e bölünür’) dört farklı gerekçesini yazın: bir örnek, on örnek, bir nokta diyagramı, bir cebirsel argüman. Öğrenciler ‘hâkim’ olarak her gerekçeye ‘ikna etti / etmedi’ kararı versin ve kararlarını Toulmin kutularıyla gerekçelendirsin. Etkinlik, öğrencilerin kendi ispat şemalarını görünür kılar.
+\end{sinif}
+
+\begin{sinif}[Etkinlik 3 · Küre üzerinde üçgen \hfill {\normalfont lise, van Hiele 4→5}]
+Bir plastik top üzerine üç ‘büyük çember’ yayıyla üçgen çizdirip açılarını ölçtürün. Toplam $180°$’den büyük çıkar. Soru: ‘Düz kâğıttaki ispatımızın hangi adımı burada çöküyor?’ Öğrenciler paralel aksiyomuna ulaştığında, teoremin aksiyom sistemine bağlı olduğunu — yani 5. düzeyin özünü — deneyimlemiş olurlar.
+\end{sinif}
+
+\usection{Bölüm Özeti}
+
+\begin{itemize}[leftmargin=1.4em]
+\item Van Hiele düzeyleri ispat öğretiminin ön koşullarını belirler; düzeyler ardışıktır, yaştan çok öğretime bağlıdır ve her düzeyin kendi dili vardır. Beş öğretim evresi düzey geçişini yapılandırır.
+\item SOLO bir yanıtın yapısını, Bloom bir hedefin bilişsel talebini sınıflar; üç model birlikte öğretmene tasarım ve değerlendirme araçları sunar.
+\item Harel–Sowder ispat şemaları ve Balacheff basamakları, öğrenci argümanını teşhis etmeye ve bir sonraki basamağa köprü kurmaya yarar. Toulmin modeli, eksik halkayı (genellikle gerekçe) bulmayı kolaylaştırır.
+\item Lakatos ve Pólya, ispatın insan eliyle olgunlaşan bir pratik olduğunu ve keşif ile kesinliğin birbirini tamamladığını gösterir.
+\end{itemize}
+
+\usection{Gözden Geçirme Soruları}
+
+\begin{enumerate}[leftmargin=1.8em,label=\textbf{\arabic*.}]
+\item Van Hiele’nin hangi düzeyinde öğrenci ilk kez biçimsel ispat üretebilir?
+\item Van Hiele modelindeki ‘uyumsuzluk’ özelliği sınıfta nasıl görünür? Bir örnek veriniz.
+\item Lakatos’un ‘canavar yasaklama’ ve ‘lemma katma’ tepkileri arasındaki fark nedir? Hangisi matematiksel bilgiyi daha çok ilerletir?
+\item Bir öğrencinin argümanını Toulmin modeliyle çözümlerken en sık eksik kalan bileşen hangisidir ve neden?
+\end{enumerate}
+
+\usection{Alıştırmalar}
+
+\begin{enumerate}[leftmargin=1.8em,label=\textbf{\arabic*.}]
+\item Van Hiele düzeylerinden birini seçip, o düzeydeki bir öğrenciye uygun kısa bir etkinlik tasarlayın ve neden o düzeye uygun olduğunu belirtin.
+\item Bir öğrenci ‘üç örnekte doğruladım, öyleyse her zaman doğru’ diyor. Onu Balacheff’in ‘genel örnek’ aşamasına taşıyacak bir soru yazın.
+\item Bir ders kitabından bir geometri ispatı seçin. İspatın keşif aşamasında hangi abdüktif adımların (yardımcı çizgi, strateji) gizlendiğini tahmin edin ve bunları görünür kılacak bir öğretmen notu yazın.
+\item Bir öğrencinin ‘kare dikdörtgen değildir’ ifadesini van Hiele modeli çerçevesinde yorumlayın ve öğrenciyi 3. düzeye taşıyacak üç soruluk bir dizi tasarlayın.
+\end{enumerate}
+
+\usection{Çoktan Seçmeli Sorular}
+
+\begin{multicols}{2}
+\footnotesize
+\raggedcolumns
+\newcommand{\cs}[5]{\item #1\\[1pt]
+\hspace*{0.4em}A) #2\\\hspace*{0.4em}B) #3\\\hspace*{0.4em}C) #4\\\hspace*{0.4em}D) #5}
+\begin{enumerate}[leftmargin=1.8em,label=\textbf{\arabic*.},itemsep=0.45em]
+\cs{Van Hiele modelinde biçimsel ispat hangi düzeyde ortaya çıkar?}{1. görsel}{2. çözümleme}{4. biçimsel çıkarım}{Hiçbiri}
+\cs{Van Hiele modelinin 1. düzeyi hangisidir?}{Görsel tanıma}{Biçimsel ispat}{Aksiyomatik karşılaştırma}{Çözümleme}
+\cs{İspat öğretimi öğrencide ne zaman anlamlı olur?}{1. düzeyde}{Hemen başlangıçta}{3.–4. düzeye geçişte}{Hiçbir zaman}
+\cs{Van Hiele modelinin en üst düzeyi hangisidir?}{Görsel}{Çözümleme}{Kesinlik (aksiyomatik karşılaştırma)}{İnformal çıkarım}
+\cs{Van Hiele’nin 3. düzeyi (informal çıkarım) neyi içerir?}{Şekilleri görselden tanıma}{Özellikler arasında ilişki kurma}{Aksiyom sistemlerini karşılaştırma}{Yalnızca ezber}
+\cs{Bloom taksonomisi neyi sıralar?}{Geometrik şekilleri}{Bilişsel süreçleri basitten karmaşığa}{İspat yöntemlerini}{Sayı kümelerini}
+\cs{Balacheff’e göre tek bir temsilî örnek üzerinden her durumda işleyen yapıyı gösteren basamak hangisidir?}{Naif empirizm}{Kritik deney}{Genel örnek}{Düşünsel deney}
+\cs{‘Kitapta yazdığına göre doğrudur’ diyen öğrencinin ispat şeması (Harel–Sowder) hangisidir?}{Otoriter (dışsal)}{Tümevarımsal}{Dönüşümsel}{Aksiyomatik}
+\cs{‘Kare dikdörtgen değildir, çünkü karenin bütün kenarları eşit’ diyen öğrenci tipik olarak hangi van Hiele düzeyindedir?}{1. düzey}{2. düzey}{4. düzey}{5. düzey}
+\cs{Lakatos’un ‘lemma katma’ tepkisi nedir?}{Tanımı daraltarak karşı örneği dışlamak}{İspatın gizli varsayımını teoremin koşuluna açıkça eklemek}{Karşı örneği görmezden gelmek}{Teoremden tümüyle vazgeçmek}
+\cs{Toulmin modelinde veriyi iddiaya bağlayan kurala ne ad verilir?}{Destek}{Niteleyici}{Gerekçe}{Çürütücü}
+\cs{Reichenbach’ın ünlü ayrımı hangisidir?}{Keşif bağlamı / gerekçelendirme bağlamı}{Geçerlilik / sağlamlık}{Analiz / sentez}{Tümdengelim / tümevarım}
+\cs{SOLO’da birçok doğru öğeyi aralarında ilişki kurmadan sıralayan yanıt hangi düzeydedir?}{Tekli}{Çoklu}{İlişkisel}{Genişletilmiş soyut}
+\end{enumerate}
+\end{multicols}
+
+\usection{Öğretmen Adayına Öneriler}
+
+\begin{enumerate}[leftmargin=1.6em,label=\textbf{\arabic*.}]
+\item \textbf{Genel örneği köprü olarak kullanın.} Görsel ve temsilî argümanlar, empirizmden biçimsel ispata en güvenli geçittir.
+\item \textbf{Düzeyi dinleyin.} Bir öğrencinin cümlesi (‘kare dikdörtgen değil’) size düzeyini söyler; öğretiminizi o düzeyden başlatın.
+\item \textbf{İspatın açıklayıcı işlevini öne çıkarın.} ‘Doğru olduğunu zaten biliyoruz, neden ispatlayalım?’ sorusuna ‘çünkü \emph{neden} doğru olduğunu anlamak istiyoruz’ yanıtını verin.
+\end{enumerate}
+
+\usection{Kavram Sözlüğü}
+
+{\small
+\renewcommand{\arraystretch}{1.25}
+\begin{longtable}{>{\raggedright\arraybackslash}p{2.3cm}>{\raggedright\itshape\arraybackslash}p{2.3cm}>{\raggedright\arraybackslash}p{5.6cm}}
+\toprule
+\textbf{Terim} & \textbf{\upshape İngilizce} & \textbf{Kısa tanım}\\
+\midrule\endhead
+Genel örnek & generic example & Tek bir örnek üzerinden her durumda işleyen yapıyı gösteren argüman.\\
+Gerekçelendirme bağlamı & context of justification & Bir iddianın kabul edilmesini sağlayan kanıtlama süreci.\\
+İspat şeması & proof scheme & Bir kişiyi bir iddianın doğruluğuna ikna eden şey.\\
+Keşif bağlamı & context of discovery & Bir fikrin ilk kez bulunduğu süreç.\\
+Olası muhakeme & plausible reasoning & Pólya’nın keşif aşamasındaki muhakeme için kullandığı terim.\\
+SOLO & Structure of the Observed Learning Outcome & Yanıtların yapısal karmaşıklığına göre sınıflama.\\
+\bottomrule
+\end{longtable}
+}

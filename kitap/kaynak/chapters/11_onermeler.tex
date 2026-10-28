@@ -1,0 +1,490 @@
+\chapter{Önermeler Mantığı ve Argüman Geçerliliği}
+\label{chap:onermeler-mantigi}
+
+
+\subsection*{Öğrenme Hedefleri}
+
+Bu bölümü tamamladığınızda:
+
+\begin{itemize}\setlength{\itemsep}{2pt}\setlength{\parskip}{0pt}
+\item Önerme kavramını tanımlayabilecek ve önerme olan/olmayan ifadeleri ayırt edebileceksiniz.
+\item Temel mantıksal bağlaçları (değil, ve, veya, ise, ancak ve ancak) doğruluk tablolarıyla tanımlayabileceksiniz.
+\item Bileşik önermelerin doğruluk tablolarını oluşturabileceksiniz.
+\item Tautoloji, çelişki ve olumsallık kavramlarını ayırt edebilecek;
+\end{itemize}
+
+De Morgan yasalarını ve koşullu önermenin çeşitlerini (karşıt, ters, çelişik) uygulayabileceksiniz.
+
+\section{Önerme Kavramı}
+
+\begin{tcolorbox}[bookbox,colback=cDef]
+\textbf{\textsf{\textcolor{cAcc}{Tanım.}}}\quad
+Doğru ya da yanlış olduğu kesin biçimde belirlenebilen bildirme cümlesine \emph{önerme} denir. Emirler, sorular ve serbest değişken içeren açık formüller, ek bir değerleme verilmeden önerme değildir.
+\end{tcolorbox}
+
+Önermeler mantığının (propositional logic) temel birimi bu kitapta önerme diye adlandıracağımız, doğruluk değeri taşıyan bildirimdir. Gündelik cümle ile onun ifade ettiği önerme arasında felsefi ve dilbilimsel ayrımlar yapılabilir; burada klasik iki-değerli mantığın çalışma uzlaşımını kullanacağız: iyi belirlenmiş her atomik önerme doğru ya da yanlış değerlerinden birini alır. “İstanbul, Türkiye’nin başkentidir” bir önermedir (yanlıştır — başkent Ankara’dır). “5 asal bir sayıdır” bir önermedir (doğrudur). Buna karşılık “Kapıyı kapatır mısın?” bir soru cümlesi olduğu için, “Keşke yağmur yağsa” bir dilek cümlesi olduğu için önerme değildir; bu tür cümlelerin doğru ya da yanlış olması söz konusu değildir. Bölüm~\ref{chap:sembolik-mantik}’te tanıttığımız açık formül (serbest değişken içeren, örneğin “x asaldır” gibi bir ifade), bir değişken ataması altında doğru ya da yanlış olabilir; fakat atama yapılmadan veya değişken niceleyiciyle bağlanmadan kapalı bir cümle değildir. Bu bölümde ele alacağımız önermeler mantığı, değişken ve niceleyici içermeyen, sabit doğruluk değerine sahip önermelerle ve bunların mantıksal bağlaçlarla birleştirilmesiyle ilgilenir (Enderton 2001, ss. 80–88).
+
+\section{Temel Mantıksal Bağlaçlar}\label{sec:baglaclar}
+
+Basit önermeler (genellikle p, q, r gibi harflerle gösterilir), mantıksal bağlaçlar aracılığıyla birleştirilerek bileşik önermeler oluşturur. Aşağıdaki beş bağlaç yaygın ve kullanışlı bir sunum kümesidir; mantıksal bakımdan hepsini ilkel kabul etmek gerekmez, çünkü bazıları diğerleriyle tanımlanabilir. Doğruluk tabloları, bu bağlaçların klasik iki-değerli doğruluk koşullarını verir (Enderton 2001, ss. 27–34). Değil (Olumsuzlama, ¬p): p’nin doğruluk değerini tersine çevirir.
+
+\par\smallskip\begin{center}{\small\itshape\sffamily\color{gray}Değil (¬p):}\par\smallskip{\renewcommand{\arraystretch}{1.15}\small\begin{tabular}{|c|c|}\hline
+\rowcolor{cAcc}\textcolor{white}{\bfseries p} & \textcolor{white}{\bfseries ¬p} \\ \hline
+D & Y \\ \hline
+Y & D \\ \hline
+\end{tabular}}\end{center}\par\smallskip
+
+\par\smallskip\begin{center}{\small\itshape\sffamily\color{gray}Ve (p ∧ q):}\par\smallskip{\renewcommand{\arraystretch}{1.15}\small\begin{tabular}{|c|c|c|}\hline
+\rowcolor{cAcc}\textcolor{white}{\bfseries p} & \textcolor{white}{\bfseries q} & \textcolor{white}{\bfseries p∧q} \\ \hline
+D & D & D \\ \hline
+D & Y & Y \\ \hline
+Y & D & Y \\ \hline
+Y & Y & Y \\ \hline
+\end{tabular}}\end{center}\par\smallskip
+
+\par\smallskip\begin{center}{\small\itshape\sffamily\color{gray}Veya (p ∨ q):}\par\smallskip{\renewcommand{\arraystretch}{1.15}\small\begin{tabular}{|c|c|c|}\hline
+\rowcolor{cAcc}\textcolor{white}{\bfseries p} & \textcolor{white}{\bfseries q} & \textcolor{white}{\bfseries p∨q} \\ \hline
+D & D & D \\ \hline
+D & Y & D \\ \hline
+Y & D & D \\ \hline
+Y & Y & Y \\ \hline
+\end{tabular}}\end{center}\par\smallskip
+
+\par\smallskip\begin{center}{\small\itshape\sffamily\color{gray}İse (p → q):}\par\smallskip{\renewcommand{\arraystretch}{1.15}\small\begin{tabular}{|c|c|c|}\hline
+\rowcolor{cAcc}\textcolor{white}{\bfseries p} & \textcolor{white}{\bfseries q} & \textcolor{white}{\bfseries p→q} \\ \hline
+D & D & D \\ \hline
+D & Y & Y \\ \hline
+Y & D & D \\ \hline
+Y & Y & D \\ \hline
+\end{tabular}}\end{center}\par\smallskip
+
+\par\smallskip\begin{center}{\small\itshape\sffamily\color{gray}Ancak ve ancak (p ↔ q):}\par\smallskip{\renewcommand{\arraystretch}{1.15}\small\begin{tabular}{|c|c|c|}\hline
+\rowcolor{cAcc}\textcolor{white}{\bfseries p} & \textcolor{white}{\bfseries q} & \textcolor{white}{\bfseries p↔q} \\ \hline
+D & D & D \\ \hline
+D & Y & Y \\ \hline
+Y & D & Y \\ \hline
+Y & Y & D \\ \hline
+\end{tabular}}\end{center}\par\smallskip
+
+Ve (Konjonksiyon, p ∧ q): Yalnızca her iki önerme de doğruyken doğrudur.
+
+Veya (Disjonksiyon, p ∨ q): En az bir önerme doğruyken doğrudur (matematikte kullanılan “veya”, günlük dildeki “ya… ya da…” anlamındaki dışlayıcı veyadan farklı olarak, her iki önermenin de doğru olduğu durumu içerir — buna kapsayıcı veya denir).
+
+İse (Koşullu / İmplikasyon, p → q): Yalnızca p doğru ve q yanlışken yanlıştır; diğer tüm durumlarda doğrudur.
+
+Ancak ve ancak (Çift Koşullu / Biyükoşullu, p ↔ q): p ve q aynı doğruluk değerine sahipken doğrudur.
+
+\section{Koşullu Önerme Üzerine Bir Not}
+
+Koşullu önermenin (p → q, “p ise q”) doğruluk tablosu, özellikle p yanlış olduğunda p → q’nun neden doğru sayıldığı konusunda sezgiye aykırı gelebilir. Buradaki bağlaç, gündelik dildeki nedensellik, zaman sırası veya açıklama ilişkilerinin tamamını değil, maddi koşulu tanımlar: p → q, ¬p ∨ q ile aynı doğruluk fonksiyonudur. Bu nedenle p → q önermesi, yalnızca “koşul (p) gerçekleştiği hâlde sonucun (q) gerçekleşmediği” durumda, yani p doğru q yanlışken, yanlış sayılır; p’nin gerçekleşmediği (yanlış olduğu) durumlarda önerme “boş yere doğrulanmış” (vacuously true) kabul edilir (Enderton 2001, ss. 29–31). Devlin’in pedagojik sunumu da maddi koşul ile gündelik dildeki nedensel ve açıklayıcı “ise” kullanımlarını ayırır. Böylece doğruluk tablosunun gündelik bir neden–sonuç iddiasını çözümlemekten ziyade, iki önermenin doğruluk değerleri arasındaki biçimsel ilişkiyi tanımladığı görünür olur (Devlin 2012, ss. 24–30). Koşullu önermeyle ilişkili üç önemli varyant vardır:
+
+\par\smallskip\begin{center}{\small\itshape\sffamily\color{gray}Koşullu önermenin dört biçimi ve eşdeğerlikleri:}\par\smallskip{\renewcommand{\arraystretch}{1.15}\small\begin{tabular}{|c|c|c|}\hline
+\rowcolor{cAcc}\textcolor{white}{\bfseries Biçim} & \textcolor{white}{\bfseries Önerme} & \textcolor{white}{\bfseries Eşdeğeri} \\ \hline
+Orijinal & p → q & Kontrapozitif \\ \hline
+Karşıt & q → p & Ters \\ \hline
+Ters & ¬p → ¬q & Karşıt \\ \hline
+Kontrapozitif & ¬q → ¬p & Orijinal \\ \hline
+\end{tabular}}\end{center}\par\smallskip
+
+\begin{itemize}\setlength{\itemsep}{2pt}\setlength{\parskip}{0pt}
+\item Karşıt (converse): q → p (yer değiştirmiş hâli)
+\item Ters (inverse): ¬p → ¬q (her iki tarafın olumsuzu)
+\item Karşıt-ters / Kontrapozitif (contrapositive): ¬q → ¬p (yer değiştirmiş ve olumsuzlanmış hâli)
+\end{itemize}
+
+Bu dört önerme arasında yalnızca orijinal önerme (p → q) ile kontrapozitifi (¬q → ¬p) her zaman mantıksal olarak eşdeğerdir (doğruluk tabloları birebir aynıdır); karşıt ve ters ise orijinal önermeyle genel olarak eşdeğer değildir. Bu eşdeğerlik, Bölüm~\ref{chap:dogrudan-ispat}’de inceleyeceğimiz kontrapozitif ile ispat yönteminin mantıksal temelini oluşturur.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[node distance=13mm and 20mm]
+  \node[schemeaccent,text width=3.5cm] (original) {\textbf{Orijinal}\\$p\to q$};
+  \node[schemenode,text width=3.5cm,right=of original] (converse) {\textbf{Karşıt}\\$q\to p$};
+  \node[schemenode,text width=3.5cm,below=of original] (contra) {\textbf{Kontrapozitif}\\$\neg q\to\neg p$};
+  \node[schemeaccent,text width=3.5cm,right=of contra] (inverse) {\textbf{Ters}\\$\neg p\to\neg q$};
+  \draw[schemearrow,<->] (original) -- node[above,font=\scriptsize] {yer değiştir} (converse);
+  \draw[schemearrow,<->] (original) -- node[left,font=\scriptsize,align=center] {yer değiştir\ ve olumsuzla} (contra);
+  \draw[schemearrow,<->] (converse) -- node[right,font=\scriptsize] {olumsuzla} (inverse);
+  \draw[schemearrow,<->] (contra) -- node[below,font=\scriptsize] {yer değiştir} (inverse);
+  \draw[schemeline,double] (original.south east) -- (contra.north east);
+  \draw[schemeline,double] (converse.south west) -- (inverse.north west);
+\end{tikzpicture}
+\caption{Koşullu önermenin dört biçimi. Orijinal önerme kontrapozitifiyle, karşıt önerme ise tersiyle eşdeğerdir.}
+\end{figure}
+
+\begin{tcolorbox}[bookbox,colback=cEx]\textbf{\textsf{\textcolor{cAcc}{Örnek.}}}\quad Karşıt, Ters ve Kontrapozitifin Karıştırılması Önerme: “Yağmur yağıyorsa, yer ıslaktır.” (p → q) Karşıtı: “Yer ıslaksa, yağmur yağıyordur.” (q → p) — Bu doğru olmak zorunda değildir (yer, başka bir nedenle de ıslanmış olabilir; sulama yapılmış olabilir). Tersi: “Yağmur yağmıyorsa, yer ıslak değildir.” (¬p → ¬q) — Bu da doğru olmak zorunda değildir (aynı nedenle). Kontrapozitifi: “Yer ıslak değilse, yağmur yağmıyordur.” (¬q → ¬p) — Bu, orijinal önermeyle tam olarak aynı bilgiyi ifade eder ve orijinal önerme doğruysa o da mutlaka doğrudur.\end{tcolorbox}
+
+\section{Tautoloji, Çelişki ve Olumsallık}
+
+Bir bileşik önermenin doğruluk tablosu incelendiğinde üç durum ortaya çıkabilir: Tautoloji: Önerme, içerdiği basit önermelerin doğruluk değerlerinden bağımsız olarak, her zaman doğrudur. Örneğin p ∨ ¬p (“p ya doğrudur ya da p doğru değildir”) her zaman doğrudur; buna klasik mantıkta üçüncü hâlin imkânsızlığı ilkesi denir (sezgiciler bu ilkenin sonsuz kümelere sınırsız uygulanmasını reddeder; bkz.\ Bölüm~\ref{chap:celiski-ispat}). Çelişki: Önerme, her zaman yanlıştır. Örneğin p ∧ ¬p (“p hem doğru hem yanlıştır”) her zaman yanlıştır; buna çelişmezlik ilkesinin (non-contradiction) bir ifadesi denir. Olumsallık (contingency): Önermenin doğruluk değeri, içerdiği basit önermelerin doğruluk değerlerine göre bazen doğru bazen yanlıştır
+
+İki formülün mantıksal olarak eşdeğer (logically equivalent) olması, doğruluk tablolarının tüm satırlarda örtüşmesi demektir. Başka bir de-
+
+yişle, A ve B formülleri ancak ve ancak 𝐴 ↔ 𝐵 bir tautoloji olduğunda eşdeğerdir (Enderton 2001, ss. 31–34).
+
+\section{De Morgan Yasaları}
+
+19. yüzyıl İngiliz matematikçisi Augustus De Morgan’ın adını taşıyan De Morgan yasaları, “ve” ve “veya” bağlaçlarının olumsuzlanmasına dair iki temel kuraldır. Modern semboller daha sonra yerleşmiş olsa da, yasaların adı De Morgan’ın 19. yüzyıl cebirsel mantık çalışmalarını yansıtır:
+
+Bu kurallar, doğruluk tabloları üzerinden kolayca doğrulanabilir ve Bölüm~\ref{chap:niceleyiciler}’da niceleyicilerin olumsuzlanması için verdiğimiz kurallarla (¬∀x P(x) ≡ ∃x ¬P(x) vb.) semantik bir benzerlik taşır. Sonlu bir evrende ∀𝑥𝑃 (𝑥), bütün örneklerin konjonksiyonu; ∃𝑥𝑃 (𝑥) ise bütün örneklerin disjonksiyonu gibi açılabilir. Sonsuz evrenlerde bu yalnızca açıklayıcı bir benzetmedir: olağan birinci-derece mantığın formülleri gerçekten sonsuz uzunlukta ∧ veya ∨ dizileri içermez (Enderton 2001, ss. 88–90).
+
+\begin{tcolorbox}[bookbox,colback=cEx]\textbf{\textsf{\textcolor{cAcc}{Örnek.}}}\quad De Morgan Yasalarının Uygulanması “Bugün hava güneşli değil ve rüzgârlı değil” ifadesinin olumsuzu, De Morgan yasasına göre “bugün hava güneşli ya da rüzgârlıdır” olur. Sembolik olarak: ¬(¬p ∧ ¬q) ≡ p ∨ q.\end{tcolorbox}
+
+\section{Doğruluk Tablolarının İşlevi}\label{sec:dt-islev}
+
+Doğruluk tablosuna giden düşünceler Boole, Jevons, Venn ve Peirce gibi 19. yüzyıl mantıkçılarında aşamalı biçimde gelişmiş; 20. yüzyılın başında doğruluk-fonksiyonel tablo tekniği açık ve sistematik bir araç hâline gelmiştir. Bu nedenle tek bir “mucit” anlatısı yerine birden fazla katkı çizgisinden söz etmek daha doğrudur (Anellis 2012, ss. 87–97). Doğruluk tabloları, önermeler mantığında iki temel işlevi yerine getirir. Birincisi, bir bileşik önermenin anlamını kesin biçimde tanımlar — bir bağlacın ne anlama geldiğini, günlük dilin belirsizliğine başvurmadan, salt bir tablo üzerinden mekanik olarak belirler. İkincisi, iki önermenin mantıksal olarak eşdeğer olup olmadığını, bir argümanın geçerli olup olmadığını denetlemek için mekanik (algoritmik) bir yöntem sunar: iki önermenin tüm olası doğruluk değeri kombinasyonlarını tek tek kontrol ederek, aralarında bir fark olup olmadığı kesin olarak belirlenebilir. Atomik önerme sayısı n ise tablo 2𝑛 satır içerdiğinden yöntem hızla büyür, fakat her sonlu formül için sona erer. Bu, klasik önermeler mantığının karar verilebilirliğini somutlaştırır (Post 1921, ss. 163–185). Bu mekanik
+
+doğrulanabilirlik özelliği, önermeler mantığını, Bölüm~\ref{chap:dogrudan-ispat} ve~\ref{chap:celiski-ispat}’de ele alacağımız ispat kavramının en temel yapı taşlarından biri hâline getirir.
+
+\section{Diğer Mantıksal Bağlaçlar: Dışlayıcı Veya, NAND ve NOR}\label{sec:nand}
+
+Beş temel bağlacın yanı sıra, hem teorik hem uygulamalı açıdan önemli olan birkaç bağlaç daha vardır. Bunlardan ilki, Bölüm~\ref{sec:baglaclar}’de “kapsayıcı veya” ile karşılaştırdığımız dışlayıcı veyadır (exclusive or, kısaca XOR, sembolü p ⊕ q). Dışlayıcı veya, p ve q’dan tam olarak biri doğruyken doğrudur; ikisi de doğru ya da ikisi de yanlışsa yanlıştır.
+
+\par\smallskip\begin{center}{\small\itshape\sffamily\color{gray}Dışlayıcı veya (p ⊕ q):}\par\smallskip{\renewcommand{\arraystretch}{1.15}\small\begin{tabular}{|c|c|c|}\hline
+\rowcolor{cAcc}\textcolor{white}{\bfseries p} & \textcolor{white}{\bfseries q} & \textcolor{white}{\bfseries p⊕q} \\ \hline
+D & D & Y \\ \hline
+D & Y & D \\ \hline
+Y & D & D \\ \hline
+Y & Y & Y \\ \hline
+\end{tabular}}\end{center}\par\smallskip
+
+Günlük dilde “ya kahve içerim ya çay içerim” dediğimizde genellikle bu dışlayıcı anlamı kastederiz — ikisini birden içmek seçenek dışıdır. Dikkat edilirse p ⊕ q, aslında p ↔ q’nun tam tersidir; yani p ⊕ q ≡ ¬(p ↔ q) eşdeğerliği geçerlidir. Bu, “aynı doğruluk değerine sahip olmama” ile “farklı doğruluk değerine sahip olma”nın aynı şey olmasının doğal bir sonucudur. İkinci grup bağlaç, “ve” ve “veya”nın olumsuzlanmış biçimleri olan NAND (p ↑ q, “değil ve”) ve NOR’dur (p ↓ q, “değil veya”). Bunlar
+
+NAND ve NOR bağlaçlarının matematiksel açıdan dikkat çekici bir özelliği, her ikisinin de tek başına işlevsel olarak tam (functionally complete) olmasıdır: yani, diğer tüm bağlaçlar (¬, ∧, ∨, →, ↔) yalnızca NAND (ya da yalnızca NOR) kullanılarak ifade edilebilir. Örneğin
+
+bağlacın bu ifade gücüne sahip olabileceğine ilişkin tarih Sheffer’den önce Peirce’a uzanır; ancak Henry M. Sheffer’in 1913’te yayımladığı çalışma tek bir mantıksal sabitin yeterliliğini açık bir aksiyomatik bağlamda gösterdiği için NAND türü bağlaç literatürde “Sheffer çizgisi” (Sheffer stroke) adıyla anılır (Sheffer 1913, ss. 481–488). Bu özellik,
+
+aşağıda Bölüm~\ref{sec:devreler}’da göreceğimiz gibi, dijital devre tasarımında son derece pratik sonuçlar doğurur.
+
+\begin{tcolorbox}[bookbox,colback=cEx]\textbf{\textsf{\textcolor{cAcc}{Bilgi Kutusu.}}}\quad Tek Bağlaçla Her Şeyi İfade Etmek Bir bağlacın “işlevsel olarak tam” olması, o bağlaç dışında hiçbir başka bağlaca ihtiyaç duymadan, önermeler mantığının tüm ifade gücünü yeniden üretebileceğimiz anlamına gelir. \{¬, ∧\} ya da \{¬, ∨\} gibi iki elemanlı bağlaç kümeleri de işlevsel olarak tamdır; ancak NAND ve NOR’un özel yanı, tek başlarına (bir tek bağlaçla) bu tamlığı sağlayabilmeleridir. Bu, her Boole işlevinin yalnız NAND veya yalnız NOR kapılarından oluşan bir devreyle gerçekleştirilebileceği anlamına gelir; belirli bir donanım tasarımında bunun maliyet ya da performans bakımından en iyi seçenek olup olmadığı ise ayrıca değerlendirilir (Post 1921; Sheffer 1913).\end{tcolorbox}
+
+\section{Doğruluk Tablosu Ötesinde: Diğer Temel Eşdeğerlikler}
+
+De Morgan yasaları, önermeler mantığındaki eşdeğerliklerin yalnızca en tanınmış örneğidir. Aşağıdaki tablo, ispatlarda ve cebirsel sadeleştirmelerde sıkça kullanılan diğer temel eşdeğerlikleri özetler; her biri, ilgili önermelerin doğruluk tabloları karşılaştırılarak doğrulanabilir.
+
+Yasanın Adı                          Eşdeğerlik Çift Olumsuzlama                     ¬¬p ≡ p Yinelenirlik (İdempotent)            p∧p≡p;p∨p≡p Değişme (Komütatiflik)               p∧q≡q∧p;p∨q≡q∨p
+
+Özdeşlik                             p∧D≡p;p∨Y≡p Baskınlık (Domination)               p∨D≡D;p∧Y≡Y
+
+Bu yasalar, cebirde bildiğimiz toplama ve çarpma işlemlerinin değişme, birleşme ve dağılma özellikleriyle yapısal bir benzerlik taşır. George Boole’un 1854 tarihli cebirsel mantık çalışmaları bu geleneğin başlıca kaynaklarından biridir; bugün kullanılan soyut Boole cebiri kavramı ise daha sonraki aksiyomatik gelişmelerin ürünüdür (Boole 1854; Sheffer 1913). Bu yasalar tek tek ezberlenecek kurallar olmaktan çok, karmaşık bir önermeyi daha sade bir biçime dönüştürmek için birer araçtır.
+
+\begin{tcolorbox}[bookbox,colback=cEx]\textbf{\textsf{\textcolor{cAcc}{Örnek.}}}\quad Yasaları Kullanarak Sadeleştirme ¬(p ∨ q) ∨ (¬p ∧ q) ifadesini sadeleştirelim. Önce De Morgan yasasıyla ¬(p ∨ q) ≡\end{tcolorbox}
+
+yasasıyla bu, ¬p ∧ (¬q ∨ q) olarak yeniden düzenlenir. ¬q ∨ q bir tautoloji olduğundan (üçüncü hâlin imkânsızlığı ilkesi) özdeşlik yasası gereği ¬p ∧ D ≡ ¬p elde edilir. Sonuç olarak, görünüşte karmaşık olan orijinal ifade, aslında yalnızca ¬p’ye eşdeğermiş — bu sonuç, dört satırlık bir doğruluk tablosuyla da doğrudan doğrulanabilir.
+
+\section{Önermeler Mantığı ve Mantık Devreleri}\label{sec:devreler}
+
+Önermeler mantığının soyut kuralları, yalnızca felsefi ya da matematiksel bir merak konusu değildir; anahtarlama devrelerinin matematiksel analizinde de kullanılır. Claude Shannon, 1937 tarihli yüksek lisans çalışmasından doğan ve 1938’de yayımlanan makalesinde, Boole cebrini röle ve anahtarlama devrelerinin temsil ve sadeleştirilmesine uyguladı. Bu tarih ifade edilirken tez yılı ile makalenin yayın yılı birbirinden ayrılmalıdır. Bu bağlantı basittir: bir önermenin doğruluk değeri (D/Y), bir elektrik devresindeki bir anahtarın durumuna (açık/kapalı ya da 1/0) karşılık gelir. Mantıksal bağlaçlar ise, girdi sinyallerini belirli kurallara göre birleştiren mantık kapılarına (logic gates) karşılık gelir: bir VE kapısı (AND gate), yalnızca tüm girdileri “1” olduğunda çıktı olarak “1” üretir — tıpkı p ∧ q’nun yalnızca p ve q ikisi de doğruyken doğru olması gibi. Benzer biçimde bir VEYA kapısı (OR gate) p ∨ q’ya, bir DEĞİL kapısı (NOT gate) ise ¬p’ye karşılık gelir. Bölüm~\ref{sec:nand}’de değindiğimiz NAND’in işlevsel tamlığı, bu bağlamda mühendislik değeri taşır: bir devre tasarımcısı, ilkece yalnızca NAND kapıları kullanarak herhangi bir Boole işlevini gerçekleştirebilir. Bunun belirli bir üretim teknolojisinde maliyet, gecikme, enerji tüketimi veya devre alanı bakımından en uygun tasarım olup olmadığı ayrı bir mühendislik sorusudur. Shannon’ın sonucu, biçimsel bir cebir ile fiziksel bir devre arasında kesin bir temsil ilişkisi kurulabildiğini gösterir; bu durum Hilbertçi biçimciliğin bütün felsefi tezlerini tek başına doğrulamaz (Shannon 1938).
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[node distance=6mm and 8mm]
+  \node[schemenode] (p) {$p=1$};
+  \node[schemenode,below=of p] (q) {$q=1$};
+  \node[schemeaccent,text width=2.3cm,right=of $(p)!0.5!(q)$] (and) {\textbf{VE}\\$a=p\land q=1$};
+  \node[schemenode,below=11mm of q] (r) {$r=0$};
+  \node[schemeaccent,text width=2.3cm,right=of r] (not) {\textbf{DEĞİL}\\$b=\neg r=1$};
+  \node[schemeaccent,text width=2.7cm,right=18mm of $(and)!0.5!(not)$] (or) {\textbf{VEYA}\\$F=a\lor b=1$};
+  \node[schemenode,right=of or] (out) {\textbf{Çıktı}\\DOĞRU};
+  \draw[schemearrow] (p)--(and); \draw[schemearrow] (q)--(and);
+  \draw[schemearrow] (r)--(not); \draw[schemearrow] (and)--(or);
+  \draw[schemearrow] (not)--(or); \draw[schemearrow] (or)--(out);
+\end{tikzpicture}
+\caption{$F=(p\land q)\lor\neg r$ ifadesinin mantık devresine dönüştürülmesi.}
+\end{figure}
+
+\section{Argüman Geçerliliğini Doğruluk Tablosuyla Sınama}\label{sec:gecerlilik}
+
+\begin{tcolorbox}[bookbox,colback=cDef]
+\textbf{\textsf{\textcolor{cAcc}{Tanım.}}}\quad
+Bir argüman, öncüllerin tümünün doğru olduğu hiçbir durumda sonucu yanlış olmuyorsa \emph{geçerlidir}. Geçerlilik, öncül ve sonucun fiilî doğruluğundan değil, aralarındaki mantıksal yapıdan söz eder.
+\end{tcolorbox}
+
+Bölüm~\ref{sec:dt-islev}’da doğruluk tablolarının, bir argümanın geçerliliğini denetlemekte mekanik bir araç olarak kullanılabileceğinden söz etmiştik; bu fikri şimdi somut bir örnekle açalım. Mantıkta bir argüman, bir ya da daha fazla öncül (premise) ile bunlardan çıkarılan bir sonuçtan (conclusion) oluşur. Bir argüman, geçerli (valid) sayılır ancak ve ancak, tüm öncüllerin doğru olduğu her durumda sonuç da mutlaka doğruysa; başka bir deyişle, öncüllerin doğru ama sonucun yanlış olduğu hiçbir doğruluk değeri ataması yoksa. Geçerlilik bu anlamda öncül ve sonucun fiilen doğru olup olmamasından değil, olası doğruluk atamaları arasındaki biçimsel ilişkiden söz eder (Enderton 2001, ss. 19–21). Klasik bir örnek olan modus ponens çıkarım kuralını ele alalım: öncüller “p → q” ve “p”, sonuç ise “q”dur. Bu argümanın geçerliliğini doğrulamak için, p → q ve p’nin birlikte doğru olduğu tüm satırlarda q’nun da doğru olup olmadığına bakarız:
+
+\par\smallskip\begin{center}{\small\itshape\sffamily\color{gray}Modus ponens geçerlilik tablosu:}\par\smallskip{\renewcommand{\arraystretch}{1.15}\small\begin{tabular}{|c|c|c|c|c|}\hline
+\rowcolor{cAcc}\textcolor{white}{\bfseries p} & \textcolor{white}{\bfseries q} & \textcolor{white}{\bfseries p→q} & \textcolor{white}{\bfseries p ∧ (p→q)} & \textcolor{white}{\bfseries q} \\ \hline
+D & D & D & Evet & D \\ \hline
+D & Y & Y & Hayır & Y \\ \hline
+Y & D & D & Hayır & D \\ \hline
+Y & Y & D & Hayır & Y \\ \hline
+\end{tabular}}\end{center}\par\smallskip
+
+Tabloda öncüllerin (p → q ve p) ikisinin birden doğru olduğu tek satır birinci satırdır; bu satırda q de doğrudur. Dolayısıyla öncüllerin doğru olduğu hiçbir durumda sonuç yanlış çıkmaz — argüman geçerlidir. Buna karşılık, sıkça karıştırılan ve sonucu olumlama yanılgısı (affirming the consequent) olarak bilinen geçersiz akıl yürütme biçimini, öncülleri “p → q” ve “q”, sonucu “p” olan argümanla karşılaştıralım: tablonun üçüncü satırında (p yanlış, q doğru) her iki öncül de doğru olduğu hâlde sonuç (p) yanlıştır; bu tek satır bile argümanın geçersiz olduğunu göstermeye yeter. Doğruluk tablosu yöntemi böylece, sezgiye ya da retorik ikna gücüne başvurmadan, bir argümanın geçerli mi yoksa yalnızca ikna edici görünen bir yanılgı mı olduğunu kesin biçimde ayırt etmemizi sağlar — bu da Bölüm~\ref{chap:dogrudan-ispat}’de tanımlayacağımız ispat kavramının mantıksal önkoşuludur.
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.18}
+\begin{tabularx}{\linewidth}{>{\bfseries\raggedright\arraybackslash}p{2.3cm}p{3.3cm}p{2.1cm}Y}
+\toprule
+Biçim & Şema & Durum & Ayırt edici nokta \\
+\midrule
+Modus ponens & $p\to q,\ p\therefore q$ & Geçerli & Koşulun öncülü doğrulanır. \\
+Modus tollens & $p\to q,\ \neg q\therefore\neg p$ & Geçerli & Sonucun olumsuzu kontrapozitifi etkinleştirir. \\
+Sonucu olumlama & $p\to q,\ q\therefore p$ & Geçersiz & $q$ başka bir nedenle doğru olabilir. \\
+Öncülü yadsıma & $p\to q,\ \neg p\therefore\neg q$ & Geçersiz & $q$, $p$ olmadan da doğru olabilir. \\
+\bottomrule
+\end{tabularx}
+\caption{Yaygın geçerli çıkarım biçimleri ile biçimsel yanılgıların karşılaştırılması.}
+\end{table}
+
+\section{Yüksek Lisans Derinleştirmesi: Normal Biçimler, NAND ve SAT}
+
+Doğruluk tabloları önermesel anlamı tüketimli biçimde gösterir; normal biçimler ise aynı bilgiyi cebirsel ve algoritmik kullanıma uygun hâle getirir.
+
+\textbf{Bu kısmın hedefleri.} Bu kısmı tamamladığınızda bir formülü DNF ve CNF’ye dönüştürebilecek, NAND’ın işlevsel tamlığını gösterebilecek, SAT problemini biçimsel olarak tanımlayabilecek ve çözümleme kuralını bir çürütme yöntemi olarak uygulayabileceksiniz.
+
+
+8.11.1 Doğruluk Tablosundan DNF ve CNF Bir formülün doğru olduğu her satır için, satırdaki doğru değişkenleri kendileriyle ve yanlış değişkenleri olumsuzlarıyla birleştiren bir minterm yazılır. Bu mintermlerin ayrışımı tam ayrışımlı normal biçimi (DNF) verir. Yanlış satırlardan benzer biçimde kurulan maxtermlerin birleşimi ise CNF’yi verir. Örneğin dışlayıcı veya
+
+DNF biçimindedir; eşdeğer CNF
+
+olur. Normal biçimler benzersiz olmak zorunda değildir; tam tablo biçimleri kanonik, sadeleştirilmiş biçimler ise daha kısa olabilir (Enderton 2001).
+
+8.11.2 Tek Bağlaçla Bütün Önermesel Mantık NAND bağlacı 𝑝 ∣ 𝑞 ≡ ¬(𝑝 ∧ 𝑞) ile tanımlansın. O zaman
+
+¬𝑝 ≡ 𝑝 ∣ 𝑝,
+
+𝑝 ∧ 𝑞 ≡ (𝑝 ∣ 𝑞) ∣ (𝑝 ∣ 𝑞), ve De Morgan yasasıyla
+
+elde edilir. ¬, ∧ ve ∨ her doğruluk fonksiyonunu ifade etmeye yettiği için NAND tek başına işlevsel tamdır (Sheffer 1913, ss. 481–488; Post 1921, ss. 163–185). Shannon’ın çalışması Boole cebri ile röle ve anahtarlama devreleri arasındaki genel bağı kurmuştur; NAND gibi işlevsel tam bir kapı kümesinin bütün Boole işlevlerini gerçekleştirebilmesi bu bağın sonraki devre tasarımı uygulamalarından biridir (Shannon 1938, ss. 713–723).
+
+8.11.3 SAT ve Çözümleme SAT problemi, verilen önermesel 𝜑 formülü için
+
+∃𝑣 [𝑣(𝜑) = 1]? sorusudur. CNF biçiminde her parantez bir tümcedir. Çözümleme kuralı
+
+(𝐴 ∨ 𝑝)  (𝐵 ∨ ¬𝑝) 𝐴∨𝐵 karşıt iki literali eleyerek yeni bir tümce üretir. Bir CNF’ye boş tümce ⊥ türetilirse başlangıç kümesi doyurulamazdır (Enderton 2001).
+
+\begin{tcolorbox}[bookbox,colback=cEx]\textbf{\textsf{\textcolor{cAcc}{Örnek.}}}\quad. (𝑝 ∨ 𝑞) ∧ (¬𝑝 ∨ 𝑞) ∧ (¬𝑞) için ilk iki tümceden 𝑞, ardından 𝑞 ile ¬𝑞’dan boş tümce elde edilir. Dolayısıyla formül doyurulamazdır.\end{tcolorbox}
+
+8.11.4 Seminer ve Araştırma Çalışmaları 1. Üç değişkenli bir formülün tam DNF ve CNF biçimlerini doğruluk tablosundan çıkarın.
+
+2. Koşullu ve iki yönlü koşulluyu yalnızca NAND ile ifade edin.
+
+3. Verilen bir CNF üzerinde çözümleme çürütmesini adım adım kurun.
+
+4. Doğruluk tablosu, Karnaugh sadeleştirmesi ve SAT çözücüsünü aynı formül üzerinde yöntem ve ölçeklenebilirlik bakımından karşılaştırın.
+
+5. Boole cebrinden dijital devre tasarımına geçişte Shannon’ın katkısını inceleyen kaynak-temelli bir seminer hazırlayın.
+
+\section*{Bölüm Özeti}
+
+Bu bölümde önerme, klasik iki-değerli mantık içinde doğru ya da yanlış değeri alan bildirim olarak ele alındı. Açık formüllerin ise bir atama altında doğruluk değeri alabildiği, fakat bağlanmadan kapalı cümle olmadığı ayrımı yapıldı. Yaygın beş mantıksal bağlaç (değil, ve, veya, ise, ancak ve ancak), doğruluk tablolarıyla tanımlandı. Koşullu önermenin (p → q) karşıtı ve tersi, orijinal önermeyle genel olarak eşdeğer değildir; yalnızca kontrapozitifi (¬q → ¬p) her zaman eşdeğerdir. Bir bileşik önerme, her zaman doğru ise tautoloji, her zaman yanlış ise çelişki, bazen doğru bazen yanlış ise olumsal (contingent) olarak sınıflandırılır. De Morgan yasaları, “ve” ve “veya” bağlaçlarının olumsuzlanma kurallarını verir ve niceleyicilerin olumsuzlanma kurallarıyla kavramsal olarak akrabadır.
+
+\section*{Gözden Geçirme Soruları}
+
+\par\noindent 1. “p → q” önermesinin p yanlışken neden doğru kabul edildiğini kendi cümlelerinizle açıklayınız.
+
+\par\noindent 2. Bir koşullu önermenin karşıtı, tersi ve kontrapozitifini kendi örneğinizle oluşturunuz; hangisinin orijinal önermeyle eşdeğer olduğunu gösteriniz.
+
+\par\noindent 3. p ∨ ¬p önermesinin neden bir tautoloji olduğunu doğruluk tablosuyla gösteriniz.
+
+\par\noindent 4. De Morgan yasalarını kullanarak “Ali çalışkan ve dürüsttür” ifadesinin olumsuzunu bulunuz.
+
+\par\noindent 5. Doğruluk tablolarının, bir argümanın geçerliliğini denetlemede nasıl “mekanik” bir araç olarak kullanılabileceğini tartışınız.
+
+\section*{Çoktan Seçmeli Sorular}
+
+\par\smallskip\noindent 1. Aşağıdakilerden hangisi bir önerme değildir?
+
+\par\noindent\hspace*{1.6em}A) “7 asal bir sayıdır.”
+
+\par\noindent\hspace*{1.6em}B) “Ankara, Türkiye’nin başkentidir.”
+
+\par\noindent\hspace*{1.6em}C) “Lütfen pencereyi açar mısın?”
+
+\par\noindent\hspace*{1.6em}D) “2 + 2 = 5.”
+
+\par\smallskip\noindent 2. p ∧ q bileşik önermesi hangi durumda doğrudur?
+
+\par\noindent\hspace*{1.6em}A) p ve q’dan en az biri doğruyken
+
+\par\noindent\hspace*{1.6em}B) Yalnızca p ve q’nun ikisi de doğruyken
+
+\par\noindent\hspace*{1.6em}C) p ve q farklı doğruluk değerlerine sahipken
+
+\par\noindent\hspace*{1.6em}D) p yanlış olduğunda, q’dan bağımsız olarak
+
+\par\smallskip\noindent 3. Kapsayıcı veya (p ∨ q) ile günlük dildeki dışlayıcı “ya… ya da…” kullanımı arasındaki temel fark nedir?
+
+\par\noindent\hspace*{1.6em}A) Kapsayıcı veya, her iki önerme de doğruyken de doğrudur; dışlayıcı kullanım bu durumu dışlar
+
+\par\noindent\hspace*{1.6em}B) Kapsayıcı veyada p ve q aynı önerme olmalıdır
+
+\par\noindent\hspace*{1.6em}C) Dışlayıcı kullanım yalnızca matematik dışında geçerlidir
+
+\par\noindent\hspace*{1.6em}D) İkisi arasında mantıksal olarak hiçbir fark yoktur
+
+\par\smallskip\noindent 4. p → q önermesi hangi tek durumda yanlıştır?
+
+\par\noindent\hspace*{1.6em}A) p ve q ikisi de yanlışken
+
+\par\noindent\hspace*{1.6em}B) p yanlış, q doğruyken
+
+\par\noindent\hspace*{1.6em}C) p doğru, q yanlışken
+
+\par\noindent\hspace*{1.6em}D) p ve q ikisi de doğruyken
+
+\par\smallskip\noindent 5. p → q önermesinde p yanlış olduğunda önermenin doğru kabul edilmesi hangi kavramla adlandırılır?
+
+\par\noindent\hspace*{1.6em}A) Çelişki
+
+\par\noindent\hspace*{1.6em}B) Boş yere doğrulanma (vacuous truth)
+
+\par\noindent\hspace*{1.6em}C) Dışlayıcı doğrulama
+
+\par\noindent\hspace*{1.6em}D) Olumsallık
+
+\par\smallskip\noindent 6. “Yağmur yağıyorsa, yer ıslaktır” önermesinin karşıtı (converse) aşağıdakilerden hangisidir?
+
+\par\noindent\hspace*{1.6em}A) “Yer ıslak değilse, yağmur yağmıyordur.”
+
+\par\noindent\hspace*{1.6em}B) “Yağmur yağmıyorsa, yer ıslak değildir.”
+
+\par\noindent\hspace*{1.6em}C) “Yer ıslaksa, yağmur yağıyordur.”
+
+\par\noindent\hspace*{1.6em}D) “Yağmur yağıyorsa, yer ıslak değildir.”
+
+\par\smallskip\noindent 7. p → q önermesiyle her zaman mantıksal olarak eşdeğer olan varyant hangisidir?
+
+\par\noindent\hspace*{1.6em}A) Karşıtı (q → p)
+
+\par\noindent\hspace*{1.6em}B) Tersi (¬p → ¬q)
+
+\par\noindent\hspace*{1.6em}C) Kontrapozitifi (¬q → ¬p)
+
+\par\noindent\hspace*{1.6em}D) Hiçbiri her zaman eşdeğer değildir
+
+\par\smallskip\noindent 8. Aşağıdakilerden hangisi bir tautoloji örneğidir?
+
+\par\noindent\hspace*{1.6em}A) p ∧ ¬p
+
+\par\noindent\hspace*{1.6em}B) p ∨ ¬p
+
+\par\noindent\hspace*{1.6em}C) p ∧ q
+
+\par\noindent\hspace*{1.6em}D) p ↔ ¬p
+
+\par\smallskip\noindent 9. p ∧ ¬p önermesinin her zaman yanlış olması hangi ilkenin bir ifadesidir?
+
+\par\noindent\hspace*{1.6em}A) Üçüncü hâlin imkânsızlığı ilkesi
+
+\par\noindent\hspace*{1.6em}B) Çelişmezlik ilkesi
+
+\par\noindent\hspace*{1.6em}C) Özdeşlik ilkesi
+
+\par\noindent\hspace*{1.6em}D) Yutma ilkesi
+
+\par\smallskip\noindent 10. İki önermenin “mantıksal olarak eşdeğer” olması ne anlama gelir?
+
+\par\noindent\hspace*{1.6em}A) İkisinin de her zaman doğru olması
+
+\par\noindent\hspace*{1.6em}B) Doğruluk tablolarının tüm satırlarda birbiriyle örtüşmesi
+
+\par\noindent\hspace*{1.6em}C) İkisinin aynı sayıda basit önerme içermesi
+
+\par\noindent\hspace*{1.6em}D) Birinin diğerinin olumsuzu olması
+
+\par\smallskip\noindent 11. De Morgan yasalarına göre ¬(p ∧ q) hangi ifadeye eşdeğerdir?
+
+\par\noindent\hspace*{1.6em}A) ¬p ∧ ¬q
+
+\par\noindent\hspace*{1.6em}B) p ∨ q
+
+\par\noindent\hspace*{1.6em}C) ¬p ∨ ¬q
+
+\par\noindent\hspace*{1.6em}D) p ∧ q
+
+\par\smallskip\noindent 12. Dışlayıcı veya (p ⊕ q) hangi bağlaçla mantıksal olarak doğrudan ilişkilidir?
+
+\par\noindent\hspace*{1.6em}A) p ⊕ q ≡ ¬(p ↔ q)
+
+\par\noindent\hspace*{1.6em}B) p ⊕ q ≡ p ∧ q
+
+\par\noindent\hspace*{1.6em}C) p ⊕ q ≡ p → q
+
+\par\noindent\hspace*{1.6em}D) p ⊕ q ≡ ¬(p ∧ q)
+
+\par\smallskip\noindent 13. NAND bağlacı (p ↑ q) hangi ifadeyle tanımlanır?
+
+\par\noindent\hspace*{1.6em}A) p ∨ q
+
+\par\noindent\hspace*{1.6em}B) ¬(p ∧ q)
+
+\par\noindent\hspace*{1.6em}C) ¬(p ∨ q)
+
+\par\noindent\hspace*{1.6em}D) p ↔ q
+
+\par\smallskip\noindent 14. Bir bağlacın “işlevsel olarak tam” (functionally complete) olması ne anlama gelir?
+
+\par\noindent\hspace*{1.6em}A) O bağlacın doğruluk tablosunun her satırında “D” görünmesi
+
+\par\noindent\hspace*{1.6em}B) Yalnızca o bağlaç kullanılarak diğer tüm mantıksal bağlaçların ifade edilebilmesi
+
+\par\noindent\hspace*{1.6em}C) O bağlacın yalnızca iki önerme arasında tanımlanabilmesi
+
+\par\noindent\hspace*{1.6em}D) O bağlacın hiçbir zaman tautoloji üretmemesi
+
+\par\smallskip\noindent 15. Sheffer’in 1913 tarihli yayımlanmış çalışmasıyla ilişkilendirilen NAND türü bağlacın literatürdeki adı nedir?
+
+\par\noindent\hspace*{1.6em}A) De Morgan çizgisi
+
+\par\noindent\hspace*{1.6em}B) Boole işlemcisi
+
+\par\noindent\hspace*{1.6em}C) Sheffer çizgisi
+
+\par\noindent\hspace*{1.6em}D) Shannon kapısı
+
+\par\smallskip\noindent 16. Aşağıdaki eşdeğerliklerden hangisi “dağılma” (distribütiflik) yasasını doğru biçimde ifade eder?
+
+\par\noindent\hspace*{1.6em}A) p ∧ (q ∨ r) ≡ (p ∧ q) ∨ (p ∧ r)
+
+\par\noindent\hspace*{1.6em}B) p ∧ q ≡ q ∧ p
+
+\par\noindent\hspace*{1.6em}C) ¬¬p ≡ p
+
+\par\noindent\hspace*{1.6em}D) p ∨ (p ∧ q) ≡ p
+
+\par\smallskip\noindent 17. Claude Shannon’ın 1937 tarihli tezinden doğan ve 1938’de yayımlanan çalışmasının temel katkısı neydi?
+
+\par\noindent\hspace*{1.6em}A) Küme kuramındaki paradoksları çözmesi
+
+\par\noindent\hspace*{1.6em}B) Boole cebrinin elektrik anahtarlama devrelerinin analizine uygulanabileceğini göstermesi
+
+\par\noindent\hspace*{1.6em}C) Sezgici mantığı biçimselleştirmesi
+
+\par\noindent\hspace*{1.6em}D) Doğruluk tablolarını ilk kez icat etmesi
+
+\par\smallskip\noindent 18. Mantık devrelerinde bir VE kapısı (AND gate), önermeler mantığındaki hangi bağlaca karşılık gelir?
+
+\par\noindent\hspace*{1.6em}A) p ∨ q
+
+\par\noindent\hspace*{1.6em}B) ¬p
+
+\par\noindent\hspace*{1.6em}C) p ∧ q
+
+\par\noindent\hspace*{1.6em}D) p ↔ q
+
+\par\smallskip\noindent 19. Bir argümanın “geçerli” (valid) sayılması için hangi koşul sağlanmalıdır?
+
+\par\noindent\hspace*{1.6em}A) Sonucun her zaman doğru olması
+
+\par\noindent\hspace*{1.6em}B) Öncüllerin tümü doğruyken sonucun da mutlaka doğru olması
+
+\par\noindent\hspace*{1.6em}C) Argümanın en az iki öncül içermesi
+
+\par\noindent\hspace*{1.6em}D) Öncüllerin ve sonucun aynı sayıda önerme içermesi
+
+\par\smallskip\noindent 20. “p → q” ve “q” öncüllerinden “p” sonucunu çıkarmaya çalışan akıl yürütme aşağıdakilerden hangisiyle adlandırılır ve neden geçersizdir?
+
+\par\noindent\hspace*{1.6em}A) Modus ponens; öncüller her zaman doğrudur
+
+\par\noindent\hspace*{1.6em}B) Sonucu olumlama yanılgısı; p yanlış, q doğruyken öncüller doğru ama sonuç yanlış olabilir
+
+\par\noindent\hspace*{1.6em}C) Kontrapozitif çıkarım; her zaman geçerlidir
+
+\par\noindent\hspace*{1.6em}D) De Morgan çıkarımı; yalnızca bileşik önermelerde geçersizdir
+
+\clearpage
+
+\clearpage

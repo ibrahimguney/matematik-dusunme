@@ -1,0 +1,355 @@
+\chapter{Değişkenler: Matematiğin Dilindeki Harfler}
+\label{chap:sembolik-mantik}
+
+\subsection*{Öğrenme Hedefleri}
+
+Bu bölümü tamamladığınızda:
+
+\begin{itemize}\setlength{\itemsep}{2pt}\setlength{\parskip}{0pt}
+\item Değişken kavramının tarihsel gelişimini özetleyebileceksiniz.
+\item Değişkenlerin matematikte kullanıldığı farklı amaçları (bilinmeyen, genel yer tutucu, değişen nicelik) birbirinden ayırt edebileceksiniz.
+\item Serbest değişken ile bağlı değişken arasındaki farkı açıklayabileceksiniz.
+\item Değişken kavramının felsefi önemini (Frege’nin fonksiyonargüman ayrımı bağlamında) tartışabileceksiniz.
+\end{itemize}
+
+\section{Değişken Kavramının Tarihsel Gelişimi}
+
+Bugün matematik derslerinde “x” harfini görmeye o kadar alışığızdır ki, genel harf cebrinin uzun bir tarihsel gelişimin ürünü olduğunu unutmaya meyilliyizdir. Öklid’in Elementler’i gibi klasik Yunan metinlerinde nicelik ilişkileri çoğunlukla geometrik nesneler üzerinden ifade edilir; buna karşılık Diophantos gibi sonraki yazarlar kısaltılmış aritmetik işaretler de kullanmıştır. Dolayısıyla “Antik Yunan matematiği bütünüyle geometrikti” genellemesi dikkatle kullanılmalıdır (Heath 1910). Aslında sembolik cebrin ortaya çıkışından çok önce, matematikçiler bilinmeyen nicelikleri içeren problemleri çözebiliyorlardı — ancak bunu tamamen sözel bir dille, hiçbir kısaltma ya da sembol kullanmadan yapıyorlardı. Bu en eski aşamaya matematik tarihçileri “retorik cebir” (rhetorical algebra) adını verir. Retorik, senkopik ve sembolik cebir ayrımı öğretici bir sınıflandırmadır; ancak farklı geleneklerin aynı doğrusal gelişim çizgisini izlediği anlamına gelmez (Bashmakova ve Smirnova 2000; Cajori 1928). Örneğin MÖ 1650 civarına tarihlenen Mısır Rhind Papirüsü’ndeki ünlü “aha” problemlerinden biri, günümüz gösterimiyle “x + x/7 = 19” denklemine karşılık gelen bir bilmeceyi, tamamen sözel bir anlatımla (“bir miktar, kendisinin yedide biriyle birlikte on dokuz eder”) ifade eder ve çözüm de yine sözel
+
+adımlarla, “yanlış konum yöntemi” (false position) denen bir teknikle bulunur. Bu örnek, papirüsün 24. problemidir (Chace 1927–1929, c. 1, Problem 24). Benzer biçimde Babil tabletlerinde (MÖ 2. binyıl) ikinci dereceden denklemler geometrik-sözel bir dille çözülüyor, ancak hiçbir yerde bugünkü anlamda bir “x” sembolü kullanılmıyordu. Bu geleneklerde genel çözüm yöntemleri bulunmasına rağmen, modern harf cebrindeki gibi aynı sembolik ifadenin bütün bir problem ailesini göstermesine yarayan ortak bir gösterim sistemi yoktu. Cebirsel düşüncenin sembolik bir dile kavuşması, uzun bir süreç içinde gerçekleşmiştir. MS 3. yüzyılda yaşamış İskenderiyeli matematikçi Diophantos, Aritmetika adlı eserinde bilinmeyenler için kısaltılmış semboller kullanmış, ancak bu semboller günümüzdeki genel ve esnek harf kullanımından uzaktı; bu yaklaşım geleneksel olarak “senkopik cebir” diye sınıflandırılır (Heath 1910). Ortaçağ İslam matematiği içinde, özellikle Harezmî’nin (yaklaşık MS 780-850) el-Kitâbü’l-Muhtasar fî Hisâbi’l-Cebr ve’l-Mukâbele adlı eseri, “cebir” (al-jabr) teriminin kaynağı olmuş ve denklemleri çözme yöntemlerini sistematik biçimde ele almış, ancak bu eserde de bilinmeyenler sembol yerine çoğunlukla sözel ifadelerle anlatılıyordu (“retorik cebir”) (al-Khwārizmī, Muḥammad ibn Mūsā 1831; Bashmakova ve Smirnova 2000). Modern anlamda sembolik cebrin (harflerin hem bilinmeyenleri hem de bilinen genel nicelikleri temsil etmesi) gelişimi, 16. yüzyılın sonunda Fransız matematikçi François Viète’in çalışmalarıyla belirgin bir sıçrama yaşamıştır. Viète, bilinen nicelikleri ünsüz harflerle, bilinmeyen nicelikleri ise sesli harflerle göstererek, denklemleri genel biçimde (yani belirli sayılar yerine sembollerle) ifade etmenin yolunu açmıştır. Viète’in kendisi bu yeni yönteme “logistica speciosa” (türsel hesap) adını vermiş ve bunun, yalnızca belirli sayılarla işlem yapan geleneksel “logistica numerosa”dan (sayısal hesap) temelde farklı, çok daha güçlü bir araç olduğunun bilincindeydi; ona göre bu yöntem, tek tek problemleri değil, problem sınıflarını bir arada çözmeyi mümkün kılıyordu. 17. yüzyılda René Descartes’ın kullanımında ise alfabenin sonundaki harfler (x, y, z) bilinmeyenleri, baştaki harfler (a, b, c) ise bilinen (ama genel) nicelikleri temsil eder (Viète 1591; Descartes 1954; Cajori 1928). Bu basit gösterim kararı, cebrin okunabilirliğini ve gücünü katlayarak artırmıştır.
+
+\begin{tcolorbox}[bookbox,colback=cEx]\textbf{\textsf{\textcolor{cAcc}{Bilgi Kutusu.}}}\quad Neden “x”? Descartes’ın neden özellikle “x” harfini bilinmeyen için tercih ettiğini açıklayan çağdaş bir kayıt yoktur. Descartes’ın La Géométrie’de alfabenin son harflerini bilinmeyenler için kullandığı belgelenebilir; buna karşılık matbaacının, dizgi kutusunda daha bol bulunduğu için x’i önerdiği yolundaki popüler hikâyeyi destekleyen birincil bir belge bilin-\end{tcolorbox}
+
+memektedir (Cajori 1928, ss. 379–384). Dolayısıyla bu hikâye, tarihsel bir açıklama olarak değil, sonradan üretilmiş ve doğrulanmamış bir anekdot olarak aktarılmalıdır.
+
+Descartes’ın gösteriminin tüm Avrupa’da hemen ve tek biçimli olarak benimsendiğini düşünmek de yanıltıcı olur; 17. yüzyıl boyunca farklı matematikçiler (İngiliz Thomas Harriot, Galli Robert Recorde gibi) kendi sembol sistemlerini geliştirmeye devam etmiş, ortak bir gösterim dilinin oturması onlarca yıl almıştır. Bu sürecin kesinleşmesinde, 18. yüzyılda İsviçreli matematikçi Leonhard Euler’in yayınları özellikle etkili olmuştur. Euler 𝑓(𝑥) gösterimini yaygın ve sistematik biçimde kullanmış; 𝑒 ve 𝜋 gibi simgelerin modern kullanımlarının yerleşmesine önemli katkıda bulunmuştur (Euler 1988; Cajori 1928). Bu tarih, gösterimlerin tek bir kişinin anlık kararıyla değil, öneri, kullanım ve benimsenme süreçleriyle yerleştiğini gösterir.
+
+\section{Değişkenin Farklı Kullanım Amaçları}
+
+\begin{tcolorbox}[bookbox,colback=cDef]
+\textbf{\textsf{\textcolor{cAcc}{Tanım.}}}\quad
+Bir \emph{değişken}, bağlama göre bilinmeyen bir değeri, bir kümenin keyfî elemanını, değişen bir niceliği veya bir nesne ailesini belirleyen parametreyi temsil eden semboldür.
+\end{tcolorbox}
+
+“Değişken” terimi tek bir anlama gelmez; matematikte değişkenler en az üç farklı kavramsal işlevi yerine getirmek için kullanılır. Bu ayrımı fark etmemek, öğrencilerin matematiksel ifadeleri yanlış yorumlamasının yaygın nedenlerinden biridir. Cebir eğitimi literatüründe bilinmeyen, genelleştirme aracı, bağıntı içindeki değişen nicelik ve parametre gibi roller özellikle ayırt edilir (Usiskin 1988, ss. 8–19). (a) Bilinmeyen olarak değişken. Bir denklemde (örneğin 2x + 3 = 7), x harfi, değerini bulmamız gereken belirli, tek (ya da sonlu sayıda) bir değerin yerini tutar. Bir denklemin hiç çözümü, tek çözümü, birden fazla ya da sonsuz sayıda çözümü olabilir; burada amaç izin verilen değerleri belirlemektir. Verilen örnekte çözüm kümesi \{2\}’dir. (b) Genel (evrensel) yer tutucu olarak değişken. Bir özdeşlikte (örneğin (a+b)² = a² + 2ab + b²) harfler, belirli tek bir sayıyı değil, herhangi bir sayıyı temsil eder; ifade, a ve b yerine hangi sayılar konursa konsun doğrudur. Burada amaç bir bilinmeyeni “çözmek” değil, sonsuz sayıda özel durumu tek bir genel ifadeyle kapsamaktır. Bu kullanım, ileride (Bölüm~\ref{chap:niceleyiciler}) inceleyeceğimiz evrensel niceleyici (“her a, b için…”) ile yakından ilişkilidir. (c) Değişen nicelik (fonksiyonel değişken) olarak değişken. Bir fonksiyon ifadesinde (örneğin f(x) = x²), x fonksiyonun tanım kümesinde farklı değerler alabilen bir argümandır; burada vurgu, girdiye göre çıktının nasıl belirlendiğini incelemektir. “Değişme” sözcüğü her zaman fiziksel zaman içinde gerçekleşen bir süreç anlamına gelmez. Bu kullanım biçimi, özellikle kalkülüs ve fizik uygulamalarında (örneğin “t zamana göre değişen konum x(t)”) merkezi bir rol oynar ve tam olarak sonsuz küçükler hesabının kavramsal
+
+kalbini oluşturur. Bu üç kullanıma sıkça dördüncü, ama biraz farklı bir kategori olarak parametre kavramı eklenir. Bir parametre, bir ifade ailesini (bir denklem ya da fonksiyon ailesini) tanımlamak için kullanılan, kendisi bir “bilinmeyen” olmasa da belirli bir uygulamada sabit tutulan bir harftir. Örneğin y = mx + b doğru denkleminde x ve y, birbirine bağlı olarak “değişen nicelikler” (bkz. (c) maddesi) iken; m (eğim) ve b (y-ekseni kesim noktası), her belirli doğru için sabit kalan, ama farklı doğrular arasında değişebilen parametrelerdir. Bir parametrenin ayırt edici özelliği, ilgilenilen tek bir matematiksel nesne (bu örnekte tek bir doğru) içinde sabit davranması, ama bakış açımızı bütün bir doğrular ailesine genişlettiğimizde kendisinin de bir değişken rolü üstlenmesidir — bu da parametre ile değişken arasındaki ayrımın, mutlak değil, incelenen bağlama göre değişen (göreli) bir ayrım olduğunu gösterir.
+
+\begin{tcolorbox}[bookbox,colback=cEx]\textbf{\textsf{\textcolor{cAcc}{Örnek.}}}\quad Üç Kullanımın Karşılaştırılması - Bilinmeyen: “3x - 5 = 10” ifadesinde x, tek bir değeri (x = 5) bulmamız gereken bilinmeyendir. - Genel yer tutucu: “x + y = y + x” ifadesinde x ve y, toplamanın değişme özelliğini ifade eden, herhangi iki sayı için geçerli genel semboller olarak kullanılır. - Değişen nicelik: “Bir arabanın hızı v(t) = 60 - 2t (km/sa)” ifadesinde t, zaman ilerledikçe sürekli değişen bir niceliktir ve fonksiyonun bütün davranışını (t’nin tüm olası değerleri için) incelemek amaçlanır. - Parametre: “ax² + bx + c = 0” ifadesinde x çözülmesi gereken bilinmeyendir, ama a, b, c katsayıları, hangi özel ikinci dereceden denklemle uğraştığımızı belirleyen parametrelerdir; “ikinci dereceden denklemin kökleri” formülü (x = (-b ± √(b²-4ac)) / 2a), a, b,\end{tcolorbox}
+
+c parametrelerinin tüm olası değerleri için geçerli tek bir genel formüldür.
+
+Bu üç (veya parametreyle birlikte dört) kullanımın birbirinden ayırt edilmesi, matematiksel ifadelerin doğru yorumlanması açısından kritik önemdedir. Örneğin bir öğrenci “x + y = y + x” ifadesini bir denklem (çözülmesi gereken bir bilinmeyen) olarak yanlış okursa, bu ifadenin aslında toplamanın bir özelliğini (değişme özelliği) ifade eden bir özdeşlik olduğunu kaçırabilir. Benzer biçimde, “ax + b = 0” ifadesindeki a ve b’nin birer parametre, x’in ise bilinmeyen olduğunu ayırt edemeyen bir öğrenci, x’i a ve b cinsinden ifade eden genel çözümün (x = -b/a) neden tek bir sayı değil, bir formül olduğunu anlamakta güçlük çekebilir; bu formülün 𝑎 ≠ 0 koşuluna bağlı olduğunu da ayrıca izlemek gerekir.
+
+\par\smallskip\begin{center}{\renewcommand{\arraystretch}{1.25}\footnotesize\begin{tabularx}{\linewidth}{|>{\raggedright\arraybackslash}p{2.35cm}|>{\raggedright\arraybackslash}p{3.21cm}|Y|}\hline
+\rowcolor{cAcc}\textcolor{white}{\bfseries Kullanım} & \textcolor{white}{\bfseries Örnek} & \textcolor{white}{\bfseries Açıklama} \\ \hline
+\textbf{Bilinmeyen} & 2x + 3 = 7  (Soru: x kaçtır?) & Belirli bir değer bulunur. \\ \hline
+\textbf{Genel yer tutucu} & a + b = b + a  (her a, b için) & Genel bir özellik ifade edilir. \\ \hline
+\textbf{Değişen nicelik} & f(x) = x²  (x değiştikçe f(x) değişir) & Fonksiyonun davranışı incelenir. \\ \hline
+\textbf{Parametre} & y = mx + b  (bir doğru için m, b sabit) & Nesne ailesinin bir üyesi belirlenir. \\ \hline
+\end{tabularx}}\end{center}\par\smallskip
+
+{\small\itshape\sffamily\color{gray}Değişken sembollerinin dört temel kullanım biçimi. Bir sembolün matematiksel anlamı yalnızca harfe değil, kullanıldığı bağlama ve ifadenin amacına bağlıdır.}
+
+\section{Serbest Değişken ve Bağlı Değişken}
+
+Matematiksel mantıkta önemli bir başka ayrım, serbest değişken (free variable) ile bağlı değişken (bound variable) arasındadır. Bir değişken, bir niceleyici (Bölüm~\ref{chap:niceleyiciler}’da ayrıntılı ele alacağımız “her…” ya da “öyle bir … vardır ki…”) veya bir toplama/integral sembolü tarafından “bağlanmadığı” sürece serbesttir; serbest bir değişkenin yorumu, formülün dışından verilen bir değişken atamasına bağlıdır. Niceleyici ise kendi kapsamındaki değişken oluşumlarını bağlar (Enderton 2001).
+
+\begin{tcolorbox}[bookbox,colback=cEx]\textbf{\textsf{\textcolor{cAcc}{Örnek.}}}\quad Serbest ve Bağlı Değişken “x² - 4 = 0” ifadesinde x serbesttir; ifadenin doğruluğu, x’e hangi değerin verildiğine bağlıdır (x = 2 için doğru, x = 3 için yanlıştır). “Her x için, x² ≥ 0” ifadesinde ise x, “her x için” niceleyicisi tarafından bağlanmıştır; bu ifadenin doğruluk değeri artık x’in belirli bir değerine bağlı değildir — ifade, x’in tüm olası değerleri üzerinden zaten “kapatılmış” (kesin bir doğruluk değerine sahip) bir önermedir. Benzer şekilde ∑(i=1 to 5) i² ifadesinde i, toplama sembolü tarafından bağlanmıştır; toplamın sonucu (55) i’nin herhangi bir “dışsal” değerine bağlı değildir, i yalnızca toplama işleminin iç mekanizmasında bir sayaç görevi görür.\end{tcolorbox}
+
+Durum, aynı ifadede birden fazla niceleyici bulunduğunda daha da ilginç bir hâl alır; çünkü niceleyicilerin sırası, bağlı bir değişkenin “kapsama alanını” (scope) belirler ve bu sıra değiştiğinde ifadenin anlamı da kökten değişebilir. Örneğin “her x için, öyle bir y vardır ki x + y = 0” ifadesi doğrudur (her x için, onun toplamsal tersi olan
+
+y = -x her zaman bulunabilir); burada y’nin seçimi x’e bağlı olarak değişebilir. Buna karşılık “öyle bir y vardır ki, her x için x + y = 0” ifadesi yanlıştır; çünkü bu ifade, tek bir sabit y’nin, x ne olursa olsun bu eşitliği sağlamasını talep eder — oysa böyle sihirli bir y sayısı (yalnızca x = -y için işe yarayan bir y hariç, tüm x’ler için aynı anda geçerli olan bir y) mevcut değildir. Bu örnek, niceleyicilerin sırasının salt biçimsel bir ayrıntı olmadığını, ifadenin doğruluk değerini doğrudan belirleyen mantıksal bir unsur olduğunu gösterir; bu konuyu Bölüm~\ref{chap:niceleyiciler}’da “niceleyicilerin iç içe geçmesi” (nested quantifiers) başlığı altında daha sistemli biçimde ele alacağız. Aşağıdaki kapsam ağacı, bir niceleyicinin yalnızca kendi altındaki ifadeyi etkilediğini ve aynı formülde bağlı değişkenlerle serbest değişkenlerin birlikte bulunabileceğini görselleştirir.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[level distance=12mm,
+  level 1/.style={sibling distance=55mm},level 2/.style={sibling distance=34mm},
+  every node/.style={schemenode,text width=3.4cm},edge from parent/.style={schemeline}]
+  \node[schemeaccent,text width=8.8cm] {$\forall x\,(P(x,y)\land\exists z\,Q(x,z,w))$\\$x$ dış niceleyici tarafından bağlanır.}
+    child {node {$P(x,y)$\\$x$: bağlı, $y$: serbest}}
+    child {node {$\exists z\,Q(x,z,w)$\\$z$ bu alt formülde bağlanır.}
+      child {node {$Q(x,z,w)$\\$x,z$: bağlı, $w$: serbest}}};
+\end{tikzpicture}
+\caption{Serbest ve bağlı değişkenlerin kapsam ağacı.}
+\end{figure}
+
+Bu ayrım, ilerideki bölümlerde (özellikle Bölüm~\ref{chap:niceleyiciler} ve Bölüm~\ref{chap:onermeler-mantigi}) önemli olacaktır: bir ifadenin bir önerme (kesin bir doğru/yanlış değerine sahip kapalı cümle) olup olmadığı, serbest değişken içerip içermediğine bağlıdır. Serbest değişken içeren bir formül (örneğin “x çift sayıdır”), bir değişken atamasına göre doğru ya da yanlış olabilir, fakat atamadan bağımsız bir cümle değildir; böyle bir ifadeye önerme fonksiyonu ya da açık formül (open formula) denir (Enderton 2001).
+
+\section{Değişkenin Felsefi Önemi}
+
+Değişken kavramı, salt teknik bir gösterim aracı olmanın ötesinde, önemli bir felsefi tartışmanın da parçasıdır. Mantıkçılık programının kurucusu Gottlob Frege, matematiksel dilin mantıksal analizinde fonksiyon ve argüman ayrımını merkeze koymuştur. Frege’ye göre bir fonksiyon ifadesi, tamamlanmayı bekleyen “doymamış” (unsaturated) bir yapıya sahiptir; fonksiyon ancak bir argümanla tamamlandığında bir değer üretir (Frege 1997, ss. 130–148). Bu analiz, değişkenin matematikte yalnızca pratik bir kısaltma değil, matematiksel ifadelerin mantıksal yapısını ortaya çıkaran temel bir analitik araç olduğunu göstermiştir. Benzer biçimde Bertrand Russell, önermesel fonksiyon (propositional function) kavramını geliştirerek, “x insandır” gibi değişken içeren ifadelerin bir argümanla tamamlandıklarında önerme ürettiğini vurgulamıştır. Açık ifade tek başına kapalı bir önerme değil, farklı argümanlar için doğruluk değerleri veren bir şablondur (Russell 1919). Bu kavram, Bölüm~\ref{chap:niceleyiciler}’da inceleyeceğimiz niceleyicilerin (evrensel ve varlıksal niceleyicilerin) mantıksal olarak nasıl tanımlandığının temelini oluşturur: bir niceleyici, tam olarak böyle bir önermesel fonksiyonu alıp, onu kesin bir doğruluk değerine sahip bir önermeye dönüştüren bir işlemdir. Frege ile Russell arasındaki dönemde, İtalyan matematikçi Giuseppe Peano da 1889 tarihli Arithmetices Principia adlı eserinde, aritmetiği aksiyomatik bir sisteme oturturken değişkenler, mantıksal ilişkiler ve aritmetik için etkili bir sembolik gösterim geliştirmiştir. Bu gösterim bugünkü ∀ ve ∃ glifleriyle özdeş değildir (Peano 1889). Russell ve Whitehead, kullandıkları gösterimin önemli ölçüde Peano’ya dayandığını açıkça belirtir (Whitehead ve Russell 1910–1913). 20. yüzyılın ortasında ise Amerikalı filozof Willard Van Orman Quine, değişkenlerin felsefi statüsüne farklı bir açıdan yaklaşmış; bağlı değişkenleri, doğal dildeki “o”, “bu” gibi zamirlere (pronoun) benzeterek, “var olmak, bir bağlı değişkenin değeri olmaktır” (to be is to be the value of a bound variable) biçimindeki ünlü formülasyonuyla, bir kuramın hangi nesnelerin var olduğunu kabul ettiğini anlamanın yolunun, o kuramın niceleyicilerinin bağladığı değişkenlere hangi tür nesnelerin değer olarak atanabildiğini incelemekten geçtiğini savunmuştur. Quine’ın bu görüşü, değişken kavramının yalnızca matematiksel bir araç değil, aynı zamanda bir kuramın ontolojik taahhütlerini (neyin var olduğunu kabul ettiğini) analiz etmek için felsefi bir mercek olarak da kullanılabileceğini göstermesi bakımından önemlidir. Quine’ın formülü, tek başına hangi ontolojinin doğru olduğunu kanıtlayan bir tezden ziyade, bir kuramın bağlı değişkenlerinin hangi nesneler üzerinde nicelendiğini açığa çıkaran bir ontolojik bağlılık ölçütüdür (Quine 1948, ss. 32–33).
+
+\section{Mantıksal Değişkenler: Önermesel Değişkenler}
+
+Buraya kadar incelediğimiz değişkenler, sayısal nicelikleri (bilinmeyen bir sayı, değişen bir zaman, bir parametre) temsil ediyordu. Ancak Bölüm~\ref{chap:onermeler-mantigi}’te ayrıntılı olarak ele alacağımız önermeler mantığında, değişkenler tamamen farklı bir tür nesneyi, önermeleri (ya da onların doğruluk değerlerini) temsil etmek için kullanılır. Bu tür değişkenlere önermesel değişken (propositional variable) denir ve genellikle p, q, r gibi harflerle gösterilir. Klasik iki değerli önermeler mantığında bir değerleme, her önermesel değişkene doğru (D/1) ya da yanlış (Y/0) değerlerinden birini atar. Bu, bütün mantık sistemlerinin zorunlu olarak iki değerli olduğu anlamına gelmez; burada Bölüm~\ref{chap:onermeler-mantigi}’te kullanılacak klasik semantik söz konusudur. Örneğin “p → q” (p ise q) ifadesinde p ve q, “Ankara Türkiye’nin başkentidir” ya da “2 + 2 = 5” gibi herhangi bir önermenin yerine geçebilen genel yer tutuculardır; ifadenin mantıksal geçerliliği, p ve q’nun içeriğinden değil, yalnızca onların alabileceği doğruluk değerlerinin tüm kombinasyonlarından (doğruluk tablosundan) incelenir. Bu yaklaşımın kökleri, 19. yüzyıl ortasında George Boole’un geliştirdiği cebirsel mantık programına uzanır. Boole sınıfları ve mantıksal koşulları cebirsel sembollerle ele alarak çıkarımın sembolik hesap yoluyla incelenmesine öncülük etmiştir; ancak Boole’un özgün cebri, günümüzdeki iki elemanlı Boolean cebriyle bütün ayrıntıları bakımından özdeşleştirilmemelidir (Boole 1854). Klasik semantikte önermesel değişkenlerin sayısal değişkenlerden bu farkı, “değişken” kavramının aslında tek bir matematiksel nesne türüne değil, çok daha genel bir yer tutucu fikrine gönderme yaptığını hatırlatır: bir değişken, üzerinde çalıştığımız nesne evreni (sayılar, önermeler, kümeler, fonksiyonlar) ne olursa olsun, o evrenin herhangi bir elemanının yerini geçici olarak tutabilen sembolik bir araçtır. Bu genel bakış açısını Bölüm~\ref{chap:onermeler-mantigi}’te doğruluk tablolarını incelerken tekrar ele alacağız.
+
+\section{Değişken Kavramının Bilgisayar Biliminde Yeniden Yorumlanması}
+
+Günümüzde “değişken” terimiyle en sık, matematik dersleri dışında, bilgisayar programlama bağlamında karşılaşılır; ancak bu iki kullanım arasında, öğrencilerin sıkça gözden kaçırdığı önemli bir kavramsal fark vardır. Programlama dillerinde “değişken” tek tip bir anlamsal nesne değildir: bir ad, değişmez bir değere bağlanabilir; değişebilir durum kullanan emirsel dillerde ise bir depolama hücresine gönderimde bulunabilir. Bu ayrım, dilin statik ve dinamik semantiğiyle
+
+belirlenir (Harper 2016). Örneğin birçok emirsel dilde “x = x + 1” benzeri bir komut, x’in mevcut değerini kullanarak yeni bir değer hesaplar ve bu değeri aynı konuma atar. Matematiksel anlamda ise “x = x + 1” denkleminin standart sayı sistemlerinde çözümü yoktur: her iki taraftan x çıkarılırsa 0 = 1 gibi yanlış bir eşitlik elde edilir. Tek bir denklemin çözümsüz olması, tek başına içinde yazıldığı bütün matematiksel teorinin tutarsız olduğu anlamına gelmez. Fark, aynı görünen işaretlerin farklı resmî dillerde farklı sözdizimsel ve anlamsal görevler üstlenebilmesinden kaynaklanır. Bazı programlama dilleri atama için “=”, bazıları “:=” kullanır; eşitlik sınaması da dile göre “=”, “==” veya başka bir gösterimle yazılabilir. Dolayısıyla işaretin anlamını biçimi tek başına değil, programlama dilinin semantiği belirler. Matematikteki “=” ise iki ifadenin aynı nesneyi gösterdiğini ileri süren simetrik bir eşitlik ilişkisidir (Pierce 2002).
+
+\begin{tcolorbox}[bookbox,colback=cEx]\textbf{\textsf{\textcolor{cAcc}{Örnek.}}}\quad Matematiksel ve Programlama Değişkeni Matematikte “y = x²” bir fonksiyonel ilişkiyi tanımlar: her x değeri için y’nin ne olduğunu belirten, zamandan bağımsız bir kuraldır. Değişebilir durum kullanan bir programda ise “y = x * x” ataması çalıştırıldığında y’nin bağlı olduğu konuma, x’in o anki değerinin karesi yazılabilir. Daha sonra x değiştirilir ve y yeniden hesaplanmazsa y eski değerini korur. Bu örnek, matematiksel eşitlikle program durumunu güncelleyen atamanın aynı işlem olmadığını gösterir.\end{tcolorbox}
+
+Saf fonksiyonel programlamada adlar değişmez değerlere bağlanır ve bir ifadenin değeri, gizli durum değişikliklerine bağlı olmadan matematiksel bir fonksiyon gibi ele alınır. Bu özellik, program ifadeleri hakkında eşitlikçi akıl yürütmeyi kolaylaştırır. Bununla birlikte, uygulamadaki fonksiyonel dillerin bir bölümü kontrollü değişebilirlik ve yan etkiler de sunar; dolayısıyla “fonksiyonel programlamada hiçbir değer değişmez” biçimindeki mutlak ifade doğru değildir (Harper 2016).
+
+\section{Yüksek Lisans Derinleştirmesi: Bağlama, Yerine Koyma ve Değişken Yakalama}
+
+Bir değişkenin anlamı yalnızca aldığı değerden değil, sözdizimindeki bağlanma biçiminden de doğar. Özellikle niceleyiciler ve lambda ifadelerinde dikkatsiz yerine koyma, formülün anlamını değiştiren değişken yakalama hatasına yol açabilir.
+
+\textbf{Bu kısmın hedefleri.} Bu kısmı tamamladığınızda serbest ve bağlı değişken kümelerini özyinelemeli olarak hesaplayabilecek, yakalamadan kaçınan yerine koymayı uygulayabilecek, alfa-eşdeğerliği açıklayabilecek ve tür bilgisinin değişken kullanımını nasıl sınırladığını gösterebileceksiniz.
+
+
+5.7.1 Serbest Değişkenlerin Özyinelemeli Tanımı 𝐹 𝑉 (𝜑), 𝜑’deki serbest değişkenler kümesi olsun. Örneğin
+
+𝐹 𝑉 (𝑃 (𝑡1, …, 𝑡𝑛 )) = 𝐹 𝑉 (𝑡1 ) ∪ ⋯ ∪ 𝐹 𝑉 (𝑡𝑛 ), 𝐹 𝑉 (¬𝜑) = 𝐹 𝑉 (𝜑), 𝐹 𝑉 (𝜑 ∧ 𝜓) = 𝐹 𝑉 (𝜑) ∪ 𝐹 𝑉 (𝜓), 𝐹 𝑉 (∀𝑥 𝜑) = 𝐹 𝑉 (𝜑) ∖ \{𝑥\}. Bu tanım, “değişkenin adı metinde geçiyor mu?” sorusundan daha inceliklidir. ∀𝑥(𝑃 (𝑥, 𝑦) ∧ ∃𝑦, 𝑄(𝑥, 𝑦, 𝑧)) formülünde serbest değişkenler \{𝑦, 𝑧\}’dir; ikinci 𝑦, kendi niceleyicisi tarafından bağlanmıştır (Enderton 2001).
+
+5.7.2 Yakalamadan Kaçınan Yerine Koyma 𝜑[𝑦 ∶= 𝑡], 𝜑’deki serbest 𝑦 oluşumlarının 𝑡 terimiyle değiştirilmesini göstersin. Şu naif işlem yanlıştır:
+
+(∀𝑥 𝑃 (𝑥, 𝑦))[𝑦 ∶= 𝑥]          ∀𝑥 𝑃 (𝑥, 𝑥). Başlangıçtaki serbest 𝑦’nin yerine konan 𝑥, niceleyicinin kapsamına girerek yakalanmıştır. Önce bağlı değişken yeniden adlandırılmalıdır:
+
+∀𝑥 𝑃 (𝑥, 𝑦) ≡𝛼 ∀𝑧 𝑃 (𝑧, 𝑦), ardından
+
+(∀𝑧 𝑃 (𝑧, 𝑦))[𝑦 ∶= 𝑥] = ∀𝑧 𝑃 (𝑧, 𝑥) elde edilir. Bağlı değişkenlerin sistematik yeniden adlandırılması alfa-eşdeğerliğidir; anlamı değil yalnızca yerel adları değiştirir.
+
+Yaygın Yanılgı — Aynı harf her yerde aynı değişkendir. Bir sembolün kimliği, bağlama kapsamıyla belirlenir. Ayrı niceleyicilerin bağladığı iki 𝑥 aynı adı taşısa da farklı yerel değişkenlerdir;
+
+serbest bir 𝑥 ise bunların hiçbirine bağlı olmayabilir.
+
+5.7.3 Lambda Bağlaması ve Türler Lambda hesabında 𝜆𝑥.𝑀, 𝑀 içindeki serbest 𝑥 oluşumlarını bağlar. Beta indirgemesi
+
+(𝜆𝑥.𝑀 )𝑁 ⟶ 𝑀 [𝑥 ∶= 𝑁 ] ancak yerine koyma yakalamadan kaçınacak biçimde tanımlandığında anlamını korur. Basit tür sisteminde
+
+Γ, 𝑥 ∶ 𝐴 ⊢ 𝑀 ∶ 𝐵        ⟹   Γ ⊢ 𝜆𝑥.𝑀 ∶ 𝐴 → 𝐵 çıkarımı, değişkenin hangi türden değer alabileceğini sözdizimsel olarak kaydeder. Böylece matematikteki değişken, programlama dillerindeki bağlama, kapsam ve tür denetimiyle ortak bir biçimsel yapıya kavuşur (Pierce 2002; Harper 2016).
+
+5.7.4 Seminer ve Araştırma Çalışmaları 1. Beş karmaşık formül için 𝐹 𝑉 ve bağlı değişken kümelerini hesaplayın.
+
+2. Değişken yakalama üreten üç naif yerine koyma örneği kurup alfa-yeniden adlandırmayla düzeltin.
+
+3. Lambda hesabında (𝜆𝑥.𝜆𝑦.𝑥)(𝑦) ifadesini güvenli biçimde indirgeyin.
+
+4. Matematiksel değişken, program değişkeni ve mantıksal metavariable kavramlarını yaşam süresi, kapsam ve tür bakımından karşılaştırın.
+
+5. Tarihsel cebirsel gösterimden modern bağlama kuramına geçişi inceleyen kısa bir araştırma tasarısı hazırlayın.
+
+\section*{Bölüm Özeti}
+
+Değişken kavramı, farklı matematik geleneklerinde gelişen retorik, senkopik ve sembolik ifade biçimlerinin uzun tarihinin ürünüdür; bu üçlü sınıflandırma yararlı olmakla birlikte tarihsel gelişimin bütün karmaşıklığını tek başına açıklamaz. Matematikte değişkenler en az üç farklı işlevde kullanılır: bilinmeyen (çözülecek belirli değer), genel yer tutucu (herhangi bir değeri temsil eden sembol) ve fonksiyonel değişken (bir fonksiyonun tanım kümesi üzerinde değer alan
+
+argüman). Ayrıca bir değişken, bir niceleyici veya toplama/integral sembolü tarafından bağlanıp bağlanmadığına göre bağlı ya da serbest olabilir; bu ayrım, bir ifadenin kapalı bir cümle mi yoksa açık bir formül mü olduğunu belirler. Frege ve Russell’ın fonksiyon–argüman ve önermesel fonksiyon analizleri, değişken kavramının felsefi derinliğini ortaya koymuştur. Programlama dillerinde ise değişken, dile göre değişmez bir bağ veya değişebilir bir depolama konumu olabilir; atama ile matematiksel eşitlik bu nedenle birbirinden ayrılmalıdır.
+
+\section*{Gözden Geçirme Soruları}
+
+\par\noindent 1. Değişkenin üç farklı kullanım amacını (bilinmeyen, genel yer tutucu, değişen nicelik) kendi örneklerinizle açıklayınız.
+
+\par\noindent 2. “2x + 1 = 9” ile “x + 1 = 1 + x” ifadeleri arasındaki kavramsal farkı tartışınız.
+
+\par\noindent 3. Serbest değişken ile bağlı değişken arasındaki farkı bir örnekle gösteriniz.
+
+\par\noindent 4. “Açık formül” (open formula) kavramını, serbest değişken kavramıyla ilişkilendirerek açıklayınız.
+
+\par\noindent 5. Frege’nin “doymamış fonksiyon” fikrinin, değişken kavramını anlamamıza nasıl katkı sağladığını tartışınız.
+
+\section*{Çoktan Seçmeli Sorular}
+
+\par\smallskip\noindent 1. Rhind Papirüsü’ndeki “aha” problemleri gibi en eski cebirsel problemler, matematik tarihçileri tarafından hangi terimle adlandırılan bir aşamaya aittir?
+
+\par\noindent\hspace*{1.6em}A) Senkopik cebir
+
+\par\noindent\hspace*{1.6em}B) Retorik cebir
+
+\par\noindent\hspace*{1.6em}C) Sembolik cebir
+
+\par\noindent\hspace*{1.6em}D) Analitik cebir
+
+\par\smallskip\noindent 2. Diophantos’un Aritmetika adlı eserindeki gösterim biçimi, aşağıdakilerden hangisiyle adlandırılır?
+
+\par\noindent\hspace*{1.6em}A) Retorik cebir
+
+\par\noindent\hspace*{1.6em}B) Senkopik cebir
+
+\par\noindent\hspace*{1.6em}C) Modern sembolik cebir
+
+\par\noindent\hspace*{1.6em}D) Geometrik cebir
+
+\par\smallskip\noindent 3. Modern sembolik cebrin gelişiminde, bilinen nicelikleri ünsüz harflerle, bilinmeyen nicelikleri sesli harflerle gösteren matematikçi kimdir?
+
+\par\noindent\hspace*{1.6em}A) Harezmî
+
+\par\noindent\hspace*{1.6em}B) François Viète
+
+\par\noindent\hspace*{1.6em}C) René Descartes
+
+\par\noindent\hspace*{1.6em}D) Leonhard Euler
+
+\par\smallskip\noindent 4. Descartes’ın kullandığı ve daha sonra etkili olan gösterim kuralına göre alfabenin baştaki harfleri (a, b, c) neyi temsil eder?
+
+\par\noindent\hspace*{1.6em}A) Bilinmeyen nicelikleri
+
+\par\noindent\hspace*{1.6em}B) Yalnızca tam sayıları
+
+\par\noindent\hspace*{1.6em}C) Bilinen (ama genel) sabitleri
+
+\par\noindent\hspace*{1.6em}D) Yalnızca negatif sayıları
+
+\par\smallskip\noindent 5. Leonhard Euler’in 18. yüzyılda matematiksel gösterime katkısı aşağıdakilerden hangisidir?
+
+\par\noindent\hspace*{1.6em}A) Retorik cebri icat etmesi
+
+\par\noindent\hspace*{1.6em}B) f(x) fonksiyon gösteriminin ve e, 𝜋 gibi simgelerin yaygınlaşmasına önemli katkıda bulunması
+
+\par\noindent\hspace*{1.6em}C) Russell Paradoksu’nu keşfetmesi
+
+\par\noindent\hspace*{1.6em}D) Bağlı değişken kavramını ilk kez tanımlaması
+
+\par\smallskip\noindent 6. “2x + 3 = 7” ifadesinde x hangi işlevde kullanılmaktadır?
+
+\par\noindent\hspace*{1.6em}A) Bilinmeyen
+
+\par\noindent\hspace*{1.6em}B) Genel yer tutucu
+
+\par\noindent\hspace*{1.6em}C) Değişen nicelik
+
+\par\noindent\hspace*{1.6em}D) Önermesel değişken
+
+\par\smallskip\noindent 7. “(a+b)² = a² + 2ab + b²” özdeşliğinde a ve b harfleri hangi işlevde kullanılmaktadır?
+
+\par\noindent\hspace*{1.6em}A) Bilinmeyen
+
+\par\noindent\hspace*{1.6em}B) Genel yer tutucu
+
+\par\noindent\hspace*{1.6em}C) Parametre
+
+\par\noindent\hspace*{1.6em}D) Önermesel değişken
+
+\par\smallskip\noindent 8. y = mx + b doğru denkleminde m ve b hangi kavramsal rolü üstlenir?
+
+\par\noindent\hspace*{1.6em}A) Bilinmeyen
+
+\par\noindent\hspace*{1.6em}B) Değişen nicelik
+
+\par\noindent\hspace*{1.6em}C) Parametre
+
+\par\noindent\hspace*{1.6em}D) Bağlı değişken
+
+\par\smallskip\noindent 9. Bir parametre ile bir değişken arasındaki ayrımın göreli (bağlama bağlı) olduğunu gösteren temel gözlem nedir?
+
+\par\noindent\hspace*{1.6em}A) Parametreler yalnızca geometri problemlerinde kullanılır
+
+\par\noindent\hspace*{1.6em}B) Bir nesne tek bir matematiksel örnek içinde sabit kalırken, bir ailenin tümüne bakıldığında kendisi de bir değişken rolü üstlenebilir
+
+\par\noindent\hspace*{1.6em}C) Parametreler yalnızca tam sayı değerleri alabilir
+
+\par\noindent\hspace*{1.6em}D) Parametreler hiçbir zaman denklemlerde yer almaz
+
+\par\smallskip\noindent 10. “x² - 4 = 0” ifadesindeki x için aşağıdakilerden hangisi doğrudur?
+
+\par\noindent\hspace*{1.6em}A) x, bir niceleyici tarafından bağlanmıştır
+
+\par\noindent\hspace*{1.6em}B) x serbesttir; doğruluk değeri x’e verilen değere bağlıdır
+
+\par\noindent\hspace*{1.6em}C) x bir önermesel değişkendir
+
+\par\noindent\hspace*{1.6em}D) x, toplama sembolü tarafından bağlanmıştır
+
+\par\smallskip\noindent 11. “Her x için, x² ≥ 0” ifadesinde x hangi durumdadır?
+
+\par\noindent\hspace*{1.6em}A) Serbest değişkendir
+
+\par\noindent\hspace*{1.6em}B) Bağlı değişkendir
+
+\par\noindent\hspace*{1.6em}C) Parametredir
+
+\par\noindent\hspace*{1.6em}D) Önermesel değişkendir
+
+\par\smallskip\noindent 12. “Her x için, öyle bir y vardır ki x + y = 0” ile “Öyle bir y vardır ki, her x için x + y = 0” ifadeleri arasındaki fark neyi gösterir?
+
+\par\noindent\hspace*{1.6em}A) İki ifadenin aynı anlama geldiğini
+
+\par\noindent\hspace*{1.6em}B) Niceleyicilerin sırasının ifadenin doğruluk değerini değiştirebileceğini
+
+\par\noindent\hspace*{1.6em}C) Bağlı değişkenlerin serbest değişkenlerden matematiksel olarak farksız olduğunu
+
+\par\noindent\hspace*{1.6em}D) Toplama işleminin değişme özelliğine sahip olmadığını
+
+\par\smallskip\noindent 13. Serbest değişken içerdiği için bir atamadan bağımsız kapalı cümle olmayan ifadeye ne ad verilir?
+
+\par\noindent\hspace*{1.6em}A) Aksiyom
+
+\par\noindent\hspace*{1.6em}B) Önerme fonksiyonu (açık formül)
+
+\par\noindent\hspace*{1.6em}C) Teorem
+
+\par\noindent\hspace*{1.6em}D) Sabit
+
+\par\smallskip\noindent 14. Frege’ye göre “x²” gibi bir ifade neden “doymamış” (unsaturated) bir fonksiyon olarak nitelendirilir?
+
+\par\noindent\hspace*{1.6em}A) Çünkü tam bir değer üretmek için bir argümanla “doyurulması” gerekir
+
+\par\noindent\hspace*{1.6em}B) Çünkü yalnızca geometri problemlerinde geçerlidir
+
+\par\noindent\hspace*{1.6em}C) Çünkü sonsuz sayıda çözümü vardır
+
+\par\noindent\hspace*{1.6em}D) Çünkü yalnızca negatif sayılarla çalışır
+
+\par\smallskip\noindent 15. Russell’ın “önermesel fonksiyon” kavramına göre “x insandır” gibi bir açık ifade, bir argümanla tamamlanmadan önce nasıl bir statüye sahiptir?
+
+\par\noindent\hspace*{1.6em}A) Kesinlikle doğrudur
+
+\par\noindent\hspace*{1.6em}B) Kesinlikle yanlıştır
+
+\par\noindent\hspace*{1.6em}C) Farklı argümanlar için doğruluk değeri veren, henüz kapalı önerme olmayan bir şablondur
+
+\par\noindent\hspace*{1.6em}D) Bir aksiyomdur
+
+\par\smallskip\noindent 16. Willard Van Orman Quine’ın “var olmak, bir bağlı değişkenin değeri olmaktır” formülasyonu hangi amaçla kullanılır?
+
+\par\noindent\hspace*{1.6em}A) Bir kuramın ontolojik taahhütlerini (neyin var olduğunu kabul ettiğini) analiz etmek için
+
+\par\noindent\hspace*{1.6em}B) Sayısal değişkenlerin türünü belirlemek için
+
+\par\noindent\hspace*{1.6em}C) Programlama dillerindeki atama işlemini tanımlamak için
+
+\par\noindent\hspace*{1.6em}D) Retorik cebri sembolik cebirden ayırmak için
+
+\par\smallskip\noindent 17. Klasik iki değerli önermeler mantığında p, q, r gibi önermesel değişkenlere bir değerleme hangi değerleri atar?
+
+\par\noindent\hspace*{1.6em}A) Yalnızca pozitif sayılar
+
+\par\noindent\hspace*{1.6em}B) Doğru veya yanlış
+
+\par\noindent\hspace*{1.6em}C) Hiçbir zaman bir ifadede birlikte kullanılamamalarıyla
+
+\par\noindent\hspace*{1.6em}D) Yalnızca geometri problemlerinde kullanılmalarıyla
+
+\par\smallskip\noindent 18. George Boole’un cebirsel mantık programının temel katkısı nedir?
+
+\par\noindent\hspace*{1.6em}A) Mantıksal sınıf ve koşulların cebirsel semboller ve işlemlerle incelenebilmesi
+
+\par\noindent\hspace*{1.6em}B) Geometrik şekillerin cebirsel denklemlerle ifade edilmesi
+
+\par\noindent\hspace*{1.6em}C) Sonsuz küçüklerin bir cebir sistemiyle tanımlanması
+
+\par\noindent\hspace*{1.6em}D) Bilinmeyenlerin yalnızca sözel ifadelerle temsil edilmesi
+
+\par\smallskip\noindent 19. Matematikteki “x = x + 1” ifadesinin, “=” işaretini atama için kullanan emirsel bir dildeki aynı yazımdan temel farkı nedir?
+
+\par\noindent\hspace*{1.6em}A) Matematikte standart sayı sistemlerinde bu denklemin çözümü yoktur; oysa programlamada bir atama işlemini (mevcut değeri bir artırma) ifade eder
+
+\par\noindent\hspace*{1.6em}B) Programlamada bu ifade hiçbir anlam taşımaz
+
+\par\noindent\hspace*{1.6em}C) Matematikte “=” işareti her zaman bir atama işlemidir
+
+\par\noindent\hspace*{1.6em}D) İki alanda da bu ifade birebir aynı anlama gelir
+
+\par\smallskip\noindent 20. Saf fonksiyonel programlamadaki değişmez bağlar, program ifadeleri hakkında matematiksel akıl yürütmeyi nasıl kolaylaştırır?
+
+\par\noindent\hspace*{1.6em}A) Bir ifadenin değerini gizli durum değişikliklerinden bağımsız kılarak, eşit ifadelerin birbirinin yerine konmasını kolaylaştırır
+
+\par\noindent\hspace*{1.6em}B) Değişkenlerin yalnızca tam sayı değerleri almasını sağlayarak
+
+\par\noindent\hspace*{1.6em}C) Değişkenleri niceleyicilerle bağlayarak
+
+\par\noindent\hspace*{1.6em}D) Programları geometrik şekillere dönüştürerek
+

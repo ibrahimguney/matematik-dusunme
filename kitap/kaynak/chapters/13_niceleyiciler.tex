@@ -1,0 +1,373 @@
+\chapter{Niceleyiciler: “Her” ve “Bazı” Üzerine Muhakeme}
+\label{chap:niceleyiciler}
+
+\subsection*{Öğrenme Hedefleri}
+
+Bu bölümü tamamladığınızda:
+
+\begin{itemize}\setlength{\itemsep}{2pt}\setlength{\parskip}{0pt}
+\item Evrensel ve varlıksal niceleyicileri tanımlayabilecek ve sembolik olarak ifade edebileceksiniz.
+\item Günlük dildeki ifadeleri niceleyici içeren biçimsel ifadelere çevirebileceksiniz.
+\item Niceleyicilerin olumsuzlanması kuralını uygulayabileceksiniz.
+\item İç içe geçmiş niceleyicilerin sırasının bir formülün anlamını nasıl değiştirdiğini açıklayabileceksiniz.
+\end{itemize}
+
+\section{Niceleyici Nedir?}
+
+\begin{tcolorbox}[bookbox,colback=cDef]
+\textbf{\textsf{\textcolor{cAcc}{Tanım.}}}\quad
+\emph{Evrensel niceleyici} $\forall$, bir özelliğin söylem evrenindeki bütün nesneler için; \emph{varlıksal niceleyici} $\exists$ ise en az bir nesne için geçerli olduğunu bildirir.
+\end{tcolorbox}
+
+Bölüm~\ref{chap:sembolik-mantik}’te, “x² ≥ 0” gibi serbest değişken içeren bir ifadenin, x’e bir değer verilene kadar tek başına kapalı bir cümle olmadığını, yani bir önerme değil bir açık formül olduğunu görmüştük. Açık formül, bir değişken ataması altında doğru veya yanlış olabilir; fakat niceleme ya da uygun bir atama belirtilmeden kapalı bir önerme oluşturmaz (Enderton 2001, ss. 80–83). Bu tür bir ifadeyi kesin bir önermeye dönüştürmenin iki temel yolu vardır: birincisi x’e belirli bir değer atamak (örneğin x = 5 koymak); ikincisi ise x’in ne kadarının bu özelliği sağladığını belirten bir niceleyici eklemektir. Bu geçiş yalnızca yeni semboller öğrenmek değildir. Devlin, üniversite matematiğine girişte gündelik dilin bağlama dayalı esnekliğinden, matematiksel dilin daha sınırlı ve açık doğruluk koşulları gerektiren kullanımına geçilmesini temel bir öğrenme güçlüğü olarak ele alır (Devlin 2012, ss. 10–13). Niceleyiciler bu kesinleştirmenin başlıca araçlarından biridir. Matematikte ve mantıkta iki temel niceleyici kullanılır: Evrensel niceleyici (∀): “Her…” ya da “tüm…” anlamına gelir. “∀x, P(x)” ifadesi, “incelenen kümedeki her x için P(x) özelliği doğrudur” anlamına gelir.
+
+Varlıksal niceleyici (∃): “Öyle bir … vardır ki…” ya da “en az bir … vardır” anlamına gelir. “∃x, P(x)” ifadesi, “incelenen kümede, P(x) özelliğini sağlayan en az bir x vardır” anlamına gelir. Bu doğruluk koşulları, seçilmiş bir söylem evreni ve değişken yorumuna göre tanımlanır (Enderton 2001, ss. 83–88). Burada niceleme kuramının tarihi ile bugün kullandığımız niceleyici gliflerinin tarihini ayırmak gerekir. Gottlob Frege, 1879 tarihli Begriffsschrift adlı eserinde ilişkileri, bağlı değişkenleri ve iç içe nicelemeleri kapsayan sistematik bir niceleme mantığı geliştirdi (Frege 1879). Ancak Frege’nin iki boyutlu gösterimi bugünkü ∀ ve ∃ işaretlerini kullanmıyordu: evrensel nicelemeyi kendine özgü bir “çukurluk” işaretiyle gösteriyor, varlıksal nicelemeyi ise olumsuzlanmış evrensel niceleme aracılığıyla ifade ediyordu. Charles Sanders Peirce, Frege’den bağımsız bir araştırma geleneğinde, 1883–1885 yıllarında evrensel ve varlıksal nicelemeler için sırasıyla Π ve Σ gösterimlerini kullandı; ayrıca İngilizce quantifier terimini mantık literatürüne kazandırdı (Peirce 1885, ss. 180–196; Ewald 2018, §4). Bugünkü varlıksal niceleyicinin ters çevrilmiş E biçimindeki öncülü Giuseppe Peano’nun 1897 tarihli Formulaire de mathématiques çalışmasında görülür (Peano 1897, Cilt II, §1). Evrensel niceleyici ∀ ise Gerhard Gentzen tarafından, varlık işaretine benzer biçimde ters çevrilmiş “All” harfi olarak 1935’te basılı bir çalışmada kullanılmıştır (Gentzen 1935, s. 178). Dolayısıyla Frege, modern niceleme kuramının başlıca kurucularından biridir; fakat ∀ ve ∃ gliflerinin mucidi değildir.
+
+\begin{tcolorbox}[bookbox,colback=cEx]\textbf{\textsf{\textcolor{cAcc}{Örnek.}}}\quad Niceleyicilerin Günlük Dilden Matematiğe Çevirisi “Her asal sayının 2’den büyük olması durumunda tektir” ifadesi şöyle sembolize edilir: ∀𝑥 [(𝑥 asaldır ∧ 𝑥 > 2) → 𝑥 tektir]. “Toplamı 10 eden iki asal sayı vardır” ifadesi şöyle sembolize edilir: ∃x ∃y [(x asaldır ∧ y asaldır) ∧ x + y = 10] (örneğin x = 3, y = 7 bu koşulu sağlar).\end{tcolorbox}
+
+Günlük dilde niceliği ifade eden çok daha zengin bir sözcük dağarcığı vardır: “hepsi”, “hiçbiri”, “bazıları”, “çoğu”, “tam olarak üçü” gibi. Standart birinci mertebeden mantık (first-order logic) bu zenginliğin yalnızca iki ucunu — “hepsi” (∀) ve “en az biri” (∃) — doğrudan sembolize eder; “çoğu” gibi ifadeler klasik ∀/∃ araçlarıyla karşılanamaz ve mantık literatüründe genelleştirilmiş niceleyiciler (generalized quantifiers) adı verilen, kitabımızın kapsamı dışında kalan daha ileri bir araç kümesini gerektirir. Buradaki iddia, “çoğu” niceleyicisinin saf birinci mertebe mantıkta genel olarak tanımlanabilir olmadığıdır; belirli sonlu yapılar veya ek semboller için özel kodlamalar yapılabilir (Peters ve Westerståhl 2006).
+
+\section{Niceleyicilerin Olumsuzlanması}
+
+Niceleyici içeren ifadelerin olumsuzunu (değilini) doğru biçimde kurmak, matematiksel akıl yürütmede sıkça karşılaşılan ve genellikle hataya açık bir işlemdir. Temel kural şudur: ¬(∀x, P(x)) ≡ ∃x, ¬P(x) (“Her x için P(x) doğru değildir” ifadesi, “P(x)’in doğru olmadığı en az bir x vardır” ifadesine eşdeğerdir.) ¬(∃x, P(x)) ≡ ∀x, ¬P(x) (“P(x)’i sağlayan hiçbir x yoktur” ifadesi, “her x için P(x) yanlıştır” ifadesine eşdeğerdir.) Bu kurallar, mantıktaki De Morgan yasalarının niceleyicilere genellenmiş hâli olarak düşünülebilir (De Morgan yasalarını Bölüm~\ref{chap:onermeler-mantigi}’te önermeler mantığı bağlamında ayrıntılı olarak ele alacağız). Sezgisel olarak bu kuralları şöyle hatırlayabiliriz: bir niceleyicinin olumsuzunu almak, niceleyicinin türünü değiştirir (∀ ↔ ∃) ve olumsuzlama işareti, niceleyicinin “içine”, yani P(x)’in üzerine taşınır (Enderton 2001, ss. 88–90).
+
+\begin{tcolorbox}[bookbox,colback=cEx]\textbf{\textsf{\textcolor{cAcc}{Örnek.}}}\quad Yaygın Bir Hata Türkçedeki “tüm öğrenciler sınavı geçemedi” cümlesi, “hiçbiri geçmedi” veya “hepsi geçmedi” biçiminde iki farklı kapsam okumasına açık olduğu için iyi bir biçimsel örnek değildir. Açıkça “hiçbir öğrenci sınavı geçmedi” diyelim. Sembolik olarak bu ifade ∀x, ¬P(x)’tir; olumsuzu ¬∀x ¬P(x) ≡ ∃x, P(x), yani “en az bir öğrenci sınavı geçti” olur. “Tüm öğrenciler geçti” (∀x, P(x)) daha güçlü ve farklı bir iddiadır.\end{tcolorbox}
+
+Bu tür hatalar, özellikle Bölüm~\ref{chap:dogrudan-ispat}’de inceleyeceğimiz çelişki yoluyla ispat ve kontrapozitif ispat yöntemlerinde, bir iddianın doğru olumsuzunu kurmanın büyük önem taşıdığı durumlarda ciddi mantıksal yanlışlara yol açabilir. Kural keyfî bir hafıza tekniği değildir: bir evrensel iddiayı (∀x P(x)) çürütmenin tek yolu, onu sağlamayan tek bir karşı örnek göstermektir — ki bu tam olarak ∃x ¬P(x)’in söylediğidir. Karşı-örnek kavramına Bölüm~\ref{chap:dogrudan-ispat}--\ref{chap:celiski-ispat}’de yeniden döneceğiz.
+
+\section{İç İçe Geçmiş Niceleyiciler ve Sıralamanın Önemi}
+
+Bir ifadede birden fazla niceleyici kullanıldığında, bu niceleyicilerin sırası ifadenin anlamını kökten değiştirebilir. Bu, niceleyicilerle çalışırken en dikkat edilmesi gereken noktalardan biridir.
+
+\begin{tcolorbox}[bookbox,colback=cEx]\textbf{\textsf{\textcolor{cAcc}{Örnek.}}}\quad Sıralamanın Anlamı Değiştirmesi “∀x ∃y, x + y = 0” ifadesi (tam sayılar kümesinde), “her x için, x + y = 0 olacak bir y vardır” anlamına gelir — bu doğrudur, çünkü her x için y = -x seçilebilir. “∃y ∀x, x + y = 0” ifadesi ise, “öyle bir y vardır ki, her x için x + y = 0’dır” anlamına gelir — bu, tek bir sabit y’nin tüm x değerleri için işe yaramasını gerektirir, ki böyle bir y (tam sayılar kümesinde) yoktur; bu ifade yanlıştır.\end{tcolorbox}
+
+Bu örnek, ∀∃ sırasıyla ∃∀ sırasının birbirinden tamamen farklı iddialar olduğunu gösterir. Genel kural şudur: bir ∃ niceleyicisi bir ∀ niceleyicisinin solunda (dışında) yer alıyorsa, seçilen eleman, ∀ ile bağlanan değişkenin her değerine göre sabit kalmalıdır; eğer ∃ niceleyicisi ∀’nin sağında (içinde) yer alıyorsa, seçilen eleman, ∀ ile bağlanan değişkenin değerine göre değişebilir. Bu, varlıksal tanığın evrensel değişkene bağımlılığı olarak okunabilir; fakat formül tek başına her zaman belirli bir seçim fonksiyonunu adlandırmaz (Enderton 2001, ss. 96–99). Benzer biçimde, “∀𝑥 ∃𝑦, 𝑦 > 𝑥” (doğal sayılarda) doğrudur (𝑦 = 𝑥 + 1 seçilebilir), ama “∃𝑦 ∀𝑥, 𝑦 > 𝑥” yanlıştır (her doğal sayıdan büyük tek bir sabit y yoktur); tek fark sıralamadır. Buna karşılık, aynı türden ardışık niceleyicilerin sırası (∀x ∀y ile ∀y ∀x, ya da ∃x ∃y ile ∃y ∃x) anlamı değiştirmez; bu çiftler birbirleriyle değişebilir (commute) — anlam değişikliği yalnızca farklı türden niceleyicilerin yer değiştirmesinden doğar. Bu ayrım, analizdeki epsilon-delta limit tanımının doğru anlaşılması için hayatidir: “her 𝜀 > 0 için, öyle bir 𝛿 > 0 vardır ki…” ifadesinde 𝛿, 𝜀’a bağlı olarak değişebilir; bu, tanımın ∀𝜀 ∃𝛿 sırasıyla yazılmasının doğrudan bir sonucudur. Eğer sıralama tersine çevrilseydi (∃𝛿 ∀𝜀), bu, tek bir 𝛿 değerinin tüm 𝜀 değerleri için işe yaraması gerektiği anlamına gelirdi — ki bu, çoğu ilginç limit için mümkün değildir. Benzer bir ayrım, düzgün süreklilikte (uniform continuity) karşımıza çıkar: bu tanımda 𝛿, “∀𝜀 ∃𝛿 ∀x…” sıralaması gereği x’ten bağımsız, tek bir değer olarak seçilmek zorundadır — fark, yine tümüyle niceleyicilerin göreli konumundan kaynaklanır (Munkres 2000, ss. 46–48).
+
+\par\smallskip\begin{center}{\renewcommand{\arraystretch}{1.25}\footnotesize\begin{tabularx}{\linewidth}{|Y|Y|}\hline
+\rowcolor{cAcc}\textcolor{white}{\bfseries ∀x ∃y  (her x için bir y)} & \textcolor{white}{\bfseries ∃y ∀x  (tek bir y, tüm x)} \\ \hline
+\textbf{Anlam: y, x’e bağlıdır. x + y = 0 için y = −x.} & Anlam: Tek bir y tüm x’lere uygulanır (sabit seçim, y* = 0). \\ \hline
+\textbf{Örnek: verilen x → seçilen y: (−1→1), (0→0), (1→−1)} & Örnek: x → x + y* (y*=0): (−1→−1≠0), (0→0=0), (1→1≠0) \\ \hline
+\textbf{DOĞRU: Her satırda y, gelen x’e göre yeniden seçilebilir.} & YANLIŞ: Hangi sabit y seçilirse seçilsin, eşitlik yalnızca x = −y için sağlanır. \\ \hline
+\end{tabularx}}\end{center}\par\smallskip
+
+{\small\itshape\sffamily\color{gray}Niceleyici sırasının anlamı değiştirmesi. Solda varlıksal seçim, evrensel değişkenin değerine bağlı olarak yenilenebilir; sağda ise önce seçilen tek bir 𝑦, bütün 𝑥 değerleri için sabit kalmak zorundadır. Bu nedenle ∀𝑥 ∃𝑦 (𝑥 + 𝑦 = 0) doğru, ∃𝑦 ∀𝑥 (𝑥 + 𝑦 = 0) yanlıştır.}
+
+\section{Sınırlı Niceleyiciler ve Kısaltılmış Gösterim}
+
+Uygulamada niceleyiciler, çoğu zaman “tüm evren” üzerinde değil, belirli bir alt küme üzerinde çalıştırılır. Bu durumda sınırlı (bounded/relativized) niceleyici gösterimi kullanılır: “∀x ∈ S, P(x)” ifadesi “S kümesinin her elemanı P(x)’i sağlar” anlamına gelirken, “∃x ∈ S, P(x)” ifadesi “S kümesinde P(x)’i sağlayan en az bir eleman vardır” anlamına gelir. Bu gösterimler, sınırsız niceleyici ifadelerinin kısaltmalarıdır ve açılımları farklı bir mantıksal bağlaç kullanır — sıkça gözden kaçan önemli bir noktadır: ∀x ∈ S, P(x) ≡ ∀x (x ∈ S → P(x)) (evrensel niceleyicide, “S’ye ait olma” koşulu bir koşullu ifadenin şartı olarak, → ile bağlanır.) ∃x ∈ S, P(x) ≡ ∃x (x ∈ S ∧ P(x)) (varlıksal niceleyicide, “S’ye ait olma” koşulu bir bağlaç olarak, ∧ ile bağlanır.) Bu iki açılım, sınırlı niceleyicilerin çoğu standart matematik metnindeki kullanımını açıklar (Enderton 2001, ss. 90–91). Sezgisel neden şudur: “S’nin her elemanı P’yi sağlar” demek, S dışındakiler için iddiada bulunmadan “x S’ye aitse P(x) doğrudur” demektir; “S’de P’yi sağlayan bir eleman vardır” ise hem S’ye ait olma hem de P’yi sağlamanın birlikte gerçekleşmesini iddia ettiği için “ve” bağlacı gerekir.
+
+\begin{tcolorbox}[bookbox,colback=cEx]\textbf{\textsf{\textcolor{cAcc}{Örnek.}}}\quad Yanlış Açılımın Doğurduğu Hata “∀x ∈ ℕ, x asaldır” ifadesini yanlışlıkla ∀x (x ∈ ℕ ∧ x asaldır) biçiminde açan bir öğrenci, “her x hem doğal sayıdır hem de asaldır” gibi absürt bir iddiaya varır. Doğru açılım olan ∀x (x ∈ ℕ → x asaldır) ise, yalnızca doğal sayı olan nesneler hakkında bir iddiada bulunur.\end{tcolorbox}
+
+Sınırlı niceleyici gösterimi, okunabilirliği artırdığı için matematik metinlerinde yaygın olarak tercih edilir ve Bölüm~\ref{chap:dogrudan-ispat}--\ref{chap:celiski-ispat}’de ispat metinlerini incelerken sıkça karşınıza çıkacaktır.
+
+\section{Benzersizlik Niceleyicisi: ∃!}
+
+Matematik metinlerinde sıkça karşılaşılan üçüncü bir niceleyici daha vardır: benzersizlik niceleyicisi (uniqueness quantifier), ∃! sembolüyle gösterilir ve “tam olarak bir tane … vardır” anlamına gelir; hem varlığı hem de tekliği birlikte iddia eder. ∃! niceleyicisi, aslında bağımsız bir temel sembol değildir; ∀ ve ∃ cinsinden aşağıdaki gibi tanımlanabilir: ∃!x, P(x) ≡ ∃x [P(x) ∧ ∀y (P(y) → y = x)] Bu tanım iki bileşeni birleştirir: P(x) “en az bir x bu özelliği sağlar” der (varlık); ∀y (P(y) → y = x) ise “bu özelliği sağlayan her y, bizim x ile aynıdır” der (teklik). Örnek: “her reel sayının tam olarak bir toplama tersi vardır” (∀x ∈ ℝ, ∃!y ∈ ℝ, x + y = 0). Bu tür ifadelerin ispatı genellikle iki aşamalıdır: önce varlık (nesne inşa edilir), sonra teklik (iki nesnenin aynı olması gerektiği gösterilir) ayrı ayrı ispatlanır.
+
+\section{Niceleyicilerin Söylem Evreni ve Kapsamı (Etki Alanı)}
+
+Bir niceleyicinin söylem evreni (domain of discourse), değişkenlerin hangi nesneler üzerinde değer aldığını belirtir. Niceleyicinin kapsamı (scope) ise niceleyicinin bağladığı alt-formüldür; bu iki kavram birbirinden ayrılmalıdır. Örneğin “∃𝑥 (𝑥2 + 1 = 0)” cümlesi reel sayılar evreninde yanlış, karmaşık sayılar evreninde doğrudur. Buna karşılık karmaşık sayılar üzerinde “<” işareti ayrıca yorumlanmadan “𝑥2 ≥ 0” yazmak, yanlış bir cümleden çok eksik yorumlanmış bir dil kullanımıdır (Enderton 2001, ss. 80–88). Söylem evreninin belirtilmemesi yalnızca akademik bir titizlik meselesi değildir; gerçek hatalara yol açabilir. Örneğin “∃𝑥 (𝑥 + 5 = 3)” doğal sayılar evreninde yanlış, tam sayılar evreninde doğrudur. Ancak
+
+buradan “tam sayılarda her denklemin çözümü vardır” sonucu çıkmaz; yalnızca aynı cümlenin yorum alanına göre doğruluk değerinin değişebildiği gösterilir.
+
+\section{Niceleyiciler ve Matematiğin Kesinliği}
+
+Niceleyicilerin sistematik biçimde geliştirilmesi, matematiğin 19. yüzyıl sonu ve 20. yüzyıl başındaki “kesinleştirme” (rigorization) hareketinin merkezî bir bileşenidir. Frege ve Peirce, farklı gösterimler ve farklı araştırma amaçlarıyla, ilişkileri ve çoklu nicelemeyi ifade eden güçlü mantıksal sistemler geliştirdiler. Frege’nin sistemi birinci mertebeyle sınırlı değildi; fonksiyonlar ve kavramlar üzerinde de niceleme yapıyordu. Bugün bağımsız bir sistem olarak tanıdığımız birinci mertebeden mantık ise Frege, Peirce, Peano, Russell, Hilbert ve başka mantıkçıların katkılarıyla aşamalı olarak ortaya çıktı; tek bir eserde bir anda kurulmuş değildi (Ewald 2018). Bu gelişmeler matematiksel ifadelerin sözdizimi ve doğruluk koşullarının açık biçimde tanımlanmasını mümkün kıldı. Ancak “kesin biçimde formüle edilebilir” olmak, her birinci mertebe cümlenin doğruluğunun genel bir algoritmayla karara bağlanabileceği anlamına gelmez; Church ve Turing’in sonuçları bu beklentiye sınır koyar (Church 1936, ss. 345–363; Turing 1937, ss. 230–265). Niceleme mantığı, Frege ve Russell’ın Mantıkçılık programının teknik altyapısını oluşturur ve Bölüm~\ref{chap:onermeler-mantigi}’te ele aldığımız önermeler mantığının niceleyicilerle genişletilmiş hâli olan yüklemler mantığının (predicate logic) temelini atar. Biçimsel dil ve çıkarım kurallarının açıklığı, ispat nesnelerinin bilgisayarlar tarafından denetlenebilmesini mümkün kılar. Rocq (eski adıyla Coq), Lean ve Isabelle gibi ispat asistanları, biçimselleştirilmiş bir önerme ve kütüphane içinde üretilen türetimleri küçük bir denetleyici çekirdekle kontrol eder. Bu, gayriresmî teorem ifadesinin doğru biçimselleştirildiğini veya ispatın açıklayıcı olduğunu tek başına garanti etmez (Rocq Development Team 2025; Yang ve diğ. 2026, ss. 66–73).
+
+\section{Niceleyicileri Görmek: Tablolar ve Oyunlar}
+
+İki niceleyicili bir cümlenin doğruluğu, sonlu bir evrende bir tablo üzerinden doğrudan okunabilir. $P(x,y)$ özelliği satırları $x$, sütunları $y$ olan bir tabloda doğru olduğu kutular boyansın. Dört temel kalıp, tabloda dört farklı görsel desene karşılık gelir.
+
+\begin{figure}[htbp]
+\centering
+\resizebox{\linewidth}{!}{%
+\begin{tikzpicture}[x=.55cm,y=.55cm]
+\newcommand{\qgrid}[3]{%
+  \begin{scope}[shift={(#1,0)}]
+  \foreach \i in {0,...,3}{\foreach \j in {0,...,3}{\draw[bar!40] (\j,-\i) rectangle ++(1,1);}}
+  \foreach \cx/\cy in {#2}{\fill[acc!55] (\cx,-\cy) rectangle ++(1,1);}
+  \node[font=\sffamily\scriptsize,anchor=north,text width=2.8cm,align=center] at (2,-3.3) {#3};
+  \end{scope}}
+\qgrid{0}{1/0,0/1,3/2,2/3,1/1}{$\forall x\,\exists y$\\her \emph{satırda} en az bir kutu}
+\qgrid{5.6}{2/0,2/1,2/2,2/3,0/0}{$\exists y\,\forall x$\\en az bir \emph{sütun} tamamen dolu}
+\qgrid{11.2}{0/2,1/2,2/2,3/2,3/0}{$\exists x\,\forall y$\\en az bir \emph{satır} tamamen dolu}
+\qgrid{16.8}{1/2}{$\exists x\,\exists y$\\en az bir kutu}
+\node[font=\sffamily\scriptsize] at (-.6,.5) {$x\backslash y$};
+\end{tikzpicture}}%
+\caption{Dört elemanlı evrende $P(x,y)$ tablosu (satır: $x$, sütun: $y$, dolu kutu: $P(x,y)$ doğru). $\forall x\,\exists y$ her satırda bir kutu ister ve kutular farklı sütunlarda olabilir; $\exists y\,\forall x$ ise tek bir sütunun baştan sona dolu olmasını ister. İkincisi birinciyi gerektirir, tersi gerekmez — soldaki tablo birinciyi sağlar ama tamamen dolu bir sütunu yoktur.}
+\end{figure}
+
+\begin{ornek}[\textbf{Tablodan okuma.}]
+Öğrenciler $x\in\{\text{Ali, Banu, Can, Deniz}\}$, sorular $y\in\{1,2,3,4\}$ ve $P(x,y)$: ‘$x$, $y$ sorusunu çözdü’ olsun. ‘Her öğrenci en az bir soru çözdü’ cümlesi $\forall x\,\exists y\,P(x,y)$’dir ve tablonun her satırında boyalı bir kutu gerektirir. ‘Bütün öğrencilerin çözdüğü bir soru var’ cümlesi ise $\exists y\,\forall x\,P(x,y)$’dir ve tamamen dolu bir sütun gerektirir. Olumsuzlamalar da tabloda okunur: $\neg\forall x\,\exists y\,P$, yani $\exists x\,\forall y\,\neg P$, ‘tamamen boş bir satır var’ demektir.
+\end{ornek}
+
+\subsection{Niceleyicileri Bir Oyun Olarak Okumak}
+
+İç içe niceleyicileri anlamanın bir başka yolu, cümleyi iki oyunculu bir oyun olarak okumaktır: $\forall$ hamlesini \emph{Şüpheci}, $\exists$ hamlesini \emph{Savunucu} yapar; hamleler soldan sağa sırayla yapılır. Cümle doğrudur ancak ve ancak Savunucunun her durumda kazandıran bir stratejisi vardır. Bu okuma, analizdeki epsilon–delta tanımının ‘oyun’ yorumunun genel biçimidir: Şüpheci bir $\varepsilon>0$ seçer, Savunucu ona uygun bir $\delta>0$ bulmak zorundadır.
+
+\begin{ornek}[\textbf{Aynı semboller, iki farklı oyun.}]
+$\forall x\in\mathbb Z\;\exists y\in\mathbb Z\;(x+y=0)$ oyununda önce Şüpheci bir $x$ seçer, Savunucu onu \emph{gördükten sonra} $y=-x$ ile yanıt verir ve her zaman kazanır: cümle doğrudur. $\exists y\in\mathbb Z\;\forall x\in\mathbb Z\;(x+y=0)$ oyununda ise Savunucu $y$’yi \emph{önce} ve bir kez seçmek zorundadır; Şüpheci $x=1-y$ seçerek $x+y=1\neq0$ yapar ve kazanır: cümle yanlıştır. Niceleyici sırası, bilginin hangi sırayla açıklandığını belirler: sonradan seçilen tanık, önce seçilen değişkenlere \emph{bağlı} olabilir.
+\end{ornek}
+
+\begin{sinif}[Sınıfta · Niceleyici oyunu]
+Öğrencileri ikişerli eşleştirin. Tahtaya $\forall x\,\exists y\,(y>x^2)$, $\exists y\,\forall x\,(y>x^2)$, $\forall\varepsilon>0\;\exists n\;(1/n<\varepsilon)$ gibi cümleler yazın. Her cümle için oyuncular rolleri paylaşıp birkaç tur oynasın; sonra ‘Savunucunun kazanma stratejisi nedir?’ ya da ‘Şüpheci nasıl kazanır?’ sorusunu tek bir formülle yanıtlasınlar. Bir kazanma stratejisini formülle yazmak, cümlenin ispatının (ya da olumsuzunun ispatının) ta kendisidir.
+\end{sinif}
+
+\section{Yüksek Lisans Derinleştirmesi: Niceleyici Dönüşümleri ve Stratejik Anlam}
+
+Niceleyicilerin sırası yalnızca dilbilgisel değildir; tanıkların hangi bilgiye bağlı seçilebildiğini belirler. Bu kısım niceleyici dönüşümlerini normal biçim, Skolemleştirme ve oyun yorumu üzerinden inceler.
+
+\textbf{Bu kısmın hedefleri.} Bu kısmı tamamladığınızda niceleyici olumsuzlamalarını ve önek normal biçimi uygulayabilecek, Skolemleştirmenin eşdeğerlik değil eş-doyurulabilirlik sağladığını açıklayabilecek ve niceleyici sırasını strateji bağımlılığı olarak yorumlayabileceksiniz.
+
+
+6.8.1 Ön-Ek Normal Biçime Geçiş Bağlı değişkenler çakışmayacak biçimde yeniden adlandırıldıktan sonra niceleyiciler formülün önüne taşınabilir. Örneğin
+
+∀𝑥(𝑃 (𝑥) → ∃𝑦 𝑄(𝑥, 𝑦)) önce
+
+∀𝑥(¬𝑃 (𝑥) ∨ ∃𝑦 𝑄(𝑥, 𝑦)) sonra
+
+∀𝑥∃𝑦(¬𝑃 (𝑥) ∨ 𝑄(𝑥, 𝑦)) biçimine getirilir. Taşıma kuralları serbest değişken koşullarına bağlıdır; örneğin 𝑥, 𝐵’de serbest değilse
+
+(∀𝑥 𝐴) ∧ 𝐵 ≡ ∀𝑥(𝐴 ∧ 𝐵) olur. Bu koşul atlanırsa anlam değişebilir (Enderton 2001).
+
+6.8.2 Skolemleştirme: Tanıkların Bağımlılığı ∀𝑥∃𝑦 𝑅(𝑥, 𝑦) ifadesinde 𝑦 tanığı 𝑥’e bağlı seçilebilir. Skolemleştirme bu bağımlılığı yeni bir 𝑓 fonksiyonuyla kaydeder:
+
+∀𝑥 𝑅(𝑥, 𝑓(𝑥)). Buna karşılık ∃𝑦∀𝑥 𝑅(𝑥, 𝑦) için tek bir Skolem sabiti 𝑐 yeterlidir: ∀𝑥 𝑅(𝑥, 𝑐). Skolemleştirilmiş formül özgün formülle aynı dilde mantıksal eşdeğer olmak zorunda değildir; yeni sembollerin uygun yorumları altında onunla eş-doyurulabilirdir. Bu ayrım otomatik ispat ve çözümleme yöntemlerinde önemlidir (Enderton 2001).
+
+6.8.3 Niceleyicilerin Oyun Yorumu ∀𝑥∃𝑦 𝑅(𝑥, 𝑦) cümlesini iki oyunculu bir oyun gibi düşünelim. Karşı oyuncu 𝑥’i seçer; doğrulayıcı oyuncu seçimi gördükten sonra bir 𝑦 üretir. Cümlenin doğru olması, doğrulayıcının her 𝑥 hamlesine karşı kazandıran bir stratejisinin bulunmasıdır. Buna karşılık ∃𝑦∀𝑥 𝑅(𝑥, 𝑦) ifadesinde 𝑦, 𝑥 görülmeden önce seçilmelidir. Örneğin doğal sayılarda
+
+∀𝑥∃𝑦 (𝑦 > 𝑥) doğrudur; strateji 𝑦 = 𝑥 + 1’dir. Fakat ∃𝑦∀𝑥(𝑦 > 𝑥) yanlıştır. Niceleyici sırası, tanığın hangi önceki seçimlere bağlı olabileceğini belirler (Peters ve Westerståhl 2006).
+
+6.8.4 Seminer ve Araştırma Çalışmaları 1. Beş formülü ön-ek normal biçime dönüştürün ve her taşıma kuralının serbest değişken koşulunu yazın.
+
+2. Üç farklı niceleyici ön eki için Skolem fonksiyonlarının hangi değişkenlere bağlı olması gerektiğini belirleyin.
+
+3. Skolemleştirmenin neden eşdeğerlik değil eş-doyurulabilirlik koruduğunu bir model örneğiyle açıklayın.
+
+4. ∀𝑥∃𝑦∀𝑧∃𝑤 𝑅(𝑥, 𝑦, 𝑧, 𝑤) cümlesinin oyun ağacını ve strateji bağımlılıklarını çizin.
+
+5. Niceleyici kapsam belirsizliğinin doğal dil, matematik ve otomatik ispat sistemlerindeki etkisini karşılaştıran bir seminer sunumu hazırlayın.
+
+\section*{Bölüm Özeti}
+
+Niceleyiciler, serbest değişken içeren açık formüllerde değişkenleri bağlayarak kapalı cümleler oluşturmaya yarayan mantıksal araçlardır. Bu cümlelerin doğruluk değeri bir yapı ve söylem evrenine göre belirlenir. Evrensel niceleyici (∀, “her”) ve varlıksal niceleyici (∃, “öyle bir … vardır ki”) olmak üzere iki temel niceleyici vardır. Bir niceleyicili ifadenin olumsuzu alınırken niceleyici türü değişir ve olumsuzlama içeri taşınır (¬∀x P(x) ≡ ∃x ¬P(x); ¬∃x P(x) ≡ ∀x ¬P(x)). İç içe geçmiş niceleyicilerin sırası, ifadenin anlamını kökten değiştirir; özellikle ∀∃ ile ∃∀ sıralamaları birbirinden farklı iddialardır. Niceleyicilerin geliştirilmesi, matematiğin 19-20. yüzyıl kesinleştirme hareketinin ve Mantıkçılık programının teknik temelini oluşturmuştur.
+
+\section*{Gözden Geçirme Soruları}
+
+\par\noindent 1. “Bazı öğrenciler matematikten hoşlanmaz” ifadesini ∃ niceleyicisi kullanarak sembolize ediniz.
+
+\par\noindent 2. “∀x, P(x) → Q(x)” ifadesinin olumsuzunu kurallara uygun biçimde bulunuz.
+
+\par\noindent 3. “∀x ∃y” ile “∃y ∀x” sıralamaları arasındaki fark, epsilon-delta limit tanımında neden önemlidir?
+
+\par\noindent 4. Bir niceleyicinin söylem evreninin (domain of discourse) belirtilmemesi hangi yanlış anlaşılmalara yol açabilir? Bir örnekle gösteriniz.
+
+\par\noindent 5. Niceleyicilerin matematiksel dile kazandırdığı kesinliği, günlük dildeki “bazı”, “hepsi” gibi ifadelerin belirsizliğiyle karşılaştırınız.
+
+\par\noindent 6. Frege’nin niceleme kuramına katkısı ile ∀ ve ∃ gliflerinin ortaya çıkışı arasındaki farkı açıklayınız.
+
+\section*{Çoktan Seçmeli Sorular}
+
+\par\smallskip\noindent 1. “∀x, P(x)” ifadesi aşağıdakilerden hangisini ifade eder?
+
+\par\noindent\hspace*{1.6em}A) İncelenen kümede P(x)’i sağlayan en az bir x vardır
+
+\par\noindent\hspace*{1.6em}B) İncelenen kümedeki her x için P(x) doğrudur
+
+\par\noindent\hspace*{1.6em}C) P(x)’i sağlayan hiçbir x yoktur
+
+\par\noindent\hspace*{1.6em}D) P(x), yalnızca belirli bir x değeri için tanımlıdır
+
+\par\smallskip\noindent 2. “∃x, P(x)” ifadesinin doğru okunuşu aşağıdakilerden hangisidir?
+
+\par\noindent\hspace*{1.6em}A) Her x için P(x) doğrudur
+
+\par\noindent\hspace*{1.6em}B) P(x)’i sağlayan en az bir x vardır
+
+\par\noindent\hspace*{1.6em}C) P(x)’i sağlayan hiçbir x yoktur
+
+\par\noindent\hspace*{1.6em}D) P(x), x’ten bağımsız bir önermedir
+
+\par\smallskip\noindent 3. Metinde, ilişkileri, bağlı değişkenleri ve iç içe nicelemeleri kapsayan sistematik niceleme mantığının 1879’daki başlıca başlangıcı olarak hangi eser gösterilmiştir?
+
+\par\noindent\hspace*{1.6em}A) Russell ve Whitehead’in Principia Mathematica’sı
+
+\par\noindent\hspace*{1.6em}B) Frege’nin Begriffsschrift’i
+
+\par\noindent\hspace*{1.6em}C) Hilbert’in Grundlagen der Geometrie’si
+
+\par\noindent\hspace*{1.6em}D) Öklid’in Elementler’i
+
+\par\smallskip\noindent 4. “Çoğu öğrenci sınavı geçti” gibi ifadeler neden standart ∀/∃ mantığıyla doğrudan sembolize edilemez?
+
+\par\noindent\hspace*{1.6em}A) Çünkü bu tür ifadeler yanlıştır
+
+\par\noindent\hspace*{1.6em}B) Çünkü “çoğu” niceliği, klasik ∀/∃ ikilisinin doğrudan karşılayamadığı, genelleştirilmiş niceleyici gerektiren bir ifadedir
+
+\par\noindent\hspace*{1.6em}C) Çünkü öğrenciler bir küme oluşturmaz
+
+\par\noindent\hspace*{1.6em}D) Çünkü sınav sonuçları önerme değildir
+
+\par\smallskip\noindent 5. ¬(∀x, P(x)) ifadesi mantıksal olarak neye eşdeğerdir?
+
+\par\noindent\hspace*{1.6em}A) ∀x, ¬P(x)
+
+\par\noindent\hspace*{1.6em}B) ∃x, P(x)
+
+\par\noindent\hspace*{1.6em}C) ∃x, ¬P(x)
+
+\par\noindent\hspace*{1.6em}D) ¬∃x, P(x)
+
+\par\smallskip\noindent 6. ¬(∃x, P(x)) ifadesi mantıksal olarak neye eşdeğerdir?
+
+\par\noindent\hspace*{1.6em}A) ∀x, ¬P(x)
+
+\par\noindent\hspace*{1.6em}B) ∃x, ¬P(x)
+
+\par\noindent\hspace*{1.6em}C) ∀x, P(x)
+
+\par\noindent\hspace*{1.6em}D) ∃x, P(x)
+
+\par\smallskip\noindent 7. “Hiçbir öğrenci sınavı geçmedi” (∀x, ¬P(x)) ifadesinin doğru olumsuzu aşağıdakilerden hangisidir?
+
+\par\noindent\hspace*{1.6em}A) Tüm öğrenciler sınavı geçti
+
+\par\noindent\hspace*{1.6em}B) Hiçbir öğrenci sınavı geçmedi
+
+\par\noindent\hspace*{1.6em}C) En az bir öğrenci sınavı geçti
+
+\par\noindent\hspace*{1.6em}D) En az bir öğrenci sınavı geçemedi
+
+\par\smallskip\noindent 8. Bir evrensel iddiayı (∀x P(x)) çürütmenin mantıksal yolu nedir?
+
+\par\noindent\hspace*{1.6em}A) İddiayı destekleyen birçok örnek göstermek
+
+\par\noindent\hspace*{1.6em}B) İddiayı sağlamayan tek bir karşı örnek göstermek
+
+\par\noindent\hspace*{1.6em}C) İddiayı hiç değerlendirmemek
+
+\par\noindent\hspace*{1.6em}D) İddiayı başka bir kümeye taşımak
+
+\par\smallskip\noindent 9. “∀x ∃y, x + y = 0” ifadesi (tam sayılar kümesinde) neden doğrudur?
+
+\par\noindent\hspace*{1.6em}A) Çünkü her x için y = -x seçilebilir
+
+\par\noindent\hspace*{1.6em}B) Çünkü sıfır sayısı her x’e eşittir
+
+\par\noindent\hspace*{1.6em}C) Çünkü tam sayılar kümesi sonludur
+
+\par\noindent\hspace*{1.6em}D) Çünkü bu ifade aslında ∃y ∀x ile aynı anlama gelir
+
+\par\smallskip\noindent 10. “∃y ∀x, x + y = 0” ifadesi (tam sayılar kümesinde) neden yanlıştır?
+
+\par\noindent\hspace*{1.6em}A) Çünkü tam sayılar kümesinde toplama işlemi tanımsızdır
+
+\par\noindent\hspace*{1.6em}B) Çünkü tüm x değerleri için işe yarayan tek bir sabit y bulunamaz
+
+\par\noindent\hspace*{1.6em}C) Çünkü x ve y aynı değişken olmalıdır
+
+\par\noindent\hspace*{1.6em}D) Çünkü ∃ niceleyicisi tam sayılarla kullanılamaz
+
+\par\smallskip\noindent 11. Aynı türden ardışık niceleyicilerin (örneğin ∀x ∀y ile ∀y ∀x) sırası hakkında hangisi doğrudur?
+
+\par\noindent\hspace*{1.6em}A) Anlamı her zaman değiştirir
+
+\par\noindent\hspace*{1.6em}B) Yalnızca sonsuz kümelerde anlamı değiştirir
+
+\par\noindent\hspace*{1.6em}C) Anlamı değiştirmez, bu niceleyiciler birbirleriyle yer değiştirebilir
+
+\par\noindent\hspace*{1.6em}D) Yalnızca varlıksal niceleyiciler için geçerlidir
+
+\par\smallskip\noindent 12. Epsilon-delta limit tanımında “∀𝜀 ∃𝛿” sıralaması neyi ifade eder?
+
+\par\noindent\hspace*{1.6em}A) 𝛿 değerinin 𝜀’dan tamamen bağımsız, sabit bir sayı olması gerektiğini
+
+\par\noindent\hspace*{1.6em}B) 𝛿 değerinin 𝜀’a bağlı olarak değişebileceğini
+
+\par\noindent\hspace*{1.6em}C) 𝜀 ve 𝛿’nın aynı anda seçilmesi gerektiğini
+
+\par\noindent\hspace*{1.6em}D) Limitin var olmadığını
+
+\par\smallskip\noindent 13. Düzgün süreklilik (uniform continuity) tanımı, noktasal süreklilik tanımından niceleyici açısından nasıl ayrılır?
+
+\par\noindent\hspace*{1.6em}A) Düzgün süreklilikte 𝛿, x’ten bağımsız olarak, ∀x’ten önce seçilir
+
+\par\noindent\hspace*{1.6em}B) Düzgün süreklilikte hiç niceleyici kullanılmaz
+
+\par\noindent\hspace*{1.6em}C) Noktasal süreklilikte 𝜀 kullanılmaz
+
+\par\noindent\hspace*{1.6em}D) İki tanım niceleyici açısından tamamen özdeştir
+
+\par\smallskip\noindent 14. “∀x ∈ S, P(x)” ifadesinin sınırsız niceleyiciyle doğru açılımı aşağıdakilerden hangisidir?
+
+\par\noindent\hspace*{1.6em}A) ∀x (x ∈ S ∧ P(x))
+
+\par\noindent\hspace*{1.6em}B) ∃x (x ∈ S → P(x))
+
+\par\noindent\hspace*{1.6em}C) ∀x (x ∈ S → P(x))
+
+\par\noindent\hspace*{1.6em}D) ∃x (x ∈ S ∧ P(x))
+
+\par\smallskip\noindent 15. “∃x ∈ S, P(x)” ifadesinin sınırsız niceleyiciyle doğru açılımı aşağıdakilerden hangisidir?
+
+\par\noindent\hspace*{1.6em}A) ∃x (x ∈ S ∧ P(x))
+
+\par\noindent\hspace*{1.6em}B) ∀x (x ∈ S → P(x))
+
+\par\noindent\hspace*{1.6em}C) ∃x (x ∈ S → P(x))
+
+\par\noindent\hspace*{1.6em}D) ∀x (x ∈ S ∧ P(x))
+
+\par\smallskip\noindent 16. Sınırlı evrensel niceleyicide “∈ S” koşulunun → (koşullu bağlaç) ile bağlanmasının nedeni nedir?
+
+\par\noindent\hspace*{1.6em}A) Çünkü S kümesinin dışındaki elemanlar için iddianın otomatik olarak doğru sayılması gerekir
+
+\par\noindent\hspace*{1.6em}B) Çünkü ∧ bağlacı evrensel niceleyicilerle hiç kullanılamaz
+
+\par\noindent\hspace*{1.6em}C) Çünkü → bağlacı yalnızca sonlu kümelerde geçerlidir
+
+\par\noindent\hspace*{1.6em}D) Çünkü bu, tamamen keyfî bir gösterim tercihidir
+
+\par\smallskip\noindent 17. ∃!x, P(x) ifadesinin standart tanımı aşağıdakilerden hangisidir?
+
+\par\noindent\hspace*{1.6em}A) ∀x, P(x)
+
+\par\noindent\hspace*{1.6em}B) ∃x [P(x) ∧ ∀y (P(y) → y = x)]
+
+\par\noindent\hspace*{1.6em}C) ∃x [P(x) ∨ ∀y (P(y) → y = x)]
+
+\par\noindent\hspace*{1.6em}D) ∀x [P(x) → ∃y (y = x)]
+
+\par\smallskip\noindent 18. Benzersizlik niceleyicisi (∃!) hangi iki bileşeni birlikte iddia eder?
+
+\par\noindent\hspace*{1.6em}A) Yalnızca varlık iddiasını
+
+\par\noindent\hspace*{1.6em}B) Yalnızca teklik iddiasını
+
+\par\noindent\hspace*{1.6em}C) Hem bir nesnenin var olduğunu hem de bu nesnenin tek olduğunu
+
+\par\noindent\hspace*{1.6em}D) Kapsamın sonlu olduğunu
+
+\par\smallskip\noindent 19. Bir niceleyicinin söylem evreninin (domain of discourse) belirtilmemesi neden sorun yaratabilir?
+
+\par\noindent\hspace*{1.6em}A) Çünkü aynı cümle, farklı söylem evrenlerinde farklı doğruluk değeri alabilir
+
+\par\noindent\hspace*{1.6em}B) Çünkü niceleyiciler kapsamsız hiç kullanılamaz
+
+\par\noindent\hspace*{1.6em}C) Çünkü kapsam yalnızca geometri problemlerinde gereklidir
+
+\par\noindent\hspace*{1.6em}D) Çünkü kapsam belirtmek matematiksel olarak yasaktır
+
+\par\smallskip\noindent 20. Biçimsel dil ve çıkarım kurallarının açıkça tanımlanması, aşağıdaki gelişmelerden hangisini mümkün kılmıştır?
+
+\par\noindent\hspace*{1.6em}A) Sezgici mantığın tamamen terk edilmesi
+
+\par\noindent\hspace*{1.6em}B) Otomatik ispat kanıtlayıcıları ve biçimsel doğrulama sistemlerinin gelişmesi
+
+\par\noindent\hspace*{1.6em}C) Aksiyomatik yöntemin matematikten çıkarılması
+
+\par\noindent\hspace*{1.6em}D) Niceleyicilerin günlük dilden tamamen kaldırılması
+
+\clearpage
+
+\clearpage

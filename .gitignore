@@ -1,0 +1,18 @@
+# Python / Jupyter
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+.env
+
+# LaTeX çıktıları (yayımlanmış kitap PDF’si korunur)
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+kitap/kaynak/main.pdf
+
+# İşletim sistemi
+.DS_Store
