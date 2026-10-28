@@ -9,7 +9,11 @@ Prof. Dr. İbrahim Güney’in **MAT507 — Matematiksel Düşünme ve Muhakeme*
 
 ## Atölyeler
 
-Bölümlere eşlik eden Colab not defterleri henüz hazırlanmamıştır. İlk atölye niceleyiciler üzerine hazırlanacaktır.
+| Bölüm | Atölye | Çalıştır |
+|---|---|---|
+| Niceleyiciler | [Niceleyici Laboratuvarı](atolyeler/niceleyiciler/README.md) | [Colab’da aç](https://colab.research.google.com/github/ibrahimguney/matematik-dusunme/blob/main/atolyeler/niceleyiciler/niceleyici_laboratuvari.ipynb) |
+
+İlk atölye: etkileşimli öğrenci–soru tablosu, tanık ve karşı örnekler, olumsuzlama, sonlu evren ile ispat ayrımı. [Öğretmen rehberi](ogretmen/niceleyiciler.md) · [Kitap kare kodları](karekodlar/README.md).
 
 Hedeflenen akış: **Kitaptaki kare kod → bölüm sayfası → Google Colab → tahmin et, dene, karşı örnek ara ve gerekçelendir.**
 
